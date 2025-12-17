@@ -1,0 +1,84 @@
+# Weekly Materials
+
+::: {.callout-caution}
+## Subject to change
+
+This page provides an **archive** of the topics and class materials used in past weeks. 
+
+It also serves as a place for instructors to plan *future* weeks, but these should not be relied on until that week is upon us.
+:::
+
+NOTE IN DEVELOPMENT TO INSTRUCTORS: This is where we will list the readings, assignments, quiz days, and other components for each class session.
+
+-------
+
+Week 1: Jan 5 <div id="week1"> 
+: Readings
+: Exercises
+: Drill
+
+-------
+
+Week 2: Jan 12 <div id="week2"> 
+: Readings
+: Exercises
+: Drill
+
+-------
+
+Week 3: Jan 19 <div id="week3">
+: Readings
+: Exercises
+: Drill
+
+-------
+
+Week 4: Jan 26 <div id="week4">
+: Readings
+: Exercises
+: Drill
+
+-------
+
+Week 5: Feb 2 <div id="week5">
+: Readings
+: Exercises
+: Drill
+
+-------
+
+Week 6: Feb 16 <div id="week6">
+: Readings
+: Exercises
+: Drill
+
+-------
+
+Week 7: Feb 23 <div id="week7">
+: Readings
+: Exercises
+: Drill
+
+-------
+
+Week 8: Mar 2 <div id="week8">
+: Readings
+: Exercises
+: Drill
+
+-------
+
+Week 9: Mar 9 <div id="week9">
+: Readings
+: Exercises
+: Drill
+
+-------
+
+Week 10: Mar 16 <div id="week10">
+: Readings
+: Exercises
+: Drill
+
+-------
+

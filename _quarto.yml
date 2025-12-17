@@ -1,0 +1,63 @@
+project:
+  output-dir: docs
+  type: website
+
+website:
+  title: "QR - Analysis at UATX"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+  sidebar:
+      background: "#D9E3E4"
+      pinned: true
+      align: left
+      contents:
+        - href: about.qmd
+          text: "About"
+        - icon: bi-person-raised-hand
+          text: Instructors
+        - text:       Dorothy Dickmann
+        - text:       Dave Ruth
+        - text:       Danny Kaplan
+        - href: "meeting-time.qmd"
+          text: "Class meeting times"
+        - href: "student-responsibilities.qmd"
+          text: "Student responsibilities"
+        - href: "One-minute.qmd"
+          text: "One-minute questions"
+        - href: "https://dtkaplan.github.io/QR-A"
+          text: "QRA textbook"
+        - section: "Weekly materials"
+          contents:
+          - href: weeks.qmd#week1
+            text: "Week 1: Jan 5"
+          - href: weeks.qmd#week2
+            text: "Week 2: Jan 12"
+          - href: weeks.qmd#week3
+            text: "Week 3: Jan 19"
+          - href: weeks.qmd#week4
+            text: "Week 4: Jan 26"
+          - href: weeks.qmd#week5
+            text: "Week 5: Feb 2"
+          - href: weeks.qmd#week6
+            text: "Week 6: Feb 16"
+          - href: weeks.qmd#week7
+            text: "Week 7: Feb 23"
+          - href: weeks.qmd#week8
+            text: "Week 8: Mar 2"
+          - href: weeks.qmd#week9
+            text: "Week 9: Mar 9"
+          - href: weeks.qmd#week10
+            text: "Week 10: Mar 16"
+
+format: 
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+
+

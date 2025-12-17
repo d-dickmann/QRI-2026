@@ -1,0 +1,27 @@
+
+```{r include=FALSE}
+library(devoirs)
+```
+
+::::{.callout-warning collapse=true}
+### Remember to hand in your work ...
+::: {.panel-tabset}
+## Submitting answers
+
+At any point, you can submit your answers by collecting them and uploading them to the class site.
+
+`r devoirs_start_no_link()`
+
+```{r echo=FALSE}
+devoirs_end()
+```
+
+[Link to upload site](https://docs.google.com/forms/d/e/1FAIpQLSfh2aEmMwgBA__bl_uTYZl9NjUTLBhzC25qEYHSnwXXWhDqoQ/viewform?usp=header){target="_blank"}
+
+## Clearing document memory
+If the answers that have been loaded automatically are not yours, press this button before starting your work:
+`r devoirs::clear_persistent_storage()`
+:::
+
+::::
+

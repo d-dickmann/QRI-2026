@@ -1,0 +1,150 @@
+
+```{r include=FALSE}
+library(devoirs)
+```
+
+After each class session, you are expected to give a brief summary of what happened in that session as well as pointing to things that either 1) were particularly meaningful to you or 2) that you found confusing. 
+
+These are called *one-minute questions* to indicate roughly how much time you should spend on your answer. Of course, you are welcome to spend more time. But even if you spend just one minute, your answer should be honest, articulate, and aimed at improving the class for yourself and your student colleagues.
+
+Your answers will count toward class participation.
+
+**DO NOT** write your answer while still in class.
+
+-----
+
+# One-minute questions
+
+{{< include _devoirs.qmd >}}
+
+::: {.callout-note collapse=true}
+# Week 1 
+
+* Monday or Tuesday session
+
+`r devoirs::devoirs_text("1-min-week1-a")`
+
+* Wednesday or Thursday session
+
+`r devoirs::devoirs_text("1-min-week1-b")`
+
+:::
+
+::: {.callout-note collapse=true}
+# Week 2 
+
+* Monday or Tuesday session
+
+`r devoirs::devoirs_text("1-min-week2-a")`
+
+* Wednesday or Thursday session
+
+`r devoirs::devoirs_text("1-min-week2-b")`
+
+:::
+
+
+::: {.callout-note collapse=true}
+# Week 3 
+
+* Monday or Tuesday session
+
+`r devoirs::devoirs_text("1-min-week3-a")`
+
+* Wednesday or Thursday session
+
+`r devoirs::devoirs_text("1-min-week3-b")`
+
+:::
+
+
+::: {.callout-note collapse=true}
+# Week 4 
+
+* Monday or Tuesday session
+
+`r devoirs::devoirs_text("1-min-week4-a")`
+
+* Wednesday or Thursday session
+
+`r devoirs::devoirs_text("1-min-week4-b")`
+
+:::
+
+::: {.callout-note collapse=true}
+# Week 5 
+
+* Monday or Tuesday session
+
+`r devoirs::devoirs_text("1-min-week5-a")`
+
+* Wednesday or Thursday session
+
+`r devoirs::devoirs_text("1-min-week5-b")`
+
+:::
+
+::: {.callout-note collapse=true}
+# Week 6 
+
+* Monday or Tuesday session
+
+`r devoirs::devoirs_text("1-min-week6-a")`
+
+* Wednesday or Thursday session
+
+`r devoirs::devoirs_text("1-min-week6-b")`
+
+:::
+
+::: {.callout-note collapse=true}
+# Week 7 
+
+* Monday or Tuesday session
+
+`r devoirs::devoirs_text("1-min-week7-a")`
+
+* Wednesday or Thursday session
+
+`r devoirs::devoirs_text("1-min-week7-b")`
+
+:::
+
+::: {.callout-note collapse=true}
+# Week 8 
+
+* Monday or Tuesday session
+
+`r devoirs::devoirs_text("1-min-week8-a")`
+
+* Wednesday or Thursday session
+
+`r devoirs::devoirs_text("1-min-week8-b")`
+
+:::
+
+::: {.callout-note collapse=true}
+# Week 9 
+
+* Monday or Tuesday session
+
+`r devoirs::devoirs_text("1-min-week9-a")`
+
+* Wednesday or Thursday session
+
+`r devoirs::devoirs_text("1-min-week9-b")`
+
+:::
+
+::: {.callout-note collapse=true}
+# Week 10 
+
+* Monday or Tuesday session
+
+`r devoirs::devoirs_text("1-min-week10-a")`
+
+* Wednesday or Thursday session
+
+`r devoirs::devoirs_text("1-min-week10-b")`
+
+:::

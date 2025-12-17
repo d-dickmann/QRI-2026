@@ -1,0 +1,23 @@
+---
+title: "UATX Quantitative Reasoning - Analysis"
+---
+
+
+This page is oriented primarily to students registered in the course at the University of Austin, but visitors are welcome. General information for visitors is available *via* the [About page](about.qmd).
+
+A typical class week consists of one or two of the topics listed sequentially below and includes textbook readings, homework exercises, self-study drill questions, and a short weekly quiz.
+
+Topics: 
+
+i. Modeling, the broad framework for quantitative reasoning
+i. Quantities and dimensions
+i. Rates and their uses
+i. Magnitudes for representing the very big along side the very small
+i. Function building blocks. Functions are the links between quantities in our models.
+i. Uncertain quantities. Functions also provide a way to represent uncertainty.
+i. Custom design of functions, to power the models we build
+i. Hypothesis and likelihood, to connect data to models and conclusion
+i. Bayesian reasoning, updating our beliefs based on evidence
+i. Dynamics, the study of systems that change in time
+i. Rates of change, a revolution in quantitative thinking
+i. Accumulation, the flip side of rates of change
