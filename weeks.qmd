@@ -13,16 +13,35 @@ NOTE IN DEVELOPMENT TO INSTRUCTORS: This is where we will list the readings, ass
 -------
 
 Week 1: Jan 5 <div id="week1"> 
+
+Monday/Tuesday sessions
 : Readings
-: Exercises
-: Drill
+: BEFORE CLASS: Reading Questions etc.
+: Assignment due next week. [Assignment 1](Assignment-01.qmd)
+
+Wednesday/Thursday sessions
+: Readings
+: BEFORE CLASS: 
+: Assignment: Continue with Assignment 1.
+
 
 -------
 
 Week 2: Jan 12 <div id="week2"> 
+
+Monday/Tuesday sessions
 : Readings
-: Exercises
-: Drill
+: BEFORE CLASS: 
+i. Hand in Assignment 1
+ii. Reading questions (as usual)
+: Assignment 2
+
+Wednesday/Thursday sessions
+: Readings
+: BEFORE CLASS:
+i. whatever
+ii. whatever.
+: Continue with Assignment 2.
 
 -------
 
