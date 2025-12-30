@@ -2,14 +2,14 @@
 title: "About"
 ---
 
-The University of Austin provides students with an extensive Intellectual Foundation curriculum. The IF courses are required of all students and taken in a student's first or second year. Each course is taught synchronously to all students in each matriculation cohort; it is part of a shared experience.
+At the University of Austin, ur students pursue a Bachelor of Arts in Liberal Studies. As part of their required course study, students must complete a core curriculum called the Intellectual Foundations, which consists of 15 intensive courses that introduce students to the various languages of understanding and teach them to see things whole. As part of this sequence, students are challenged to confront timeless questions beginning in antiquity and culminating in the present day.
 
 There are two quantitative reasoning courses in the Intellectual Foundation curriculum. These are:
 
-- QR Analysis, which is about the concepts, techniques, and habits of mind that help people to make sense and use of quantitative information.
-- QR Data, which teaches modern data-science techniques to extract useful information from data.
+- Quantitative Reasoning I ("QR — Analysis"), which teaches students the mathematical modeling tools useful for modelling real-world phenomena.
+- Quantitative Reasoning II ("QR — Data"), which teaches students to extract useful information from data using modern data science techniques.
 
-Both QR Analysis and QR Data are unlike the introductory courses found at almost all other colleges and universities. We have selected topics based on their utility in modern professional work. In contrast, basic topics in the traditional curriculum reflect the historical development of mathematics rather than the needs of modern work. Modern topics widely used in the economy and scientific/technical worlds are relegated to so-called "advanced" courses far downstream where they are inaccessible to almost all students. 
+Both QR — Analysis and QR — Data are unlike the introductory courses found at almost all other colleges and universities. We have selected topics based on their utility in modern professional work. In contrast, basic topics in the traditional curriculum reflect the historical development of mathematics rather than the needs of modern work. Modern topics widely used in the economy and scientific/technical worlds are relegated to so-called "advanced" courses far downstream where they are inaccessible to almost all students. 
 
 Our two QR courses dramatically streamline the pre-requisites for successful work with modern quantitative topics. Surprisingly often the "advanced" topics are readily accessible to students, so long as one is willing to move beyond traditional pedagogy and avoid unwarranted devotion to topics that were important historically but are no longer necessarily for understanding. 
 
