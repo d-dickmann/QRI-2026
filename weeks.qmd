@@ -1,14 +1,14 @@
 # Weekly Materials
 
 ::: {.callout-caution}
-## Subject to change
+## Development Note:
 
-This page provides an **archive** of the topics and class materials used in past weeks. 
+This is where we will list the readings, assignments, quiz days, and other components for each class session. The formatting is subject to change, but will be finalized by 1/3/2025.
 
-It also serves as a place for instructors to plan *future* weeks, but these should not be relied on until that week is upon us.
 :::
 
-NOTE IN DEVELOPMENT TO INSTRUCTORS: This is where we will list the readings, assignments, quiz days, and other components for each class session.
+This page provides an archive of the topics, class materials, and homework assignments used in the course. This page is kept up-to-date throughout the term. 
+
 
 -------
 
@@ -17,87 +17,14 @@ Week 1: Jan 5 <div id="week1">
 Monday/Tuesday sessions
 : Readings
 : BEFORE CLASS: Reading Questions etc.
-: Assignment due next week. [Assignment 1](Assignment-01.qmd)
+: Assignment due next week. [Assignment 1] 
+::: {.callout-caution}
+Assignment 1 file in DTK's original repo was not compiling for me. To troubleshoot when we build the first Assignment this week. In the meantime, an example of what assignments will look like for students can be found [here](https://dtkaplan.github.io/QRA-homepage/Assignment-01.html)
+
+:::
 
 Wednesday/Thursday sessions
 : Readings
 : BEFORE CLASS: 
 : Assignment: Continue with Assignment 1.
-
-
--------
-
-Week 2: Jan 12 <div id="week2"> 
-
-Monday/Tuesday sessions
-: Readings
-: BEFORE CLASS: 
-i. Hand in Assignment 1
-ii. Reading questions (as usual)
-: Assignment 2
-
-Wednesday/Thursday sessions
-: Readings
-: BEFORE CLASS:
-i. whatever
-ii. whatever.
-: Continue with Assignment 2.
-
--------
-
-Week 3: Jan 19 <div id="week3">
-: Readings
-: Exercises
-: Drill
-
--------
-
-Week 4: Jan 26 <div id="week4">
-: Readings
-: Exercises
-: Drill
-
--------
-
-Week 5: Feb 2 <div id="week5">
-: Readings
-: Exercises
-: Drill
-
--------
-
-Week 6: Feb 16 <div id="week6">
-: Readings
-: Exercises
-: Drill
-
--------
-
-Week 7: Feb 23 <div id="week7">
-: Readings
-: Exercises
-: Drill
-
--------
-
-Week 8: Mar 2 <div id="week8">
-: Readings
-: Exercises
-: Drill
-
--------
-
-Week 9: Mar 9 <div id="week9">
-: Readings
-: Exercises
-: Drill
-
--------
-
-Week 10: Mar 16 <div id="week10">
-: Readings
-: Exercises
-: Drill
-
--------
 

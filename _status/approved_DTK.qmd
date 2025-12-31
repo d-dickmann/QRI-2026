@@ -1,0 +1,9 @@
+::: {.callout-tip}
+## Ready for publication
+
+```{r}
+#| echo: false
+```
+
+Approved by DTK
+:::
