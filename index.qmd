@@ -3,13 +3,14 @@ title: "UATX Quantitative Reasoning - Analysis"
 ---
 
 
-This is the course homepage for UATX INF 1130 (Quantitative Reasoning I). All course materials can be found through this website, and information will be updated throughout the term. This site is designed for students, but visitors are welcome. General information for visitors is available *via* the [About page](about.qmd).
+This is the course homepage for UATX INF 1130 (Quantitative Reasoning I). All course materials can be found through this website, and information will be updated throughout the term. This site is designed for students, but visitors are welcome. General information for visitors is available via the [About page](about.qmd).
 
 A typical class week consists of one or two of the topics from [the textbook](https://dtkaplan.github.io/QR-A/) and includes textbook readings, homework questions, and a short weekly quiz.
 
 ## Professors
 
 | Professor | Email Address | Office Hours |
+|-----------|---------------|--------------|
 | Prof. David Ruth | druth@uaustin.org | Wednesday 11:15-12:45; otherwise by appointment |
 | Asst. Prof. Dorothy Dickmann | ddickmann@uaustin.org | Thursday 09:30-11:30; otherwise by appointment. Scarbrough second floor — email for access. |
 

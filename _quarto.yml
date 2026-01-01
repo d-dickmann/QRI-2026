@@ -15,16 +15,12 @@ website:
       contents:
         - href: about.qmd
           text: "About"
-        - href: "student-responsibilities.qmd"
-          text: "Student responsibilities"
         - href: "One-minute.qmd"
           text: "One-minute questions"
         - href: "https://dtkaplan.github.io/QR-A"
           text: "QRA textbook"
-        - section: "Weekly materials"
-          contents:
-          - href: weeks.qmd#week1
-            text: "Week 1: Jan 5"
+        - text: "Weekly materials"
+          contents: weeks.qmd
 
 format: 
   html:

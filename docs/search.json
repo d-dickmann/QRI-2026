@@ -15,7 +15,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "At the University of Austin, ur students pursue a Bachelor of Arts in Liberal Studies. As part of their required course study, students must complete a core curriculum called the Intellectual Foundations, which consists of 15 intensive courses that introduce students to the various languages of understanding and teach them to see things whole. As part of this sequence, students are challenged to confront timeless questions beginning in antiquity and culminating in the present day.\nThere are two quantitative reasoning courses in the Intellectual Foundation curriculum. These are:\n\nQuantitative Reasoning I (“QR — Analysis”), which teaches students the mathematical modeling tools useful for modelling real-world phenomena.\nQuantitative Reasoning II (“QR — Data”), which teaches students to extract useful information from data using modern data science techniques.\n\nBoth QR — Analysis and QR — Data are unlike the introductory courses found at almost all other colleges and universities. We have selected topics based on their utility in modern professional work. In contrast, basic topics in the traditional curriculum reflect the historical development of mathematics rather than the needs of modern work. Modern topics widely used in the economy and scientific/technical worlds are relegated to so-called “advanced” courses far downstream where they are inaccessible to almost all students.\nOur two QR courses dramatically streamline the pre-requisites for successful work with modern quantitative topics. Surprisingly often the “advanced” topics are readily accessible to students, so long as one is willing to move beyond traditional pedagogy and avoid unwarranted devotion to topics that were important historically but are no longer necessarily for understanding.",
+    "text": "At the University of Austin, our students pursue a Bachelor of Arts in Liberal Studies. As part of their required course of study, students must complete a core curriculum called the Intellectual Foundations, which consists of 15 intensive courses that introduce students to the various languages of understanding and teach them to see things whole. As part of this sequence, students are challenged to confront timeless questions beginning in antiquity and culminating in the present day.\nThere are two quantitative reasoning courses in the Intellectual Foundation curriculum. These are:\n\nQuantitative Reasoning I (“QR — Analysis”), which teaches students the mathematical modeling tools useful for modelling real-world phenomena.\nQuantitative Reasoning II (“QR — Data”), which teaches students to extract useful information from data using modern data science techniques.\n\nBoth QR — Analysis and QR — Data are unlike the introductory courses found at almost all other colleges and universities. We have selected topics based on their utility in modern professional work. In contrast, basic topics in the traditional curriculum reflect the historical development of mathematics rather than the needs of modern work. Modern topics widely used in the economy and scientific/technical worlds are relegated to so-called “advanced” courses far downstream where they are inaccessible to almost all students.\nOur two QR courses dramatically streamline the pre-requisites for successful work with modern quantitative topics. Surprisingly often the “advanced” topics are readily accessible to students, so long as one is willing to move beyond traditional pedagogy and avoid unwarranted devotion to topics that were important historically but are no longer necessarily for understanding.",
     "crumbs": [
       "Home",
       "About"
@@ -75,11 +75,7 @@
     "href": "student-responsibilities.html",
     "title": "Student responsibilities",
     "section": "",
-    "text": "Student responsibilities",
-    "crumbs": [
-      "Home",
-      "Student responsibilities"
-    ]
+    "text": "Student responsibilities"
   },
   {
     "objectID": "index.html",
@@ -93,7 +89,7 @@
     "href": "index.html#professors",
     "title": "UATX Quantitative Reasoning - Analysis",
     "section": "Professors",
-    "text": "Professors\nProfessor | Email Address | Office Hours |\nProf. David Ruth | druth@uaustin.org | Wednesday 11:15-12:45; otherwise by appointment |\nAsst. Prof. Dorothy Dickmann | ddickmann@uaustin.org | Thursday 09:30-11:30; otherwise by appointment. Scarbrough second floor — email for access. |"
+    "text": "Professors\n\n\n\n\n\n\n\n\nProfessor\nEmail Address\nOffice Hours\n\n\n\n\nProf. David Ruth\ndruth@uaustin.org\nWednesday 11:15-12:45; otherwise by appointment\n\n\nAsst. Prof. Dorothy Dickmann\nddickmann@uaustin.org\nThursday 09:30-11:30; otherwise by appointment. Scarbrough second floor — email for access."
   },
   {
     "objectID": "index.html#class-meetings",
@@ -107,6 +103,6 @@
     "href": "weeks.html",
     "title": "Weekly Materials",
     "section": "",
-    "text": "Weekly Materials\n\n\n\n\n\n\nCautionDevelopment Note:\n\n\n\nThis is where we will list the readings, assignments, quiz days, and other components for each class session. The formatting is subject to change, but will be finalized by 1/3/2025.\n\n\nThis page provides an archive of the topics, class materials, and homework assignments used in the course. This page is kept up-to-date throughout the term.\n\nWeek 1: Jan 5\n\n\nMonday/Tuesday sessions\n\nReadings\n\n\nBEFORE CLASS: Reading Questions etc.\n\n\nAssignment due next week. [Assignment 1] ::: {.callout-caution} Assignment 1 file in DTK’s original repo was not compiling for me. To troubleshoot when we build the first Assignment this week. In the meantime, an example of what assignments will look like for students can be found here\n\n\n:::\n\nWednesday/Thursday sessions\n\nReadings\n\n\nBEFORE CLASS:\n\n\nAssignment: Continue with Assignment 1."
+    "text": "Weekly Materials\n\n\n\n\n\n\nCautionDevelopment Note:\n\n\n\nThis is where we will list the readings, assignments, quiz days, and other components for each class session. The formatting is subject to change, but will be finalized by 1/4/2025.\n\n\nThis page provides an archive of the topics, class materials, and homework assignments used in the course. This page is kept up-to-date throughout the term."
   }
 ]

@@ -2,7 +2,7 @@
 title: "About"
 ---
 
-At the University of Austin, ur students pursue a Bachelor of Arts in Liberal Studies. As part of their required course study, students must complete a core curriculum called the Intellectual Foundations, which consists of 15 intensive courses that introduce students to the various languages of understanding and teach them to see things whole. As part of this sequence, students are challenged to confront timeless questions beginning in antiquity and culminating in the present day.
+At the University of Austin, our students pursue a Bachelor of Arts in Liberal Studies. As part of their required course of study, students must complete a core curriculum called the Intellectual Foundations, which consists of 15 intensive courses that introduce students to the various languages of understanding and teach them to see things whole. As part of this sequence, students are challenged to confront timeless questions beginning in antiquity and culminating in the present day.
 
 There are two quantitative reasoning courses in the Intellectual Foundation curriculum. These are:
 
