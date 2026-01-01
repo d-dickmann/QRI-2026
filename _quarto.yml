@@ -19,8 +19,8 @@ website:
           text: "One-minute questions"
         - href: "https://dtkaplan.github.io/QR-A"
           text: "QRA textbook"
-        - text: "Weekly materials"
-          contents: weeks.qmd
+        - href: weeks.qmd 
+          text: "Weekly materials"
 
 format: 
   html:
