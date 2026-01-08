@@ -37,6 +37,8 @@ source("_start-up.R")
 ## Drill for chapter two
 
 Open drill questions in [this document](https://dtkaplan.github.io/QR-A/Drill-02-quantities.html){target="_blank"}
+
+Remember to submit your drill answers through that document. But for the exercises in the present document, use the "collect answers" at the top of this page.
 :::::
 
 :::: {.callout-note collapse=true}
@@ -70,11 +72,6 @@ Open drill questions in [this document](https://dtkaplan.github.io/QR-A/Drill-02
 
 {{< include ../QR-A/_exercises/panda-refer-window.qmd >}}
 
-## `r cc()`.
-
-::: {#exr-missing}
-NOT FOUND: Exercise 2.18
-:::
 
 ## `r cc()`.
 
