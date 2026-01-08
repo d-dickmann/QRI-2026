@@ -3,7 +3,7 @@
 ::: {.callout-caution}
 ## Development Note:
 
-This is where we will list the readings, assignments, quiz days, and other components for each class session. The formatting is subject to change, but will be finalized by 1/4/2025.
+This is where we will list the readings, assignments, quiz days, and other components for each class session. The formatting is subject to change.
 
 :::
 
