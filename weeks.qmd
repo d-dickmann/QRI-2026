@@ -10,3 +10,18 @@ This is where we will list the readings, assignments, quiz days, and other compo
 This page provides an archive of the topics, class materials, and homework assignments used in the course. This page is kept up-to-date throughout the term. 
 
 -------
+
+*A NOTE ON SUBMISSION:* Always be sure to turn in your work using the Google Form linked at the top of the page you are working on. Click **"Collect your answers"** (which copies your answers to your clipboard in machine-readable format). Open the submission form linked in the same dropdown box. Paste your answers into the Google Form. **Do not modify the text pasted into the Google Form.** We have the ability to parse your answers and handle multiple submissions on our end, as long as you don't change the text!
+
+## Repeating assignments
+
+| Assignment | Description | Cadence | 
+| ---------- | ----------- | ------- |
+| One-minute questions (1MQs) | Students submit 1MQs by end of day (11:59 PM) after each class meeting. Accessible [here](https://d-dickmann.github.io/QRI-2026/One-minute.html). | After each class meeting (2x per week) |
+| Quizzes | Quizzes will be short (under 10 minutes) and delivered in-class | Once-per-week, at the first class meeting: M (001) or T (003, 004) |
+
+## Week 1 (Jan 5 - Jan 9)
+
+| Assignment | Due Date | Notes |
+| ---------- | -------- | ----- |
+| [Assignment 1](Assignment-01-CH1-CH2.html) | 001: W 1/14 @ 10:00 AM // 003: TH 1/15 @ 11:30 AM // 004: TH 1/15 @ 2:00 PM | You'll be quizzed on this material M/T. (Postpone at your own risk)! |

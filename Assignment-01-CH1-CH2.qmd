@@ -1,6 +1,6 @@
 ---
 title: QR-I Assignment 1
-subtitle: Chapters 1 and 2 of QR-A book
+subtitle: Chapters 1 and 2 of the QR-A book
 ---
 
 ```{r include = FALSE}
@@ -26,6 +26,8 @@ source("_start-up.R")
 {{< include ../QR-A/_exercises/pig-forgive-saw.qmd >}}
 
 ## `r cc()`.
+
+NOTE: The version of the SIR model built-in to Chapter 1 of the textbook does not work reliably. Use [this link](https://dtkaplan.shinyapps.io/QR-A-shiny/){target="_blank"} to access the model via a different web service. Follow the Models/SIR menu at the top of the new page.
 
 {{< include ../QR-A/_exercises/doe-teach-chair.qmd >}}
 
