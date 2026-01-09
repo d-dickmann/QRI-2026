@@ -103,7 +103,7 @@
     "href": "weeks.html",
     "title": "Weekly Materials",
     "section": "",
-    "text": "CautionDevelopment Note:\n\n\n\nThis is where we will list the readings, assignments, quiz days, and other components for each class session. The formatting is subject to change.\n\n\nThis page provides an archive of the topics, class materials, and homework assignments used in the course. This page is kept up-to-date throughout the term.\n\nA NOTE ON SUBMISSION: Always be sure to turn in your work using the Google Form linked at the top of the page you are working on. Click “Collect your answers” (which copies your answers to your clipboard in machine-readable format). Open the submission form linked in the same dropdown box. Paste your answers into the Google Form. Do not modify the text pasted into the Google Form. We have the ability to parse your answers and handle multiple submissions on our end, as long as you don’t change the text!\n\n\n\n\n\nAssignment\nDescription\nCadence\n\n\n\n\nOne-minute questions (1MQs)\nStudents submit 1MQs by end of day (11:59 PM) after each class meeting. Accessible here.\nAfter each class meeting (2x per week)\n\n\nQuizzes\nQuizzes will be short (under 10 minutes) and delivered in-class\nOnce-per-week, at the first class meeting: M (001) or T (003, 004)\n\n\n\n\n\n\n\n\n\nAssignment\nDue Date\nNotes\n\n\n\n\nAssignment 1\n001: W 1/14 @ 10:00 AM // 003: TH 1/15 @ 11:30 AM // 004: TH 1/15 @ 2:00 PM\nYou’ll be quizzed on this material M/T. (Postpone at your own risk)!",
+    "text": "CautionDevelopment Note:\n\n\n\nThis is where we will list the readings, assignments, quiz days, and other components for each class session. The formatting is subject to change.\n\n\nThis page provides an archive of the topics, class materials, and homework assignments used in the course. This page is kept up-to-date throughout the term.\n\n\n\n\n\n\n\nCautionRemember to hand in your work!\n\n\n\n\n\nMuch of your work for the class will take the form of completing interactive web documents. Near the top of each such document, there is a highlighted box very similar to this on. To hand in your work, open that box and press “Collect your answers”. This will copy your essay and multiple-choice answers to your clipboard, in preparation for uploading them to the course’s collection site.\nAfter pressing **“Collect your answers”* to the the follow the link to upload site. This leads to a Google form providing space for your email address and for pasting your answers from the clipboard. The same link will be used for the entire course.\nFinally, press the “Submit” button on the Google form. Done!\n\n\n\n\n\n\nTipMore details about the submission process …\n\n\n\n\n\nPlease do not edit the clipboard string. It’s intended for computer-to-computer communication and will look something like this.\n{\"docid\":\"One-minute.rmarkdown\",\"MC\":[],\"Essays\":[{\"itemid\":\"1-min-week1-a\",\"contents\":\"The class was great!\"},{\"itemid\":\"1-min-week1-b\",\"contents\":\"Even better today!\"}}\nThere may be many empty fields in the string; that is as it should be.\nSo long as you are using the same browser on the same computer, your answers will continue to appear in the web document each time you open it. (DON’T CONFUSE THIS with submitting your work. For us to receive it, it has to be submitted via the Google form.) You can go back to the web document whenever you like. So feel free to do your work in stages, perhaps spread over a couple of days.\nWhen in doubt whether your work has been submitted, submit it again! The computerized collection system will take care of any duplications.\n\n\n\n\n\n\n\n\n\n\n\n\nNoteEvery week\n\n\n\n\n\n\nOne-minute essays. These should be submitted by end of day (11:59 PM) after every class meeting.\nA Quiz will be given once per week at the first class meeting of that week. Usually this is Monday (for section 001) or Tuesday (for sections 003 & 004).Quizzes will be short (under 10 minutes) and delivered in-class.\n\n\n\n\n\n\n\nReading: Chapters 1 and 2 of the QR-A textbook. Answer the Reading Questions for Chap-1 & Chap-2. In later weeks you will be asked to submit these before your class session.\n\n\n\n\n\n\n\nTipAssignment 1\n\n\n\n\n\n\nLink to assignment document\nQuiz: Mon Jan 12 or Tues Jan 13. Note that this is before the submission deadline.\nSubmission deadline: Start of your class Wed Jan 14 or Thurs Jan 15.\n\n\n\n\n\n\n\n\n\nQuiz covering Week 1 material in your Mon/Tues class.\nMon/Tues Reading: Chapter 3 of QR-A. Answer and submit the Reading Questions before your class meeting.\nWed/Thurs Reading: TBA\n\nAssignment: TBA\n\n\n\n\nQuiz covering Weeks 1 and 2 material.\n\nEverything else: TBA",
     "crumbs": [
       "Home",
       "Weekly materials"
@@ -132,7 +132,29 @@
     "href": "weeks.html#week-1-jan-5---jan-9",
     "title": "Weekly Materials",
     "section": "",
-    "text": "Assignment\nDue Date\nNotes\n\n\n\n\nAssignment 1\n001: W 1/14 @ 10:00 AM // 003: TH 1/15 @ 11:30 AM // 004: TH 1/15 @ 2:00 PM\nYou’ll be quizzed on this material M/T. (Postpone at your own risk)!",
+    "text": "Reading: Chapters 1 and 2 of the QR-A textbook. Answer the Reading Questions for Chap-1 & Chap-2. In later weeks you will be asked to submit these before your class session.\n\n\n\n\n\n\n\nTipAssignment 1\n\n\n\n\n\n\nLink to assignment document\nQuiz: Mon Jan 12 or Tues Jan 13. Note that this is before the submission deadline.\nSubmission deadline: Start of your class Wed Jan 14 or Thurs Jan 15.",
+    "crumbs": [
+      "Home",
+      "Weekly materials"
+    ]
+  },
+  {
+    "objectID": "weeks.html#week-2-jan-12-16",
+    "href": "weeks.html#week-2-jan-12-16",
+    "title": "Weekly Materials",
+    "section": "",
+    "text": "Quiz covering Week 1 material in your Mon/Tues class.\nMon/Tues Reading: Chapter 3 of QR-A. Answer and submit the Reading Questions before your class meeting.\nWed/Thurs Reading: TBA\n\nAssignment: TBA",
+    "crumbs": [
+      "Home",
+      "Weekly materials"
+    ]
+  },
+  {
+    "objectID": "weeks.html#week-3-jan-19-23",
+    "href": "weeks.html#week-3-jan-19-23",
+    "title": "Weekly Materials",
+    "section": "",
+    "text": "Quiz covering Weeks 1 and 2 material.\n\nEverything else: TBA",
     "crumbs": [
       "Home",
       "Weekly materials"

@@ -11,17 +11,65 @@ This page provides an archive of the topics, class materials, and homework assig
 
 -------
 
-*A NOTE ON SUBMISSION:* Always be sure to turn in your work using the Google Form linked at the top of the page you are working on. Click **"Collect your answers"** (which copies your answers to your clipboard in machine-readable format). Open the submission form linked in the same dropdown box. Paste your answers into the Google Form. **Do not modify the text pasted into the Google Form.** We have the ability to parse your answers and handle multiple submissions on our end, as long as you don't change the text!
+::: {.callout-caution collapse=false}
+## Remember to hand in your work!
 
-## Repeating assignments
+Much of your work for the class will take the form of completing interactive web documents. Near the top of each such document, there is a highlighted box very similar to this on. To hand in your work, open that box and press **"Collect your answers"**. This will copy your essay and multiple-choice answers to your clipboard, in preparation for uploading them to the course's collection site.
 
-| Assignment | Description | Cadence | 
-| ---------- | ----------- | ------- |
-| One-minute questions (1MQs) | Students submit 1MQs by end of day (11:59 PM) after each class meeting. Accessible [here](https://d-dickmann.github.io/QRI-2026/One-minute.html). | After each class meeting (2x per week) |
-| Quizzes | Quizzes will be short (under 10 minutes) and delivered in-class | Once-per-week, at the first class meeting: M (001) or T (003, 004) |
+After pressing **"Collect your answers"* to the the follow the [link to upload site](https://docs.google.com/forms/d/e/1FAIpQLSfh2aEmMwgBA__bl_uTYZl9NjUTLBhzC25qEYHSnwXXWhDqoQ/viewform?usp=header). This leads to a Google form providing space for your email address and for pasting your answers from the clipboard. The same link will be used for the entire course.
+
+Finally, press the "Submit" button on the Google form. Done!
+
+::: {.callout-tip collapse=true}
+## More details about the submission process ...
+
+Please do not edit the clipboard string. It's intended for computer-to-computer communication and will look something like this.
+
+```
+{"docid":"One-minute.rmarkdown","MC":[],"Essays":[{"itemid":"1-min-week1-a","contents":"The class was great!"},{"itemid":"1-min-week1-b","contents":"Even better today!"}}
+```
+
+There may be many empty fields in the string; that is as it should be.
+
+So long as you are using the same browser on the same computer, your answers will continue to appear in the web document each time you open it. (DON'T CONFUSE THIS with submitting your work. For us to receive it, it has to be submitted via the Google form.) You can go back to the web document whenever you like. So feel free to do your work in stages, perhaps spread over a couple of days. 
+
+When in doubt whether your work has been submitted, submit it again! The computerized collection system will take care of any duplications.
+:::
+::::
+
+::: {.callout-note collapse=false}
+## Every week
+
+- [One-minute essays](https://d-dickmann.github.io/QRI-2026/One-minute.html). These should be submitted by end of day (11:59 PM) after *every* class meeting. 
+
+- A Quiz will be given once per week at the first class meeting of that week. Usually this is Monday (for section 001) or Tuesday  (for sections 003 & 004).Quizzes will be short (under 10 minutes) and delivered in-class. 
+:::
 
 ## Week 1 (Jan 5 - Jan 9)
 
-| Assignment | Due Date | Notes |
-| ---------- | -------- | ----- |
-| [Assignment 1](Assignment-01-CH1-CH2.html) | 001: W 1/14 @ 10:00 AM // 003: TH 1/15 @ 11:30 AM // 004: TH 1/15 @ 2:00 PM | You'll be quizzed on this material M/T. (Postpone at your own risk)! |
+- Reading: Chapters 1 and 2 of the *QR-A* textbook. Answer the Reading Questions for [Chap-1](https://dtkaplan.github.io/QR-A/RQ-01-models.html) & [Chap-2](https://dtkaplan.github.io/QR-A/RQ-02-quantities.html). In later weeks you will be asked to submit these *before* your class session.
+
+::: {.callout-tip collapse=false appearance=simple}
+## Assignment 1 
+
+- [Link to assignment document](Assignment-01-CH1-CH2.html) 
+- *Quiz*: [Mon  Jan 12]{title="Section 1"} or [Tues  Jan 13]{title="Sections 3 & 4"}. Note that this is *before* the submission deadline.
+- *Submission deadline*: Start of your class [Wed Jan 14]{title="Section 1"} or [Thurs Jan 15]{title="Sections 3 & 4"}.  
+:::
+
+## Week 2 (Jan 12-16)
+
+- Quiz covering Week 1 material in your Mon/Tues class.
+
+- Mon/Tues Reading: Chapter 3 of *QR-A*. Answer and submit the [Reading Questions](https://dtkaplan.github.io/QR-A/RQ-03-rates.html) before your class meeting. 
+
+- Wed/Thurs Reading: TBA
+
+Assignment: TBA
+
+## Week 3 (Jan 19-23)
+
+- Quiz covering Weeks 1 and 2 material.
+
+Everything else: TBA
+
