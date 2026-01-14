@@ -54,12 +54,6 @@ Remember to submit your drill answers through that document. But for the exercis
 
 {{< include ../QR-A/_exercises/bear-leave-tv.qmd >}}
 
-## `r cc()`
-
-{{< include _exercises/cheetah-eat-jacket.qmd >}}
-
-
-
 ## `r cc()`.
 
 {{< include ../QR-A/_exercises/crow-pull-laundry.qmd >}}
