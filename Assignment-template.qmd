@@ -25,11 +25,7 @@ source("_start-up.R")
 
 {{< include ../QR-A/_exercises/pig-forgive-saw.qmd >}}
 
-## `r cc()`.
 
-NOTE: The version of the SIR model built-in to Chapter 1 of the textbook does not work reliably. Use [this link](https://dtkaplan.shinyapps.io/QR-A-shiny/){target="_blank"} to access the model via a different web service. Follow the Models/SIR menu at the top of the new page.
-
-{{< include ../QR-A/_exercises/doe-teach-chair.qmd >}}
 
 :::
 
@@ -58,26 +54,6 @@ Remember to submit your drill answers through that document. But for the exercis
 
 {{< include ../QR-A/_exercises/crow-pull-laundry.qmd >}}
 
-## `r cc()`.
-
-{{< include ../QR-A/_exercises/cow-walk-pantry.qmd >}}
-
-## `r cc()`.
-
-{{< include ../QR-A/_exercises/titmouse-leave-shelf.qmd >}}
-
-## `r cc()`.
-
-{{< include ../QR-A/_exercises/snake-show-knife.qmd >}}
-
-## `r cc()`.
-
-{{< include ../QR-A/_exercises/panda-refer-window.qmd >}}
-
-
-## `r cc()`.
-
-{{< include ../QR-A/_exercises/titmouse-let-saw.qmd >}}
 
 :::
 ::::

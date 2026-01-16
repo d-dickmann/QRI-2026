@@ -1,17 +1,17 @@
 # Weekly Materials
 
-::: {.callout-caution}
+::: {.callout-caution collapse=true}
 ## Development Note:
 
 This is where we will list the readings, assignments, quiz days, and other components for each class session. The formatting is subject to change.
 
-:::
+::: 
 
 This page provides an archive of the topics, class materials, and homework assignments used in the course. This page is kept up-to-date throughout the term. 
 
 -------
 
-::: {.callout-caution collapse=false}
+:::: {.callout-caution collapse=false}
 ## Remember to hand in your work!
 
 Much of your work for the class will take the form of completing interactive web documents. Near the top of each such document, there is a highlighted box very similar to this on. To hand in your work, open that box and press **"Collect your answers"**. This will copy your essay and multiple-choice answers to your clipboard, in preparation for uploading them to the course's collection site.
@@ -62,14 +62,22 @@ When in doubt whether your work has been submitted, submit it again! The compute
 - Quiz covering Week 1 material in your Mon/Tues class.
 
 - Mon/Tues Reading: Chapter 3 of *QR-A*. Answer and submit the [Reading Questions](https://dtkaplan.github.io/QR-A/RQ-03-rates.html) before your class meeting. 
-
-- Wed/Thurs Reading: TBA
-
-Assignment: TBA
+- Wed/Thurs Reading: Chapter 4 of *QR-A*. Answer and submit the [Reading Questions](https://dtkaplan.github.io/QR-A/RQ-04-magnitudes.html) before your class meeting. 
 
 ## Week 3 (Jan 19-23)
 
-- Quiz covering Weeks 1 and 2 material.
+- Quiz Mon/Tues covering Weeks 1 and 2 material.
 
-Everything else: TBA
+- Mon/Tues Reading: Chapter 5 of *QR-A*. Answer and submit the [Reading Questions](https://dtkaplan.github.io/QR-A/RQ-03-rates.html) before your class meeting. 
+
+::: {.callout-tip collapse=false appearance=simple}
+## Assignment 2 
+
+- [Link to assignment document](Assignment-02-CH3-CH4.html) 
+- *Submission deadline*: Start of your class [Wed Jan 21]{title="Section 1"} or [Thurs Jan 22]{title="Sections 3 & 4"}.  
+:::
+
+
+
+
 
