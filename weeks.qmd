@@ -66,7 +66,7 @@ When in doubt whether your work has been submitted, submit it again! The compute
 
 ## Week 3 (Jan 19-23)
 
-- Quiz Mon/Tues covering Weeks 1 and 2 material.
+- Quiz Mon/Tues covering Chapter 3 & Chapter 4.
 
 - Mon/Tues Reading: Chapter 5 of *QR-A*. Answer and submit the [Reading Questions](https://dtkaplan.github.io/QR-A/RQ-03-rates.html) before your class meeting. 
 
@@ -76,6 +76,20 @@ When in doubt whether your work has been submitted, submit it again! The compute
 - [Link to assignment document](Assignment-02-CH3-CH4.html) 
 - *Submission deadline*: Start of your class [Wed Jan 21]{title="Section 1"} or [Thurs Jan 22]{title="Sections 3 & 4"}.  
 :::
+
+## Week 4 (Jan 26-30)
+
+- Quiz Mon/Tues covering Chapter 5.
+
+- Mon/Tues Reading: Chapter 6 of *QR-A*. Answer and submit the [Reading Questions](https://dtkaplan.github.io/QR-A/RQ-06-storybook-functions.html) before your class meeting. 
+
+- Assignment 3: [Link to assignment document](Assignment-03-CH5.html) 
+    - *Submission deadline*: Start of your class [Wed Jan 28]{title="Section 1"} or [Thurs Jan 29]{title="Sections 3 & 4"}.  
+
+
+
+
+
 
 
 

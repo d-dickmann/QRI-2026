@@ -1,0 +1,68 @@
+---
+title: QR-I Assignment 2
+subtitle: Chapters 3 and 4 of the QR-A book
+---
+
+```{r include = FALSE}
+library(devoirs)
+source("_start-up.R")
+```
+
+{{< include _devoirs.qmd >}}
+
+::::: {.callout-note collapse=true}
+## Drill for Chapter 3
+
+Open drill questions in [this document](https://dtkaplan.github.io/QR-A/Drill-03-rates.html){target="_blank"}
+
+Remember to submit your drill answers through that document. But for the exercises in the present document, use the "collect answers" at the top of this page.
+:::::
+
+:::: {.callout-note collapse=true}
+## Chapter Three
+
+`r id <- "a2-ch3"`
+
+::: {.panel-tabset}
+## 1.
+
+{{< include ../QR-A/_exercises/seahorse-bathe-knife.qmd >}}
+
+## 2.
+
+{{< include _exercises/puppy-lose-laundry.qmd >}}
+
+:::
+
+::::
+
+::::: {.callout-note collapse=true}
+## Drill for Chapter 4
+
+Open drill questions in [this document](https://dtkaplan.github.io/QR-A/Drill-04-magnitudes.html){target="_blank"}
+
+Remember to submit your drill answers through that document. But for the exercises in the present document, use the "collect answers" at the top of this page.
+:::::
+
+:::: {.callout-note collapse=true}
+## Chapter Four
+
+`r id <- "a2-ch4"`
+
+::: {.panel-tabset}
+## 3.
+
+{{< include _exercises/spider-put-plant.qmd >}}
+
+
+## 4.
+
+{{< include _exercises/calf-wear-fork.qmd >}}
+
+## 5.
+
+{{< include ../QR-A/_exercises/avoid-send-mug.qmd >}}
+
+:::
+::::
+
