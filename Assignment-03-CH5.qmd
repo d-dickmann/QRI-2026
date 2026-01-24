@@ -1,0 +1,57 @@
+---
+title: QR-I Assignment 3
+subtitle: Chapter 5 of the QR-A book
+---
+
+```{r include = FALSE}
+library(devoirs)
+library(mosaicCalc)
+source("_start-up.R")
+```
+
+{{< include _devoirs.qmd >}}
+
+::::: {.callout-note collapse=true}
+## Drill for Chapter 5
+
+Open drill questions in [this document](https://dtkaplan.github.io/QR-A/Drill-05-functions.html){target="_blank"}
+
+Remember to submit your drill answers through that document. But for the exercises in the present document, use the "collect answers" at the top of this page.
+:::::
+
+:::: {.callout-note collapse=true}
+## Chapter Five
+
+`r id <- "a2-ch3"`
+
+::: {.panel-tabset}
+## 1.
+
+{{< include ../QR-A/_exercises/calf-freeze-saw.qmd >}}
+
+## 2.
+
+{{< include ../QR-A/_exercises/goldfish-cost-bed.qmd >}}
+
+## 3.
+
+{{< include ../QR-A/_exercises/titmouse-sit-chair.qmd >}}
+
+## 4.
+
+{{< include ../QR-A/_exercises/giraffe-meet-cotton.qmd >}}
+
+## 4.
+
+{{< include ../QR-A/_exercises/dolphin-enjoy-kitchen.qmd >}}
+
+## 5.
+
+{{< include ../QR-A/_exercises/daisy-blow-kitchen.qmd >}}
+
+
+:::
+
+::::
+
+::::: {.callout-note collapse=true}
