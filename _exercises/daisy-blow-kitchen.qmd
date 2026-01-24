@@ -1,0 +1,68 @@
+---
+id: "daisy-blow-kitchen"
+created: "Thu Jan  1 07:52:59 2026"
+attribution: TBA
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+# For stand-alone compilation testing
+library(devoirs)
+library(mosaicCalc)
+```
+
+
+<!-- This is a copy of the daisy-blow-kitchen in QR-A. the only difference is the cross-reference to titmouse-sit-chair -->
+
+::: {#exr-daisy-blow-kitchen}
+The `slice_plot()` function (see @exr-titmouse-sit-chair) produces the graph of a function with one input. Convention calls for the input to correspond to the horizontal axis and the output to the vertical axis.
+
+For functions with *two* inputs, the input corresponds to the points in a *two-dimensional* space. That is, each possible input is a coordinate *pair*. To graphically represent each possible input uniquely, we need to use *both* the horizontal and vertical axes, one for the first input and the other for the second input. Where, then, to show the output.
+
+Our preferred graphical format for functions of two inputs is called a `r xf_definition("contour plot")`. The R chunk below shows the R/mosaic code to generate a plot. Run the chunk.
+
+```{webr}
+#| caption: Making a contour plot
+contour_plot(    # instead of slice_plot()
+  y * hill(x) ~ x & y,  # first argument
+  domain(x = -2:2, y = -3:3) # second argument
+  )
+```
+
+This R expression follows a similar form to that used for `slice_plot()`. Notice, however, that the tilde expression used in the first argument names *both* inputs: `x & y` on the right-hand side of the tilde. Likewise, the definition of the graphics domain involves two components, one for each of the inputs.
+
+It takes some practice to get comfortable reading contour plots. The labels along each blue `r xf_definition("contour")` specify the output for any input that lies on the contour. 
+
+In principle, each possible input point has *some* contour line running through it. This is the same as saying that for each input, say, (x=1, y=2), the function has an output value. But if we drew a contour for *every* output value, the graph would be filled with blue ink and incomprehensible. To avoid this problem, only a handful of contours are drawn. Also, to avoid cluttering up the graph with output value labels, the `contour_plot()` R function labels only every second contour. The output value for the unlabeled contours are half-way in-between the output values for the two labeled contours that run side-by-side with the unlabeled one. 
+
+To illustrate, the input point (x=1, y=2) falls about half-way between the contour labeled 0.6 and the *unlabeled* contour corresponding to output value 0.4. Since the input point is located between the 0.4 and 0.6 contours, the corresponding output will be approximately 0.5. 
+
+In this book, we won't dwell on teaching the syntax of the `contour_plot()` function. When we need it, we will give you a template so that you just have to fill in the details: the names of the two inputs, the function itself, and the extent of the graphics domain along *each* axis.
+
+For now, we'll practice how to read off the output for any given input. Consider @fig-second-contour-plot, which displays a function $f(x,y)$ we have made up for the example.
+
+```{r}
+#| echo: false
+#| context: setup
+f <- mosaicCalc::doodle_fun(~ x + y, seed = 8923)
+set.seed(101)
+Pts <- tibble::tibble(
+  x = runif(5, 0, 3),
+  y = runif(5, 0, 3),
+  labels = letters[1:5]
+)
+```
+
+```{r}
+#| echo: false
+#| label: fig-second-contour-plot
+contour_plot(f(x, y) ~ x & y, domain(x = 0:4, y = 0:3)) |>
+  gf_text(y ~ x, label = ~ labels, color = "magenta", data = Pts, size = 6) |>
+  gf_theme(theme_minimal())
+
+```
+For each of the five distinct input points labeled (a) to (e), give a good estimate of the corresponding output. 
+
+`r devoirs::devoirs_text("dbk-1-5points", rows = 6)`
+
+:::
+ <!-- end of exr-daisy-blow-kitchen -->

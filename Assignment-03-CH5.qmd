@@ -29,7 +29,7 @@ Remember to submit your drill answers through that document. But for the exercis
 ::: {.panel-tabset}
 ## 1.
 
-{{< include ../QR-A/_exercises/calf-freeze-saw.qmd >}}
+{{< include _exercises/calf-freeze-saw.qmd >}}
 
 ## 2.
 
@@ -49,7 +49,7 @@ Remember to submit your drill answers through that document. But for the exercis
 
 ## 6.
 
-{{< include ../QR-A/_exercises/daisy-blow-kitchen.qmd >}}
+{{< include _exercises/daisy-blow-kitchen.qmd >}}
 
 
 :::
