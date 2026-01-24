@@ -10,8 +10,6 @@ source("_start-up.R")
 ```
 
 {{< include _devoirs.qmd >}}
-{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
-{{< include _use_webr.qmd >}}
 
 ::::: {.callout-note collapse=true}
 ## Drill for Chapter 5
@@ -24,7 +22,7 @@ Remember to submit your drill answers through that document. But for the exercis
 :::: {.callout-note collapse=true}
 ## Chapter Five
 
-`r id <- "a2-ch3"`
+`r id <- "a3-ch5"`
 
 ::: {.panel-tabset}
 ## 1.
