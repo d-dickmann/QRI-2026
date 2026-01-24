@@ -30,5 +30,11 @@ format:
     css: styles.css
     toc: true
 
-
-
+# Enable webR
+webr:
+  channel-type: 'automatic'
+  repos: ["https://dtkaplan.r-universe.dev"]
+  packages: ['mosaicCalc', 'ggplot2', 'ggformula', "dplyr"]
+filters:
+  - live
+  - shinylive

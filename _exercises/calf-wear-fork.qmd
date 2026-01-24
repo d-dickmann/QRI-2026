@@ -10,7 +10,7 @@ library(devoirs)
 library(mosaicCalc)
 ```
 
-::: {#exr-calf-wear-fork}
+:::: {#exr-calf-wear-fork}
 <!-- this is a subset of zebra-dream-blouse from QR-A -->
 
 The `Engine` data frame, which contains measurements of many different internal combustion engines of widely varying sizes. For instance, we can graph engine RPM (revolutions per second) versus engine mass (in pounds), as in @fig-rpm-mass1.
@@ -26,7 +26,6 @@ In the @fig-rpm-mass1, most engines have a mass of... zero. At least, that is ho
 
 Plotting the magnitude of the engine mass spreads things out, as in @fig-rpm-mass-log.
 
-::: {.column-page-inset-right}
 ```{r echo=FALSE}
 #| label: fig-rpm-mass-log
 #| fig-cap: "The engine data plotted with magnitude scales"
@@ -45,7 +44,7 @@ gf_point(RPM ~ mass, data = Engines) |>
     ) |> 
   gf_theme(theme_minimal())
 ```
-:::
+
 
 1. Which of the plots in @fig-rpm-mass-log uses two magnitude axes?
 
@@ -69,5 +68,5 @@ gf_point(RPM ~ mass, data = Engines) |>
 4. 3000
 ```
 
-:::
+::::
  <!-- end of exr-calf-wear-fork -->

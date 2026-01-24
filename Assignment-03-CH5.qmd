@@ -3,6 +3,8 @@ title: QR-I Assignment 3
 subtitle: Chapter 5 of the QR-A book
 ---
 
+{{< include _use_webr.qmd >}}
+
 ```{r include = FALSE}
 library(devoirs)
 library(mosaicCalc)
@@ -54,4 +56,3 @@ Remember to submit your drill answers through that document. But for the exercis
 
 ::::
 
-::::: {.callout-note collapse=true}

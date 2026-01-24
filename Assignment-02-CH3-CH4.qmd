@@ -8,7 +8,11 @@ library(devoirs)
 source("_start-up.R")
 ```
 
+{{< include _use_webr.qmd >}}
+
 {{< include _devoirs.qmd >}}
+
+
 
 ::::: {.callout-note collapse=true}
 ## Drill for Chapter 3
@@ -16,6 +20,7 @@ source("_start-up.R")
 Open drill questions in [this document](https://dtkaplan.github.io/QR-A/Drill-03-rates.html){target="_blank"}
 
 Remember to submit your drill answers through that document. But for the exercises in the present document, use the "collect answers" at the top of this page.
+
 :::::
 
 :::: {.callout-note collapse=true}
@@ -36,13 +41,13 @@ Remember to submit your drill answers through that document. But for the exercis
 
 ::::
 
-::::: {.callout-note collapse=true}
+:::: {.callout-note collapse=true}
 ## Drill for Chapter 4
 
 Open drill questions in [this document](https://dtkaplan.github.io/QR-A/Drill-04-magnitudes.html){target="_blank"}
 
 Remember to submit your drill answers through that document. But for the exercises in the present document, use the "collect answers" at the top of this page.
-:::::
+::::
 
 :::: {.callout-note collapse=true}
 ## Chapter Four
