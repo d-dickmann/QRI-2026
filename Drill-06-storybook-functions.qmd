@@ -1,0 +1,419 @@
+---
+number-offset: 5
+crossref:
+  exr-title: "Drill 6."
+---
+
+# Drill Questions: Storybook Functions {-}
+
+```{r include=FALSE}
+source("_start-up.R")
+library(mosaicCalc)
+```
+
+{{< include _devoirs.qmd >}}
+
+`r devoirs::push_answer_style("block")`
+
+:::: {.callout-note collapse=true}
+## Identifying Storybook Functions
+
+`r cc <- drill::new_drill_counter()`
+`r id <- "d06"`
+
+::: {.panel-tabset}
+
+## `r cc()`
+
+Which of the following is **not** the name of a storybook function?
+
+```{mcq}
+#| label: d06-not-storybook
+#| inline: true
+1. hill()
+2. ramp() [correct]
+3. steady()
+4. doublings()
+5. recip()
+```
+
+## `r cc()`
+
+Match each storybook function to its characteristic behavior. The function `osc()` ...
+
+```{mcq}
+#| label: d06-osc-behavior
+1. goes up and then back down to a baseline
+2. repeats the same pattern over and over [correct]
+3. starts low and levels off at a high value
+4. increases by the same factor for each unit increase in input
+```
+
+## `r cc()`
+
+The function `hillside()` ...
+
+```{mcq}
+#| label: d06-hillside-behavior
+1. goes up and then back down to a baseline
+2. repeats the same pattern over and over
+3. starts at a low value and gradually levels off at a higher value [correct]
+4. decreases quickly at first, then more slowly
+```
+
+## `r cc()`
+
+The function `hill()` ...
+
+```{mcq}
+#| label: d06-hill-behavior
+1. goes up from a baseline and then back down to the baseline [correct]
+2. repeats the same pattern over and over
+3. starts at a low value and gradually levels off at a higher value
+4. increases by the same factor for each unit increase in input
+```
+
+## `r cc()`
+
+The function `double()` ...
+
+```{mcq}
+#| label: d06-double-behavior
+1. goes up from a baseline and then back down to the baseline
+2. the output doubles for every unit increase in input [correct]
+3. tells you how many doublings correspond to a given output
+4. decreases quickly at first, then more slowly
+```
+
+## `r cc()`
+
+The function `doublings()` is closely related to `double()`. What is the relationship?
+
+```{mcq}
+#| label: d06-doublings-relationship
+1. They are the same function with different names
+2. doublings() tells you the input needed to reach a given output from double() [correct]
+3. doublings() is double() multiplied by 2
+4. doublings() is the rate of change of double()
+```
+
+## `r cc()`
+
+Which storybook function would best describe the outdoor temperature over the course of a single day (rising in the morning, falling in the evening, repeating daily)?
+
+```{mcq}
+#| label: d06-temp-daily
+#| inline: true
+1. hill()
+2. hillside()
+3. osc() [correct]
+4. double()
+```
+
+## `r cc()`
+
+Which storybook function would best describe the adoption of a new technology (few users at first, rapid growth, then leveling off as the market saturates)?
+
+```{mcq}
+#| label: d06-adoption
+#| inline: true
+1. hill()
+2. hillside() [correct]
+3. osc()
+4. double()
+```
+
+:::
+::::
+
+:::: {.callout-note collapse=true}
+## Function Properties
+
+`r cc <- drill::new_drill_counter(style = "ALPHA")`
+
+::: {.panel-tabset}
+
+## `r cc()`
+
+Which storybook functions have a positive rate of change for all positive inputs?
+
+`r devoirs::devoirsTF(FALSE, leed="recip()", id="d06-pos-recip")`
+
+`r devoirs::devoirsTF(TRUE, leed="double()", id="d06-pos-double")`
+
+`r devoirs::devoirsTF(FALSE, leed="hill()", id="d06-pos-hill")`
+
+`r devoirs::devoirsTF(TRUE, leed="hillside()", id="d06-pos-hillside")`
+
+`r devoirs::devoirsTF(TRUE, leed="steady()", id="d06-pos-steady")`
+
+## `r cc()`
+
+For the `osc()` function, what is the **period** (the input interval over which the function completes one full cycle and returns to its starting pattern)?
+
+```{mcq}
+#| label: d06-osc-period
+#| inline: true
+1. 0.5
+2. 1 [correct]
+3. 2
+4. 3.14159
+```
+
+## `r cc()`
+
+At what input value does `hillside()` produce an output of 0.5 (halfway between its minimum and maximum)?
+
+```{mcq}
+#| label: d06-hillside-half
+#| inline: true
+1. -1
+2. 0 [correct]
+3. 0.5
+4. 1
+```
+
+## `r cc()`
+
+For the `double()` function:
+
+a. What is the output when the input is 0?
+
+`r devoirs::devoirs_set(choices = c(0, 0.5, 1, 2, 4), correct = 1, id = "d06-double-zero")`
+
+b. What is the output when the input is 3?
+
+`r devoirs::devoirs_set(choices = c(3, 6, 8, 9), correct = 8, id = "d06-double-three")`
+
+c. What is the output when the input is -1?
+
+`r devoirs::devoirs_set(choices = c(-2, -1, 0.5, 1), correct = 0.5, id = "d06-double-neg")`
+
+## `r cc()`
+
+For the `doublings()` function:
+
+a. What is the output when the input is 8?
+
+`r devoirs::devoirs_set(choices = c(2, 3, 4, 8, 16), correct = 3, id = "d06-doublings-8")`
+
+b. What is the output when the input is 1?
+
+`r devoirs::devoirs_set(choices = c(-1, 0, 1, 2), correct = 0, id = "d06-doublings-1")`
+
+c. What input to `doublings()` gives an output of -2?
+
+`r devoirs::devoirs_set(choices = c(-4, -2, 0.25, 0.5), correct = 0.25, id = "d06-doublings-neg2")`
+
+## `r cc()`
+
+The `flat()` function always returns the same output regardless of input. What is the rate of change of `flat()` with respect to its input?
+
+```{mcq}
+#| label: d06-flat-rate
+#| inline: true
+1. -1
+2. 0 [correct]
+3. 1
+4. It depends on the input
+```
+
+:::
+::::
+
+:::: {.callout-note collapse=true}
+## Input and Output Transformations
+
+`r cc <- drill::new_drill_counter(style = "roman")`
+
+::: {.panel-tabset}
+
+## `r cc()`
+
+The storybook functions take pure numbers (dimensionless) as input and produce pure numbers as output. To use them with real-world quantities that have units, we use **input transformations**. 
+
+An input transformation has the form $a(q - q_0)$ where $q$ is the real-world input quantity. What must be true about the dimension of $q_0$?
+
+```{mcq}
+#| label: d06-input-trans-dim
+1. It must be dimensionless
+2. It must have the same dimension as $q$ [correct]
+3. It must have the reciprocal dimension of $q$
+4. It can have any dimension
+```
+
+## `r cc()`
+
+In the input transformation $a(q - q_0)$, what must be true about the dimension of parameter $a$?
+
+```{mcq}
+#| label: d06-a-dim
+1. It must be dimensionless
+2. It must have the same dimension as $q$
+3. It must have dimension $1/[q]$ (the reciprocal of $q$'s dimension) [correct]
+4. It can have any dimension
+```
+
+## `r cc()`
+
+Suppose you want to model oil production using `hillside()`, and the data shows production reached half its maximum value around the year 1970. In the input transformation $a(\text{year} - q_0)$, what value should $q_0$ have?
+
+```{mcq}
+#| label: d06-q0-oil
+#| inline: true
+1. 0
+2. 0.5
+3. 1970 [correct]
+4. 2023
+```
+
+## `r cc()`
+
+An **output transformation** has the form $A \cdot f(\text{input}) + B$ where $f()$ is a storybook function. If you want the transformed function to have a maximum output of 100 and a minimum of 0, and the storybook function naturally ranges from 0 to 1, what should $A$ be?
+
+```{mcq}
+#| label: d06-output-A
+#| inline: true
+1. 1
+2. 50
+3. 100 [correct]
+4. 200
+```
+
+## `r cc()`
+
+Continuing from the previous question, what should $B$ be?
+
+```{mcq}
+#| label: d06-output-B
+#| inline: true
+1. -50
+2. 0 [correct]
+3. 50
+4. 100
+```
+
+## `r cc()`
+
+If a quantity is measured in miles per gallon and you need to create a dimensionless input for a storybook function using the transformation $a(q - q_0)$, what are the units of parameter $a$?
+
+```{mcq}
+#| label: d06-mpg-units
+1. miles per gallon
+2. gallons per mile [correct]
+3. dimensionless
+4. miles
+```
+
+:::
+::::
+
+:::: {.callout-note collapse=true}
+## Recognizing Functions from Graphs
+
+`r cc <- drill::new_drill_counter(style = "ROMAN")`
+
+::: {.panel-tabset}
+
+## `r cc()`
+
+```{r}
+#| echo: false
+slice_plot(pnorm(x) ~ x, domain(x = -3:3)) |>
+  gf_labs(y = "output", x = "input") |>
+  gf_theme(theme_minimal())
+```
+
+Which storybook function does this graph show?
+
+```{mcq}
+#| label: d06-graph-hillside
+#| inline: true
+1. hill()
+2. hillside() [correct]
+3. osc()
+4. double()
+```
+
+## `r cc()`
+
+```{r}
+#| echo: false
+slice_plot(dnorm(x) ~ x, domain(x = -3:3)) |>
+  gf_labs(y = "output", x = "input") |>
+  gf_theme(theme_minimal())
+```
+
+Which storybook function does this graph show?
+
+```{mcq}
+#| label: d06-graph-hill
+#| inline: true
+1. hill() [correct]
+2. hillside()
+3. osc()
+4. recip()
+```
+
+## `r cc()`
+
+```{r}
+#| echo: false
+slice_plot(2^x ~ x, domain(x = -2:3)) |>
+  gf_labs(y = "output", x = "input") |>
+  gf_theme(theme_minimal())
+```
+
+Which storybook function does this graph show?
+
+```{mcq}
+#| label: d06-graph-double
+#| inline: true
+1. doublings()
+2. double() [correct]
+3. steady()
+4. hillside()
+```
+
+## `r cc()`
+
+```{r}
+#| echo: false
+slice_plot(sin(2*pi*x) ~ x, domain(x = 0:3), npts = 500) |>
+  gf_labs(y = "output", x = "input") |>
+  gf_theme(theme_minimal())
+```
+
+Which storybook function does this graph show?
+
+```{mcq}
+#| label: d06-graph-osc
+#| inline: true
+1. hill()
+2. hillside()
+3. osc() [correct]
+4. steady()
+```
+
+## `r cc()`
+
+```{r}
+#| echo: false
+slice_plot(1/x ~ x, domain(x = 0.2:3)) |>
+  gf_labs(y = "output", x = "input") |>
+  gf_theme(theme_minimal())
+```
+
+Which storybook function does this graph show?
+
+```{mcq}
+#| label: d06-graph-recip
+#| inline: true
+1. doublings()
+2. double()
+3. recip() [correct]
+4. hillside()
+```
+
+:::
+::::

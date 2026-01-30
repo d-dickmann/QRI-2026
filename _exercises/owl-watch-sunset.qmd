@@ -1,0 +1,70 @@
+---
+id: "owl-watch-sunset"
+created: "Thu Jan 30 2026"
+attribution: AI-assisted draft
+use: "Chapter 6 exercise"
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+# For stand-alone compilation testing
+library(devoirs)
+library(mosaicCalc)
+```
+
+::: {#exr-owl-watch-sunset}
+
+The `osc()` function models periodic (repeating) phenomena. It oscillates smoothly between -1 and +1 with a period of 1 (meaning it completes one full cycle when the input increases by 1).
+
+Use the interactive R chunk to plot `osc()` and answer the questions.
+
+```{webr}
+#| caption: Plotting osc()
+slice_plot(osc(t) ~ t, domain(t = 0:4), npts = 500)
+```
+
+1. At what input value does `osc()` first return to zero after starting at zero?
+
+`r devoirs::devoirs_set(choices = c(0.25, 0.5, 1, 2), correct = 0.5, id = "ows-zero-return")`
+
+2. At what input value does `osc()` reach its maximum value of 1 for the first time?
+
+`r devoirs::devoirs_set(choices = c(0.25, 0.5, 0.75, 1), correct = 0.25, id = "ows-max")`
+
+3. How many complete cycles does `osc()` complete between input 0 and input 3?
+
+`r devoirs::devoirs_set(choices = c(1, 2, 3, 6), correct = 3, id = "ows-cycles")`
+
+**Modeling real periodic phenomena:**
+
+Suppose you want to model the average daily temperature in a city that varies seasonally. The temperature ranges from a winter low of 30°F to a summer high of 80°F. The warmest day is around July 15 (day 196 of the year) and the coldest around January 15 (day 15).
+
+4. The average temperature (halfway between high and low) is:
+
+`r devoirs::devoirs_set(choices = c(25, 50, 55, 80), correct = 55, id = "ows-avg-temp")`
+
+5. The amplitude (how far the temperature swings from the average) is:
+
+`r devoirs::devoirs_set(choices = c(25, 30, 50, 55), correct = 25, id = "ows-amplitude")`
+
+6. To model temperature as a function of day-of-year using `osc()`, we need the function to have a period of 365 days. In the expression `osc(a * day)`, what should $a$ be?
+
+```{mcq}
+#| label: ows-period-a
+1. 1/365 [correct hint: When day increases by 365, we want osc() to complete one cycle. So a*365 should equal 1, meaning a = 1/365.]
+2. 365
+3. 1
+4. 2*pi/365
+```
+
+7. Using the average and amplitude from questions 4-5, which expression correctly models the temperature?
+
+```{mcq}
+#| label: ows-temp-model
+1. 55 + 25 * osc(day/365) [correct]
+2. 55 * osc(day/365)
+3. 25 + 55 * osc(day/365)
+4. 80 * osc(day/365) + 30
+```
+
+:::
+ <!-- end of exr-owl-watch-sunset -->

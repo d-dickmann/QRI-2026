@@ -1,0 +1,99 @@
+---
+id: "rabbit-plant-garden"
+created: "Thu Jan 30 2026"
+attribution: AI-assisted draft
+use: "Chapter 6 exercise"
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+# For stand-alone compilation testing
+library(devoirs)
+library(mosaicCalc)
+```
+
+::: {#exr-rabbit-plant-garden}
+
+This exercise focuses on **input and output transformations**—the technique for adapting storybook functions to model real-world data with actual units and dimensions.
+
+**The setup:** You're modeling the spread of a viral video. The data shows:
+- At week 0, essentially no one had seen it (views ≈ 0)
+- By week 10, about half of the eventual maximum viewers had seen it
+- By week 20, views had essentially plateaued at 2 million
+
+The `hillside()` function naturally:
+- Outputs ≈ 0 for large negative inputs
+- Outputs 0.5 when input = 0
+- Outputs ≈ 1 for large positive inputs
+
+**Part A: Understanding the input transformation**
+
+The input transformation has the form $a(q - q_0)$ where $q$ is the real-world quantity (weeks, in this case).
+
+1. We want `hillside()` to output 0.5 when the week is 10. What value should $q_0$ have?
+
+`r devoirs::devoirs_set(choices = c(0, 0.5, 5, 10, 20), correct = 10, id = "rpg-q0")`
+
+2. We want `hillside()` to be near its maximum (output ≈ 1) around week 20. The input to `hillside()` should be around +2 when week = 20. Given that $q_0 = 10$, solve for $a$ in: $a(20 - 10) = 2$
+
+`r devoirs::devoirs_set(choices = c(0.1, 0.2, 0.5, 1, 2), correct = 0.2, id = "rpg-a")`
+
+3. What are the units of parameter $a$?
+
+```{mcq}
+#| label: rpg-a-units
+#| inline: true
+1. weeks
+2. per week [correct]
+3. views
+4. dimensionless
+```
+
+**Part B: Understanding the output transformation**
+
+The output transformation has the form $A \cdot \text{hillside}(\ldots) + B$.
+
+4. The `hillside()` function naturally ranges from 0 to 1. We want our model to range from 0 to 2,000,000 views. What should $A$ be?
+
+`r devoirs::devoirs_set(choices = c(1, 1000, 1000000, 2000000), correct = 2000000, id = "rpg-A")`
+
+5. What are the units of parameter $A$?
+
+```{mcq}
+#| label: rpg-A-units
+#| inline: true
+1. weeks
+2. per week
+3. views [correct]
+4. dimensionless
+```
+
+6. Since `hillside()` naturally starts at 0 (for very negative inputs) and we want our model to also start at 0 views, what should $B$ be?
+
+`r devoirs::devoirs_set(choices = c(-1000000, 0, 1000000, 2000000), correct = 0, id = "rpg-B")`
+
+**Part C: The complete model**
+
+7. Putting it all together, which expression represents the complete model for views as a function of week?
+
+```{mcq}
+#| label: rpg-complete
+1. hillside(0.2 * (week - 10))
+2. 2000000 * hillside(0.2 * (week - 10)) [correct]
+3. 2000000 * hillside(week - 10)
+4. hillside(2000000 * (week - 10))
+```
+
+```{webr}
+#| caption: Test the model
+# Plot the model
+slice_plot(2000000 * hillside(0.2 * (week - 10)) ~ week, 
+           domain(week = 0:25)) |>
+  gf_labs(y = "Views", x = "Week")
+```
+
+8. According to this model, approximately how many views would there be at week 5?
+
+`r devoirs::devoirs_set(choices = c("about 150,000", "about 500,000", "about 1,000,000", "about 1,500,000"), correct = "about 500,000", id = "rpg-week5")`
+
+:::
+ <!-- end of exr-rabbit-plant-garden -->

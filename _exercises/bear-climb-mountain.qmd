@@ -1,0 +1,92 @@
+---
+id: "bear-climb-mountain"
+created: "Thu Jan 30 2026"
+attribution: AI-assisted draft
+use: "Chapter 6 exercise"
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+# For stand-alone compilation testing
+library(devoirs)
+library(mosaicCalc)
+```
+
+::: {#exr-bear-climb-mountain}
+
+Consider these four storybook functions and their characteristic shapes:
+
+- **flat()**: Output doesn't change regardless of input
+- **steady()**: Output increases at a constant rate as input increases  
+- **hillside()**: Output starts low, gradually increases, then levels off at a higher value
+- **hill()**: Output rises from a baseline to a peak, then falls back to the baseline
+
+For each real-world scenario below, choose which storybook function would best model the relationship between the input and output.
+
+1. **Input**: Amount of fertilizer applied to a garden plot. **Output**: Crop yield from that plot. (Hint: Too little fertilizer means low yield, but too much can actually harm plants.)
+
+```{mcq}
+#| label: bcm-1-fertilizer
+#| inline: true
+1. flat()
+2. steady()
+3. hillside()
+4. hill() [correct]
+```
+
+2. **Input**: Years of experience in a profession. **Output**: Annual salary. (Assume salaries tend to plateau at senior levels.)
+
+```{mcq}
+#| label: bcm-2-salary
+#| inline: true
+1. flat()
+2. steady()
+3. hillside() [correct]
+4. hill()
+```
+
+3. **Input**: Distance from your house. **Output**: Your familiarity with the neighborhood streets.
+
+```{mcq}
+#| label: bcm-3-familiarity
+#| inline: true
+1. flat()
+2. steady()
+3. hillside()
+4. hill() [correct hint: You're most familiar with streets near your house, less familiar as you go farther away, and eventually unfamiliar again in distant areas.]
+```
+
+4. **Input**: Number of hours you study for an exam. **Output**: Your exam score. (Assume there's a maximum possible score and diminishing returns from additional studying.)
+
+```{mcq}
+#| label: bcm-4-study
+#| inline: true
+1. flat()
+2. steady()
+3. hillside() [correct]
+4. hill()
+```
+
+5. **Input**: The day of the year (1-365). **Output**: Average daily temperature in a northern climate.
+
+```{mcq}
+#| label: bcm-5-temp
+#| inline: true
+1. flat()
+2. steady()
+3. hillside()
+4. None of the above—this requires osc() [correct]
+```
+
+6. **Input**: Amount of money invested in advertising. **Output**: Number of new customers gained. (Assume the market can become saturated.)
+
+```{mcq}
+#| label: bcm-6-advertising
+#| inline: true
+1. flat()
+2. steady()
+3. hillside() [correct]
+4. hill()
+```
+
+:::
+ <!-- end of exr-bear-climb-mountain -->

@@ -1,0 +1,115 @@
+---
+id: "wolf-find-path"
+created: "Thu Jan 30 2026"
+attribution: AI-assisted draft
+use: "Chapter 8 exercise (composing functions)"
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+# For stand-alone compilation testing
+library(devoirs)
+library(mosaicCalc)
+```
+
+::: {#exr-wolf-find-path}
+
+Storybook functions can be **combined** to create more complex models. Two common ways to combine functions are:
+
+- **Multiplication**: `f(x) * g(x)` — the output is the product of the two function values
+- **Linear combination**: `a*f(x) + b*g(x)` — a weighted sum of the two functions
+
+This exercise explores function multiplication.
+
+**Part A: Multiplying osc() by other functions**
+
+```{webr}
+#| caption: Explore multiplied functions
+# osc() alone
+slice_plot(osc(t) ~ t, domain(t = 0:5), npts = 500) |>
+  gf_labs(title = "osc(t) alone")
+
+# osc() multiplied by hillside()
+slice_plot(osc(t) * hillside(t - 2) ~ t, domain(t = 0:5), npts = 500) |>
+  gf_labs(title = "osc(t) * hillside(t - 2)")
+```
+
+1. When you multiply `osc(t)` by `hillside(t - 2)`, what happens to the oscillation for small values of t (near t = 0)?
+
+```{mcq}
+#| label: wfp-1-small-t
+1. The oscillation amplitude stays the same
+2. The oscillation amplitude is reduced (damped) [correct]
+3. The oscillation amplitude is increased
+4. The oscillation disappears entirely
+```
+
+2. What happens to the oscillation for large values of t (near t = 5)?
+
+```{mcq}
+#| label: wfp-2-large-t
+1. The oscillation amplitude stays the same as osc() alone [correct hint: hillside() approaches 1 for large inputs, so multiplying by it doesn't change osc() much]
+2. The oscillation amplitude is reduced
+3. The oscillation amplitude is increased
+4. The oscillation disappears
+```
+
+**Part B: A sound envelope**
+
+In audio synthesis, musicians often multiply an oscillating function (the tone) by an "envelope" function that controls how the volume changes over time. A simple envelope might:
+- Start at zero (silence)
+- Rise quickly to full volume
+- Stay at full volume briefly  
+- Decay back to silence
+
+3. Which combination would create an oscillation that starts at full amplitude and gradually dies away?
+
+```{mcq}
+#| label: wfp-3-decay
+1. osc(t) * hillside(t)
+2. osc(t) * hillside(-t) [correct hint: hillside(-t) starts at 1 (for t=0) and decreases toward 0 as t increases]
+3. osc(t) * hill(t)
+4. osc(t) * double(t)
+```
+
+4. Which combination would create an oscillation that starts silent and gradually reaches full amplitude?
+
+```{mcq}
+#| label: wfp-4-attack
+1. osc(t) * hillside(t) [correct]
+2. osc(t) * hillside(-t)
+3. osc(t) * recip(t)
+4. osc(t) * doublings(t)
+```
+
+**Part C: Recognizing multiplied functions**
+
+```{r}
+#| echo: false
+slice_plot(osc(t) * hill(t) ~ t, domain(t = -4:4), npts = 500) |>
+  gf_labs(y = "output", x = "t") |>
+  gf_theme(theme_minimal())
+```
+
+5. The graph above shows `osc(t)` multiplied by which storybook function?
+
+```{mcq}
+#| label: wfp-5-identify
+#| inline: true
+1. double(t)
+2. hillside(t)
+3. hill(t) [correct]
+4. recip(t)
+```
+
+6. What real-world phenomenon might this `osc(t) * hill(t)` pattern represent?
+
+```{mcq}
+#| label: wfp-6-realworld
+1. A sustained musical note
+2. A plucked guitar string [correct hint: The string oscillates, but the vibration dies down over time forming a bell-shaped envelope]
+3. Daily temperature variations
+4. Population growth
+```
+
+:::
+ <!-- end of exr-wolf-find-path -->

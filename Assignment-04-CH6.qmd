@@ -1,0 +1,52 @@
+---
+title: QR-I Assignment 4
+subtitle: Chapter 6 of the QR-A book
+---
+
+{{< include _use_webr.qmd >}}
+
+```{r include = FALSE}
+library(devoirs)
+library(mosaicCalc)
+source("_start-up.R")
+```
+
+{{< include _devoirs.qmd >}}
+
+::::: {.callout-note collapse=true}
+## Drill for Chapter 6
+
+Open drill questions in [this document](https://dtkaplan.github.io/QR-A/Drill-06-storybook-functions.html){target="_blank"}
+
+Remember to submit your drill answers through that document. But for the exercises in the present document, use the "collect answers" at the top of this page.
+:::::
+
+:::: {.callout-note collapse=true}
+## Chapter Six
+
+`r id <- "a4-ch6"`
+
+::: {.panel-tabset}
+## 1.
+
+{{< include _exercises/bear-climb-mountain.qmd >}}
+
+## 2.
+
+{{< include _exercises/fox-read-book.qmd >}}
+
+## 3.
+
+{{< include _exercises/owl-watch-sunset.qmd >}}
+
+## 4.
+
+{{< include _exercises/rabbit-plant-garden.qmd >}}
+
+## 5.
+
+{{< include _exercises/deer-cross-river.qmd >}}
+
+:::
+
+::::

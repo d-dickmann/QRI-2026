@@ -1,0 +1,107 @@
+---
+id: "deer-cross-river"
+created: "Thu Jan 30 2026"
+attribution: AI-assisted draft
+use: "Chapter 6 exercise"
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+# For stand-alone compilation testing
+library(devoirs)
+library(mosaicCalc)
+```
+
+::: {#exr-deer-cross-river}
+
+The functions `recip()`, `double()`, and `doublings()` each have distinctive shapes that make them suitable for different modeling situations.
+
+- **recip(x)** = 1/x : Falls rapidly at first, then levels off approaching zero
+- **double(x)** = 2^x : Grows slowly at first, then increasingly rapidly  
+- **doublings(x)** = log₂(x) : Grows rapidly at first, then increasingly slowly
+
+```{webr}
+#| caption: Compare the three functions
+slice_plot(recip(x) ~ x, domain(x = 0.5:5), color = "red") |>
+  gf_labs(title = "recip(x) in red")
+
+slice_plot(double(x) ~ x, domain(x = -2:4), color = "blue") |>
+  gf_labs(title = "double(x) in blue")
+
+slice_plot(doublings(x) ~ x, domain(x = 0.1:10), color = "green") |>
+  gf_labs(title = "doublings(x) in green")
+```
+
+For each scenario below, decide which function would best model the relationship.
+
+1. **Input**: Number of workers on a task. **Output**: Time to complete the task. (More workers = faster completion, but you can't make it instant.)
+
+```{mcq}
+#| label: dcr-1-workers
+#| inline: true
+1. recip() [correct]
+2. double()
+3. doublings()
+```
+
+2. **Input**: Time since you started saving money in a high-interest compound account. **Output**: Balance in the account.
+
+```{mcq}
+#| label: dcr-2-savings
+#| inline: true
+1. recip()
+2. double() [correct]
+3. doublings()
+```
+
+3. **Input**: Amount of RAM in a computer. **Output**: Perceived improvement in performance (each doubling of RAM feels like a similar improvement).
+
+```{mcq}
+#| label: dcr-3-ram
+#| inline: true
+1. recip()
+2. double()
+3. doublings() [correct]
+```
+
+4. **Input**: Number of days since an epidemic began. **Output**: Number of infected people (in the early exponential growth phase).
+
+```{mcq}
+#| label: dcr-4-epidemic
+#| inline: true
+1. recip()
+2. double() [correct]
+3. doublings()
+```
+
+5. **Input**: Loudness of a sound (in physical power units). **Output**: How loud it sounds to a human (perceived loudness).
+
+```{mcq}
+#| label: dcr-5-loudness
+#| inline: true
+1. recip()
+2. double()
+3. doublings() [correct hint: Human perception of loudness follows a logarithmic scale—doubling the power produces a constant increase in perceived loudness.]
+```
+
+6. **Input**: Distance from a light source. **Output**: Brightness of the light at that distance.
+
+```{mcq}
+#| label: dcr-6-light
+#| inline: true
+1. recip() [correct hint: Light intensity follows an inverse-square law—as distance increases, brightness decreases rapidly then levels off.]
+2. double()
+3. doublings()
+```
+
+7. **Input**: Number of practice hours. **Output**: Skill improvement (the 10,000-hour rule suggests diminishing returns).
+
+```{mcq}
+#| label: dcr-7-practice
+#| inline: true
+1. recip()
+2. double()
+3. doublings() [correct hint: Early practice hours yield large improvements; later hours yield smaller (but still positive) improvements.]
+```
+
+:::
+ <!-- end of exr-deer-cross-river -->
