@@ -19,43 +19,52 @@ library(mosaicCalc)
 
 ::: {#exr-owl-watch-sunset}
 
-The `osc()` function models periodic (repeating) phenomena. It oscillates smoothly between -1 and +1 with a period of 1. Use the R chunk to explore it.
+**Time-of-Use Electricity Pricing**
+
+Your electric utility charges different rates depending on the time of day. You want to model the price so you can decide when to charge your electric vehicle, run the dishwasher, or do laundry.
+
+The utility publishes this rate schedule:
+
+| Time of day | Price ($/kWh) |
+|-------------|---------------|
+| 4 AM        | $0.08 (lowest) |
+| 10 AM       | $0.20         |
+| 4 PM        | $0.32 (highest) |
+| 10 PM       | $0.20         |
+| 4 AM (next day) | $0.08     |
+
+The price follows a smooth daily cycle.
 
 ```{webr}
-#| caption: Explore osc()
-# Plot osc() and experiment with transformations
+#| caption: Explore osc() and build your model
 
 ```
 
-**Modeling a real periodic phenomenon:**
+Your task: Build a model for **electricity price** (in $/kWh) as a function of **hour of the day** (0-24).
 
-A ferris wheel at a carnival has a radius of 15 meters. The center of the wheel is 18 meters above the ground. The wheel completes one full rotation every 2 minutes. A rider boards at the lowest point of the wheel (3 meters above the ground).
+1. What is the average price (halfway between the highest and lowest)?
 
-Your task is to model the rider's **height above the ground** (in meters) as a function of **time** (in minutes) since boarding.
+`r devoirs::devoirs_set(choices = c(0.08, 0.12, 0.20, 0.24, 0.32), correct = 0.20, id = "ows-avg")`
 
-1. What is the rider's height at the lowest point of the rotation?
+2. What is the amplitude (how far the price swings from the average)?
 
-`r devoirs::devoirs_set(choices = c(0, 3, 15, 18, 33), correct = 3, id = "ows-low")`
+`r devoirs::devoirs_set(choices = c(0.08, 0.12, 0.20, 0.24, 0.32), correct = 0.12, id = "ows-amp")`
 
-2. What is the rider's height at the highest point of the rotation?
+3. The basic `osc()` has a period of 1. To make the model have a period of 24 hours, what goes inside osc()?
 
-`r devoirs::devoirs_set(choices = c(15, 18, 30, 33, 36), correct = 33, id = "ows-high")`
+`r devoirs::devoirs_set(choices = c("hour/24", "hour*24", "hour - 24", "24/hour"), correct = "hour/24", id = "ows-period")`
 
-3. The basic `osc()` function has a period of 1 (one full cycle per unit input). To make the model have a period of 2 minutes, what input transformation is needed?
+4. The price peaks at 4 PM (hour 16), but `osc()` peaks when its input equals 0.25. What input shift aligns the peak correctly?
 
-`r devoirs::devoirs_set(choices = c("osc(t/2)", "osc(2*t)", "osc(t - 2)", "osc(t + 2)"), correct = "osc(t/2)", id = "ows-period")`
+`r devoirs::devoirs_set(choices = c("(hour - 10)/24", "(hour + 10)/24", "(hour - 4)/24", "(hour + 4)/24"), correct = "(hour - 10)/24", id = "ows-shift")`
 
-4. The basic `osc()` function oscillates between -1 and +1 (amplitude = 1, centered at 0). Your ferris wheel model needs amplitude = 15 and should be centered at height = 18. Which output transformation achieves this?
+5. Write the complete model for price as a function of hour (0-24):
 
-`r devoirs::devoirs_set(choices = c("15 * osc(...)", "18 + osc(...)", "18 + 15 * osc(...)", "15 + 18 * osc(...)"), correct = "18 + 15 * osc(...)", id = "ows-output")`
+`r devoirs::devoirs_text("ows-model", rows = 1)`
 
-5. There's one more problem: `osc()` starts at 0 (its middle value), but your rider starts at the *bottom* of the wheel. You need to shift the input so the function starts at its minimum. What input shift is needed?
+6. **Decision time:** Your EV needs 4 hours to charge and uses about 10 kWh. According to your model, approximately how much would it cost to charge starting at midnight vs. starting at 5 PM?
 
-`r devoirs::devoirs_set(choices = c("t + 0.25", "t - 0.25", "t + 0.5", "t - 0.5"), correct = "t - 0.25", id = "ows-shift")`
-
-6. Putting it all together, write the complete model for height (in meters) as a function of time t (in minutes). Enter your answer as a formula.
-
-`r devoirs::devoirs_text("ows-final-model", rows = 1)`
+`r devoirs::devoirs_text("ows-decision", rows = 2)`
 
 :::
  <!-- end of exr-owl-watch-sunset -->

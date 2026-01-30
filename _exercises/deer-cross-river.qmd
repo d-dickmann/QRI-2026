@@ -19,43 +19,45 @@ library(mosaicCalc)
 
 ::: {#exr-deer-cross-river}
 
-**Build a model from scratch.**
+**Chemical Spill Response**
 
-A hot cup of coffee is left on a counter in a room that stays at 70°F. The coffee starts at 180°F. After 10 minutes, it has cooled to 125°F. After 20 minutes, it's at 97.5°F. After 30 minutes, it's at 83.75°F.
+A tanker truck accident has spilled industrial solvent into a municipal reservoir. The EPA safe limit for this chemical is **5 parts per million (ppm)**. Initial readings show a concentration of **80 ppm**.
 
-| Time (min) | Temperature (°F) |
-|------------|------------------|
-| 0          | 180              |
-| 10         | 125              |
-| 20         | 97.5             |
-| 30         | 83.75            |
+Environmental engineers take measurements over the following days:
 
-Your task: Build a model for the coffee's temperature as a function of time using a storybook function and appropriate input/output transformations.
+| Days after spill | Concentration (ppm) |
+|------------------|---------------------|
+| 0                | 80                  |
+| 3                | 40                  |
+| 6                | 20                  |
+| 9                | 10                  |
+
+The city needs to know: **When will the water be safe to drink?**
 
 ```{webr}
-#| caption: Use this space to explore and test your model
+#| caption: Build and test your model
 
 ```
 
-**Hints to consider (but you must figure out the details):**
+Your task: Build a model for **contamination level** (in ppm) as a function of **days since the spill**, then use it to answer the city's question.
 
-- What quantity is actually decaying? (It's not the temperature itself.)
-- What storybook function describes something that halves repeatedly?
-- What transformations are needed to make the model match the data?
+**Your model:**
 
-When you have a model, test it by checking that it produces the correct temperatures at t = 0, 10, 20, and 30.
-
-**Your final model:**
-
-Write a formula for Temperature as a function of time t (in minutes):
+Write a formula for concentration C as a function of days d:
 
 `r devoirs::devoirs_text("dcr-model", rows = 1)`
 
-**Explain your reasoning:**
+**The decision:**
 
-Why did you choose this storybook function? How did you determine the transformations?
+According to your model, on what day will the concentration first drop below the 5 ppm safety threshold? Show your reasoning.
 
-`r devoirs::devoirs_text("dcr-reasoning", rows = 4)`
+`r devoirs::devoirs_text("dcr-decision", rows = 3)`
+
+**Reflection:**
+
+The mayor wants to announce a reopening date. What would you advise, and why might you recommend some buffer time beyond what the model predicts?
+
+`r devoirs::devoirs_text("dcr-reflection", rows = 3)`
 
 :::
  <!-- end of exr-deer-cross-river -->
