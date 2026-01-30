@@ -22,10 +22,10 @@ Consider these four storybook functions and their characteristic shapes:
 
 For each real-world scenario below, choose which storybook function would best model the relationship between the input and output.
 
-1. **Input**: Amount of fertilizer applied to a garden plot. **Output**: Crop yield from that plot. (Hint: Too little fertilizer means low yield, but too much can actually harm plants.)
+1. **Input**: Cups of coffee consumed in a morning. **Output**: Your work productivity that day. (No coffee leaves you groggy; 1-2 cups makes you alert and focused; 5+ cups leaves you jittery and unable to concentrate.)
 
 ```{mcq}
-#| label: bcm-1-fertilizer
+#| label: bcm-1-coffee
 #| inline: true
 1. flat()
 2. steady()
@@ -33,10 +33,32 @@ For each real-world scenario below, choose which storybook function would best m
 4. hill() [correct]
 ```
 
-2. **Input**: Years of experience in a profession. **Output**: Annual salary. (Assume salaries tend to plateau at senior levels.)
+2. **Input**: Runtime of a movie (in minutes). **Output**: Ticket price at the cinema. (A 90-minute film costs the same as a 3-hour epic.)
 
 ```{mcq}
-#| label: bcm-2-salary
+#| label: bcm-2-movie
+#| inline: true
+1. flat() [correct]
+2. steady()
+3. hillside()
+4. hill()
+```
+
+3. **Input**: Depth below the ocean surface (in meters). **Output**: Water pressure experienced by a diver.
+
+```{mcq}
+#| label: bcm-3-pressure
+#| inline: true
+1. flat()
+2. steady() [correct hint: Pressure increases by about 1 atmosphere for every 10 meters of depth—a constant rate.]
+3. hillside()
+4. hill()
+```
+
+4. **Input**: Total hours spent learning a new language. **Output**: Number of vocabulary words you can recall. (Beginners pick up words quickly; advanced learners find each new word harder to acquire.)
+
+```{mcq}
+#| label: bcm-4-language
 #| inline: true
 1. flat()
 2. steady()
@@ -44,49 +66,35 @@ For each real-world scenario below, choose which storybook function would best m
 4. hill()
 ```
 
-3. **Input**: Distance from your house. **Output**: Your familiarity with the neighborhood streets.
+5. **Input**: Days since a meme first appeared online. **Output**: Number of times it's shared per day. (Memes explode in popularity, peak, then fade into obscurity.)
 
 ```{mcq}
-#| label: bcm-3-familiarity
+#| label: bcm-5-meme
 #| inline: true
 1. flat()
 2. steady()
 3. hillside()
-4. hill() [correct hint: You're most familiar with streets near your house, less familiar as you go farther away, and eventually unfamiliar again in distant areas.]
+4. hill() [correct]
 ```
 
-4. **Input**: Number of hours you study for an exam. **Output**: Your exam score. (Assume there's a maximum possible score and diminishing returns from additional studying.)
+6. **Input**: Hour of the day (0-24) at a coastal beach. **Output**: Height of the tide.
 
 ```{mcq}
-#| label: bcm-4-study
-#| inline: true
-1. flat()
-2. steady()
-3. hillside() [correct]
-4. hill()
-```
-
-5. **Input**: The day of the year (1-365). **Output**: Average daily temperature in a northern climate.
-
-```{mcq}
-#| label: bcm-5-temp
+#| label: bcm-6-tide
 #| inline: true
 1. flat()
 2. steady()
 3. hillside()
-4. None of the above—this requires osc() [correct]
+4. None of the above—this requires osc() [correct hint: Tides rise and fall in a repeating cycle, roughly twice per day.]
 ```
 
-6. **Input**: Amount of money invested in advertising. **Output**: Number of new customers gained. (Assume the market can become saturated.)
+---
 
-```{mcq}
-#| label: bcm-6-advertising
-#| inline: true
-1. flat()
-2. steady()
-3. hillside() [correct]
-4. hill()
-```
+**Reflection question:**
+
+7. Choose ONE of the scenarios above and make a case for using a *different* storybook function to model it. Explain your reasoning: Is the alternative model better than your original answer, roughly equivalent, or worse? Why?
+
+`r devoirs::devoirs_text("bcm-reflection")`
 
 :::
  <!-- end of exr-bear-climb-mountain -->
