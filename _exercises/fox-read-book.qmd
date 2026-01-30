@@ -11,6 +11,12 @@ library(devoirs)
 library(mosaicCalc)
 ```
 
+```{webr}
+#| echo: false
+#| autorun: true
+{{< include _software/storybook-functions.r >}}
+```
+
 ::: {#exr-fox-read-book}
 
 The storybook functions `double()` and `doublings()` are closely related but serve different purposes.
@@ -41,6 +47,15 @@ doublings(8)   # How many doublings to reach 8?
 
 `r devoirs::devoirs_set(choices = c(-4, -2, 0.25, 0.5, 2), correct = 0.25, id = "frb-double-neg")`
 
+```{webr}
+#| caption: Try your own calculations
+# Test double() and doublings() with different inputs
+double(5)
+double(-2)
+doublings(64)
+doublings(0.5)
+```
+
 **Questions about doublings():**
 
 4. If a population grew from 1 to 64, how many doublings occurred?
@@ -58,6 +73,13 @@ doublings(8)   # How many doublings to reach 8?
 **The relationship between double() and doublings():**
 
 The functions `double()` and `doublings()` are related: if you know the output of `double()`, you can use `doublings()` to find what input produced it, and vice versa.
+
+```{webr}
+#| caption: Explore the relationship
+# What happens when you combine them?
+double(5)
+doublings(32)
+```
 
 7. If `double(x)` gives output 32, what was the input `x`?
 

@@ -11,6 +11,12 @@ library(devoirs)
 library(mosaicCalc)
 ```
 
+```{webr}
+#| echo: false
+#| autorun: true
+{{< include _software/storybook-functions.r >}}
+```
+
 ::: {#exr-owl-watch-sunset}
 
 The `osc()` function models periodic (repeating) phenomena. It oscillates smoothly between -1 and +1 with a period of 1 (meaning it completes one full cycle when the input increases by 1).
