@@ -19,21 +19,13 @@ library(mosaicCalc)
 
 ::: {#exr-fox-read-book}
 
-The storybook functions `double()` and `doublings()` are closely related but serve different purposes.
-
-- `double(x)` tells you the result after $x$ doublings (output = $2^x$)
-- `doublings(y)` tells you how many doublings are needed to reach output $y$
-
-Use the interactive R chunk to explore these functions.
+The storybook functions `double()` and `doublings()` are closely related but serve different purposes. Use the R chunk to explore them.
 
 ```{webr}
 #| caption: Explore double() and doublings()
-# Try different inputs
-double(3)      # After 3 doublings, what do you have?
-doublings(8)   # How many doublings to reach 8?
-```
+# Try different inputs to both functions
 
-**Questions about double():**
+```
 
 1. Starting with 1 item, after 5 doublings, how many items do you have?
 
@@ -43,58 +35,32 @@ doublings(8)   # How many doublings to reach 8?
 
 `r devoirs::devoirs_set(choices = c(10, 20, 100, 512, 1024), correct = 1024, id = "frb-bacteria")`
 
-3. What is `double(-2)`? (Think: what happens with negative doublings?)
+3. What is `double(-2)`?
 
 `r devoirs::devoirs_set(choices = c(-4, -2, 0.25, 0.5, 2), correct = 0.25, id = "frb-double-neg")`
-
-```{webr}
-#| caption: Try your own calculations
-# Test double() and doublings() with different inputs
-double(5)
-double(-2)
-doublings(64)
-doublings(0.5)
-```
-
-**Questions about doublings():**
 
 4. If a population grew from 1 to 64, how many doublings occurred?
 
 `r devoirs::devoirs_set(choices = c(4, 5, 6, 7, 8), correct = 6, id = "frb-doublings-64")`
 
-5. A savings account doubled from $1000 to $2000. How many "doublings" is this?
-
-`r devoirs::devoirs_set(choices = c(0.5, 1, 2, 1000), correct = 1, id = "frb-doublings-2000")`
-
-6. What is `doublings(0.5)`?
+5. What is `doublings(0.5)`?
 
 `r devoirs::devoirs_set(choices = c(-2, -1, 0, 0.5, 1), correct = -1, id = "frb-doublings-half")`
 
-**The relationship between double() and doublings():**
+6. If `double(x)` gives output 128, what was the input `x`?
 
-The functions `double()` and `doublings()` are related: if you know the output of `double()`, you can use `doublings()` to find what input produced it, and vice versa.
+`r devoirs::devoirs_set(choices = c(4, 5, 6, 7, 64), correct = 7, id = "frb-find-input")`
 
-```{webr}
-#| caption: Explore the relationship
-# What happens when you combine them?
-double(5)
-doublings(32)
-```
-
-7. If `double(x)` gives output 32, what was the input `x`?
-
-`r devoirs::devoirs_set(choices = c(2, 4, 5, 6, 16), correct = 5, id = "frb-find-input")`
-
-8. If `doublings(y)` gives output 4, what was the input `y`?
+7. If `doublings(y)` gives output 4, what was the input `y`?
 
 `r devoirs::devoirs_set(choices = c(2, 4, 8, 16, 32), correct = 16, id = "frb-find-input-2")`
 
-9. Based on questions 7 and 8, what is the relationship between `double()` and `doublings()`?
+8. What is the relationship between `double()` and `doublings()`?
 
 ```{mcq}
 #| label: frb-inverse
 1. They always give the same output
-2. They "undo" each other—doublings() finds the input that would give a particular output from double() [correct]
+2. They "undo" each other [correct]
 3. One is always twice the other
 4. They have no particular relationship
 ```

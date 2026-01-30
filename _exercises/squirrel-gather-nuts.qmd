@@ -23,174 +23,165 @@ Both `recip(x)` and `double(-x)` produce outputs that *decrease* as the input in
 
 **Scenario A — Sharing Pizza**
 
-A pizza has 8 slices. The more people who share it, the fewer slices each person gets.
+A pizza has 24 slices. The more people who share it, the fewer slices each person gets.
 
 | People | Slices per person |
 |--------|-------------------|
-| 1      | 8                 |
-| 2      | 4                 |
-| 4      | 2                 |
-| 8      | 1                 |
+| 1      | 24                |
+| 2      | 12                |
+| 3      | 8                 |
+| 4      | 6                 |
+| 6      | 4                 |
+| 8      | 3                 |
 
-**Scenario B — Lily Pad Die-Off**
+**Scenario B — Radioactive Decay**
 
-A pond starts with 8 lily pads. Each winter, exactly half of the lily pads die.
+A sample starts with 100 grams of a radioactive isotope. Each year, exactly half of the remaining material decays.
 
-| Winters passed | Lily pads remaining |
-|----------------|---------------------|
-| 0              | 8                   |
-| 1              | 4                   |
-| 2              | 2                   |
-| 3              | 1                   |
+| Years passed | Grams remaining |
+|--------------|-----------------|
+| 0            | 100             |
+| 1            | 50              |
+| 2            | 25              |
+| 3            | 12.5            |
+| 4            | 6.25            |
 
 ---
 
 **Part 1: Noticing the Pattern**
 
-1. In Scenario A (pizza), if the number of people *doubles* from 2 to 4, what happens to slices per person?
+1. In Scenario A (pizza), if the number of people *doubles* from 3 to 6, what happens to slices per person?
 
 ```{mcq}
 #| label: sgn-pizza-double
 #| inline: true
 1. It doubles
 2. It is cut in half [correct]
-3. It decreases by 2
+3. It decreases by 4
 4. It stays the same
 ```
 
-2. In Scenario B (lily pads), if you wait *one more winter* (from 1 to 2 winters), what happens to the lily pad count?
+2. In Scenario A (pizza), if the number of people increases by 1 (from 3 to 4), what happens to slices per person?
 
 ```{mcq}
-#| label: sgn-lily-one-more
+#| label: sgn-pizza-add-one
+#| inline: true
+1. It is cut in half
+2. It decreases by 2 [correct]
+3. It decreases by a factor of 4/3
+4. It stays the same
+```
+
+3. In Scenario B (radioactive decay), if you wait *one more year* (from year 2 to year 3), what happens to the amount remaining?
+
+```{mcq}
+#| label: sgn-decay-one-more
 #| inline: true
 1. It doubles
 2. It is cut in half [correct]
-3. It decreases by 2
-4. It stays the same
+3. It decreases by 12.5
+4. It decreases by 25
 ```
 
-3. These two scenarios *look* similar because both involve halving. But the **trigger** for halving is different. In Scenario A, what causes the halving?
+4. In Scenario B (radioactive decay), if you wait *two more years* (from year 1 to year 3), what happens to the amount remaining?
+
+```{mcq}
+#| label: sgn-decay-two-more
+#| inline: true
+1. It is cut in half
+2. It is cut to one quarter [correct]
+3. It decreases by 37.5
+4. It is cut to one third
+```
+
+---
+
+**Part 2: The Key Distinction**
+
+5. In Scenario A, what causes the output to be cut in half?
 
 ```{mcq}
 #| label: sgn-trigger-a
-1. Doubling the input (number of people) [correct]
+1. Doubling the input [correct]
 2. Adding 1 to the input
 3. Waiting one time period
-4. Random chance
+4. Subtracting half from the output
 ```
 
-4. In Scenario B, what causes the halving?
+6. In Scenario B, what causes the output to be cut in half?
 
 ```{mcq}
 #| label: sgn-trigger-b
-1. Doubling the input (number of winters)
-2. Adding 1 to the input (one more winter) [correct]
-3. Doubling the lily pad count
-4. Random chance
-```
-
----
-
-**Part 2: Identifying the Functions**
-
-5. Scenario A (pizza sharing) is best modeled by which function? (Hint: slices = 8/people)
-
-```{mcq}
-#| label: sgn-model-a
-#| inline: true
-1. recip(x) scaled appropriately [correct]
-2. double(-x) scaled appropriately
-3. doublings(x)
-4. hillside(x)
-```
-
-6. Scenario B (lily pad die-off) is best modeled by which function? (Hint: lily pads = 8 × 2^(-winters))
-
-```{mcq}
-#| label: sgn-model-b
-#| inline: true
-1. recip(x) scaled appropriately
-2. double(-x) scaled appropriately [correct]
-3. doublings(x)
-4. hillside(x)
+1. Doubling the input
+2. Adding 1 to the input [correct]
+3. Multiplying the input by itself
+4. Subtracting half from the output
 ```
 
 ```{webr}
-#| caption: Explore both functions
-# Scenario A: Pizza sharing (recip)
-# slices = 8 / people
-slice_plot(8 * recip(x) ~ x, domain(x = 1:10), color = "blue") |>
-  gf_labs(title = "Pizza: 8/people", x = "Number of people", y = "Slices per person")
+#| caption: Explore both scenarios
 
-# Scenario B: Lily pad die-off (exponential decay)  
-# lily_pads = 8 * 2^(-winters)
-slice_plot(8 * double(-x) ~ x, domain(x = 0:5), color = "red") |>
-  gf_labs(title = "Lily pads: 8 × 2^(-winters)", x = "Winters passed", y = "Lily pads remaining")
 ```
 
----
-
-**Part 3: The Key Distinction**
-
-7. Which statement best captures the difference between these two functions?
+7. Which statement best captures the difference between `recip` and `double(-x)`?
 
 ```{mcq}
 #| label: sgn-key-difference
 1. recip decreases and double(-x) increases
 2. recip is for small numbers, double(-x) is for large numbers
-3. recip: "doubling input halves output" vs double(-x): "each unit of input halves output" [correct hint: This is the key insight! With recip, you must DOUBLE the input to halve the output. With double(-x), adding just ONE unit to the input halves the output.]
+3. recip: "doubling input halves output" vs double(-x): "each unit of input halves output" [correct]
 4. They are mathematically the same function
 ```
 
 ---
 
-**Part 4: Apply Your Understanding**
+**Part 3: Apply Your Understanding**
 
-For each scenario, decide: Is this a `recip` situation (doubling input halves output) or a `double(-x)` situation (each time unit halves output)?
+For each scenario, decide which type of relationship it represents.
 
-8. **Radioactive decay**: A substance has a half-life of 10 years. Every 10 years, half remains.
-
-```{mcq}
-#| label: sgn-apply-radioactive
-#| inline: true
-1. recip (inverse proportionality)
-2. double(-x) (exponential decay) [correct]
-```
-
-9. **Splitting a bill**: If 3 friends split a $90 bill, each pays $30. If 6 friends split it, each pays $15.
+8. **Splitting a bill**: If 3 friends split a $90 bill, each pays $30. If 6 friends split it, each pays $15.
 
 ```{mcq}
 #| label: sgn-apply-bill
 #| inline: true
-1. recip (inverse proportionality) [correct]
-2. double(-x) (exponential decay)
+1. recip [correct]
+2. double(-x)
 ```
 
-10. **Medicine metabolism**: A drug's concentration drops by half every 4 hours.
+9. **Medicine metabolism**: A drug's concentration drops by half every 4 hours.
 
 ```{mcq}
 #| label: sgn-apply-medicine
 #| inline: true
-1. recip (inverse proportionality)
-2. double(-x) (exponential decay) [correct]
+1. recip
+2. double(-x) [correct]
 ```
 
-11. **Crowdfunding**: If a $10,000 goal is split among backers, more backers means less money needed per person.
+10. **Travel time**: Driving 120 miles at 30 mph takes 4 hours. At 60 mph it takes 2 hours. At 120 mph it takes 1 hour.
 
 ```{mcq}
-#| label: sgn-apply-crowdfund
+#| label: sgn-apply-travel
 #| inline: true
-1. recip (inverse proportionality) [correct]
-2. double(-x) (exponential decay)
+1. recip [correct]
+2. double(-x)
 ```
 
-12. **Phone battery**: Your phone loses half its remaining charge every 3 hours of use.
+11. **Depreciation**: A car loses 15% of its current value each year.
 
 ```{mcq}
-#| label: sgn-apply-battery
+#| label: sgn-apply-depreciation
 #| inline: true
-1. recip (inverse proportionality)
-2. double(-x) (exponential decay) [correct]
+1. recip
+2. double(-x) [correct]
+```
+
+12. **Resolution**: A printer's ink cartridge can print 1000 pages. If you print 250 photos (each uses 4 pages worth of ink), you can print 0 photos. But if you print smaller photos using 2 pages of ink each, you can print 500.
+
+```{mcq}
+#| label: sgn-apply-printer
+#| inline: true
+1. recip [correct]
+2. double(-x)
 ```
 
 :::

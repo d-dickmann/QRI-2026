@@ -19,95 +19,43 @@ library(mosaicCalc)
 
 ::: {#exr-deer-cross-river}
 
-The functions `recip()`, `double()`, and `doublings()` each have distinctive shapes that make them suitable for different modeling situations.
+**Build a model from scratch.**
 
-- **recip(x)** = 1/x : Falls rapidly at first, then levels off approaching zero
-- **double(x)** = 2^x : Grows slowly at first, then increasingly rapidly  
-- **doublings(x)** = log₂(x) : Grows rapidly at first, then increasingly slowly
+A hot cup of coffee is left on a counter in a room that stays at 70°F. The coffee starts at 180°F. After 10 minutes, it has cooled to 125°F. After 20 minutes, it's at 97.5°F. After 30 minutes, it's at 83.75°F.
+
+| Time (min) | Temperature (°F) |
+|------------|------------------|
+| 0          | 180              |
+| 10         | 125              |
+| 20         | 97.5             |
+| 30         | 83.75            |
+
+Your task: Build a model for the coffee's temperature as a function of time using a storybook function and appropriate input/output transformations.
 
 ```{webr}
-#| caption: Compare the three functions
-slice_plot(recip(x) ~ x, domain(x = 0.5:5), color = "red") |>
-  gf_labs(title = "recip(x) in red")
+#| caption: Use this space to explore and test your model
 
-slice_plot(double(x) ~ x, domain(x = -2:4), color = "blue") |>
-  gf_labs(title = "double(x) in blue")
-
-slice_plot(doublings(x) ~ x, domain(x = 0.1:10), color = "green") |>
-  gf_labs(title = "doublings(x) in green")
 ```
 
-For each scenario below, decide which function would best model the relationship.
+**Hints to consider (but you must figure out the details):**
 
-1. **Input**: Number of workers on a task. **Output**: Time to complete the task. (More workers = faster completion, but you can't make it instant.)
+- What quantity is actually decaying? (It's not the temperature itself.)
+- What storybook function describes something that halves repeatedly?
+- What transformations are needed to make the model match the data?
 
-```{mcq}
-#| label: dcr-1-workers
-#| inline: true
-1. recip() [correct]
-2. double()
-3. doublings()
-```
+When you have a model, test it by checking that it produces the correct temperatures at t = 0, 10, 20, and 30.
 
-2. **Input**: Time since you started saving money in a high-interest compound account. **Output**: Balance in the account.
+**Your final model:**
 
-```{mcq}
-#| label: dcr-2-savings
-#| inline: true
-1. recip()
-2. double() [correct]
-3. doublings()
-```
+Write a formula for Temperature as a function of time t (in minutes):
 
-3. **Input**: Amount of RAM in a computer. **Output**: Perceived improvement in performance (each doubling of RAM feels like a similar improvement).
+`r devoirs::devoirs_text("dcr-model", rows = 1)`
 
-```{mcq}
-#| label: dcr-3-ram
-#| inline: true
-1. recip()
-2. double()
-3. doublings() [correct]
-```
+**Explain your reasoning:**
 
-4. **Input**: Number of days since an epidemic began. **Output**: Number of infected people (in the early exponential growth phase).
+Why did you choose this storybook function? How did you determine the transformations?
 
-```{mcq}
-#| label: dcr-4-epidemic
-#| inline: true
-1. recip()
-2. double() [correct]
-3. doublings()
-```
-
-5. **Input**: Loudness of a sound (in physical power units). **Output**: How loud it sounds to a human (perceived loudness).
-
-```{mcq}
-#| label: dcr-5-loudness
-#| inline: true
-1. recip()
-2. double()
-3. doublings() [correct hint: Human perception of loudness follows a logarithmic scale—doubling the power produces a constant increase in perceived loudness.]
-```
-
-6. **Input**: Distance from a light source. **Output**: Brightness of the light at that distance.
-
-```{mcq}
-#| label: dcr-6-light
-#| inline: true
-1. recip() [correct hint: Light intensity follows an inverse-square law—as distance increases, brightness decreases rapidly then levels off.]
-2. double()
-3. doublings()
-```
-
-7. **Input**: Number of practice hours. **Output**: Skill improvement (the 10,000-hour rule suggests diminishing returns).
-
-```{mcq}
-#| label: dcr-7-practice
-#| inline: true
-1. recip()
-2. double()
-3. doublings() [correct hint: Early practice hours yield large improvements; later hours yield smaller (but still positive) improvements.]
-```
+`r devoirs::devoirs_text("dcr-reasoning", rows = 4)`
 
 :::
  <!-- end of exr-deer-cross-river -->
