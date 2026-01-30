@@ -7,3 +7,9 @@
 #| echo: false
 {{< include _software/storybook-functions.r >}}
 ```
+
+```{ojs}
+//| echo: false
+// Hidden cell to ensure OJS runtime is loaded for webr
+_webr_ojs_trigger = true
+```
