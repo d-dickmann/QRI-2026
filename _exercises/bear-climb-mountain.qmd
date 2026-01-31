@@ -11,85 +11,100 @@ library(devoirs)
 library(mosaicCalc)
 ```
 
+```{webr}
+#| echo: false
+#| autorun: true
+{{< include _software/storybook-functions.r >}}
+```
+
 ::: {#exr-bear-climb-mountain}
-
-Consider these four storybook functions and their characteristic shapes:
-
-| Function | Shape |
-|----------|-------|
-| `flat()` | Output doesn't change regardless of input |
-| `steady()` | Output increases at a constant rate as input increases |
-| `hillside()` | Output starts low, gradually increases, then levels off |
-| `hill()` | Output rises to a peak, then falls back down |
 
 For each scenario below, choose which storybook function would best model the relationship.
 
 ---
 
-**1.** Cups of coffee consumed → Work productivity that day. (No coffee leaves you groggy; 1-2 cups makes you alert; 5+ cups leaves you jittery.)
+**1.** Model **work productivity** as a function of **cups of coffee consumed**. (No coffee leaves you groggy; 1-2 cups makes you alert; 5+ cups leaves you jittery.)
 
 ```{mcq}
 #| label: bcm-1-coffee
-#| inline: true
 1. flat()
 2. steady()
 3. hillside()
 4. hill() [correct]
+5. osc()
+6. double()
+7. recip()
 ```
 
-**2.** Runtime of a movie (minutes) → Ticket price. (A 90-minute film costs the same as a 3-hour epic.)
+**2.** Model **ticket price** as a function of **movie runtime** (minutes). (A 90-minute film costs the same as a 3-hour epic.)
+
+```{webr}
+#| caption: Explore storybook functions
+# Plot any storybook function to see its shape:
+slice_plot(flat(x) ~ x, domain(x = -3:3))
+```
 
 ```{mcq}
 #| label: bcm-2-movie
-#| inline: true
 1. flat() [correct]
 2. steady()
 3. hillside()
 4. hill()
+5. osc()
+6. double()
+7. recip()
 ```
 
-**3.** Depth below ocean surface (meters) → Water pressure on a diver.
+**3.** Model **tide height** as a function of **hour of the day** (0-24) at a coastal beach.
 
 ```{mcq}
-#| label: bcm-3-pressure
-#| inline: true
+#| label: bcm-3-tide
 1. flat()
-2. steady() [correct hint: Pressure increases by about 1 atmosphere for every 10 meters of depth—a constant rate.]
+2. steady()
 3. hillside()
 4. hill()
+5. osc() [correct hint: Tides rise and fall in a repeating cycle, roughly twice per day.]
+6. double()
+7. recip()
 ```
 
-**4.** Total hours spent learning a new language → Vocabulary words you can recall. (Beginners learn quickly; advanced learners find each new word harder.)
+**4.** Model **vocabulary words you can recall** as a function of **total hours spent learning a new language**. (Beginners learn quickly; advanced learners find each new word harder.)
 
 ```{mcq}
 #| label: bcm-4-language
-#| inline: true
 1. flat()
 2. steady()
 3. hillside() [correct]
 4. hill()
+5. osc()
+6. double()
+7. recip()
 ```
 
-**5.** Days since a meme first appeared → Times it's shared per day. (Memes explode in popularity, peak, then fade.)
+**5.** Model **water pressure on a diver** as a function of **depth below ocean surface** (meters).
 
 ```{mcq}
-#| label: bcm-5-meme
-#| inline: true
+#| label: bcm-5-pressure
+1. flat()
+2. steady() [correct hint: Pressure increases by about 1 atmosphere for every 10 meters of depth—a constant rate.]
+3. hillside()
+4. hill()
+5. osc()
+6. double()
+7. recip()
+```
+
+**6.** Model **times a meme is shared per day** as a function of **days since it first appeared**. (Memes explode in popularity, peak, then fade.)
+
+```{mcq}
+#| label: bcm-6-meme
 1. flat()
 2. steady()
 3. hillside()
 4. hill() [correct]
-```
-
-**6.** Hour of the day (0-24) at a coastal beach → Height of the tide.
-
-```{mcq}
-#| label: bcm-6-tide
-#| inline: true
-1. flat()
-2. steady()
-3. hillside()
-4. None of the above—this requires osc() [correct hint: Tides rise and fall in a repeating cycle, roughly twice per day.]
+5. osc()
+6. double()
+7. recip()
 ```
 
 ---
