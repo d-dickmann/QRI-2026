@@ -21,6 +21,13 @@ library(mosaicCalc)
 
 Both `recip(x)` and `double(-x)` produce outputs that *decrease* as the input increases. But they model fundamentally different processes. This exercise will help you discover the difference.
 
+```{webr}
+#| caption: A space for scratch work
+# Here's a plot of double(-x) to get you started.
+slice_plot(double(-x) ~ x, domain(x = -2:5))
+
+```
+
 **Scenario A — Sharing Pizza**
 
 A pizza has 24 slices. The more people who share it, the fewer slices each person gets.
@@ -116,11 +123,6 @@ A sample starts with 100 grams of a radioactive isotope. Each year, exactly half
 2. Adding 1 to the input [correct]
 3. Multiplying the input by itself
 4. Subtracting half from the output
-```
-
-```{webr}
-#| caption: Explore both scenarios
-
 ```
 
 7. Which statement best captures the difference between `recip` and `double(-x)`?

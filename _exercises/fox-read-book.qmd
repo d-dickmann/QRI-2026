@@ -23,7 +23,11 @@ The storybook functions `double()` and `doublings()` are related. Use the R chun
 
 ```{webr}
 #| caption: Explore double() and doublings()
+# Here's a plot of double() to get you started.
+slice_plot(double(x) ~ x, domain(x = -2:5))
 
+# You can also look at the output of a function for a given value
+doublings(128)
 ```
 
 1. What is `double(5)`?

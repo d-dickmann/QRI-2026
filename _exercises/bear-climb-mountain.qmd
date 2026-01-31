@@ -23,6 +23,12 @@ For each scenario below, choose which storybook function would best model the re
 
 ---
 
+```{webr}
+#| caption: Explore storybook functions
+# Plot any storybook function to see its shape:
+slice_plot(flat(x) ~ x, domain(x = -3:3))
+```
+
 **1.** Model **work productivity** as a function of **cups of coffee consumed**. (No coffee leaves you groggy; 1-2 cups makes you alert; 5+ cups leaves you jittery.)
 
 ```{mcq}
@@ -37,12 +43,6 @@ For each scenario below, choose which storybook function would best model the re
 ```
 
 **2.** Model **ticket price** as a function of **movie runtime** (minutes). (A 90-minute film costs the same as a 3-hour epic.)
-
-```{webr}
-#| caption: Explore storybook functions
-# Plot any storybook function to see its shape:
-slice_plot(flat(x) ~ x, domain(x = -3:3))
-```
 
 ```{mcq}
 #| label: bcm-2-movie
