@@ -86,6 +86,18 @@ When in doubt whether your work has been submitted, submit it again! The compute
 - Assignment 3: [Link to assignment document](Assignment-03-CH5.html) 
     - *Submission deadline*: Start of your class [Wed Jan 28]{title="Section 1"} or [Thurs Jan 29]{title="Sections 3 & 4"}.  
 
+## Week 5 (Feb 2-6)
+
+- Quiz Mon/Tues covering Chapter 6.
+
+- Mon/Tues Reading: Chapter 8 of *QR-A*. Answer and submit the [Reading Questions](https://dtkaplan.github.io/QR-A/RQ-08-composing-functions.html) before your class meeting. 
+
+- Assignment 4: [Link to assignment document](Assignment-04-CH6.html) 
+    - *Submission deadline*: Start of your class [Wed Feb 4]{title="Section 1"} or [Thurs Feb 5]{title="Sections 3 & 4"}.  
+
+- Midterm Exam: During your class period [Wed Feb 4]{title="Section 1"} or [Thurs Feb 5]{title="Sections 3 & 4"}.  
+
+
 
 
 

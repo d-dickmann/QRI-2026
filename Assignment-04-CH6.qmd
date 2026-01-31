@@ -48,7 +48,6 @@ Remember to submit your drill answers through that document. But for the exercis
 ## 6.
 {{< include _exercises/deer-cross-river.qmd >}}
 
-
 :::
 
 ::::
