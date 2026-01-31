@@ -19,48 +19,51 @@ library(mosaicCalc)
 
 ::: {#exr-fox-read-book}
 
-The storybook functions `double()` and `doublings()` are closely related but serve different purposes. Use the R chunk to explore them.
+The storybook functions `double()` and `doublings()` are related. Use the R chunk to explore them.
 
 ```{webr}
 #| caption: Explore double() and doublings()
-# Try different inputs to both functions
 
 ```
 
-1. Starting with 1 item, after 5 doublings, how many items do you have?
+1. What is `double(5)`?
 
 `r devoirs::devoirs_set(choices = c(5, 10, 16, 25, 32), correct = 32, id = "frb-double-5")`
 
-2. If bacteria double every hour, and you start with 1 bacterium, how many will you have after 10 hours?
+2. What is `double(-3)`?
 
-`r devoirs::devoirs_set(choices = c(10, 20, 100, 512, 1024), correct = 1024, id = "frb-bacteria")`
+`r devoirs::devoirs_set(choices = c(-8, -3, 0.125, 0.25, 3), correct = 0.125, id = "frb-double-neg")`
 
-3. What is `double(-2)`?
-
-`r devoirs::devoirs_set(choices = c(-4, -2, 0.25, 0.5, 2), correct = 0.25, id = "frb-double-neg")`
-
-4. If a population grew from 1 to 64, how many doublings occurred?
+3. What is `doublings(64)`?
 
 `r devoirs::devoirs_set(choices = c(4, 5, 6, 7, 8), correct = 6, id = "frb-doublings-64")`
 
-5. What is `doublings(0.5)`?
+4. What is `doublings(0.25)`?
 
-`r devoirs::devoirs_set(choices = c(-2, -1, 0, 0.5, 1), correct = -1, id = "frb-doublings-half")`
+`r devoirs::devoirs_set(choices = c(-4, -2, -1, 0.25, 2), correct = -2, id = "frb-doublings-quarter")`
 
-6. If `double(x)` gives output 128, what was the input `x`?
+5. If `double(x)` outputs 256, what is `x`?
 
-`r devoirs::devoirs_set(choices = c(4, 5, 6, 7, 64), correct = 7, id = "frb-find-input")`
+`r devoirs::devoirs_set(choices = c(4, 6, 8, 16, 128), correct = 8, id = "frb-find-input")`
 
-7. If `doublings(y)` gives output 4, what was the input `y`?
+6. If `doublings(x)` outputs 5, what is `x`?
 
-`r devoirs::devoirs_set(choices = c(2, 4, 8, 16, 32), correct = 16, id = "frb-find-input-2")`
+`r devoirs::devoirs_set(choices = c(5, 10, 16, 25, 32), correct = 32, id = "frb-find-input-2")`
 
-8. What is the relationship between `double()` and `doublings()`?
+7. What is `doublings(double(4))`?
+
+`r devoirs::devoirs_set(choices = c(2, 4, 8, 16, 256), correct = 4, id = "frb-compose-1")`
+
+8. What is `double(doublings(64))`?
+
+`r devoirs::devoirs_set(choices = c(6, 12, 32, 64, 4096), correct = 64, id = "frb-compose-2")`
+
+9. Based on questions 7 and 8, what is the relationship between `double()` and `doublings()`?
 
 ```{mcq}
 #| label: frb-inverse
 1. They always give the same output
-2. They "undo" each other [correct]
+2. They are inverses—each undoes the other [correct]
 3. One is always twice the other
 4. They have no particular relationship
 ```

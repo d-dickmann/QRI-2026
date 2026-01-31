@@ -21,18 +21,20 @@ library(mosaicCalc)
 
 **Chemical Spill Response**
 
-A tanker truck accident has spilled industrial solvent into a municipal reservoir. The EPA safe limit for this chemical is **5 parts per million (ppm)**. Initial readings show a concentration of **80 ppm**.
+A tanker truck accident has spilled industrial solvent into a municipal reservoir. The city immediately shut off water supply and began monitoring contamination levels.
 
-Environmental engineers take measurements over the following days:
+The EPA safe limit for this chemical is **5 parts per million (ppm)**. Initial readings show a concentration of **80 ppm**. The chemical degrades through a combination of natural processes: volatilization (evaporation), photolysis (breakdown by sunlight), and dilution from incoming fresh water.
+
+Environmental engineers take measurements over the following weeks:
 
 | Days after spill | Concentration (ppm) |
 |------------------|---------------------|
 | 0                | 80                  |
-| 3                | 40                  |
-| 6                | 20                  |
-| 9                | 10                  |
+| 7                | 40                  |
+| 14               | 20                  |
+| 21               | 10                  |
 
-The city needs to know: **When will the water be safe to drink?**
+The city council needs to know: **When will the water be safe to drink?**
 
 ```{webr}
 #| caption: Build and test your model
@@ -55,9 +57,9 @@ According to your model, on what day will the concentration first drop below the
 
 **Reflection:**
 
-The mayor wants to announce a reopening date. What would you advise, and why might you recommend some buffer time beyond what the model predicts?
+The mayor wants to announce a reopening date to the public. What date would you advise, and why might you recommend waiting longer than what your model strictly predicts? Consider factors like measurement uncertainty, model limitations, and the consequences of being wrong.
 
-`r devoirs::devoirs_text("dcr-reflection", rows = 3)`
+`r devoirs::devoirs_text("dcr-reflection", rows = 4)`
 
 :::
  <!-- end of exr-deer-cross-river -->

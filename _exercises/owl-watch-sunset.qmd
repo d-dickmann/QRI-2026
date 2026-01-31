@@ -23,7 +23,7 @@ library(mosaicCalc)
 
 Your electric utility charges different rates depending on the time of day. You want to model the price so you can decide when to charge your electric vehicle, run the dishwasher, or do laundry.
 
-The utility publishes this rate schedule:
+The utility publishes sample rates at several times of day:
 
 | Time of day | Price ($/kWh) |
 |-------------|---------------|
@@ -31,9 +31,8 @@ The utility publishes this rate schedule:
 | 10 AM       | $0.20         |
 | 4 PM        | $0.32 (highest) |
 | 10 PM       | $0.20         |
-| 4 AM (next day) | $0.08     |
 
-The price follows a smooth daily cycle.
+**Assume the price changes continuously and smoothly throughout the day** (not in discrete steps).
 
 ```{webr}
 #| caption: Explore osc() and build your model
@@ -65,6 +64,10 @@ Your task: Build a model for **electricity price** (in $/kWh) as a function of *
 6. **Decision time:** Your EV needs 4 hours to charge and uses about 10 kWh. According to your model, approximately how much would it cost to charge starting at midnight vs. starting at 5 PM?
 
 `r devoirs::devoirs_text("ows-decision", rows = 2)`
+
+7. **Model validity:** In reality, most power companies use step changes (e.g., "off-peak" from 9 PM to 7 AM at $0.10, "peak" from 4 PM to 9 PM at $0.30) rather than continuously varying rates. Does this information significantly change the validity of your model for making decisions about when to run appliances? Explain.
+
+`r devoirs::devoirs_text("ows-validity", rows = 3)`
 
 :::
  <!-- end of exr-owl-watch-sunset -->

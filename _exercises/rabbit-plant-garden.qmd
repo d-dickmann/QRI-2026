@@ -19,31 +19,29 @@ library(mosaicCalc)
 
 ::: {#exr-rabbit-plant-garden}
 
-This exercise focuses on **input and output transformations**—the technique for adapting storybook functions to model real-world data with actual units and dimensions.
+This exercise focuses on **input and output transformations**—the technique for adapting storybook functions to model real-world data.
 
 **The setup:** You're modeling the spread of a viral video. The data shows:
+
 - At week 0, essentially no one had seen it (views ≈ 0)
 - By week 10, about half of the eventual maximum viewers had seen it
 - By week 20, views had essentially plateaued at 2 million
 
-The `hillside()` function naturally:
-- Outputs ≈ 0 for large negative inputs
-- Outputs 0.5 when input = 0
-- Outputs ≈ 1 for large positive inputs
+The `hillside()` function naturally outputs ≈ 0 for large negative inputs, 0.5 when input = 0, and ≈ 1 for large positive inputs.
 
-**Part A: Understanding the input transformation**
+**Part A: Input transformation**
 
-The input transformation has the form $a(q - q_0)$ where $q$ is the real-world quantity (weeks, in this case).
+The input transformation has the form $a(q - q_0)$ where $q$ is the real-world input (weeks).
 
-1. We want `hillside()` to output 0.5 when the week is 10. What value should $q_0$ have?
+1. What value should $q_0$ have so that `hillside()` outputs 0.5 at week 10?
 
 `r devoirs::devoirs_set(choices = c(0, 0.5, 5, 10, 20), correct = 10, id = "rpg-q0")`
 
-2. We want `hillside()` to be near its maximum (output ≈ 1) around week 20. The input to `hillside()` should be around +2 when week = 20. Given that $q_0 = 10$, solve for $a$ in: $a(20 - 10) = 2$
+2. We want `hillside()` to output ≈ 1 around week 20. The input to `hillside()` should be around +2 when week = 20. Solve for $a$.
 
 `r devoirs::devoirs_set(choices = c(0.1, 0.2, 0.5, 1, 2), correct = 0.2, id = "rpg-a")`
 
-3. What are the units of parameter $a$?
+3. What are the units of $a$?
 
 ```{mcq}
 #| label: rpg-a-units
@@ -54,15 +52,15 @@ The input transformation has the form $a(q - q_0)$ where $q$ is the real-world q
 4. dimensionless
 ```
 
-**Part B: Understanding the output transformation**
+**Part B: Output transformation**
 
 The output transformation has the form $A \cdot \text{hillside}(\ldots) + B$.
 
-4. The `hillside()` function naturally ranges from 0 to 1. We want our model to range from 0 to 2,000,000 views. What should $A$ be?
+4. What should $A$ be to scale the output to 2 million views?
 
 `r devoirs::devoirs_set(choices = c(1, 1000, 1000000, 2000000), correct = 2000000, id = "rpg-A")`
 
-5. What are the units of parameter $A$?
+5. What are the units of $A$?
 
 ```{mcq}
 #| label: rpg-A-units
@@ -73,33 +71,30 @@ The output transformation has the form $A \cdot \text{hillside}(\ldots) + B$.
 4. dimensionless
 ```
 
-6. Since `hillside()` naturally starts at 0 (for very negative inputs) and we want our model to also start at 0 views, what should $B$ be?
+**Part C: Build and test the model**
 
-`r devoirs::devoirs_set(choices = c(-1000000, 0, 1000000, 2000000), correct = 0, id = "rpg-B")`
-
-**Part C: The complete model**
-
-7. Putting it all together, which expression represents the complete model for views as a function of week?
-
-```{mcq}
-#| label: rpg-complete
-1. hillside(0.2 * (week - 10))
-2. 2000000 * hillside(0.2 * (week - 10)) [correct]
-3. 2000000 * hillside(week - 10)
-4. hillside(2000000 * (week - 10))
-```
+6. Define your transformation parameters and plot the model. Fill in the values for `a`, `q0`, and `A`:
 
 ```{webr}
-#| caption: Test the model
+#| caption: Define parameters and plot
+# Define the transformation parameters
+a <- ___    # input scaling (per week)
+q0 <- ___   # input shift (weeks) 
+A <- ___    # output scaling (views)
+
 # Plot the model
-slice_plot(2000000 * hillside(0.2 * (week - 10)) ~ week, 
+slice_plot(A * hillside(a * (week - q0)) ~ week, 
            domain(week = 0:25)) |>
   gf_labs(y = "Views", x = "Week")
 ```
 
-8. According to this model, approximately how many views would there be at week 5?
+7. According to your model, approximately how many views would there be at week 5?
 
 `r devoirs::devoirs_set(choices = c("about 150,000", "about 500,000", "about 1,000,000", "about 1,500,000"), correct = "about 500,000", id = "rpg-week5")`
+
+8. **Model limitations:** What aspects of real viral video spread does this model fail to capture? Consider factors like the initial launch, word-of-mouth dynamics, platform algorithms, or what happens after the "plateau."
+
+`r devoirs::devoirs_text("rpg-limitations", rows = 3)`
 
 :::
  <!-- end of exr-rabbit-plant-garden -->
