@@ -36,6 +36,7 @@ Remember to submit your drill answers through that document. But for the exercis
 {{< include _exercises/fox-read-book.qmd >}}
 
 ## 3.
+
 {{< include _exercises/squirrel-gather-nuts.qmd >}}
 
 ## 4.
@@ -43,9 +44,11 @@ Remember to submit your drill answers through that document. But for the exercis
 {{< include _exercises/rabbit-plant-garden.qmd >}}
 
 ## 5.
+
 {{< include _exercises/owl-watch-sunset.qmd >}}
 
 ## 6.
+
 {{< include _exercises/deer-cross-river.qmd >}}
 
 :::
