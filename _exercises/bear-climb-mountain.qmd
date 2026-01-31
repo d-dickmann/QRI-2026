@@ -15,14 +15,18 @@ library(mosaicCalc)
 
 Consider these four storybook functions and their characteristic shapes:
 
-- **flat()**: Output doesn't change regardless of input
-- **steady()**: Output increases at a constant rate as input increases  
-- **hillside()**: Output starts low, gradually increases, then levels off at a higher value
-- **hill()**: Output rises from a baseline to a peak, then falls back to the baseline
+| Function | Shape |
+|----------|-------|
+| `flat()` | Output doesn't change regardless of input |
+| `steady()` | Output increases at a constant rate as input increases |
+| `hillside()` | Output starts low, gradually increases, then levels off |
+| `hill()` | Output rises to a peak, then falls back down |
 
-For each real-world scenario below, choose which storybook function would best model the relationship between the input and output.
+For each scenario below, choose which storybook function would best model the relationship.
 
-1. **Input**: Cups of coffee consumed in a morning. **Output**: Your work productivity that day. (No coffee leaves you groggy; 1-2 cups makes you alert and focused; 5+ cups leaves you jittery and unable to concentrate.)
+---
+
+**1.** Cups of coffee consumed → Work productivity that day. (No coffee leaves you groggy; 1-2 cups makes you alert; 5+ cups leaves you jittery.)
 
 ```{mcq}
 #| label: bcm-1-coffee
@@ -33,7 +37,7 @@ For each real-world scenario below, choose which storybook function would best m
 4. hill() [correct]
 ```
 
-2. **Input**: Runtime of a movie (in minutes). **Output**: Ticket price at the cinema. (A 90-minute film costs the same as a 3-hour epic.)
+**2.** Runtime of a movie (minutes) → Ticket price. (A 90-minute film costs the same as a 3-hour epic.)
 
 ```{mcq}
 #| label: bcm-2-movie
@@ -44,7 +48,7 @@ For each real-world scenario below, choose which storybook function would best m
 4. hill()
 ```
 
-3. **Input**: Depth below the ocean surface (in meters). **Output**: Water pressure experienced by a diver.
+**3.** Depth below ocean surface (meters) → Water pressure on a diver.
 
 ```{mcq}
 #| label: bcm-3-pressure
@@ -55,7 +59,7 @@ For each real-world scenario below, choose which storybook function would best m
 4. hill()
 ```
 
-4. **Input**: Total hours spent learning a new language. **Output**: Number of vocabulary words you can recall. (Beginners pick up words quickly; advanced learners find each new word harder to acquire.)
+**4.** Total hours spent learning a new language → Vocabulary words you can recall. (Beginners learn quickly; advanced learners find each new word harder.)
 
 ```{mcq}
 #| label: bcm-4-language
@@ -66,7 +70,7 @@ For each real-world scenario below, choose which storybook function would best m
 4. hill()
 ```
 
-5. **Input**: Days since a meme first appeared online. **Output**: Number of times it's shared per day. (Memes explode in popularity, peak, then fade into obscurity.)
+**5.** Days since a meme first appeared → Times it's shared per day. (Memes explode in popularity, peak, then fade.)
 
 ```{mcq}
 #| label: bcm-5-meme
@@ -77,7 +81,7 @@ For each real-world scenario below, choose which storybook function would best m
 4. hill() [correct]
 ```
 
-6. **Input**: Hour of the day (0-24) at a coastal beach. **Output**: Height of the tide.
+**6.** Hour of the day (0-24) at a coastal beach → Height of the tide.
 
 ```{mcq}
 #| label: bcm-6-tide
@@ -90,9 +94,9 @@ For each real-world scenario below, choose which storybook function would best m
 
 ---
 
-**Reflection question:**
+**Reflection:**
 
-7. Choose ONE of the scenarios above and make a case for using a *different* storybook function to model it. Explain your reasoning: Is the alternative model better than your original answer, roughly equivalent, or worse? Why?
+**7.** Choose ONE of the scenarios above and make a case for using a *different* storybook function to model it. Is the alternative better, equivalent, or worse than your original answer? Why?
 
 `r devoirs::devoirs_text("bcm-reflection")`
 

@@ -37,8 +37,9 @@ Environmental engineers take measurements over the following weeks:
 The city council needs to know: **When will the water be safe to drink?**
 
 ```{webr}
-#| caption: Build and test your model
-
+#| caption: Use this space to explore, build your model, and do any necessary calculations. (Try doing arithmetic here too, for example `(5*2)/2`)
+# Here's double(-x) plotted—this shows exponential decay:
+slice_plot(double(-x) ~ x, domain(x = 0:5))
 ```
 
 Your task: Build a model for **contamination level** (in ppm) as a function of **days since the spill**, then use it to answer the city's question.

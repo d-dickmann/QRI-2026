@@ -29,17 +29,23 @@ This exercise focuses on **input and output transformations**—the technique fo
 
 The `hillside()` function naturally outputs ≈ 0 for large negative inputs, 0.5 when input = 0, and ≈ 1 for large positive inputs.
 
+```{webr}
+#| caption: Use this space to explore, build your model, and do any necessary calculations. (Try doing arithmetic here too, for example `(5*2)/2`)
+# Here's hillside() plotted over its natural domain:
+slice_plot(hillside(x) ~ x, domain(x = -5:5))
+```
+
 **Part A: Input transformation**
 
 The input transformation has the form $a(q - q_0)$ where $q$ is the real-world input (weeks).
 
-1. What value should $q_0$ have so that `hillside()` outputs 0.5 at week 10?
+1. What is the horizontal shift $q_0$? (At what week should `hillside()` output 0.5?)
 
 `r devoirs::devoirs_set(choices = c(0, 0.5, 5, 10, 20), correct = 10, id = "rpg-q0")`
 
-2. We want `hillside()` to output ≈ 1 around week 20. The input to `hillside()` should be around +2 when week = 20. Solve for $a$.
+2. We want `hillside()` to output ≈ 1 around week 20 and ≈ 0 at week 0. For the output to be nearly 1, the input to `hillside()` should be around +5. Given $q_0 = 10$, solve for $a$ in: $a(20 - 10) = 5$
 
-`r devoirs::devoirs_set(choices = c(0.1, 0.2, 0.5, 1, 2), correct = 0.2, id = "rpg-a")`
+`r devoirs::devoirs_set(choices = c(0.1, 0.2, 0.5, 1, 2), correct = 0.5, id = "rpg-a")`
 
 3. What are the units of $a$?
 
@@ -56,7 +62,7 @@ The input transformation has the form $a(q - q_0)$ where $q$ is the real-world i
 
 The output transformation has the form $A \cdot \text{hillside}(\ldots) + B$.
 
-4. What should $A$ be to scale the output to 2 million views?
+4. What is the vertical scaling $A$? (What value scales the output from 0–1 to 0–2,000,000?)
 
 `r devoirs::devoirs_set(choices = c(1, 1000, 1000000, 2000000), correct = 2000000, id = "rpg-A")`
 
@@ -73,14 +79,16 @@ The output transformation has the form $A \cdot \text{hillside}(\ldots) + B$.
 
 **Part C: Build and test the model**
 
-6. Define your transformation parameters and plot the model. Fill in the values for `a`, `q0`, and `A`:
+6. Define your transformation parameters and plot the model. Fill in the values for `a`, `q0`, and `A`.
+
+*In R, you define a variable with `<-` (the assignment arrow). For example: `x <- 5` stores the value 5 in a variable named x.*
 
 ```{webr}
 #| caption: Define parameters and plot
-# Define the transformation parameters
-a <- ___    # input scaling (per week)
-q0 <- ___   # input shift (weeks) 
-A <- ___    # output scaling (views)
+# Define the transformation parameters (replace ___ with your values)
+a <- ___     # input scaling (per week)
+q0 <- ___    # horizontal shift (weeks) 
+A <- ___     # vertical scaling (views)
 
 # Plot the model
 slice_plot(A * hillside(a * (week - q0)) ~ week, 
@@ -90,7 +98,7 @@ slice_plot(A * hillside(a * (week - q0)) ~ week,
 
 7. According to your model, approximately how many views would there be at week 5?
 
-`r devoirs::devoirs_set(choices = c("about 150,000", "about 500,000", "about 1,000,000", "about 1,500,000"), correct = "about 500,000", id = "rpg-week5")`
+`r devoirs::devoirs_set(choices = c("about 13,000", "about 150,000", "about 500,000", "about 1,000,000"), correct = "about 150,000", id = "rpg-week5")`
 
 8. **Model limitations:** What aspects of real viral video spread does this model fail to capture? Consider factors like the initial launch, word-of-mouth dynamics, platform algorithms, or what happens after the "plateau."
 

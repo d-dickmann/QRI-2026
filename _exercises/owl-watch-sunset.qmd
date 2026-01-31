@@ -32,30 +32,37 @@ The utility publishes sample rates at several times of day:
 | 4 PM        | $0.32 (highest) |
 | 10 PM       | $0.20         |
 
-**Assume the price changes continuously and smoothly throughout the day** (not in discrete steps).
+Assume the price changes continuously and smoothly throughout the day (not in discrete steps).
 
 ```{webr}
-#| caption: Explore osc() and build your model
-
+#| caption: Use this space to explore, build your model, and do any necessary calculations. (Try doing arithmetic here too, for example `(5*2)/2`)
+# Here's osc() plotted over its natural domain:
+slice_plot(osc(x) ~ x, domain(x = 0:1))
 ```
 
 Your task: Build a model for **electricity price** (in $/kWh) as a function of **hour of the day** (0-24).
 
-1. What is the average price (halfway between the highest and lowest)?
+**Output transformation:** The output transformation scales and shifts the vertical axis.
+
+1. What is the vertical shift $Q_0$ (the average price, halfway between highest and lowest)?
 
 `r devoirs::devoirs_set(choices = c(0.08, 0.12, 0.20, 0.24, 0.32), correct = 0.20, id = "ows-avg")`
 
-2. What is the amplitude (how far the price swings from the average)?
+2. What is the amplitude $A$ (how far the price swings above or below the average)?
 
 `r devoirs::devoirs_set(choices = c(0.08, 0.12, 0.20, 0.24, 0.32), correct = 0.12, id = "ows-amp")`
+
+**Input transformation:** The input transformation scales and shifts the horizontal axis.
 
 3. The basic `osc()` has a period of 1. To make the model have a period of 24 hours, what goes inside osc()?
 
 `r devoirs::devoirs_set(choices = c("hour/24", "hour*24", "hour - 24", "24/hour"), correct = "hour/24", id = "ows-period")`
 
-4. The price peaks at 4 PM (hour 16), but `osc()` peaks when its input equals 0.25. What input shift aligns the peak correctly?
+4. The price peaks at 4 PM (hour 16), but `osc()` peaks when its input equals 0.25. What horizontal shift $q_0$ aligns the peak correctly?
 
 `r devoirs::devoirs_set(choices = c("(hour - 10)/24", "(hour + 10)/24", "(hour - 4)/24", "(hour + 4)/24"), correct = "(hour - 10)/24", id = "ows-shift")`
+
+**The complete model:**
 
 5. Write the complete model for price as a function of hour (0-24):
 
