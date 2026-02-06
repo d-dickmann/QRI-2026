@@ -60,7 +60,7 @@ The input transformation has the form $a(q - q_0)$ where $q$ is the real-world i
 
 **Part B: Output transformation**
 
-The output transformation has the form $A \cdot \text{hillside}(\ldots) + B$.
+The output transformation has the form $A \cdot$ **hillside**(···) $+ B$.
 
 4. What is the vertical scaling $A$? (What value scales the output from 0–1 to 0–2,000,000?)
 

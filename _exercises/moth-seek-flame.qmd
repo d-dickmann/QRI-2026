@@ -20,19 +20,19 @@ library(mosaicCalc)
 
 **Two-input functions and interaction**
 
-In an epidemic model, **new cases per day** may depend on both the number of **susceptible** people \(S\) and the number of **infective** people \(I\). So we want a function of two inputs: \(\text{new\_cases}(S, I)\). A simple choice is to use a linear combination where each ingredient is a function of *one* input: e.g. \(a\,f(S) + b\,g(I)\). Another option is to use **function multiplication** with two inputs: \(f(S)\,g(I)\).
+In an epidemic model, **new cases per day** may depend on both the number of **susceptible** people \(S\) and the number of **infective** people \(I\). So we want a function of two inputs: **new_cases**($S$, $I$). A simple choice is to use a linear combination where each ingredient is a function of *one* input: e.g. $a\,f(S) + b\,g(I)$. Another option is to use **function multiplication** with two inputs: $f(S)\,g(I)$.
 
 **1.** If we want new cases to be *large* when both \(S\) and \(I\) are large, and *small* when either \(S\) or \(I\) is small, which of these forms is more appropriate?
 
 ```{mcq}
 #| label: msf-form
-1. A linear combination \(a\,\text{steady}(S) + b\,\text{steady}(I)\) (effect of S and I just add)
-2. A product like \(\text{steady}(S) \cdot \text{steady}(I)\) [correct hint: Product is large only when both factors are large.]
-3. A pipeline \(\text{steady}(S)(\text{steady}(I))\)
-4. flat() only
+1. A linear combination $a\cdot$**steady**($S$) $+ b\cdot$**steady**($I$) (effect of S and I just add)
+2. A product like **steady**($S$)·**steady**($I$) [correct hint: Product is large only when both factors are large.]
+3. A pipeline **steady**($S$)(**steady**($I$))
+4. **flat**() only
 ```
 
-**2.** The form \(\text{steady}(S) \cdot \text{steady}(I)\) is often called an **interaction term**. In words, when is this term large?
+**2.** The form **steady**($S$)·**steady**($I$) is often called an **interaction term**. In words, when is this term large?
 
 ```{mcq}
 #| label: msf-interaction
@@ -42,27 +42,27 @@ In an epidemic model, **new cases per day** may depend on both the number of **s
 4. When either S or I is zero
 ```
 
-**3.** A model of **student performance** might use \(\text{perf}(\text{income}, \text{ed}, \text{skill}) = a\,\text{steady}(\text{income}) + b\,\text{steady}(\text{skill}) + c\,\text{steady}(\text{ed}) + d\cdot\text{flat}()\). Here the modeler implicitly used which storybook functions for each input?
+**3.** A model of **student performance** might use **perf**(income, ed, skill) $= a\cdot$**steady**(income) $+ b\cdot$**steady**(skill) $+ c\cdot$**steady**(ed) $+ d\cdot$**flat**(). Here the modeler implicitly used which storybook functions for each input?
 
 ```{mcq}
 #| label: msf-perf
-1. \(\text{hill}(x)\) for each
-2. \(\text{steady}(x)\) for income, skill, and ed; \(\text{flat}()\) for the constant [correct]
-3. \(\text{flat}()\) for all
-4. \(\text{hillside}(x)\) for all
+1. **hill**($x$) for each
+2. **steady**($x$) for income, skill, and ed; **flat**() for the constant [correct]
+3. **flat**() for all
+4. **hillside**($x$) for all
 ```
 
-**4.** If we suspect that the effect of **income** on performance diminishes at high income (diminishing returns), we might replace the term that depends on income with a different storybook function. Which would be a reasonable replacement for \(\text{steady}(\text{income})\)?
+**4.** If we suspect that the effect of **income** on performance diminishes at high income (diminishing returns), we might replace the term that depends on income with a different storybook function. Which would be a reasonable replacement for **steady**(income)?
 
 ```{mcq}
 #| label: msf-replace
-1. \(\text{flat}()\)
-2. \(\text{magnitude}(x)\) or \(\text{hillside}(x)\) [correct]
-3. \(\text{osc}(x)\)
-4. \(\text{recip}(x)\)
+1. **flat**()
+2. **magnitude**($x$) or **hillside**($x$) [correct]
+3. **osc**($x$)
+4. **recip**($x$)
 ```
 
-**5.** The algebraic form of \(\text{steady}(S) \cdot \text{steady}(I)\) is usually written as:
+**5.** The algebraic form of **steady**($S$)·**steady**($I$) is usually written as:
 
 `r devoirs::devoirs_set(choices = c("S + I", "S * I", "S / I", "S - I"), correct = "S * I", id = "msf-algebraic")`
 

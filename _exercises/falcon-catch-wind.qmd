@@ -24,11 +24,9 @@ A café models its **daily revenue** \(R\) (in dollars) as a function of **hours
 
 Suppose the model is
 
-\[
-R(t) = 50\cdot\operatorname{flat}() + 120\cdot\operatorname{steady}(t).
-\]
+$R(t) = 50\cdot$ **flat**$() + 120\cdot$ **steady**$(t)$.
 
-So revenue equals 50 (dollars base) plus 120 times the number of hours open: flat() is the constant function (value 1) and steady($t$) = $t$.
+So revenue equals 50 (dollars base) plus 120 times the number of hours open: **flat**() is the constant function (value 1) and **steady**($t$) = $t$.
 
 ```{webr}
 #| caption: Explore the model
@@ -64,11 +62,7 @@ slice_plot(50*flat(x) + 120*steady(x) ~ x, domain(x = 0:12))
 
 `r devoirs::devoirs_set(choices = c(110, 550, 600, 650), correct = 650, id = "fcw-R5")`
 
-**5.** The owner considers a different model:
-
-\[
-R(t) = a\cdot\operatorname{hillside}(t) + b\cdot\operatorname{flat}().
-\]
+**5.** The owner considers a different model: $R(t) = a\cdot$ **hillside**$(t) + b\cdot$ **flat**$()$ (hillside and flat are storybook functions).
 
 What is the main conceptual difference from the first model?
 

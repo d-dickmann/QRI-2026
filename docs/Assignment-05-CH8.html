@@ -474,8 +474,8 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1
 <p><span class="theorem-title"><strong>Exercise 1</strong></span> <strong>Linear combinations</strong></p>
 <p>A café models its <strong>daily revenue</strong> (R) (in dollars) as a function of <strong>hours open</strong> (t) (0–12). They use a linear combination of two storybook functions: one term captures a base level of sales, and another captures sales that grow with how long the café is open.</p>
 <p>Suppose the model is</p>
-<p>[ R(t) = 50() + 120(t). ]</p>
-<p>So revenue equals 50 (dollars base) plus 120 times the number of hours open: flat() is the constant function (value 1) and steady(<span class="math inline">\(t\)</span>) = <span class="math inline">\(t\)</span>.</p>
+<p><span class="math inline">\(R(t) = 50\cdot\)</span> <strong>flat</strong><span class="math inline">\(() + 120\cdot\)</span> <strong>steady</strong><span class="math inline">\((t)\)</span>.</p>
+<p>So revenue equals 50 (dollars base) plus 120 times the number of hours open: <strong>flat</strong>() is the constant function (value 1) and <strong>steady</strong>(<span class="math inline">\(t\)</span>) = <span class="math inline">\(t\)</span>.</p>
 <div class="cell" data-caption="Explore the model">
 <div>
 <div id="webr-3" class="exercise-cell">
@@ -491,16 +491,16 @@ eyJhdHRyIjp7ImNhcHRpb24iOiJFeHBsb3JlIHRoZSBtb2RlbCIsImVkaXQiOnRydWUsImV2YWwiOnRy
 <span> <small style="color: grey;" id="fcw-ingredients-hintarea" class="hintarea">fcw-ingredients</small>
 <form id="fcw-ingredients-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="50 and 120" id="fcw-ingredients-1" w="7" name="fcw-ingredients" hint="Hmmm ..." show_hints="false"> 50 and 120</p>
+</p><p><input type="radio" class="devoirs-mcq" value="50 and 120" id="fcw-ingredients-1" w="23" name="fcw-ingredients" hint="Try again!" show_hints="false"> 50 and 120</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="flat() and ... teady($t$)" id="fcw-ingredients-2" w="20" name="fcw-ingredients" hint="Excellent!" show_hints="false"> flat() and steady(<span class="math inline">\(t\)</span>)</p>
+</p><p><input type="radio" class="devoirs-mcq" value="flat() and ... teady($t$)" id="fcw-ingredients-2" w="20" name="fcw-ingredients" hint="Spot on!" show_hints="false"> flat() and steady(<span class="math inline">\(t\)</span>)</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="R and t" id="fcw-ingredients-3" w="19" name="fcw-ingredients" hint="Sorry!" show_hints="false"> R and t</p>
+</p><p><input type="radio" class="devoirs-mcq" value="R and t" id="fcw-ingredients-3" w="87" name="fcw-ingredients" hint="No." show_hints="false"> R and t</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="dollars and hours" id="fcw-ingredients-4" w="3" name="fcw-ingredients" hint="Think again." show_hints="false"> dollars and hours</p>
+</p><p><input type="radio" class="devoirs-mcq" value="dollars and hours" id="fcw-ingredients-4" w="19" name="fcw-ingredients" hint="Better luck next time." show_hints="false"> dollars and hours</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="fcw-ingredients" id="fcw-ingredients.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -537,16 +537,16 @@ document.addEventListener('DOMContentLoaded', function() {
 <span> <small style="color: grey;" id="fcw-coeffs-hintarea" class="hintarea">fcw-coeffs</small>
 <form id="fcw-coeffs-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="flat() and ... teady($t$)" id="fcw-coeffs-1" w="7" name="fcw-coeffs" hint="You're mistaken" show_hints="false"> flat() and steady(<span class="math inline">\(t\)</span>)</p>
+</p><p><input type="radio" class="devoirs-mcq" value="flat() and ... teady($t$)" id="fcw-coeffs-1" w="23" name="fcw-coeffs" hint="You're wrong here." show_hints="false"> flat() and steady(<span class="math inline">\(t\)</span>)</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="50 and 120" id="fcw-coeffs-2" w="8" name="fcw-coeffs" hint="Nice." show_hints="false"> 50 and 120</p>
+</p><p><input type="radio" class="devoirs-mcq" value="50 and 120" id="fcw-coeffs-2" w="35" name="fcw-coeffs" hint="Yes!" show_hints="false"> 50 and 120</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="0 and 12" id="fcw-coeffs-3" w="7" name="fcw-coeffs" hint="No." show_hints="false"> 0 and 12</p>
+</p><p><input type="radio" class="devoirs-mcq" value="0 and 12" id="fcw-coeffs-3" w="3" name="fcw-coeffs" hint="Think again." show_hints="false"> 0 and 12</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="R and t" id="fcw-coeffs-4" w="3" name="fcw-coeffs" hint="Not so!" show_hints="false"> R and t</p>
+</p><p><input type="radio" class="devoirs-mcq" value="R and t" id="fcw-coeffs-4" w="3" name="fcw-coeffs" hint="Sorry!" show_hints="false"> R and t</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="fcw-coeffs" id="fcw-coeffs.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -581,7 +581,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p><strong>3.</strong> When the café is open 0 hours, what does the model predict for revenue?</p>
 <span> <small style="color: grey;" id="fcw-R0-hintarea" class="hintarea">fcw-R0</small>
 <form id="fcw-R0-form">
-<span> <span> <input type="radio" class="devoirs-mcq" value="0" id="fcw-R0-1" w="7" name="fcw-R0" hint="Wrong." show_hints="false"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="50" id="fcw-R0-2" w="8" name="fcw-R0" hint="You've got it!" show_hints="false"> 50 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="120" id="fcw-R0-3" w="23" name="fcw-R0" hint="Sorry!" show_hints="false"> 120 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="170" id="fcw-R0-4" w="23" name="fcw-R0" hint="Try again!" show_hints="false"> 170 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fcw-R0" id="fcw-R0.null" style="display: none;" w="skipped" checked=""> </span> </span>
+<span> <span> <input type="radio" class="devoirs-mcq" value="0" id="fcw-R0-1" w="19" name="fcw-R0" hint="Sorry!" show_hints="false"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="50" id="fcw-R0-2" w="29" name="fcw-R0" hint="Yes!" show_hints="false"> 50 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="120" id="fcw-R0-3" w="19" name="fcw-R0" hint="Not quite right." show_hints="false"> 120 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="170" id="fcw-R0-4" w="3" name="fcw-R0" hint="Nope." show_hints="false"> 170 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fcw-R0" id="fcw-R0.null" style="display: none;" w="skipped" checked=""> </span> </span>
 </form>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
@@ -613,7 +613,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p><strong>4.</strong> When the café is open 5 hours, what does the model predict for revenue (in dollars)?</p>
 <span> <small style="color: grey;" id="fcw-R5-hintarea" class="hintarea">fcw-R5</small>
 <form id="fcw-R5-form">
-<span> <span> <input type="radio" class="devoirs-mcq" value="110" id="fcw-R5-1" w="87" name="fcw-R5" hint="Not on target." show_hints="false"> 110 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="550" id="fcw-R5-2" w="7" name="fcw-R5" hint="No." show_hints="false"> 550 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="600" id="fcw-R5-3" w="32" name="fcw-R5" hint="Not on target." show_hints="false"> 600 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="650" id="fcw-R5-4" w="41" name="fcw-R5" hint="You're right!" show_hints="false"> 650 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fcw-R5" id="fcw-R5.null" style="display: none;" w="skipped" checked=""> </span> </span>
+<span> <span> <input type="radio" class="devoirs-mcq" value="110" id="fcw-R5-1" w="87" name="fcw-R5" hint="Try again!" show_hints="false"> 110 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="550" id="fcw-R5-2" w="7" name="fcw-R5" hint="Better luck next time." show_hints="false"> 550 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="600" id="fcw-R5-3" w="32" name="fcw-R5" hint="Boo!" show_hints="false"> 600 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="650" id="fcw-R5-4" w="14" name="fcw-R5" hint="Yes." show_hints="false"> 650 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fcw-R5" id="fcw-R5.null" style="display: none;" w="skipped" checked=""> </span> </span>
 </form>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
@@ -642,8 +642,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 </script>
 <p></p>
-<p><strong>5.</strong> The owner considers a different model:</p>
-<p>[ R(t) = a(t) + b(). ]</p>
+<p><strong>5.</strong> The owner considers a different model: <span class="math inline">\(R(t) = a\cdot\)</span> <strong>hillside</strong><span class="math inline">\((t) + b\cdot\)</span> <strong>flat</strong><span class="math inline">\(()\)</span> (hillside and flat are storybook functions).</p>
 <p>What is the main conceptual difference from the first model?</p>
 <div class="cell">
 <span> <small style="color: grey;" id="fcw-hillside-hintarea" class="hintarea">fcw-hillside</small>
@@ -652,13 +651,13 @@ document.addEventListener('DOMContentLoaded', function() {
 </p><p><input type="radio" class="devoirs-mcq" value="The coeffi ... different." id="fcw-hillside-1" w="87" name="fcw-hillside" hint="Hmmm ..." show_hints="false"> The coefficients are different.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Sales now  ... tant rate." id="fcw-hillside-2" w="18" name="fcw-hillside" hint="Certainly." show_hints="false"> Sales now grow in a “diminishing returns” way (steep at first, then leveling off) instead of at a constant rate.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Sales now  ... tant rate." id="fcw-hillside-2" w="35" name="fcw-hillside" hint="Yup!" show_hints="false"> Sales now grow in a “diminishing returns” way (steep at first, then leveling off) instead of at a constant rate.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Revenue ca ...  negative." id="fcw-hillside-3" w="23" name="fcw-hillside" hint="Not quite right." show_hints="false"> Revenue can be negative.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Revenue ca ...  negative." id="fcw-hillside-3" w="32" name="fcw-hillside" hint="You're mistaken" show_hints="false"> Revenue can be negative.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="There is n ... ifference." id="fcw-hillside-4" w="3" name="fcw-hillside" hint="Better luck next time." show_hints="false"> There is no difference.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="There is n ... ifference." id="fcw-hillside-4" w="87" name="fcw-hillside" hint="Incorrect." show_hints="false"> There is no difference.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="fcw-hillside" id="fcw-hillside.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -732,7 +731,11 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1
 <li><strong>Pipelining:</strong> (h(x) = f(g(x))) — the output of (g) is fed as the input to (f). (Pipelining is also known as <strong>piping</strong> or <strong>composing functions</strong>.)</li>
 </ul>
 <p>In display form:</p>
-<p>[ h(x) = f(x)g(x) h(x) = f(g(x)) ]</p>
+<ul>
+<li><strong>Multiplication:</strong> <span class="math inline">\(h(x) = f(x)\cdot g(x)\)</span><br>
+</li>
+<li><strong>Pipelining:</strong> <span class="math inline">\(h(x) = f(g(x))\)</span></li>
+</ul>
 <div class="cell" data-caption="Compare multiplication and pipelining">
 <div>
 <div id="webr-5" class="exercise-cell">
@@ -743,21 +746,21 @@ eyJhdHRyIjp7ImNhcHRpb24iOiJDb21wYXJlIG11bHRpcGxpY2F0aW9uIGFuZCBwaXBlbGluaW5nIiwi
 </script>
 </div>
 </div>
-<p><strong>1.</strong> Consider the function (h(x) = (x) (x)). What is another name for this function?</p>
+<p><strong>1.</strong> Consider the function <span class="math inline">\(h(x) =\)</span> <strong>steady</strong><span class="math inline">\((x)\cdot\)</span> <strong>steady</strong><span class="math inline">\((x)\)</span>. What is another name for this function?</p>
 <div class="cell">
 <span> <small style="color: grey;" id="obd-square-hintarea" class="hintarea">obd-square</small>
 <form id="obd-square-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="flat($x$)" id="obd-square-1" w="19" name="obd-square" hint="Boo!" show_hints="false"> flat(<span class="math inline">\(x\)</span>)</p>
+</p><p><input type="radio" class="devoirs-mcq" value="flat($x$)" id="obd-square-1" w="3" name="obd-square" hint="Hmmm ..." show_hints="false"> flat(<span class="math inline">\(x\)</span>)</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="steady($x$)" id="obd-square-2" w="3" name="obd-square" hint="No." show_hints="false"> steady(<span class="math inline">\(x\)</span>)</p>
+</p><p><input type="radio" class="devoirs-mcq" value="steady($x$)" id="obd-square-2" w="3" name="obd-square" hint="Incorrect choice." show_hints="false"> steady(<span class="math inline">\(x\)</span>)</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The square ... i.e. $x^2$" id="obd-square-3" w="35" name="obd-square" hint="Yes!" show_hints="false"> The square of <span class="math inline">\(x\)</span>, i.e.&nbsp;<span class="math inline">\(x^2\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="The square ... i.e. $x^2$" id="obd-square-3" w="41" name="obd-square" hint="You're right." show_hints="false"> The square of <span class="math inline">\(x\)</span>, i.e.&nbsp;<span class="math inline">\(x^2\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="A pipeline ... teady($x$)" id="obd-square-4" w="23" name="obd-square" hint="Sorry!" show_hints="false"> A pipeline of steady(<span class="math inline">\(x\)</span>) and steady(<span class="math inline">\(x\)</span>)</p>
+</p><p><input type="radio" class="devoirs-mcq" value="A pipeline ... teady($x$)" id="obd-square-4" w="32" name="obd-square" hint="Boo!" show_hints="false"> A pipeline of steady(<span class="math inline">\(x\)</span>) and steady(<span class="math inline">\(x\)</span>)</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="obd-square" id="obd-square.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -794,10 +797,10 @@ document.addEventListener('DOMContentLoaded', function() {
 <span> <small style="color: grey;" id="obd-same-hintarea" class="hintarea">obd-same</small>
 <form id="obd-same-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="True" id="obd-same-1" w="19" name="obd-same" hint="Incorrect." show_hints="false"> True</p>
+</p><p><input type="radio" class="devoirs-mcq" value="True" id="obd-same-1" w="23" name="obd-same" hint="Incorrect choice." show_hints="false"> True</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="False" id="obd-same-2" w="18" name="obd-same" hint="Correct." show_hints="false"> False</p>
+</p><p><input type="radio" class="devoirs-mcq" value="False" id="obd-same-2" w="5" name="obd-same" hint="That's right." show_hints="false"> False</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="obd-same" id="obd-same.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -834,7 +837,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <span> <small style="color: grey;" id="obd-two-inputs-hintarea" class="hintarea">obd-two-inputs</small>
 <form id="obd-two-inputs-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Yes" id="obd-two-inputs-1" w="23" name="obd-two-inputs" hint="Boo!" show_hints="false"> Yes</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Yes" id="obd-two-inputs-1" w="7" name="obd-two-inputs" hint="Incorrect." show_hints="false"> Yes</p>
 <p></p>
 <p>
 </p><p><input type="radio" class="devoirs-mcq" value="No" id="obd-two-inputs-2" w="29" name="obd-two-inputs" hint="There is only one argument slot—the input to the interior function." show_hints="false"> No</p>
@@ -869,21 +872,21 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <p></p>
 </span></div>
-<p><strong>4.</strong> Suppose (h(x) = ((x) + 2)). Which function is in the <em>interior</em> position?</p>
+<p><strong>4.</strong> Suppose <span class="math inline">\(h(x) =\)</span> <strong>hill</strong><span class="math inline">\((\)</span> <strong>steady</strong><span class="math inline">\((x) + 2)\)</span>. Which function is in the <em>interior</em> position?</p>
 <div class="cell">
 <span> <small style="color: grey;" id="obd-interior-hintarea" class="hintarea">obd-interior</small>
 <form id="obd-interior-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="hill($x$)" id="obd-interior-1" w="7" name="obd-interior" hint="Incorrect choice." show_hints="false"> hill(<span class="math inline">\(x\)</span>)</p>
+</p><p><input type="radio" class="devoirs-mcq" value="hill($x$)" id="obd-interior-1" w="3" name="obd-interior" hint="Wrong." show_hints="false"> hill(<span class="math inline">\(x\)</span>)</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="steady($x$)" id="obd-interior-2" w="20" name="obd-interior" hint="You're right!" show_hints="false"> steady(<span class="math inline">\(x\)</span>)</p>
+</p><p><input type="radio" class="devoirs-mcq" value="steady($x$)" id="obd-interior-2" w="16" name="obd-interior" hint="You've got it!" show_hints="false"> steady(<span class="math inline">\(x\)</span>)</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Both are interior" id="obd-interior-3" w="19" name="obd-interior" hint="Incorrect choice." show_hints="false"> Both are interior</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Both are interior" id="obd-interior-3" w="19" name="obd-interior" hint="Boo!" show_hints="false"> Both are interior</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Neither; t ... iplication" id="obd-interior-4" w="19" name="obd-interior" hint="Not so!" show_hints="false"> Neither; this is multiplication</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Neither; t ... iplication" id="obd-interior-4" w="32" name="obd-interior" hint="Think again." show_hints="false"> Neither; this is multiplication</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="obd-interior" id="obd-interior.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -920,16 +923,16 @@ document.addEventListener('DOMContentLoaded', function() {
 <span> <small style="color: grey;" id="obd-jxz-hintarea" class="hintarea">obd-jxz</small>
 <form id="obd-jxz-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="One input; ... pipelining" id="obd-jxz-1" w="19" name="obd-jxz" hint="Not quite." show_hints="false"> One input; pipelining</p>
+</p><p><input type="radio" class="devoirs-mcq" value="One input; ... pipelining" id="obd-jxz-1" w="32" name="obd-jxz" hint="Incorrect." show_hints="false"> One input; pipelining</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="One input; ... iplication" id="obd-jxz-2" w="32" name="obd-jxz" hint="Incorrect." show_hints="false"> One input; multiplication</p>
+</p><p><input type="radio" class="devoirs-mcq" value="One input; ... iplication" id="obd-jxz-2" w="3" name="obd-jxz" hint="Think again." show_hints="false"> One input; multiplication</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Two inputs ... pipelining" id="obd-jxz-3" w="23" name="obd-jxz" hint="Oops!" show_hints="false"> Two inputs; pipelining</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Two inputs ... pipelining" id="obd-jxz-3" w="23" name="obd-jxz" hint="You're mistaken" show_hints="false"> Two inputs; pipelining</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Two inputs ... iplication" id="obd-jxz-4" w="16" name="obd-jxz" hint="Spot on!" show_hints="false"> Two inputs; multiplication</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Two inputs ... iplication" id="obd-jxz-4" w="35" name="obd-jxz" hint="A hit!" show_hints="false"> Two inputs; multiplication</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="obd-jxz" id="obd-jxz.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -997,22 +1000,22 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1
 </div>
 <div id="exr-moth-seek-flame" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 3</strong></span> <strong>Two-input functions and interaction</strong></p>
-<p>In an epidemic model, <strong>new cases per day</strong> may depend on both the number of <strong>susceptible</strong> people (S) and the number of <strong>infective</strong> people (I). So we want a function of two inputs: ((S, I)). A simple choice is to use a linear combination where each ingredient is a function of <em>one</em> input: e.g.&nbsp;(a,f(S) + b,g(I)). Another option is to use <strong>function multiplication</strong> with two inputs: (f(S),g(I)).</p>
+<p>In an epidemic model, <strong>new cases per day</strong> may depend on both the number of <strong>susceptible</strong> people (S) and the number of <strong>infective</strong> people (I). So we want a function of two inputs: <strong>new_cases</strong>(<span class="math inline">\(S\)</span>, <span class="math inline">\(I\)</span>). A simple choice is to use a linear combination where each ingredient is a function of <em>one</em> input: e.g.&nbsp;<span class="math inline">\(a\,f(S) + b\,g(I)\)</span>. Another option is to use <strong>function multiplication</strong> with two inputs: <span class="math inline">\(f(S)\,g(I)\)</span>.</p>
 <p><strong>1.</strong> If we want new cases to be <em>large</em> when both (S) and (I) are large, and <em>small</em> when either (S) or (I) is small, which of these forms is more appropriate?</p>
 <div class="cell">
 <span> <small style="color: grey;" id="msf-form-hintarea" class="hintarea">msf-form</small>
 <form id="msf-form-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="A linear c ...  just add)" id="msf-form-1" w="19" name="msf-form" hint="Not so!" show_hints="false"> A linear combination (a,(S) + b,(I)) (effect of S and I just add)</p>
+</p><p><input type="radio" class="devoirs-mcq" value="A linear c ...  just add)" id="msf-form-1" w="23" name="msf-form" hint="Hmmm ..." show_hints="false"> A linear combination <span class="math inline">\(a\cdot\)</span><strong>steady</strong>(<span class="math inline">\(S\)</span>) <span class="math inline">\(+ b\cdot\)</span><strong>steady</strong>(<span class="math inline">\(I\)</span>) (effect of S and I just add)</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="A product  ... eady}(I)\)" id="msf-form-2" w="5" name="msf-form" hint="Product is large only when both factors are large." show_hints="false"> A product like ((S) (I))</p>
+</p><p><input type="radio" class="devoirs-mcq" value="A product  ... ady**($I$)" id="msf-form-2" w="5" name="msf-form" hint="Product is large only when both factors are large." show_hints="false"> A product like <strong>steady</strong>(<span class="math inline">\(S\)</span>)·<strong>steady</strong>(<span class="math inline">\(I\)</span>)</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="A pipeline ... ady}(I))\)" id="msf-form-3" w="32" name="msf-form" hint="Incorrect choice." show_hints="false"> A pipeline ((S)((I)))</p>
+</p><p><input type="radio" class="devoirs-mcq" value="A pipeline ... dy**($I$))" id="msf-form-3" w="32" name="msf-form" hint="You're mistaken" show_hints="false"> A pipeline <strong>steady</strong>(<span class="math inline">\(S\)</span>)(<strong>steady</strong>(<span class="math inline">\(I\)</span>))</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="flat() only" id="msf-form-4" w="87" name="msf-form" hint="You're wrong here." show_hints="false"> flat() only</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**flat**() only" id="msf-form-4" w="32" name="msf-form" hint="You're mistaken" show_hints="false"> <strong>flat</strong>() only</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="msf-form" id="msf-form.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -1044,21 +1047,21 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <p></p>
 </span></div>
-<p><strong>2.</strong> The form ((S) (I)) is often called an <strong>interaction term</strong>. In words, when is this term large?</p>
+<p><strong>2.</strong> The form <strong>steady</strong>(<span class="math inline">\(S\)</span>)·<strong>steady</strong>(<span class="math inline">\(I\)</span>) is often called an <strong>interaction term</strong>. In words, when is this term large?</p>
 <div class="cell">
 <span> <small style="color: grey;" id="msf-interaction-hintarea" class="hintarea">msf-interaction</small>
 <form id="msf-interaction-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="When S is  ... I is large" id="msf-interaction-1" w="87" name="msf-interaction" hint="You might think so, but ..." show_hints="false"> When S is large or I is large</p>
+</p><p><input type="radio" class="devoirs-mcq" value="When S is  ... I is large" id="msf-interaction-1" w="32" name="msf-interaction" hint="You're mistaken" show_hints="false"> When S is large or I is large</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="When S and ... both large" id="msf-interaction-2" w="8" name="msf-interaction" hint="Exactly." show_hints="false"> When S and I are both large</p>
+</p><p><input type="radio" class="devoirs-mcq" value="When S and ... both large" id="msf-interaction-2" w="20" name="msf-interaction" hint="Bullseye!" show_hints="false"> When S and I are both large</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="When S equals I" id="msf-interaction-3" w="32" name="msf-interaction" hint="Hmmm ..." show_hints="false"> When S equals I</p>
+</p><p><input type="radio" class="devoirs-mcq" value="When S equals I" id="msf-interaction-3" w="23" name="msf-interaction" hint="You might think so, but ..." show_hints="false"> When S equals I</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="When eithe ...  I is zero" id="msf-interaction-4" w="23" name="msf-interaction" hint="Wrong." show_hints="false"> When either S or I is zero</p>
+</p><p><input type="radio" class="devoirs-mcq" value="When eithe ...  I is zero" id="msf-interaction-4" w="19" name="msf-interaction" hint="Incorrect." show_hints="false"> When either S or I is zero</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="msf-interaction" id="msf-interaction.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -1090,21 +1093,21 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <p></p>
 </span></div>
-<p><strong>3.</strong> A model of <strong>student performance</strong> might use ((, , ) = a,() + b,() + c,() + d()). Here the modeler implicitly used which storybook functions for each input?</p>
+<p><strong>3.</strong> A model of <strong>student performance</strong> might use <strong>perf</strong>(income, ed, skill) <span class="math inline">\(= a\cdot\)</span><strong>steady</strong>(income) <span class="math inline">\(+ b\cdot\)</span><strong>steady</strong>(skill) <span class="math inline">\(+ c\cdot\)</span><strong>steady</strong>(ed) <span class="math inline">\(+ d\cdot\)</span><strong>flat</strong>(). Here the modeler implicitly used which storybook functions for each input?</p>
 <div class="cell">
 <span> <small style="color: grey;" id="msf-perf-hintarea" class="hintarea">msf-perf</small>
 <form id="msf-perf-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{hi ... ) for each" id="msf-perf-1" w="7" name="msf-perf" hint="Think again." show_hints="false"> ((x)) for each</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**hill**($ ... ) for each" id="msf-perf-1" w="23" name="msf-perf" hint="Not quite right." show_hints="false"> <strong>hill</strong>(<span class="math inline">\(x\)</span>) for each</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{st ... e constant" id="msf-perf-2" w="8" name="msf-perf" hint="Certainly." show_hints="false"> ((x)) for income, skill, and ed; (()) for the constant</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**steady** ... e constant" id="msf-perf-2" w="35" name="msf-perf" hint="Spot on!" show_hints="false"> <strong>steady</strong>(<span class="math inline">\(x\)</span>) for income, skill, and ed; <strong>flat</strong>() for the constant</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{fl ... \) for all" id="msf-perf-3" w="32" name="msf-perf" hint="This is wide of the mark." show_hints="false"> (()) for all</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**flat**() for all" id="msf-perf-3" w="32" name="msf-perf" hint="Boo!" show_hints="false"> <strong>flat</strong>() for all</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{hi ... \) for all" id="msf-perf-4" w="19" name="msf-perf" hint="Try again!" show_hints="false"> ((x)) for all</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**hillside ... $) for all" id="msf-perf-4" w="19" name="msf-perf" hint="Not on target." show_hints="false"> <strong>hillside</strong>(<span class="math inline">\(x\)</span>) for all</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="msf-perf" id="msf-perf.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -1136,21 +1139,21 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <p></p>
 </span></div>
-<p><strong>4.</strong> If we suspect that the effect of <strong>income</strong> on performance diminishes at high income (diminishing returns), we might replace the term that depends on income with a different storybook function. Which would be a reasonable replacement for (())?</p>
+<p><strong>4.</strong> If we suspect that the effect of <strong>income</strong> on performance diminishes at high income (diminishing returns), we might replace the term that depends on income with a different storybook function. Which would be a reasonable replacement for <strong>steady</strong>(income)?</p>
 <div class="cell">
 <span> <small style="color: grey;" id="msf-replace-hintarea" class="hintarea">msf-replace</small>
 <form id="msf-replace-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{flat}()\)" id="msf-replace-1" w="7" name="msf-replace" hint="Incorrect choice." show_hints="false"> (())</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**flat**()" id="msf-replace-1" w="19" name="msf-replace" hint="Oops!" show_hints="false"> <strong>flat</strong>()</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{ma ... side}(x)\)" id="msf-replace-2" w="35" name="msf-replace" hint="Right-O!" show_hints="false"> ((x)) or ((x))</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**magnitud ... ide**($x$)" id="msf-replace-2" w="35" name="msf-replace" hint="You've got it!" show_hints="false"> <strong>magnitude</strong>(<span class="math inline">\(x\)</span>) or <strong>hillside</strong>(<span class="math inline">\(x\)</span>)</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{osc}(x)\)" id="msf-replace-3" w="23" name="msf-replace" hint="Incorrect choice." show_hints="false"> ((x))</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**osc**($x$)" id="msf-replace-3" w="3" name="msf-replace" hint="Untrue!" show_hints="false"> <strong>osc</strong>(<span class="math inline">\(x\)</span>)</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{recip}(x)\)" id="msf-replace-4" w="87" name="msf-replace" hint="Wrong." show_hints="false"> ((x))</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**recip**($x$)" id="msf-replace-4" w="7" name="msf-replace" hint="Untrue!" show_hints="false"> <strong>recip</strong>(<span class="math inline">\(x\)</span>)</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="msf-replace" id="msf-replace.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -1182,10 +1185,10 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <p></p>
 </span></div>
-<p><strong>5.</strong> The algebraic form of ((S) (I)) is usually written as:</p>
+<p><strong>5.</strong> The algebraic form of <strong>steady</strong>(<span class="math inline">\(S\)</span>)·<strong>steady</strong>(<span class="math inline">\(I\)</span>) is usually written as:</p>
 <span> <small style="color: grey;" id="msf-algebraic-hintarea" class="hintarea">msf-algebraic</small>
 <form id="msf-algebraic-form">
-<span> <span> <input type="radio" class="devoirs-mcq" value="S + I" id="msf-algebraic-1" w="3" name="msf-algebraic" hint="Try again!" show_hints="false"> S + I &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="S * I" id="msf-algebraic-2" w="41" name="msf-algebraic" hint="Yes!" show_hints="false"> S * I &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="S / I" id="msf-algebraic-3" w="87" name="msf-algebraic" hint="You're wrong here." show_hints="false"> S / I &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="S - I" id="msf-algebraic-4" w="32" name="msf-algebraic" hint="No." show_hints="false"> S - I &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="msf-algebraic" id="msf-algebraic.null" style="display: none;" w="skipped" checked=""> </span> </span>
+<span> <span> <input type="radio" class="devoirs-mcq" value="S + I" id="msf-algebraic-1" w="19" name="msf-algebraic" hint="Boo!" show_hints="false"> S + I &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="S * I" id="msf-algebraic-2" w="8" name="msf-algebraic" hint="You've got it!" show_hints="false"> S * I &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="S / I" id="msf-algebraic-3" w="3" name="msf-algebraic" hint="Better luck next time." show_hints="false"> S / I &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="S - I" id="msf-algebraic-4" w="3" name="msf-algebraic" hint="Wrong." show_hints="false"> S - I &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="msf-algebraic" id="msf-algebraic.null" style="display: none;" w="skipped" checked=""> </span> </span>
 </form>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
@@ -1250,22 +1253,22 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1
 </div>
 <div id="exr-crow-open-walnut" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 4</strong></span> <strong>Polynomials and monomials</strong></p>
-<p>A <strong>polynomial</strong> is a linear combination of simpler functions called <strong>monomials</strong>. Using storybook names: (()), ((x)), ((x)(x)), ((x)(x)(x)), and so on. In algebra we write these as 1, (x), (x^2), (x^3), etc. So the quadratic polynomial (a x^2 + b x + c) is a linear combination of three ingredient functions.</p>
-<p><strong>1.</strong> In the quadratic (a x^2 + b x + c), which storybook function corresponds to the term (x^2)?</p>
+<p>A <strong>polynomial</strong> is a linear combination of simpler functions called <strong>monomials</strong>. Using storybook names: <strong>flat</strong>(), <strong>steady</strong>(<span class="math inline">\(x\)</span>), <strong>steady</strong>(<span class="math inline">\(x\)</span>)·<strong>steady</strong>(<span class="math inline">\(x\)</span>), <strong>steady</strong>(<span class="math inline">\(x\)</span>)·<strong>steady</strong>(<span class="math inline">\(x\)</span>)·<strong>steady</strong>(<span class="math inline">\(x\)</span>), and so on. In algebra we write these as 1, <span class="math inline">\(x\)</span>, <span class="math inline">\(x^2\)</span>, <span class="math inline">\(x^3\)</span>, etc. So the quadratic polynomial <span class="math inline">\(a x^2 + b x + c\)</span> is a linear combination of three ingredient functions.</p>
+<p><strong>1.</strong> In the quadratic <span class="math inline">\(a x^2 + b x + c\)</span>, which storybook function corresponds to the term <span class="math inline">\(x^2\)</span>?</p>
 <div class="cell">
 <span> <small style="color: grey;" id="cow-x2-hintarea" class="hintarea">cow-x2</small>
 <form id="cow-x2-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{flat}()\)" id="cow-x2-1" w="3" name="cow-x2" hint="Not so!" show_hints="false"> (())</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**flat**()" id="cow-x2-1" w="7" name="cow-x2" hint="Wrong." show_hints="false"> <strong>flat</strong>()</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{st ... eady}(x)\)" id="cow-x2-2" w="19" name="cow-x2" hint="Wrong." show_hints="false"> ((x))</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**steady**($x$)" id="cow-x2-2" w="87" name="cow-x2" hint="You're mistaken" show_hints="false"> <strong>steady</strong>(<span class="math inline">\(x\)</span>)</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{st ... . \(x^2\))" id="cow-x2-3" w="5" name="cow-x2" hint="You're right." show_hints="false"> ((x)(x)) (i.e.&nbsp;(x^2))</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**steady** ... .e. $x^2$)" id="cow-x2-3" w="41" name="cow-x2" hint="Yes!" show_hints="false"> <strong>steady</strong>(<span class="math inline">\(x\)</span>)·<strong>steady</strong>(<span class="math inline">\(x\)</span>) (i.e.&nbsp;<span class="math inline">\(x^2\)</span>)</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{hi ... side}(x)\)" id="cow-x2-4" w="7" name="cow-x2" hint="Boo!" show_hints="false"> ((x))</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**hillside**($x$)" id="cow-x2-4" w="7" name="cow-x2" hint="Think again." show_hints="false"> <strong>hillside</strong>(<span class="math inline">\(x\)</span>)</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="cow-x2" id="cow-x2.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -1302,16 +1305,16 @@ document.addEventListener('DOMContentLoaded', function() {
 <span> <small style="color: grey;" id="cow-poly-hintarea" class="hintarea">cow-poly</small>
 <form id="cow-poly-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Many coefficients" id="cow-poly-1" w="87" name="cow-poly" hint="This is wide of the mark." show_hints="false"> Many coefficients</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Many coefficients" id="cow-poly-1" w="19" name="cow-poly" hint="Try again!" show_hints="false"> Many coefficients</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Many inputs" id="cow-poly-2" w="7" name="cow-poly" hint="Not on target." show_hints="false"> Many inputs</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Many inputs" id="cow-poly-2" w="7" name="cow-poly" hint="Better luck next time." show_hints="false"> Many inputs</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Many terms ... ombination" id="cow-poly-3" w="8" name="cow-poly" hint="Excellent!" show_hints="false"> Many terms (monomials) in the linear combination</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Many terms ... ombination" id="cow-poly-3" w="41" name="cow-poly" hint="Exactly." show_hints="false"> Many terms (monomials) in the linear combination</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Many outputs" id="cow-poly-4" w="23" name="cow-poly" hint="You might think so, but ..." show_hints="false"> Many outputs</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Many outputs" id="cow-poly-4" w="3" name="cow-poly" hint="Boo!" show_hints="false"> Many outputs</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="cow-poly" id="cow-poly.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -1348,16 +1351,16 @@ document.addEventListener('DOMContentLoaded', function() {
 <span> <small style="color: grey;" id="cow-monomials-hintarea" class="hintarea">cow-monomials</small>
 <form id="cow-monomials-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="5, -3, 10" id="cow-monomials-1" w="23" name="cow-monomials" hint="Try again!" show_hints="false"> 5, -3, 10</p>
+</p><p><input type="radio" class="devoirs-mcq" value="5, -3, 10" id="cow-monomials-1" w="23" name="cow-monomials" hint="You're wrong here." show_hints="false"> 5, -3, 10</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(5x^2\),  ... (-3x\), 10" id="cow-monomials-2" w="7" name="cow-monomials" hint="Oops!" show_hints="false"> (5x^2), (-3x), 10</p>
+</p><p><input type="radio" class="devoirs-mcq" value="\(5x^2\),  ... (-3x\), 10" id="cow-monomials-2" w="32" name="cow-monomials" hint="You're mistaken" show_hints="false"> (5x^2), (-3x), 10</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(x^2\), \ ... flat}()\))" id="cow-monomials-3" w="41" name="cow-monomials" hint="Score!" show_hints="false"> (x^2), (x), and the constant 1 (i.e.&nbsp;(()))</p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x^2$, $x$ ... *flat**())" id="cow-monomials-3" w="35" name="cow-monomials" hint="Right!" show_hints="false"> <span class="math inline">\(x^2\)</span>, <span class="math inline">\(x\)</span>, and the constant 1 (i.e.&nbsp;<strong>flat</strong>())</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{st ... {flat}()\)" id="cow-monomials-4" w="32" name="cow-monomials" hint="You're mistaken" show_hints="false"> ((x)(x)), ((x)), (())</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**steady** ... **flat**()" id="cow-monomials-4" w="23" name="cow-monomials" hint="Not so!" show_hints="false"> <strong>steady</strong>(<span class="math inline">\(x\)</span>)·<strong>steady</strong>(<span class="math inline">\(x\)</span>), <strong>steady</strong>(<span class="math inline">\(x\)</span>), <strong>flat</strong>()</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="cow-monomials" id="cow-monomials.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -1394,16 +1397,16 @@ document.addEventListener('DOMContentLoaded', function() {
 <span> <small style="color: grey;" id="cow-formula-hintarea" class="hintarea">cow-formula</small>
 <form id="cow-formula-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="To evaluat ... at a point" id="cow-formula-1" w="7" name="cow-formula" hint="Incorrect." show_hints="false"> To evaluate a polynomial at a point</p>
+</p><p><input type="radio" class="devoirs-mcq" value="To evaluat ... at a point" id="cow-formula-1" w="87" name="cow-formula" hint="Nope." show_hints="false"> To evaluate a polynomial at a point</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="To find ze ... polynomial" id="cow-formula-2" w="18" name="cow-formula" hint="Right-O!" show_hints="false"> To find zeros of a quadratic polynomial</p>
+</p><p><input type="radio" class="devoirs-mcq" value="To find ze ... polynomial" id="cow-formula-2" w="29" name="cow-formula" hint="Score!" show_hints="false"> To find zeros of a quadratic polynomial</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="To multipl ... olynomials" id="cow-formula-3" w="87" name="cow-formula" hint="Incorrect." show_hints="false"> To multiply two polynomials</p>
+</p><p><input type="radio" class="devoirs-mcq" value="To multipl ... olynomials" id="cow-formula-3" w="19" name="cow-formula" hint="This is wide of the mark." show_hints="false"> To multiply two polynomials</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="To differe ... polynomial" id="cow-formula-4" w="3" name="cow-formula" hint="You might think so, but ..." show_hints="false"> To differentiate a polynomial</p>
+</p><p><input type="radio" class="devoirs-mcq" value="To differe ... polynomial" id="cow-formula-4" w="87" name="cow-formula" hint="Incorrect." show_hints="false"> To differentiate a polynomial</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="cow-formula" id="cow-formula.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -1440,16 +1443,16 @@ document.addEventListener('DOMContentLoaded', function() {
 <span> <small style="color: grey;" id="cow-mechanism-hintarea" class="hintarea">cow-mechanism</small>
 <form id="cow-mechanism-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="They canno ... ave zeros." id="cow-mechanism-1" w="32" name="cow-mechanism" hint="Incorrect." show_hints="false"> They cannot have zeros.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="They canno ... ave zeros." id="cow-mechanism-1" w="7" name="cow-mechanism" hint="Boo!" show_hints="false"> They cannot have zeros.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The polyno ... mechanism." id="cow-mechanism-2" w="41" name="cow-mechanism" hint="Right." show_hints="false"> The polynomial itself does not tell you the underlying mechanism.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The polyno ... mechanism." id="cow-mechanism-2" w="8" name="cow-mechanism" hint="Right-O!" show_hints="false"> The polynomial itself does not tell you the underlying mechanism.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="They only  ... one input." id="cow-mechanism-3" w="7" name="cow-mechanism" hint="Not on target." show_hints="false"> They only work for one input.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="They only  ... one input." id="cow-mechanism-3" w="23" name="cow-mechanism" hint="Not on target." show_hints="false"> They only work for one input.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="They are n ...  practice." id="cow-mechanism-4" w="19" name="cow-mechanism" hint="Wrong." show_hints="false"> They are never used in practice.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="They are n ...  practice." id="cow-mechanism-4" w="32" name="cow-mechanism" hint="Not on target." show_hints="false"> They are never used in practice.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="cow-mechanism" id="cow-mechanism.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -1481,7 +1484,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <p></p>
 </span></div>
-<p><strong>6.</strong> Write the quadratic (2x^2 + 7x - 1) in the form “coefficient × storybook form” for each term (e.g.&nbsp;(a() + b(x) + )). Use the function names (()), ((x)), and ((x)(x)).</p>
+<p><strong>6.</strong> Write the quadratic <span class="math inline">\(2x^2 + 7x - 1\)</span> in the form “coefficient × storybook form” for each term (e.g.&nbsp;<span class="math inline">\(a\cdot\)</span><strong>flat</strong><span class="math inline">\(() + b\cdot\)</span><strong>steady</strong><span class="math inline">\((x) + \cdots\)</span>). Use the function names <strong>flat</strong>(), <strong>steady</strong>(<span class="math inline">\(x\)</span>), and <strong>steady</strong>(<span class="math inline">\(x\)</span>)·<strong>steady</strong>(<span class="math inline">\(x\)</span>).</p>
 <script type="text/javascript">
       //save entered info
       document.addEventListener('DOMContentLoaded', function() {
@@ -1517,8 +1520,8 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1
 </div>
 <div id="exr-newt-cross-log" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 5</strong></span> <strong>Input transformation (pipelining)</strong></p>
-<p>An <strong>input transformation</strong> is a way to scale or shift the <em>input</em> to a function. We use <strong>pipelining</strong>: the interior function is (g(x) = a x + b) (a linear combination of steady and flat), and the exterior function is any storybook function. So we get (f(g(x)) = f(a x + b)). This lets us change the horizontal scale and position of a shape like (()) or (()).</p>
-<p>Suppose we want a <strong>hill</strong> that peaks at (x = 3) instead of at (x = 0). We use (((x) - 3) = (x - 3)).</p>
+<p>An <strong>input transformation</strong> is a way to scale or shift the <em>input</em> to a function. We use <strong>pipelining</strong>: the interior function is (g(x) = a x + b) (a linear combination of steady and flat), and the exterior function is any storybook function. So we get (f(g(x)) = f(a x + b)). This lets us change the horizontal scale and position of a shape like <strong>hill</strong>() or <strong>osc</strong>().</p>
+<p>Suppose we want a <strong>hill</strong> that peaks at <span class="math inline">\(x = 3\)</span> instead of at <span class="math inline">\(x = 0\)</span>. We use <strong>hill</strong>(<strong>steady</strong>(<span class="math inline">\(x\)</span>) − 3) = <strong>hill</strong>(<span class="math inline">\(x - 3\)</span>).</p>
 <div class="cell" data-caption="Hill shifted so it peaks at x = 3">
 <div>
 <div id="webr-9" class="exercise-cell">
@@ -1529,21 +1532,21 @@ eyJhdHRyIjp7ImNhcHRpb24iOiJIaWxsIHNoaWZ0ZWQgc28gaXQgcGVha3MgYXQgeCA9IDMiLCJlZGl0
 </script>
 </div>
 </div>
-<p><strong>1.</strong> In ((x - 3)), which function is in the <em>interior</em> position?</p>
+<p><strong>1.</strong> In <strong>hill</strong>(<span class="math inline">\(x - 3\)</span>), which function is in the <em>interior</em> position?</p>
 <div class="cell">
 <span> <small style="color: grey;" id="ncl-interior-hintarea" class="hintarea">ncl-interior</small>
 <form id="ncl-interior-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{hill}(x)\)" id="ncl-interior-1" w="7" name="ncl-interior" hint="Incorrect." show_hints="false"> ((x))</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**hill**($x$)" id="ncl-interior-1" w="19" name="ncl-interior" hint="Not quite." show_hints="false"> <strong>hill</strong>(<span class="math inline">\(x\)</span>)</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The linear ... (x) - 3\))" id="ncl-interior-2" w="8" name="ncl-interior" hint="Right." show_hints="false"> The linear function that sends (x) to (x - 3) (i.e.&nbsp;((x) - 3))</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The linear ... ($x$) − 3)" id="ncl-interior-2" w="18" name="ncl-interior" hint="Right-O!" show_hints="false"> The linear function that sends <span class="math inline">\(x\)</span> to <span class="math inline">\(x - 3\)</span> (i.e.&nbsp;<strong>steady</strong>(<span class="math inline">\(x\)</span>) − 3)</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{st ... eady}(x)\)" id="ncl-interior-3" w="3" name="ncl-interior" hint="Incorrect choice." show_hints="false"> ((x))</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**steady**($x$)" id="ncl-interior-3" w="87" name="ncl-interior" hint="Untrue!" show_hints="false"> <strong>steady</strong>(<span class="math inline">\(x\)</span>)</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{flat}()\)" id="ncl-interior-4" w="32" name="ncl-interior" hint="Oops!" show_hints="false"> (())</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**flat**()" id="ncl-interior-4" w="23" name="ncl-interior" hint="No." show_hints="false"> <strong>flat</strong>()</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="ncl-interior" id="ncl-interior.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -1575,21 +1578,21 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <p></p>
 </span></div>
-<p><strong>2.</strong> To make ((x)) have a period of 24 (e.g.&nbsp;for hours in a day), we need the <em>argument</em> of () to go from 0 to 1 as the input goes from 0 to 24. What should go inside (())?</p>
+<p><strong>2.</strong> To make <strong>osc</strong>(<span class="math inline">\(x\)</span>) have a period of 24 (e.g.&nbsp;for hours in a day), we need the <em>argument</em> of <strong>osc</strong> to go from 0 to 1 as the input goes from 0 to 24. What should go inside <strong>osc</strong>(···)?</p>
 <div class="cell">
 <span> <small style="color: grey;" id="ncl-period-hintarea" class="hintarea">ncl-period</small>
 <form id="ncl-period-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{osc}(24x)\)" id="ncl-period-1" w="3" name="ncl-period" hint="You might think so, but ..." show_hints="false"> ((24x))</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**osc**($24x$)" id="ncl-period-1" w="19" name="ncl-period" hint="Incorrect." show_hints="false"> <strong>osc</strong>(<span class="math inline">\(24x\)</span>)</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{os ... c}(x/24)\)" id="ncl-period-2" w="16" name="ncl-period" hint="When x = 24, argument = 1; when x = 0, argument = 0." show_hints="false"> ((x/24))</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**osc**($x/24$)" id="ncl-period-2" w="18" name="ncl-period" hint="When x = 24, argument = 1; when x = 0, argument = 0." show_hints="false"> <strong>osc</strong>(<span class="math inline">\(x/24\)</span>)</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{os ... (x - 24)\)" id="ncl-period-3" w="7" name="ncl-period" hint="Untrue!" show_hints="false"> ((x - 24))</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**osc**($x - 24$)" id="ncl-period-3" w="32" name="ncl-period" hint="Boo!" show_hints="false"> <strong>osc</strong>(<span class="math inline">\(x - 24\)</span>)</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="\(\text{osc}(24)\)" id="ncl-period-4" w="32" name="ncl-period" hint="Sorry!" show_hints="false"> ((24))</p>
+</p><p><input type="radio" class="devoirs-mcq" value="**osc**(24)" id="ncl-period-4" w="23" name="ncl-period" hint="No." show_hints="false"> <strong>osc</strong>(24)</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="ncl-period" id="ncl-period.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -1621,10 +1624,10 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <p></p>
 </span></div>
-<p><strong>3.</strong> The basic ((t)) peaks when (t = 0.25). If we use ((/24)) for “hour of day” (0–24), at what hour does the oscillation first peak?</p>
+<p><strong>3.</strong> The basic <strong>osc</strong>(<span class="math inline">\(t\)</span>) peaks when <span class="math inline">\(t = 0.25\)</span>. If we use <strong>osc</strong>(hour/24) for “hour of day” (0–24), at what hour does the oscillation first peak?</p>
 <span> <small style="color: grey;" id="ncl-peak-hour-hintarea" class="hintarea">ncl-peak-hour</small>
 <form id="ncl-peak-hour-form">
-<span> <span> <input type="radio" class="devoirs-mcq" value="0" id="ncl-peak-hour-1" w="3" name="ncl-peak-hour" hint="Better luck next time." show_hints="false"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="6" id="ncl-peak-hour-2" w="41" name="ncl-peak-hour" hint="Right." show_hints="false"> 6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="12" id="ncl-peak-hour-3" w="87" name="ncl-peak-hour" hint="Incorrect." show_hints="false"> 12 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="24" id="ncl-peak-hour-4" w="87" name="ncl-peak-hour" hint="Sorry!" show_hints="false"> 24 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="ncl-peak-hour" id="ncl-peak-hour.null" style="display: none;" w="skipped" checked=""> </span> </span>
+<span> <span> <input type="radio" class="devoirs-mcq" value="0" id="ncl-peak-hour-1" w="23" name="ncl-peak-hour" hint="Oops!" show_hints="false"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="6" id="ncl-peak-hour-2" w="35" name="ncl-peak-hour" hint="Correct." show_hints="false"> 6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="12" id="ncl-peak-hour-3" w="7" name="ncl-peak-hour" hint="Not quite right." show_hints="false"> 12 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="24" id="ncl-peak-hour-4" w="7" name="ncl-peak-hour" hint="This is wide of the mark." show_hints="false"> 24 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="ncl-peak-hour" id="ncl-peak-hour.null" style="display: none;" w="skipped" checked=""> </span> </span>
 </form>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
@@ -1653,21 +1656,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 </script>
 <p></p>
-<p><strong>4.</strong> To shift the peak to 4 PM (hour 16), we could use ((( - 16)/24)). What is the role of the (-16)?</p>
+<p><strong>4.</strong> To shift the peak to 4 PM (hour 16), we could use <strong>osc</strong>((hour − 16)/24). What is the role of the −16?</p>
 <div class="cell">
 <span> <small style="color: grey;" id="ncl-shift-hintarea" class="hintarea">ncl-shift</small>
 <form id="ncl-shift-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="It changes ... he period." id="ncl-shift-1" w="3" name="ncl-shift" hint="Better luck next time." show_hints="false"> It changes the period.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="It changes ... he period." id="ncl-shift-1" w="23" name="ncl-shift" hint="Try again!" show_hints="false"> It changes the period.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="It shifts  ... t hour 16." id="ncl-shift-2" w="20" name="ncl-shift" hint="Exactly." show_hints="false"> It shifts the horizontal position so the peak occurs at hour 16.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="It shifts  ... t hour 16." id="ncl-shift-2" w="8" name="ncl-shift" hint="That's right." show_hints="false"> It shifts the horizontal position so the peak occurs at hour 16.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="It changes ... amplitude." id="ncl-shift-3" w="23" name="ncl-shift" hint="No." show_hints="false"> It changes the amplitude.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="It changes ... amplitude." id="ncl-shift-3" w="23" name="ncl-shift" hint="Oops!" show_hints="false"> It changes the amplitude.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="It makes t ... backwards." id="ncl-shift-4" w="32" name="ncl-shift" hint="This is wide of the mark." show_hints="false"> It makes the function run backwards.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="It makes t ... backwards." id="ncl-shift-4" w="3" name="ncl-shift" hint="Oops!" show_hints="false"> It makes the function run backwards.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="ncl-shift" id="ncl-shift.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -1704,10 +1707,10 @@ document.addEventListener('DOMContentLoaded', function() {
 <span> <small style="color: grey;" id="ncl-output-hintarea" class="hintarea">ncl-output</small>
 <form id="ncl-output-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="True" id="ncl-output-1" w="41" name="ncl-output" hint="Exactly." show_hints="false"> True</p>
+</p><p><input type="radio" class="devoirs-mcq" value="True" id="ncl-output-1" w="8" name="ncl-output" hint="Right-O!" show_hints="false"> True</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="False" id="ncl-output-2" w="19" name="ncl-output" hint="You're mistaken" show_hints="false"> False</p>
+</p><p><input type="radio" class="devoirs-mcq" value="False" id="ncl-output-2" w="3" name="ncl-output" hint="Not on target." show_hints="false"> False</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="ncl-output" id="ncl-output.null" style="display: none;" w="skipped" checked="">
 </form>
