@@ -22,25 +22,34 @@ library(mosaicCalc)
 
 For two single-input functions \(f\) and \(g\), we can combine them in two different ways:
 
-- **Multiplication:** \(h(x) = f(x) \cdot g(x)\) (one input \(x\)).
-- **Pipelining:** \(h(x) = f(g(x))\) — the output of \(g\) is fed as the input to \(f\).
+- **Multiplication:** \(h(x) = f(x) \cdot g(x)\) — one input \(x\) is used in both functions; the outputs are multiplied.
+- **Pipelining:** \(h(x) = f(g(x))\) — the output of \(g\) is fed as the input to \(f\). (Pipelining is also known as **piping** or **composing functions**.)
+
+In display form:
+
+\[
+\text{Multiplication:}\quad h(x) = f(x)\cdot g(x) \qquad\qquad
+\text{Pipelining:}\quad h(x) = f(g(x))
+\]
 
 ```{webr}
 #| caption: Compare multiplication and pipelining
+# In R, a line starting with # is a comment: it is not run.
+# Add or remove # at the start of a line to choose which plot runs.
 # Multiplication: hill(x) * hillside(x)
 slice_plot(hill(x) * hillside(x) ~ x, domain(x = -2:4))
-# Pipelining: hill(hillside(x))
+# Pipelining: hill(hillside(x)) — uncomment the next line to run it instead
 # slice_plot(hill(hillside(x)) ~ x, domain(x = -2:4))
 ```
 
-**1.** Consider \(h(x) = \text{steady}(x) \cdot \text{steady}(x)\). What is another name for this function?
+**1.** Consider the function \(h(x) = \text{steady}(x) \cdot \text{steady}(x)\). What is another name for this function?
 
 ```{mcq}
 #| label: obd-square
-1. flat()
-2. steady()
-3. The square of x, i.e. \(x^2\) [correct]
-4. A pipeline of steady and steady
+1. \(\text{flat}(x)\)
+2. \(\text{steady}(x)\)
+3. The square of \(x\), i.e. \(x^2\) [correct]
+4. A pipeline of \(\text{steady}(x)\) and \(\text{steady}(x)\)
 ```
 
 **2.** True or false: \(f(x)\,g(x)\) and \(f(g(x))\) are always the same.
@@ -63,8 +72,8 @@ slice_plot(hill(x) * hillside(x) ~ x, domain(x = -2:4))
 
 ```{mcq}
 #| label: obd-interior
-1. hill()
-2. steady() [correct]
+1. \(\text{hill}(x)\)
+2. \(\text{steady}(x)\) [correct]
 3. Both are interior
 4. Neither; this is multiplication
 ```
@@ -79,7 +88,7 @@ slice_plot(hill(x) * hillside(x) ~ x, domain(x = -2:4))
 4. Two inputs; multiplication [correct]
 ```
 
-**6.** Give a one-sentence reason why \(f(x)\,g(x)\) and \(f(g(x))\) are different in general.
+**6.** Give a one-sentence reason why \(f(x)\cdot g(x)\) and \(f(g(x))\) are different in general.
 
 `r devoirs::devoirs_text("obd-reason", rows = 2)`
 

@@ -22,10 +22,17 @@ library(mosaicCalc)
 
 A café models its **daily revenue** \(R\) (in dollars) as a function of **hours open** \(t\) (0–12). They use a linear combination of two storybook functions: one term captures a base level of sales, and another captures sales that grow with how long the café is open.
 
-Suppose the model is \(R(t) = 50\,\text{flat}() + 120\,\text{steady}(t)\).
+Suppose the model is
+
+\[
+R(t) = 50\cdot\text{flat}() + 120\cdot\text{steady}(t).
+\]
+
+So revenue equals 50 (dollars base) plus 120 times the number of hours open: \(\text{flat}()\) is the constant function (value 1) and \(\text{steady}(t) = t\).
 
 ```{webr}
 #| caption: Explore the model
+# In R, lines starting with # are comments and are not run.
 slice_plot(50*flat(x) + 120*steady(x) ~ x, domain(x = 0:12))
 ```
 
@@ -34,7 +41,7 @@ slice_plot(50*flat(x) + 120*steady(x) ~ x, domain(x = 0:12))
 ```{mcq}
 #| label: fcw-ingredients
 1. 50 and 120
-2. flat() and steady() [correct]
+2. \(\text{flat}()\) and \(\text{steady}(t)\) [correct]
 3. R and t
 4. dollars and hours
 ```
@@ -43,7 +50,7 @@ slice_plot(50*flat(x) + 120*steady(x) ~ x, domain(x = 0:12))
 
 ```{mcq}
 #| label: fcw-coeffs
-1. flat() and steady()
+1. \(\text{flat}()\) and \(\text{steady}(t)\)
 2. 50 and 120 [correct]
 3. 0 and 12
 4. R and t
@@ -57,7 +64,13 @@ slice_plot(50*flat(x) + 120*steady(x) ~ x, domain(x = 0:12))
 
 `r devoirs::devoirs_set(choices = c(110, 550, 600, 650), correct = 650, id = "fcw-R5")`
 
-**5.** The owner considers a different model: \(R(t) = a\,\text{hillside}(t) + b\,\text{flat}()\). What is the main conceptual difference from the first model?
+**5.** The owner considers a different model:
+
+\[
+R(t) = a\cdot\text{hillside}(t) + b\cdot\text{flat}().
+\]
+
+What is the main conceptual difference from the first model?
 
 ```{mcq}
 #| label: fcw-hillside

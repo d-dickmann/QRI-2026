@@ -26,28 +26,29 @@ Suppose we want a **hill** that peaks at \(x = 3\) instead of at \(x = 0\). We u
 
 ```{webr}
 #| caption: Hill shifted so it peaks at x = 3
+# In R, # starts a comment; add or remove it to choose which plot runs.
 slice_plot(hill(x - 3) ~ x, domain(x = 0:6))
-# Compare: slice_plot(hill(x) ~ x, domain(x = -3:3))
+# slice_plot(hill(x) ~ x, domain(x = -3:3))
 ```
 
 **1.** In \(\text{hill}(x - 3)\), which function is in the *interior* position?
 
 ```{mcq}
 #| label: ncl-interior
-1. hill()
-2. The linear function that sends \(x\) to \(x - 3\) (i.e. steady(x) - 3) [correct]
-3. steady()
-4. flat()
+1. \(\text{hill}(x)\)
+2. The linear function that sends \(x\) to \(x - 3\) (i.e. \(\text{steady}(x) - 3\)) [correct]
+3. \(\text{steady}(x)\)
+4. \(\text{flat}()\)
 ```
 
-**2.** To make \(\text{osc}()\) have a period of 24 (e.g. for hours in a day), we need the *argument* of \(\text{osc}\) to go from 0 to 1 as the input goes from 0 to 24. What should go inside \(\text{osc}()\)?
+**2.** To make \(\text{osc}(x)\) have a period of 24 (e.g. for hours in a day), we need the *argument* of \(\text{osc}\) to go from 0 to 1 as the input goes from 0 to 24. What should go inside \(\text{osc}(\cdots)\)?
 
 ```{mcq}
 #| label: ncl-period
-1. osc(24x)
-2. osc(x / 24) [correct hint: When x = 24, argument = 1; when x = 0, argument = 0.]
-3. osc(x - 24)
-4. osc(24)
+1. \(\text{osc}(24x)\)
+2. \(\text{osc}(x/24)\) [correct hint: When x = 24, argument = 1; when x = 0, argument = 0.]
+3. \(\text{osc}(x - 24)\)
+4. \(\text{osc}(24)\)
 ```
 
 **3.** The basic \(\text{osc}(t)\) peaks when \(t = 0.25\). If we use \(\text{osc}(\text{hour}/24)\) for "hour of day" (0–24), at what hour does the oscillation first peak?

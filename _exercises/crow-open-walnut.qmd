@@ -26,10 +26,10 @@ A **polynomial** is a linear combination of simpler functions called **monomials
 
 ```{mcq}
 #| label: cow-x2
-1. flat()
-2. steady(x)
-3. steady(x) × steady(x) [correct]
-4. hillside(x)
+1. \(\text{flat}()\)
+2. \(\text{steady}(x)\)
+3. \(\text{steady}(x)\cdot\text{steady}(x)\) (i.e. \(x^2\)) [correct]
+4. \(\text{hillside}(x)\)
 ```
 
 **2.** The "poly" in polynomial means "many." Many of what?
@@ -47,9 +47,9 @@ A **polynomial** is a linear combination of simpler functions called **monomials
 ```{mcq}
 #| label: cow-monomials
 1. 5, -3, 10
-2. 5x^2, -3x, 10
-3. x^2, x, and the constant 1 (i.e. flat()) [correct]
-4. steady(), steady(), flat()
+2. \(5x^2\), \(-3x\), 10
+3. \(x^2\), \(x\), and the constant 1 (i.e. \(\text{flat}()\)) [correct]
+4. \(\text{steady}(x)\cdot\text{steady}(x)\), \(\text{steady}(x)\), \(\text{flat}()\)
 ```
 
 **4.** The quadratic formula \(x_0 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\) is used for what purpose?
@@ -72,7 +72,7 @@ A **polynomial** is a linear combination of simpler functions called **monomials
 4. They are never used in practice.
 ```
 
-**6.** Write the quadratic \(2x^2 + 7x - 1\) in the form "coefficient × storybook form" for each term (e.g. "a·flat() + b·steady(x) + …"). You can use words: flat(), steady(x), and "steady(x)×steady(x)."
+**6.** Write the quadratic \(2x^2 + 7x - 1\) in the form "coefficient × storybook form" for each term (e.g. \(a\cdot\text{flat}() + b\cdot\text{steady}(x) + \cdots\)). Use the function names \(\text{flat}()\), \(\text{steady}(x)\), and \(\text{steady}(x)\cdot\text{steady}(x)\).
 
 `r devoirs::devoirs_text("cow-rewrite", rows = 3)`
 

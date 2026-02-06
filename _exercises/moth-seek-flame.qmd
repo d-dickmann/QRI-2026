@@ -42,24 +42,24 @@ In an epidemic model, **new cases per day** may depend on both the number of **s
 4. When either S or I is zero
 ```
 
-**3.** A model of **student performance** might use \(\text{perf}(\text{income}, \text{ed}, \text{skill}) = a\,\text{income} + b\,\text{skill} + c\,\text{ed} + d\). Here the modeler implicitly used which storybook functions for each input?
+**3.** A model of **student performance** might use \(\text{perf}(\text{income}, \text{ed}, \text{skill}) = a\,\text{steady}(\text{income}) + b\,\text{steady}(\text{skill}) + c\,\text{steady}(\text{ed}) + d\cdot\text{flat}()\). Here the modeler implicitly used which storybook functions for each input?
 
 ```{mcq}
 #| label: msf-perf
-1. hill() for each
-2. steady() for income, skill, and ed; flat() for the constant [correct]
-3. flat() for all
-4. hillside() for all
+1. \(\text{hill}(x)\) for each
+2. \(\text{steady}(x)\) for income, skill, and ed; \(\text{flat}()\) for the constant [correct]
+3. \(\text{flat}()\) for all
+4. \(\text{hillside}(x)\) for all
 ```
 
 **4.** If we suspect that the effect of **income** on performance diminishes at high income (diminishing returns), we might replace the term that depends on income with a different storybook function. Which would be a reasonable replacement for \(\text{steady}(\text{income})\)?
 
 ```{mcq}
 #| label: msf-replace
-1. flat(income)
-2. magnitude(income) or hillside(income) [correct]
-3. osc(income)
-4. recip(income)
+1. \(\text{flat}()\)
+2. \(\text{magnitude}(x)\) or \(\text{hillside}(x)\) [correct]
+3. \(\text{osc}(x)\)
+4. \(\text{recip}(x)\)
 ```
 
 **5.** The algebraic form of \(\text{steady}(S) \cdot \text{steady}(I)\) is usually written as:
