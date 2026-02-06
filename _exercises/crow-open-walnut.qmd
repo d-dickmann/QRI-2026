@@ -1,0 +1,80 @@
+---
+id: "crow-open-walnut"
+created: "Fri Feb 06 2026"
+attribution: AI-assisted draft
+use: "Chapter 8 exercise"
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+library(devoirs)
+library(mosaicCalc)
+```
+
+```{webr}
+#| echo: false
+#| autorun: true
+{{< include _software/storybook-functions.r >}}
+```
+
+::: {#exr-crow-open-walnut}
+
+**Polynomials and monomials**
+
+A **polynomial** is a linear combination of simpler functions called **monomials**. Using storybook names: \(\text{flat}()\), \(\text{steady}(x)\), \(\text{steady}(x)\cdot\text{steady}(x)\), \(\text{steady}(x)\cdot\text{steady}(x)\cdot\text{steady}(x)\), and so on. In algebra we write these as 1, \(x\), \(x^2\), \(x^3\), etc. So the quadratic polynomial \(a x^2 + b x + c\) is a linear combination of three ingredient functions.
+
+**1.** In the quadratic \(a x^2 + b x + c\), which storybook function corresponds to the term \(x^2\)?
+
+```{mcq}
+#| label: cow-x2
+1. flat()
+2. steady(x)
+3. steady(x) × steady(x) [correct]
+4. hillside(x)
+```
+
+**2.** The "poly" in polynomial means "many." Many of what?
+
+```{mcq}
+#| label: cow-poly
+1. Many coefficients
+2. Many inputs
+3. Many terms (monomials) in the linear combination [correct]
+4. Many outputs
+```
+
+**3.** What are the three monomials (ingredient functions) in the quadratic \(5x^2 - 3x + 10\)?
+
+```{mcq}
+#| label: cow-monomials
+1. 5, -3, 10
+2. 5x^2, -3x, 10
+3. x^2, x, and the constant 1 (i.e. flat()) [correct]
+4. steady(), steady(), flat()
+```
+
+**4.** The quadratic formula \(x_0 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\) is used for what purpose?
+
+```{mcq}
+#| label: cow-formula
+1. To evaluate a polynomial at a point
+2. To find zeros of a quadratic polynomial [correct]
+3. To multiply two polynomials
+4. To differentiate a polynomial
+```
+
+**5.** In modeling, polynomials are sometimes used as "modeling clay" because they are flexible. What is a limitation of interpreting a polynomial model in terms of *mechanism*?
+
+```{mcq}
+#| label: cow-mechanism
+1. They cannot have zeros.
+2. The polynomial itself does not tell you the underlying mechanism. [correct]
+3. They only work for one input.
+4. They are never used in practice.
+```
+
+**6.** Write the quadratic \(2x^2 + 7x - 1\) in the form "coefficient × storybook form" for each term (e.g. "a·flat() + b·steady(x) + …"). You can use words: flat(), steady(x), and "steady(x)×steady(x)."
+
+`r devoirs::devoirs_text("cow-rewrite", rows = 3)`
+
+:::
+ <!-- end of exr-crow-open-walnut -->

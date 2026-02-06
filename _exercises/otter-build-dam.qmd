@@ -1,0 +1,87 @@
+---
+id: "otter-build-dam"
+created: "Fri Feb 06 2026"
+attribution: AI-assisted draft
+use: "Chapter 8 exercise"
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+library(devoirs)
+library(mosaicCalc)
+```
+
+```{webr}
+#| echo: false
+#| autorun: true
+{{< include _software/storybook-functions.r >}}
+```
+
+::: {#exr-otter-build-dam}
+
+**Multiplication vs. pipelining**
+
+For two single-input functions \(f\) and \(g\), we can combine them in two different ways:
+
+- **Multiplication:** \(h(x) = f(x) \cdot g(x)\) (one input \(x\)).
+- **Pipelining:** \(h(x) = f(g(x))\) — the output of \(g\) is fed as the input to \(f\).
+
+```{webr}
+#| caption: Compare multiplication and pipelining
+# Multiplication: hill(x) * hillside(x)
+slice_plot(hill(x) * hillside(x) ~ x, domain(x = -2:4))
+# Pipelining: hill(hillside(x))
+# slice_plot(hill(hillside(x)) ~ x, domain(x = -2:4))
+```
+
+**1.** Consider \(h(x) = \text{steady}(x) \cdot \text{steady}(x)\). What is another name for this function?
+
+```{mcq}
+#| label: obd-square
+1. flat()
+2. steady()
+3. The square of x, i.e. \(x^2\) [correct]
+4. A pipeline of steady and steady
+```
+
+**2.** True or false: \(f(x)\,g(x)\) and \(f(g(x))\) are always the same.
+
+```{mcq}
+#| label: obd-same
+1. True
+2. False [correct]
+```
+
+**3.** Can pipelining two single-input functions ever produce a function with *two* inputs?
+
+```{mcq}
+#| label: obd-two-inputs
+1. Yes
+2. No [correct hint: There is only one argument slot—the input to the interior function.]
+```
+
+**4.** Suppose \(h(x) = \text{hill}(\text{steady}(x) + 2)\). Which function is in the *interior* position?
+
+```{mcq}
+#| label: obd-interior
+1. hill()
+2. steady() [correct]
+3. Both are interior
+4. Neither; this is multiplication
+```
+
+**5.** In the expression \(j(x, z) = f(x)\,g(z)\), how many inputs does \(j\) have, and is this multiplication or pipelining?
+
+```{mcq}
+#| label: obd-jxz
+1. One input; pipelining
+2. One input; multiplication
+3. Two inputs; pipelining
+4. Two inputs; multiplication [correct]
+```
+
+**6.** Give a one-sentence reason why \(f(x)\,g(x)\) and \(f(g(x))\) are different in general.
+
+`r devoirs::devoirs_text("obd-reason", rows = 2)`
+
+:::
+ <!-- end of exr-otter-build-dam -->

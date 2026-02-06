@@ -1,0 +1,80 @@
+---
+id: "newt-cross-log"
+created: "Fri Feb 06 2026"
+attribution: AI-assisted draft
+use: "Chapter 8 exercise"
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+library(devoirs)
+library(mosaicCalc)
+```
+
+```{webr}
+#| echo: false
+#| autorun: true
+{{< include _software/storybook-functions.r >}}
+```
+
+::: {#exr-newt-cross-log}
+
+**Input transformation (pipelining)**
+
+An **input transformation** is a way to scale or shift the *input* to a function. We use **pipelining**: the interior function is \(g(x) = a x + b\) (a linear combination of steady and flat), and the exterior function is any storybook function. So we get \(f(g(x)) = f(a x + b)\). This lets us change the horizontal scale and position of a shape like \(\text{hill}()\) or \(\text{osc}()\).
+
+Suppose we want a **hill** that peaks at \(x = 3\) instead of at \(x = 0\). We use \(\text{hill}(\text{steady}(x) - 3) = \text{hill}(x - 3)\).
+
+```{webr}
+#| caption: Hill shifted so it peaks at x = 3
+slice_plot(hill(x - 3) ~ x, domain(x = 0:6))
+# Compare: slice_plot(hill(x) ~ x, domain(x = -3:3))
+```
+
+**1.** In \(\text{hill}(x - 3)\), which function is in the *interior* position?
+
+```{mcq}
+#| label: ncl-interior
+1. hill()
+2. The linear function that sends \(x\) to \(x - 3\) (i.e. steady(x) - 3) [correct]
+3. steady()
+4. flat()
+```
+
+**2.** To make \(\text{osc}()\) have a period of 24 (e.g. for hours in a day), we need the *argument* of \(\text{osc}\) to go from 0 to 1 as the input goes from 0 to 24. What should go inside \(\text{osc}()\)?
+
+```{mcq}
+#| label: ncl-period
+1. osc(24x)
+2. osc(x / 24) [correct hint: When x = 24, argument = 1; when x = 0, argument = 0.]
+3. osc(x - 24)
+4. osc(24)
+```
+
+**3.** The basic \(\text{osc}(t)\) peaks when \(t = 0.25\). If we use \(\text{osc}(\text{hour}/24)\) for "hour of day" (0–24), at what hour does the oscillation first peak?
+
+`r devoirs::devoirs_set(choices = c(0, 6, 12, 24), correct = 6, id = "ncl-peak-hour")`
+
+**4.** To shift the peak to 4 PM (hour 16), we could use \(\text{osc}((\text{hour} - 16)/24)\). What is the role of the \(-16\)?
+
+```{mcq}
+#| label: ncl-shift
+1. It changes the period.
+2. It shifts the horizontal position so the peak occurs at hour 16. [correct]
+3. It changes the amplitude.
+4. It makes the function run backwards.
+```
+
+**5.** True or false: The *output* transformation (scaling and shifting the vertical axis) is also a linear combination.
+
+```{mcq}
+#| label: ncl-output
+1. True [correct]
+2. False
+```
+
+**6.** In one or two sentences, explain the difference between an *input* transformation and an *output* transformation when composing a function.
+
+`r devoirs::devoirs_text("ncl-difference", rows = 3)`
+
+:::
+ <!-- end of exr-newt-cross-log -->

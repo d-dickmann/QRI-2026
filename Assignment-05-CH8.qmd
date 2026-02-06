@@ -1,0 +1,52 @@
+---
+title: QR-I Assignment 5
+subtitle: Chapter 8 of the QR-A book
+---
+
+{{< include _use_webr.qmd >}}
+
+```{r include = FALSE}
+library(devoirs)
+library(mosaicCalc)
+source("_start-up.R")
+```
+
+{{< include _devoirs.qmd >}}
+
+::::: {.callout-note collapse=true}
+## Drill for Chapter 8
+
+Open drill questions in [this document](https://dtkaplan.github.io/QR-A/Drill-08-composing-functions.html){target="_blank"}
+
+Remember to submit your drill answers through that document. But for the exercises in the present document, use the "collect answers" at the top of this page.
+:::::
+
+:::: {.callout-note collapse=true}
+## Chapter Eight
+
+`r id <- "a5-ch8"`
+
+::: {.panel-tabset}
+## 1.
+
+{{< include _exercises/falcon-catch-wind.qmd >}}
+
+## 2.
+
+{{< include _exercises/otter-build-dam.qmd >}}
+
+## 3.
+
+{{< include _exercises/moth-seek-flame.qmd >}}
+
+## 4.
+
+{{< include _exercises/crow-open-walnut.qmd >}}
+
+## 5.
+
+{{< include _exercises/newt-cross-log.qmd >}}
+
+:::
+
+::::
