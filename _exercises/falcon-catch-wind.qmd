@@ -25,10 +25,10 @@ A café models its **daily revenue** \(R\) (in dollars) as a function of **hours
 Suppose the model is
 
 \[
-R(t) = 50\cdot\text{flat}() + 120\cdot\text{steady}(t).
+R(t) = 50\cdot\operatorname{flat}() + 120\cdot\operatorname{steady}(t).
 \]
 
-So revenue equals 50 (dollars base) plus 120 times the number of hours open: \(\text{flat}()\) is the constant function (value 1) and \(\text{steady}(t) = t\).
+So revenue equals 50 (dollars base) plus 120 times the number of hours open: flat() is the constant function (value 1) and steady($t$) = $t$.
 
 ```{webr}
 #| caption: Explore the model
@@ -41,7 +41,7 @@ slice_plot(50*flat(x) + 120*steady(x) ~ x, domain(x = 0:12))
 ```{mcq}
 #| label: fcw-ingredients
 1. 50 and 120
-2. \(\text{flat}()\) and \(\text{steady}(t)\) [correct]
+2. flat() and steady($t$) [correct]
 3. R and t
 4. dollars and hours
 ```
@@ -50,7 +50,7 @@ slice_plot(50*flat(x) + 120*steady(x) ~ x, domain(x = 0:12))
 
 ```{mcq}
 #| label: fcw-coeffs
-1. \(\text{flat}()\) and \(\text{steady}(t)\)
+1. flat() and steady($t$)
 2. 50 and 120 [correct]
 3. 0 and 12
 4. R and t
@@ -67,7 +67,7 @@ slice_plot(50*flat(x) + 120*steady(x) ~ x, domain(x = 0:12))
 **5.** The owner considers a different model:
 
 \[
-R(t) = a\cdot\text{hillside}(t) + b\cdot\text{flat}().
+R(t) = a\cdot\operatorname{hillside}(t) + b\cdot\operatorname{flat}().
 \]
 
 What is the main conceptual difference from the first model?

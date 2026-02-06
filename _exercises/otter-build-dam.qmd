@@ -28,8 +28,8 @@ For two single-input functions \(f\) and \(g\), we can combine them in two diffe
 In display form:
 
 \[
-\text{Multiplication:}\quad h(x) = f(x)\cdot g(x) \qquad\qquad
-\text{Pipelining:}\quad h(x) = f(g(x))
+\textrm{Multiplication:}\quad h(x) = f(x)\cdot g(x) \qquad\qquad
+\textrm{Pipelining:}\quad h(x) = f(g(x))
 \]
 
 ```{webr}
@@ -42,14 +42,14 @@ slice_plot(hill(x) * hillside(x) ~ x, domain(x = -2:4))
 # slice_plot(hill(hillside(x)) ~ x, domain(x = -2:4))
 ```
 
-**1.** Consider the function \(h(x) = \text{steady}(x) \cdot \text{steady}(x)\). What is another name for this function?
+**1.** Consider the function \(h(x) = \operatorname{steady}(x) \cdot \operatorname{steady}(x)\). What is another name for this function?
 
 ```{mcq}
 #| label: obd-square
-1. \(\text{flat}(x)\)
-2. \(\text{steady}(x)\)
-3. The square of \(x\), i.e. \(x^2\) [correct]
-4. A pipeline of \(\text{steady}(x)\) and \(\text{steady}(x)\)
+1. flat($x$)
+2. steady($x$)
+3. The square of $x$, i.e. $x^2$ [correct]
+4. A pipeline of steady($x$) and steady($x$)
 ```
 
 **2.** True or false: \(f(x)\,g(x)\) and \(f(g(x))\) are always the same.
@@ -68,12 +68,12 @@ slice_plot(hill(x) * hillside(x) ~ x, domain(x = -2:4))
 2. No [correct hint: There is only one argument slot—the input to the interior function.]
 ```
 
-**4.** Suppose \(h(x) = \text{hill}(\text{steady}(x) + 2)\). Which function is in the *interior* position?
+**4.** Suppose \(h(x) = \operatorname{hill}(\operatorname{steady}(x) + 2)\). Which function is in the *interior* position?
 
 ```{mcq}
 #| label: obd-interior
-1. \(\text{hill}(x)\)
-2. \(\text{steady}(x)\) [correct]
+1. hill($x$)
+2. steady($x$) [correct]
 3. Both are interior
 4. Neither; this is multiplication
 ```
