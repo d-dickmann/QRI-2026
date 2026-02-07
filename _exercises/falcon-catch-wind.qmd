@@ -62,21 +62,17 @@ slice_plot(50*flat(x) + 120*steady(x) ~ x, domain(x = 0:12))
 
 `r devoirs::devoirs_set(choices = c(110, 550, 600, 650), correct = 650, id = "fcw-R5")`
 
-**5.** The owner considers a different model: $R(t) = a\cdot$ **hillside**$(t) + b\cdot$ **flat**$()$ (hillside and flat are storybook functions).
+**5.** The owner considers a different model: $R(t) = a\cdot$ **hillside**$(t) + b\cdot$ **flat**$()$.
 
 What is the main conceptual difference from the first model?
 
 ```{mcq}
 #| label: fcw-hillside
-1. The coefficients are different.
-2. Sales now grow in a "diminishing returns" way (steep at first, then leveling off) instead of at a constant rate. [correct]
-3. Revenue can be negative.
-4. There is no difference.
+1. The second model has two coefficients ($a$ and $b$) instead of two fixed numbers (50 and 120).
+2. In the second model, sales grow with diminishing returns (steep at first, then leveling off) rather than at a constant rate per hour. [correct]
+3. The second model allows revenue to be negative for some $t$.
+4. The second model uses a different input variable.
 ```
-
-**6.** In a linear combination, who or what typically chooses the *coefficients* after the modeler has chosen the ingredient functions?
-
-`r devoirs::devoirs_text("fcw-who-coeffs", rows = 2)`
 
 :::
  <!-- end of exr-falcon-catch-wind -->

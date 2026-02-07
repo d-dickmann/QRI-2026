@@ -47,6 +47,10 @@ Remember to submit your drill answers through that document. But for the exercis
 
 {{< include _exercises/newt-cross-log.qmd >}}
 
+## 6.
+
+{{< include _exercises/wren-tune-dial.qmd >}}
+
 :::
 
 ::::

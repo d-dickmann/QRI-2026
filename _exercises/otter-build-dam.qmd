@@ -20,15 +20,10 @@ library(mosaicCalc)
 
 **Multiplication vs. pipelining**
 
-For two single-input functions \(f\) and \(g\), we can combine them in two different ways:
-
-- **Multiplication:** \(h(x) = f(x) \cdot g(x)\) — one input \(x\) is used in both functions; the outputs are multiplied.
-- **Pipelining:** \(h(x) = f(g(x))\) — the output of \(g\) is fed as the input to \(f\). (Pipelining is also known as **piping** or **composing functions**.)
-
-In display form:
+For two single-input functions $f$ and $g$, two common ways to combine them are:
 
 - **Multiplication:** $h(x) = f(x)\cdot g(x)$  
-- **Pipelining:** $h(x) = f(g(x))$
+- **Pipelining:** $h(x) = f(g(x))$ (also called **piping** or **composing functions**)
 
 ```{webr}
 #| caption: Compare multiplication and pipelining
@@ -50,15 +45,7 @@ slice_plot(hill(x) * hillside(x) ~ x, domain(x = -2:4))
 4. A pipeline of steady($x$) and steady($x$)
 ```
 
-**2.** True or false: \(f(x)\,g(x)\) and \(f(g(x))\) are always the same.
-
-```{mcq}
-#| label: obd-same
-1. True
-2. False [correct]
-```
-
-**3.** Can pipelining two single-input functions ever produce a function with *two* inputs?
+**2.** Can pipelining two single-input functions ever produce a function with *two* inputs?
 
 ```{mcq}
 #| label: obd-two-inputs
@@ -66,7 +53,7 @@ slice_plot(hill(x) * hillside(x) ~ x, domain(x = -2:4))
 2. No [correct hint: There is only one argument slot—the input to the interior function.]
 ```
 
-**4.** Suppose $h(x) =$ **hill**$($ **steady**$(x) + 2)$. Which function is in the *interior* position?
+**3.** Suppose $h(x) =$ **hill**$($ **steady**$(x) + 2)$. Which function is in the *interior* position?
 
 ```{mcq}
 #| label: obd-interior
@@ -76,7 +63,7 @@ slice_plot(hill(x) * hillside(x) ~ x, domain(x = -2:4))
 4. Neither; this is multiplication
 ```
 
-**5.** In the expression \(j(x, z) = f(x)\,g(z)\), how many inputs does \(j\) have, and is this multiplication or pipelining?
+**4.** In the expression $j(x, z) = f(x)\cdot g(z)$, how many inputs does $j$ have, and is this multiplication or pipelining?
 
 ```{mcq}
 #| label: obd-jxz
@@ -85,10 +72,6 @@ slice_plot(hill(x) * hillside(x) ~ x, domain(x = -2:4))
 3. Two inputs; pipelining
 4. Two inputs; multiplication [correct]
 ```
-
-**6.** Give a one-sentence reason why \(f(x)\cdot g(x)\) and \(f(g(x))\) are different in general.
-
-`r devoirs::devoirs_text("obd-reason", rows = 2)`
 
 :::
  <!-- end of exr-otter-build-dam -->

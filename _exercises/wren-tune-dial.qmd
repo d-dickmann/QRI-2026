@@ -1,0 +1,132 @@
+---
+id: "wren-tune-dial"
+created: "Fri Feb 06 2026"
+attribution: AI-assisted draft
+use: "Chapter 8 exercise"
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+library(devoirs)
+library(mosaicCalc)
+```
+
+::: {#exr-wren-tune-dial}
+
+**AM and FM radio: multiplication vs. composition**
+
+You've probably heard of AM and FM radio. Both broadcast a **signal** (music, voice) by combining it with a high-frequency **carrier wave**. The math behind each method is a different way of combining two functions: **AM uses multiplication**; **FM uses composition**. Below we walk through both with R, using time $t$ (in seconds) as the input.
+
+---
+
+**Step 1: The carrier wave**
+
+The carrier is a high-frequency wave, e.g. $C(t) = \cos(2\pi f_c\, t)$ with $f_c$ the carrier frequency (in Hz). We'll use $f_c = 5$ so the wave is easy to see over a short time window.
+
+```{webr}
+#| caption: Carrier wave C(t) = cos(2π·5·t)
+# Time t in seconds; we plot over 0 to 2 seconds.
+# f_c = 5 Hz (5 cycles per second)
+slice_plot(cos(2*pi*5*x) ~ x, domain(x = 0:2))
+```
+
+---
+
+**Step 2: The signal**
+
+The signal (e.g. audio) is a lower-frequency wave. We'll use $S(t) = \cos(2\pi f_s\, t)$ with $f_s = 1$ Hz as a stand-in for the message being sent.
+
+```{webr}
+#| caption: Signal S(t) = cos(2π·1·t)
+# This is the "message" (here, a simple tone at 1 Hz).
+slice_plot(cos(2*pi*1*x) ~ x, domain(x = 0:2))
+```
+
+---
+
+**Step 3: AM — amplitude modulation (multiplication)**
+
+In AM, the **amplitude** of the carrier is varied by the signal. So the transmitted wave is
+
+**AM**($t$) = $C(t) \cdot \bigl(1 + m\cdot S(t)\bigr)$.
+
+Here $m$ is the modulation depth (we use $m = 0.7$). So we **multiply** the carrier by a factor that depends on the signal: one function $\times$ another, same input $t$.
+
+```{webr}
+#| caption: AM(t) = carrier(t) × (1 + 0.7·signal(t))
+# Multiplication: both C and S are evaluated at the same t.
+carrier <- function(t) cos(2*pi*5*t)
+signal <- function(t) cos(2*pi*1*t)
+slice_plot(carrier(x) * (1 + 0.7*signal(x)) ~ x, domain(x = 0:2))
+```
+
+You can see the carrier’s oscillations, with their **height** (amplitude) rising and falling with the signal.
+
+---
+
+**Step 4: FM — frequency modulation (composition)**
+
+In FM, the signal changes the **argument** (phase) of the carrier instead of its amplitude. So the transmitted wave is
+
+**FM**($t$) = $\cos\bigl(2\pi f_c\, t + k\cdot S(t)\bigr)$.
+
+So we **compose**: the outer function is $\cos(\cdot)$, and its **input** is $2\pi f_c\, t + k\cdot S(t)$ — a function of $t$ that includes the signal. We use $k = 2$ so the effect is visible.
+
+```{webr}
+#| caption: FM(t) = cos(2π·5·t + 2·signal(t))
+# Composition: the argument of cos() is (2π·5·t + 2·S(t)).
+# The inner “function of t” is the phase; the outer function is cos.
+slice_plot(cos(2*pi*5*x + 2*cos(2*pi*1*x)) ~ x, domain(x = 0:2))
+```
+
+Here the **frequency** of the wave (how tightly the oscillations are packed) changes with the signal, while the amplitude stays constant.
+
+---
+
+**Step 5: Side-by-side comparison**
+
+Run the two plots below one after the other. In the **AM** plot, what varies with the signal is the **amplitude** (multiplication). In the **FM** plot, what varies is the **phase/argument** of the cosine (composition).
+
+```{webr}
+#| caption: "AM (multiplication): amplitude follows the signal"
+slice_plot(cos(2*pi*5*x) * (1 + 0.7*cos(2*pi*1*x)) ~ x, domain(x = 0:2))
+```
+
+```{webr}
+#| caption: "FM (composition): phase/argument follows the signal"
+slice_plot(cos(2*pi*5*x + 2*cos(2*pi*1*x)) ~ x, domain(x = 0:2))
+```
+
+---
+
+**1.** In the AM formula **AM**($t$) = $C(t) \cdot (1 + m\cdot S(t))$, which mathematical operation combines the carrier $C$ and the signal $S$?
+
+```{mcq}
+#| label: wtd-am
+1. Addition
+2. Multiplication [correct]
+3. Composition (one function’s output as the other’s input)
+4. Division
+```
+
+**2.** In the FM formula **FM**($t$) = $\cos(2\pi f_c\, t + k\cdot S(t))$, the signal $S(t)$ appears inside the **argument** of $\cos$. Which way of combining functions does that represent?
+
+```{mcq}
+#| label: wtd-fm
+1. Addition
+2. Multiplication
+3. Composition (the phase $2\pi f_c t + k\cdot S(t)$ is the input to $\cos$) [correct]
+4. Division
+```
+
+**3.** If we wrote the FM wave as **FM**($t$) = $f\bigl(g(t)\bigr)$ for two functions $f$ and $g$, what would $f$ be, and what would $g(t)$ be?
+
+```{mcq}
+#| label: wtd-fg
+1. $f$ = carrier, $g(t)$ = signal
+2. $f$ = $\cos$, $g(t)$ = $2\pi f_c\, t + k\cdot S(t)$ (the phase) [correct]
+3. $f$ = signal, $g(t)$ = carrier
+4. $f$ = $\cos$, $g(t)$ = $S(t)$ only
+```
+
+:::
+<!-- end of exr-wren-tune-dial -->
