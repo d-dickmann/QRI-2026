@@ -82,7 +82,7 @@ slice_plot(2*steady(x)*steady(x) - 7*steady(x) + 3*flat(x) ~ x, domain(x = 0:4))
 4. They are rarely used in practice.
 ```
 
-**6.** Write the quadratic $2x^2 + 7x - 1$ in storybook form: one term for each monomial, with the right coefficient. Use **flat**(), **steady**($x$), and **steady**($x$)·**steady**($x$). (Example format: $a\cdot$**flat**() $+ b\cdot$**steady**($x$) $+ c\cdot$**steady**($x$)·**steady**($x$).)
+**6.** Write the quadratic $2x^2 + 7x - 1$ in storybook form.
 
 `r devoirs::devoirs_text("cow-rewrite", rows = 3)`
 
