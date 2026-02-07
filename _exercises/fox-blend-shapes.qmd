@@ -1,0 +1,131 @@
+---
+id: "fox-blend-shapes"
+created: "Fri Feb 06 2026"
+attribution: AI-assisted draft
+use: "Chapter 8 exercise"
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+library(devoirs)
+library(mosaicCalc)
+```
+
+```{webr}
+#| echo: false
+#| autorun: true
+{{< include _software/storybook-functions.r >}}
+```
+
+::: {#exr-fox-blend-shapes}
+
+**Combining storybook functions to make new shapes**
+
+We can build more complex shapes by **combining** two storybook functions in different ways: **multiplication**, **linear combination** (adding scaled versions), or **composition** (one function’s output as the other’s input). This exercise uses **hill**($x$) (a symmetric bump) and **hillside**($x$) (an S-curve that rises and levels off) as building blocks. All plots use the domain $x \in [-2, 4]$ so both shapes are visible.
+
+---
+
+**Step 1: The two building blocks**
+
+Run the code below to see **hill**($x$) and **hillside**($x$) on their own. Add or remove `#` at the start of a line to choose which plot runs.
+
+```{webr}
+#| caption: "Building blocks — hill(x) and hillside(x)"
+# In R, # starts a comment; the line is not run.
+slice_plot(hill(x) ~ x, domain(x = -2:4))
+# slice_plot(hillside(x) ~ x, domain(x = -2:4))
+```
+
+---
+
+**Step 2: Three ways to combine them**
+
+**A. Multiplication:** $h(x) =$ **hill**($x$) $\cdot$ **hillside**($x$). The output is large only where *both* are moderately large, so you get a single asymmetric bump that falls off on the left and right.
+
+**B. Linear combination:** $h(x) = 0.6\cdot$ **hill**($x$) $+ 0.4\cdot$ **hillside**($x$). The shape is a *blend* of the two: a peak with a rising tail.
+
+**C. Composition (input shift):** $h(x) =$ **hill**($x - 2$). The same **hill** shape, but the peak is *shifted* to the right (the argument to **hill** is $x - 2$ instead of $x$).
+
+Run each chunk below to see the corresponding plot. Then use the **Explore** chunk to try your own combinations.
+
+```{webr}
+#| caption: "A. Multiplication — hill(x) × hillside(x)"
+slice_plot(hill(x) * hillside(x) ~ x, domain(x = -2:4))
+```
+
+```{webr}
+#| caption: "B. Linear combination — 0.6·hill(x) + 0.4·hillside(x)"
+slice_plot(0.6*hill(x) + 0.4*hillside(x) ~ x, domain(x = -2:4))
+```
+
+```{webr}
+#| caption: "C. Composition (shift) — hill(x - 2)"
+slice_plot(hill(x - 2) ~ x, domain(x = -2:4))
+```
+
+---
+
+**Step 3: Explore**
+
+Edit the formula in the code below to experiment. Try: **hill**($x$)$\cdot$**osc**($x$), or **hill**($x$) $+$ **hillside**($x$), or **hillside**($x - 1$), or your own. Change the domain if you like (e.g. `domain(x = 0:3)`).
+
+```{webr}
+#| caption: "Try your own combination"
+# Replace the formula below with another combination of storybook functions.
+# Examples: hill(x) * osc(x),  hill(x) + 0.3*hillside(x),  hill(x - 1)
+slice_plot(hill(x) * hillside(x) ~ x, domain(x = -2:4))
+```
+
+---
+
+**1.** In plot **A** (multiplication **hill**($x$)$\cdot$**hillside**($x$)), how would you describe the shape compared to **hill**($x$) alone?
+
+```{mcq}
+#| label: fbs-mult
+1. The peak is shifted left.
+2. The peak is shifted right.
+3. The shape is a single asymmetric bump that is small where either function is small. [correct]
+4. The shape has two separate peaks.
+```
+
+**2.** In plot **B** (linear combination $0.6\cdot$**hill**($x$) $+ 0.4\cdot$**hillside**($x$)), how would you describe the shape?
+
+```{mcq}
+#| label: fbs-lc
+1. A symmetric bell with no tail.
+2. A blend of a peak and an S-curve: one main peak with a rising tail. [correct]
+3. Two separate peaks.
+4. The same as **hillside**($x$) only.
+```
+
+**3.** In plot **C** (**hill**($x - 2$)), what is the main visual change from **hill**($x$)?
+
+```{mcq}
+#| label: fbs-comp
+1. The amplitude is doubled.
+2. The peak is shifted to the right. [correct]
+3. The shape is stretched horizontally.
+4. The shape is a blend of two functions.
+```
+
+**4.** Which combination type (multiplication, linear combination, or composition) would you use if you wanted the *same* shape as **hill** but with its peak moved to $x = 3$?
+
+```{mcq}
+#| label: fbs-which
+1. Multiplication
+2. Linear combination
+3. Composition (e.g. hill(x - 3)) [correct]
+4. Any of the three
+```
+
+**5.** Suppose you plot **hill**($x$) $\cdot$ **osc**($x$). What do you expect the shape to look like? (**osc** oscillates between $-1$ and $1$.)
+
+```{mcq}
+#| label: fbs-osc
+1. A single smooth bump like hill(x).
+2. A bump whose height oscillates (wavy envelope) as $x$ increases. [correct]
+3. A straight line.
+4. Two separate bumps.
+```
+
+:::
+<!-- end of exr-fox-blend-shapes -->

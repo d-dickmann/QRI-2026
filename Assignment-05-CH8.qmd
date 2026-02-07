@@ -37,19 +37,15 @@ Remember to submit your drill answers through that document. But for the exercis
 
 ## 3.
 
-{{< include _exercises/moth-seek-flame.qmd >}}
+{{< include _exercises/crow-open-walnut.qmd >}}
 
 ## 4.
 
-{{< include _exercises/crow-open-walnut.qmd >}}
+{{< include _exercises/wren-tune-dial.qmd >}}
 
 ## 5.
 
-{{< include _exercises/newt-cross-log.qmd >}}
-
-## 6.
-
-{{< include _exercises/wren-tune-dial.qmd >}}
+{{< include _exercises/fox-blend-shapes.qmd >}}
 
 :::
 
