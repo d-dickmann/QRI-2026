@@ -22,11 +22,11 @@ library(mosaicCalc)
 
 A **polynomial** is a linear combination of a few simple building blocks. Those building blocks are called **monomials**. Using storybook names, the simplest monomials are: **flat**() (constant 1), **steady**($x$) (just $x$), **steady**($x$)·**steady**($x$) (i.e. $x^2$), and so on. So when we write a quadratic like $ax^2 + bx + c$, we are choosing a linear combination of exactly three ingredient functions: the constant (**flat**), the identity (**steady**), and the square (**steady**·**steady**). The "poly" in polynomial means "many" of these monomial terms.
 
-Example: suppose we model **profit** (in dollars) as a function of **price** $x$ (in dollars) with a quadratic. We might write it in storybook form as $2\cdot$**steady**($x$)·**steady**($x$) $-\, 7\cdot$**steady**($x$) $+ \,3\cdot$**flat**() — i.e. $2x^2 - 7x + 3$. Run the code below to see the shape. You can change the coefficients (2, -7, 3) to see how the curve changes.
+A standard example is **height of a ball** (in meters) as a function of **time** (in seconds): under constant gravity, height is a quadratic in $t$, so we write it in storybook form as $a\cdot$**steady**($t$)·**steady**($t$) $+ b\cdot$**steady**($t$) $+ c\cdot$**flat**() — i.e. $at^2 + bt + c$. Run the code below to see an example shape ($2t^2 - 7t + 3$). You can change the coefficients to see how the curve changes.
 
 ```{webr}
-#| caption: "Quadratic in storybook form — profit vs price (example)"
-# Linear combination: 2·steady(x)·steady(x) - 7·steady(x) + 3·flat()
+#| caption: "Quadratic in storybook form — height vs time (example)"
+# Example: 2·steady(t)·steady(t) - 7·steady(t) + 3·flat(); horizontal axis = time
 slice_plot(2*steady(x)*steady(x) - 7*steady(x) + 3*flat(x) ~ x, domain(x = 0:4))
 ```
 

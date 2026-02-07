@@ -43,10 +43,6 @@ Remember to submit your drill answers through that document. But for the exercis
 
 {{< include _exercises/wren-tune-dial.qmd >}}
 
-## 5.
-
-{{< include _exercises/fox-blend-shapes.qmd >}}
-
 :::
 
 ::::
