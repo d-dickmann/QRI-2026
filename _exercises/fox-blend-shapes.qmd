@@ -43,7 +43,7 @@ slice_plot(hill(x) ~ x, domain(x = -2:4))
 
 **B. Linear combination:** $h(x) = 0.6\cdot$ **hill**($x$) $+ 0.4\cdot$ **hillside**($x$). The shape is a *blend* of the two: a peak with a rising tail.
 
-**C. Composition (input shift):** $h(x) =$ **hill**($x - 2$). The same **hill** shape, but the peak is *shifted* to the right (the argument to **hill** is $x - 2$ instead of $x$).
+**C. Composition (two storybook functions):** $h(x) =$ **hillside**(**hill**($x$)). Think of $x$ as *distance* from a signal source. **Hill**($x$) is the *signal strength* (a bump: strongest nearby, weaker farther away). **Hillside**(signal strength) is the *probability of detecting* the signal (an S-curve: low when the signal is weak, high when it’s strong). So we **compose**: distance $\to$ **hill** $\to$ signal strength $\to$ **hillside** $\to$ detection probability. The output of **hill** becomes the input to **hillside**.
 
 Run each chunk below to see the corresponding plot. Then use the **Explore** chunk to try your own combinations.
 
@@ -58,20 +58,20 @@ slice_plot(0.6*hill(x) + 0.4*hillside(x) ~ x, domain(x = -2:4))
 ```
 
 ```{webr}
-#| caption: "C. Composition (shift) — hill(x - 2)"
-slice_plot(hill(x - 2) ~ x, domain(x = -2:4))
+#| caption: "C. Composition — hillside(hill(x)); detection probability vs distance"
+slice_plot(hillside(hill(x)) ~ x, domain(x = -2:4))
 ```
 
 ---
 
 **Step 3: Explore**
 
-Edit the formula in the code below to experiment. Try: **hill**($x$)$\cdot$**osc**($x$), or **hill**($x$) $+$ **hillside**($x$), or **hillside**($x - 1$), or your own. Change the domain if you like (e.g. `domain(x = 0:3)`).
+Edit the formula in the code below to experiment. Try: **hill**($x$)$\cdot$**osc**($x$), **hill**($x$) $+$ **hillside**($x$), **hillside**(**hill**($x$)), or **hill**($x - 1$) (input shift). Change the domain if you like (e.g. `domain(x = 0:3)`).
 
 ```{webr}
 #| caption: "Try your own combination"
 # Replace the formula below with another combination of storybook functions.
-# Examples: hill(x) * osc(x),  hill(x) + 0.3*hillside(x),  hill(x - 1)
+# Examples: hill(x) * osc(x),  hill(x) + 0.3*hillside(x),  hillside(hill(x)),  hill(x - 1)
 slice_plot(hill(x) * hillside(x) ~ x, domain(x = -2:4))
 ```
 
@@ -97,24 +97,24 @@ slice_plot(hill(x) * hillside(x) ~ x, domain(x = -2:4))
 4. The same as **hillside**($x$) only.
 ```
 
-**3.** In plot **C** (**hill**($x - 2$)), what is the main visual change from **hill**($x$)?
+**3.** In plot **C** (**hillside**(**hill**($x$))), which function is on the *outside* (the one whose output we ultimately see)?
 
 ```{mcq}
 #| label: fbs-comp
-1. The amplitude is doubled.
-2. The peak is shifted to the right. [correct]
-3. The shape is stretched horizontally.
-4. The shape is a blend of two functions.
+1. **hill** (signal strength)
+2. **hillside** (detection probability) [correct]
+3. Both are on the outside
+4. Neither; C is multiplication
 ```
 
-**4.** Which combination type (multiplication, linear combination, or composition) would you use if you wanted the *same* shape as **hill** but with its peak moved to $x = 3$?
+**4.** In the composition **hillside**(**hill**($x$)), what is the *inner* function’s output (the input to the outer function)?
 
 ```{mcq}
 #| label: fbs-which
-1. Multiplication
-2. Linear combination
-3. Composition (e.g. hill(x - 3)) [correct]
-4. Any of the three
+1. Distance $x$
+2. Signal strength (**hill**($x$)) [correct]
+3. Detection probability
+4. A linear combination of hill and hillside
 ```
 
 **5.** Suppose you plot **hill**($x$) $\cdot$ **osc**($x$). What do you expect the shape to look like? (**osc** oscillates between $-1$ and $1$.)

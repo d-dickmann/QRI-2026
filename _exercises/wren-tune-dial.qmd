@@ -20,17 +20,16 @@ library(mosaicCalc)
 
 **AM and FM radio: multiplication vs. composition**
 
-You've probably heard of AM and FM radio. Both broadcast a **signal** (music, voice) by combining it with a high-frequency **carrier wave**. The math behind each method is a different way of combining two functions: **AM uses multiplication**; **FM uses composition**. We use the storybook function **osc**() (oscillator): **osc**($u$) $= \sin(2\pi u)$, so one cycle per unit of $u$. Below we walk through both with R, using time $t$ as the input.
+You've probably heard of AM and FM radio. Both send a **signal** (e.g. music, voice) by combining it with a **carrier wave**. The two methods correspond to two ways of combining functions: **AM uses multiplication**; **FM uses composition**. We model both using the storybook function **osc**(): a fast **osc** as the carrier and a slower **osc** as the signal. Below we walk through both with R.
 
 ---
 
-**Step 1: The carrier wave**
+**Step 1: The carrier**
 
-The carrier is a high-frequency wave. We use **osc**($f_c\cdot t$) with $f_c = 5$, so $C(t) =$ **osc**($5t$): 5 cycles per unit time.
+The carrier is a rapid oscillation. We use **osc** with input $5t$ (five cycles per unit time). In the code, that’s **osc**(5·$x$).
 
 ```{webr}
-#| caption: Carrier C(t) = osc(5·t)
-# osc(u) = sin(2π·u); 5 cycles per unit time.
+#| caption: Carrier — fast osc
 slice_plot(osc(5*x) ~ x, domain(x = 0:2))
 ```
 
@@ -38,11 +37,10 @@ slice_plot(osc(5*x) ~ x, domain(x = 0:2))
 
 **Step 2: The signal**
 
-The signal (e.g. audio) is a lower-frequency wave. We use $S(t) =$ **osc**($t$): 1 cycle per unit time, a stand-in for the message.
+The signal is the “message” we want to send — here, a slower oscillation: **osc**($t$), one cycle per unit time.
 
 ```{webr}
-#| caption: Signal S(t) = osc(t)
-# The "message" (here, a simple tone).
+#| caption: Signal — slower osc (the message)
 slice_plot(osc(x) ~ x, domain(x = 0:2))
 ```
 
@@ -50,44 +48,33 @@ slice_plot(osc(x) ~ x, domain(x = 0:2))
 
 **Step 3: AM — amplitude modulation (multiplication)**
 
-In AM, the **amplitude** of the carrier is varied by the signal. So the transmitted wave is
-
-**AM**($t$) = $C(t) \cdot \bigl(1 + m\cdot S(t)\bigr)$.
-
-Here $m$ is the modulation depth (we use $m = 0.7$). So we **multiply** the carrier by a factor that depends on the signal: one function $\times$ another, same input $t$.
+In AM, the **height** (amplitude) of the carrier is varied by the signal. We **multiply** the carrier by a factor that depends on the signal: same input $t$ into both, then multiply their outputs. So the transmitted wave is carrier $\times$ (1 + modulation·signal). We use a modulation factor of 0.7.
 
 ```{webr}
-#| caption: AM(t) = osc(5·t) × (1 + 0.7·osc(t))
-# Multiplication: carrier and signal both evaluated at the same t.
+#| caption: AM — carrier × (1 + 0.7·signal)
+# Multiplication: both carrier and signal evaluated at the same input.
 slice_plot(osc(5*x) * (1 + 0.7*osc(x)) ~ x, domain(x = 0:2))
 ```
 
-You can see the carrier’s oscillations, with their **height** (amplitude) rising and falling with the signal.
+The carrier’s **height** rises and falls with the signal.
 
 ---
 
 **Step 4: FM — frequency modulation (composition)**
 
-In FM, the signal changes the **argument** (phase) of the carrier instead of its amplitude. So the transmitted wave is
-
-**FM**($t$) = **osc**$\bigl(f_c\cdot t + k\cdot S(t)/(2\pi)\bigr)$.
-
-So we **compose**: the outer function is **osc**, and its **input** is $f_c\cdot t + k\cdot S(t)/(2\pi)$ — a function of $t$ that includes the signal. We use $k = 2$ so the effect is visible.
+In FM, the signal changes the **argument** of the carrier instead of its amplitude. So we **compose**: the outer function is **osc** (the carrier shape), and its **input** is something that depends on both time and the signal. The wave keeps roughly constant height, but how tightly the oscillations are packed varies with the signal.
 
 ```{webr}
-#| caption: FM(t) = osc(5·t + 2·osc(t)/(2π))
-# Composition: the argument of osc() is the phase (inner function of t).
-# The inner “function of t” is the phase; the outer function is osc.
+#| caption: FM — osc( argument that includes the signal )
+# Composition: the signal is part of the input to osc.
 slice_plot(osc(5*x + 2*osc(x)/(2*pi)) ~ x, domain(x = 0:2))
 ```
-
-Here the **frequency** of the wave (how tightly the oscillations are packed) changes with the signal, while the amplitude stays constant.
 
 ---
 
 **Step 5: Side-by-side comparison**
 
-Run the two plots below one after the other. In the **AM** plot, what varies with the signal is the **amplitude** (multiplication). In the **FM** plot, what varies is the **phase/argument** of **osc** (composition).
+Run the two plots below. In **AM**, what varies with the signal is the **amplitude**. In **FM**, what varies is the **argument** to **osc** (composition).
 
 ```{webr}
 #| caption: "AM (multiplication): amplitude follows the signal"
@@ -95,40 +82,60 @@ slice_plot(osc(5*x) * (1 + 0.7*osc(x)) ~ x, domain(x = 0:2))
 ```
 
 ```{webr}
-#| caption: "FM (composition): phase/argument follows the signal"
+#| caption: "FM (composition): argument to osc follows the signal"
 slice_plot(osc(5*x + 2*osc(x)/(2*pi)) ~ x, domain(x = 0:2))
 ```
 
 ---
 
-**1.** In the AM formula **AM**($t$) = $C(t) \cdot (1 + m\cdot S(t))$, which mathematical operation combines the carrier $C$ and the signal $S$?
+**1.** In AM, what are the two "ingredient" functions (the two shapes we combine)?
 
 ```{mcq}
 #| label: wtd-am
+1. Time and frequency
+2. The carrier (**osc** at a fast rate) and the signal (**osc** at a slower rate) [correct]
+3. Amplitude and argument
+4. AM and FM
+```
+
+**2.** Which way of combining those two functions does AM use?
+
+```{mcq}
+#| label: wtd-mult
 1. Addition
-2. Multiplication [correct]
-3. Composition (one function’s output as the other’s input)
+2. Multiplication (carrier × a factor that depends on the signal) [correct]
+3. Composition (signal goes inside the carrier's input)
 4. Division
 ```
 
-**2.** In the FM formula **FM**($t$) = **osc**($f_c\cdot t + k\cdot S(t)/(2\pi)$), the signal $S(t)$ appears inside the **argument** of **osc**. Which way of combining functions does that represent?
+**3.** In FM, which way of combining do we use?
 
 ```{mcq}
 #| label: wtd-fm
 1. Addition
 2. Multiplication
-3. Composition (the phase $f_c t + k\cdot S(t)/(2\pi)$ is the input to **osc**) [correct]
+3. Composition (the signal is part of the **argument** to **osc**) [correct]
 4. Division
 ```
 
-**3.** If we wrote the FM wave as **FM**($t$) = $f\bigl(g(t)\bigr)$ for two functions $f$ and $g$, what would $f$ be, and what would $g(t)$ be?
+**4.** In the FM wave, which storybook function is on the "outside" — the one whose output we actually hear?
 
 ```{mcq}
 #| label: wtd-fg
-1. $f$ = carrier, $g(t)$ = signal
-2. $f$ = **osc**, $g(t)$ = $f_c\cdot t + k\cdot S(t)/(2\pi)$ (the phase) [correct]
-3. $f$ = signal, $g(t)$ = carrier
-4. $f$ = **osc**, $g(t)$ = $S(t)$ only
+1. The signal
+2. **osc** (the carrier shape) [correct]
+3. Both are on the outside
+4. Neither; FM uses multiplication
+```
+
+**5.** What is the main *visual* difference between the AM and FM plots?
+
+```{mcq}
+#| label: wtd-visual
+1. AM has one peak, FM has two.
+2. In AM the wave's **height** varies with the signal; in FM the height is steadier but how **tightly** the waves are packed varies. [correct]
+3. FM is always larger than AM.
+4. There is no visual difference.
 ```
 
 :::

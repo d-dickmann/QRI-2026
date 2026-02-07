@@ -20,61 +20,71 @@ library(mosaicCalc)
 
 **Polynomials and monomials**
 
-A **polynomial** is a linear combination of simpler functions called **monomials**. Using storybook names: **flat**(), **steady**($x$), **steady**($x$)·**steady**($x$), **steady**($x$)·**steady**($x$)·**steady**($x$), and so on. In algebra we write these as 1, $x$, $x^2$, $x^3$, etc. So the quadratic polynomial $a x^2 + b x + c$ is a linear combination of three ingredient functions.
+A **polynomial** is a linear combination of a few simple building blocks. Those building blocks are called **monomials**. Using storybook names, the simplest monomials are: **flat**() (constant 1), **steady**($x$) (just $x$), **steady**($x$)·**steady**($x$) (i.e. $x^2$), and so on. So when we write a quadratic like $ax^2 + bx + c$, we are choosing a linear combination of exactly three ingredient functions: the constant (**flat**), the identity (**steady**), and the square (**steady**·**steady**). The "poly" in polynomial means "many" of these monomial terms.
 
-**1.** In the quadratic $a x^2 + b x + c$, which storybook function corresponds to the term $x^2$?
+Example: suppose we model **profit** (in dollars) as a function of **price** $x$ (in dollars) with a quadratic. We might write it in storybook form as $2\cdot$**steady**($x$)·**steady**($x$) $-\, 7\cdot$**steady**($x$) $+ \,3\cdot$**flat**() — i.e. $2x^2 - 7x + 3$. Run the code below to see the shape. You can change the coefficients (2, -7, 3) to see how the curve changes.
+
+```{webr}
+#| caption: "Quadratic in storybook form — profit vs price (example)"
+# Linear combination: 2·steady(x)·steady(x) - 7·steady(x) + 3·flat()
+slice_plot(2*steady(x)*steady(x) - 7*steady(x) + 3*flat(x) ~ x, domain(x = 0:4))
+```
+
+---
+
+**1.** In the quadratic $ax^2 + bx + c$, which storybook function corresponds to the term $x^2$?
 
 ```{mcq}
 #| label: cow-x2
 1. **flat**()
 2. **steady**($x$)
-3. **steady**($x$)·**steady**($x$) (i.e. $x^2$) [correct]
+3. **steady**($x$)·**steady**($x$) [correct]
 4. **hillside**($x$)
 ```
 
-**2.** The "poly" in polynomial means "many." Many of what?
+**2.** In the example $2x^2 - 7x + 3$, what are the three *coefficients* (the numbers we multiply each ingredient by)?
+
+```{mcq}
+#| label: cow-coeffs
+1. **flat**(), **steady**($x$), **steady**($x$)·**steady**($x$)
+2. $x^2$, $x$, and 1
+3. 2, $-7$, and 3 [correct]
+4. 0, 2, and 4 (the domain)
+```
+
+**3.** The "poly" in polynomial means "many." Many of what?
 
 ```{mcq}
 #| label: cow-poly
 1. Many coefficients
 2. Many inputs
-3. Many terms (monomials) in the linear combination [correct]
+3. Many monomial terms in the linear combination [correct]
 4. Many outputs
 ```
 
-**3.** What are the three monomials (ingredient functions) in the quadratic \(5x^2 - 3x + 10\)?
+**4.** What are the three *ingredient functions* (monomials) in the quadratic $5x^2 - 3x + 10$?
 
 ```{mcq}
 #| label: cow-monomials
-1. 5, -3, 10
-2. \(5x^2\), \(-3x\), 10
-3. $x^2$, $x$, and the constant 1 (i.e. **flat**()) [correct]
-4. **steady**($x$)·**steady**($x$), **steady**($x$), **flat**()
+1. 5, $-3$, and 10
+2. $5x^2$, $-3x$, and 10
+3. $x^2$, $x$, and the constant 1 — i.e. **steady**·**steady**, **steady**, and **flat** [correct]
+4. Three different storybook functions that are not flat or steady
 ```
 
-**4.** The quadratic formula \(x_0 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\) is used for what purpose?
-
-```{mcq}
-#| label: cow-formula
-1. To evaluate a polynomial at a point
-2. To find zeros of a quadratic polynomial [correct]
-3. To multiply two polynomials
-4. To differentiate a polynomial
-```
-
-**5.** In modeling, polynomials are sometimes used as "modeling clay" because they are flexible. What is a limitation of interpreting a polynomial model in terms of *mechanism*?
+**5.** In modeling, polynomials are often used as flexible "modeling clay" to fit curves. What is a limitation of interpreting a polynomial *mechanistically*?
 
 ```{mcq}
 #| label: cow-mechanism
 1. They cannot have zeros.
-2. The polynomial itself does not tell you the underlying mechanism. [correct]
+2. The polynomial does not tell you *why* the relationship has that shape. [correct]
 3. They only work for one input.
-4. They are never used in practice.
+4. They are rarely used in practice.
 ```
 
-**6.** Write the quadratic $2x^2 + 7x - 1$ in the form "coefficient × storybook form" for each term (e.g. $a\cdot$**flat**$() + b\cdot$**steady**$(x) + \cdots$). Use the function names **flat**(), **steady**($x$), and **steady**($x$)·**steady**($x$).
+**6.** Write the quadratic $2x^2 + 7x - 1$ in storybook form: one term for each monomial, with the right coefficient. Use **flat**(), **steady**($x$), and **steady**($x$)·**steady**($x$). (Example format: $a\cdot$**flat**() $+ b\cdot$**steady**($x$) $+ c\cdot$**steady**($x$)·**steady**($x$).)
 
 `r devoirs::devoirs_text("cow-rewrite", rows = 3)`
 
 :::
- <!-- end of exr-crow-open-walnut -->
+<!-- end of exr-crow-open-walnut -->
