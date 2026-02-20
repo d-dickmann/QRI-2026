@@ -50,23 +50,15 @@ These exercises draw on uncertainty in quantities (Ch 7), likelihood (Ch 9), and
 ::: {.panel-tabset}
 ## 1.
 
-{{< include ../QR-A/_exercises/sister-freeze-map.qmd >}}
+{{< include ../QR-A/_exercises/jaquar-shut-pot.qmd >}}
 
 ## 2.
 
-{{< include ../QR-A/_exercises/pollen-wish-hamper.qmd >}}
+{{< include ../QR-A/_exercises/dingo-eat-saw.qmd >}}
 
 ## 3.
 
-{{< include ../QR-A/_exercises/jaquar-shut-pot.qmd >}}
-
-## 4.
-
-{{< include ../QR-A/_exercises/dingo-eat-saw.qmd >}}
-
-## 5.
-
-{{< include _exercises/lynx-hit-target.qmd >}}
+{{< include _exercises/heron-catch-fish.qmd >}}
 
 :::
 

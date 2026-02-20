@@ -479,7 +479,7 @@ Clear memory
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -488,337 +488,31 @@ Clear memory
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>These exercises draw on uncertainty in quantities (Ch 7), likelihood (Ch 9), and Bayesian updating (Ch 10).</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">1.</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">2.</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">3.</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false" href="">4.</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-5" role="tab" aria-controls="tabset-2-5" aria-selected="false" href="">5.</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">1.</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">2.</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">3.</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<div id="exr-sister-freeze-map" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1</strong></span> &nbsp;</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Next status step: Refine the draft
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>… to make it ready for testing.</p>
-<p>Assigned to DTK</p>
-</div>
-</div>
-<p>{&gt;&gt;Should we change this to multiple-choice answers?&lt;&lt;}</p>
-<p>In <a href="Chap-07-uncertainty.html#sec-relative-probability">Section 7.1</a> we looked at the problem of calculating the number of Cals used on a walk, when the uncertainty in the walk length is [3 to 4] miles, and the uncertainty in Cals-per-mile is [60 to 100].</p>
-<p>In the chunk that follows, a <em>simulation</em> has been constructed that generates normally distributed random numbers based on the intervals for walk length and Cals-per-mile.</p>
-<p>Then, the simulation is run for 5000 iterations. There will be 5000 rows in the resulting data frame, one row for each iteration. There will be three variables, the randomly generated walk length and cals per mile as well as the total Calories calculated by multiplying the two random quantities. The 5000-row output from the simulation is then passed to a statistics function which calculates the lower and upper bounds of the 95% interval.</p>
-<div class="cell" data-caption="Simulation for arithmetic on intervals">
-<div>
-<div id="webr-2" class="exercise-cell">
-
-</div>
-<script type="webr-2-contents">
-eyJhdHRyIjp7ImNhcHRpb24iOiJTaW11bGF0aW9uIGZvciBhcml0aG1ldGljIG9uIGludGVydmFscyIsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2ltMSA8LSBkYXRhc2ltX21ha2UoXG4gIHdhbGtfbGVuZ3RoIDwtIHJub3JtKG4sIG1lYW4gPSAzLjUsIHNkID0gMC4yNSksXG4gIGNhbHNfcGVyX21pbGUgPC0gcm5vcm0obiwgbWVhbiA9IDgwLCBzZCA9IDEwKSxcbiAgdG90YWxfY2FscyA8LSB3YWxrX2xlbmd0aCAqIGNhbHNfcGVyX21pbGVcbilcbnNpbTEgfD5cbiAgZGF0YXNpbV9ydW4obiA9IDUwMDApIHw+XG4gIGRmX3N0YXRzKH4gdG90YWxfY2FscywgbG93ZXIgPSBxdWFudGlsZSgwLjAyNSksIHVwcGVyID0gcXVhbnRpbGUoMC45NzUpKSJ9
-</script>
-</div>
-</div>
-<p>The intervals are given as [3 to 4] and [60 to 80], but the simulation is run using random number generators that take the <em>mean</em> and <em>standard deviation</em> as their parameter values.</p>
-<ol type="1">
-<li>Explain how the parameters used in generating <code>walk_length</code> and <code>cals_per_mile</code> correspond to the two intervals.</li>
-</ol>
-<script type="text/javascript">
-      //save entered info
-      document.addEventListener('DOMContentLoaded', function() {
-      console.log('Adding event listener for sfm-intervals.');
-      const form = document.getElementById('sfm-intervals');
-      form.addEventListener("input", function () {
-        var todo = document.getElementById('sfm-intervals').value;
-        localStorage.setItem("sfm-intervals-contents", todo);
-        console.log("Saving value of sfm-intervals.")
-      }, false);
-
-      //on page load, read in the old value
-      const savedValue = localStorage.getItem("sfm-intervals-contents");
-      if (savedValue) {
-        document.getElementById('sfm-intervals').value = savedValue;
-      }
-})
-</script>
-<textarea id="sfm-intervals" name="sfm-intervals" class="devoirs-text" style="font-family: monospace, monospace;" rows="4" cols="50" placeholder="Type here. (ID sfm-intervals)"></textarea>
-<ol start="2" type="1">
-<li>Modify the code to find the uncertainty distribution of the product [-3 to 5]<span class="math inline">\(\times\)</span>[-10 to 2]. What is the resulting interval? Does it include zero?</li>
-</ol>
-<script type="text/javascript">
-      //save entered info
-      document.addEventListener('DOMContentLoaded', function() {
-      console.log('Adding event listener for sfm-intervals2.');
-      const form = document.getElementById('sfm-intervals2');
-      form.addEventListener("input", function () {
-        var todo = document.getElementById('sfm-intervals2').value;
-        localStorage.setItem("sfm-intervals2-contents", todo);
-        console.log("Saving value of sfm-intervals2.")
-      }, false);
-
-      //on page load, read in the old value
-      const savedValue = localStorage.getItem("sfm-intervals2-contents");
-      if (savedValue) {
-        document.getElementById('sfm-intervals2').value = savedValue;
-      }
-})
-</script>
-<textarea id="sfm-intervals2" name="sfm-intervals2" class="devoirs-text" style="font-family: monospace, monospace;" rows="4" cols="50" placeholder="Type here. (ID sfm-intervals2)"></textarea>
-<ol start="3" type="1">
-<li>Modify the code once again to find the uncertainty distribution of the ratio [-1 to 1] divided by [-1 to 1]. What is the resulting interval and why is it so much bigger than [-1 to 1]? (Hint: If the interval you calculate is about [-1 to 1], you probably used multiplication rather than division in your calculations.)</li>
-</ol>
-<script type="text/javascript">
-      //save entered info
-      document.addEventListener('DOMContentLoaded', function() {
-      console.log('Adding event listener for sfm-intervals3.');
-      const form = document.getElementById('sfm-intervals3');
-      form.addEventListener("input", function () {
-        var todo = document.getElementById('sfm-intervals3').value;
-        localStorage.setItem("sfm-intervals3-contents", todo);
-        console.log("Saving value of sfm-intervals3.")
-      }, false);
-
-      //on page load, read in the old value
-      const savedValue = localStorage.getItem("sfm-intervals3-contents");
-      if (savedValue) {
-        document.getElementById('sfm-intervals3').value = savedValue;
-      }
-})
-</script>
-<textarea id="sfm-intervals3" name="sfm-intervals3" class="devoirs-text" style="font-family: monospace, monospace;" rows="4" cols="50" placeholder="Type here. (ID sfm-intervals3)"></textarea>
-</div>
-<p><!-- end of exr-sister-freeze-map --></p>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<div id="exr-pollen-wish-hamper" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> An important task for quantitative reasoning is evaluating evidence for a claim. Non-Bayesian statistical methodology can offer great insight so long as data can be collected in a repeatable and reliable way as in a laboratory experiment. The logic of non-Bayesian statistics is based on <em>making assumptions</em> that the data meet the required standards and have the properties needed for the techniques to give a correct answer. And, for the idea of a “correct” answer to apply at all, non-Bayesian statistics limits its purview to mathematically idealized questions that often do not directly target the questions of actual interest. An example: the “fail to reject” the Null Hypothesis that is at the heart of frequentist statistics.</p>
-<p>In his autobiography, Benjamin Franklin (1706-1790), gave a good description of the personality trait of requiring mathematically correct answers:</p>
-<blockquote class="blockquote">
-<p>Thomas Godfrey, a self-taught mathematician, great in his way, and afterward inventor of what is now called Hadley’s Quadrant. But he knew little out of his way, and was not a pleasing companion; as, like most great mathematicians I have met with, he expected universal precision in everything said, or was for ever denying or distinguishing upon trifles, to the disturbance of all conversation. He soon left us.*</p>
-</blockquote>
-<p>Often, useful quantitative reasoning accepts uncertainty and imprecision as inevitable and recognizes that precise statements about a matter of not usually available. An excellent example of such quantitative reasoning is described in David Spiegelhalter’s <em>The Art of Statistics</em> and is based on a 2014 report published in <em>Nature</em>: “<a href="https://www.nature.com/articles/ncomms6631">Identification of the remains of King Richard III</a>.”</p>
-<p>Richard III was killed on August 22, 1485 at the Battle of Bosworth, aged 32. He was buried in the town of Leicester in the medieval church of the Grey Friars. The church was torn down on the orders of Henry VIII in about 1540. The location of the church is documented but there are no grave markers and, today, the site is occupied by a car parking lot. Around 2012, an interdisciplinary group—archeologists, anthropologists, geneticists, historians, etc.—attempted to locate Richard’s skeleton. Digging at a likely location in the parking lot let almost immediately to a skeleton.</p>
-<p>Finding a skeleton on the site of a church graveyard is hardly surprising, but was the skeleton Richard’s? The team sought to evaluate the evidence provided by the skeleton and, importantly, the recovered DNA from the skeleton.</p>
-<p>The <em>Nature</em> report states:</p>
-<blockquote class="blockquote">
-<p>To obtain a probability that Skeleton 1 is that of Richard III, we considered the non-genetic data (radiocarbon data, estimated age at death, sex, presence of scoliosis and presence of perimortem wounds) together with the genetic data (mtDNA and Y-chromosome). For each data type, we computed likelihoods for the observed data under hypothesis 1 (H1—that Skeleton 1 is Richard III) and under hypothesis 2 (H2—that Skeleton 1 is not Richard III).</p>
-</blockquote>
-<p>Here are the non-genetic observations:</p>
-<blockquote class="blockquote">
-<p>The skeleton was that of a male aged 30 to 34 years, with severe scoliosis rendering one shoulder higher than the other, with numerous perimortem battle injuries Modelled radiocarbon dating … [indicated death in the interval] 1456–1530 AD at 95.4% probability.</p>
-</blockquote>
-<ol type="1">
-<li><p>Age and sex of skeleton. Given the historical facts, a “male aged 30 to 34 years” is absolutely consistent with the observations. So, under hypothesis 1, the likelihood would be high, perhaps 75%. On the other hand, under hypothesis 2, it’s fair to see the likelihood as the product of 1/2 (for sex) and perhaps 1/5 given the age distribution at death of the sorts of people likely to be buried at the church. The likelihood ratio is divides the likelihood under hypothesis 1 by the likelihood under hypothesis 2, something like 0.75 / 0.10 = 7.5. On the verbal scale, this is “weak support” for hypothesis 1.</p></li>
-<li><p>Radiocarbon dating to AD 1456-1530. Given the historical record, this is obviously consistent with hypothesis 1, so the likelihood is high (say, 50%) under hypothesis 1. But under hypothesis 2, given the location and age of the church, it’s hardly surprising that any skeleton would date to this period. Let’s call it a likelihood of 1/3 to 1/4. The likelihood ratio is thus about 1.5 to 2, also “weak support.” It would have been much more stronger evidence, <strong>against hypothesis 1</strong>, if the skeleton dated to 1400 or 1600.</p></li>
-<li><p>Scoliosis. Under hypothesis 1, the likelihood of this evidence is high. Under hypothesis 2, the likelihood can be estimated from the fraction of skeletons found with scoliosis, perhaps 1 in 300. The likelihood ratio can reasonably be assigned as 200, “moderately strong evidence.”</p></li>
-<li><p>Wounds inflicted after death. Under hypothesis 1, this likelihood is high, but hard to know how high. (The War of the Roses, for which Richard’s death marked the end, was bitterly fought.) Under hypothesis 2, one could look at how often post-mortem wounds are found in such burials. The researchers assigned a likelihood ratio of 40: “moderate support.”</p></li>
-</ol>
-<p>A. Given the evidence presented in (1) - (4), what’s a reasonable estimate of the overall likelihood ratio?</p>
-<div class="cell" data-inline="true">
-<span> <small style="color: grey;" id="pwh-A-3ks-hintarea" class="hintarea">pwh-A-3ks</small>
-<form id="pwh-A-3ks-form">
-<span> <span> <input type="radio" class="devoirs-mcq" value="1000" id="pwh-A-3ks-1" w="23" name="pwh-A-3ks" hint="Not so!" show_hints="false"> 1000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="5,000" id="pwh-A-3ks-2" w="7" name="pwh-A-3ks" hint="You might think so, but ..." show_hints="false"> 5,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="10,000 " id="pwh-A-3ks-2" w="32" name="pwh-A-3ks" hint="Not quite." show_hints="false"> 10,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="100,000" id="pwh-A-3ks-3" w="18" name="pwh-A-3ks" hint="Right on the nose!" show_hints="false"> 100,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1,000,000" id="pwh-A-3ks-4" w="23" name="pwh-A-3ks" hint="You might think so, but ..." show_hints="false"> 1,000,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="5,000,000" id="pwh-A-3ks-5" w="23" name="pwh-A-3ks" hint="You might think so, but ..." show_hints="false"> 5,000,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="10,000,000" id="pwh-A-3ks-6" w="3" name="pwh-A-3ks" hint="Sorry!" show_hints="false"> 10,000,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="pwh-A-3ks" id="pwh-A-3ks.null" style="display: none;" w="skipped" checked=""> </span> </span>
-</form>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function() {
-      console.log('Adding event listener for pwh-A-3ks.');
-      const form = document.getElementById('pwh-A-3ks-form');
-      const radioButtons = form.querySelectorAll('input[type="radio"]');
-
-      // Load saved value on page load
-      const savedValue = localStorage.getItem('pwh-A-3ks-choice');
-      if (savedValue) {
-        console.log("Restoring radio button values for pwh-A-3ks.");
-        radioButtons.forEach(radio => {
-          if (radio.value === savedValue) {
-            radio.checked = true;
-          }
-        });
-      }
-
-      // Save value on change
-      form.addEventListener('change', function(event) {
-        if (event.target.type === 'radio') {
-          console.log("Saving changed value for pwh-A-3ks.");
-          localStorage.setItem('pwh-A-3ks-choice', event.target.value);
-        }
-      });
-    });
-</script>
-<p></p>
-</span></div>
-<p>B. What does (A) correspond to on the verbal scale of strength of evidence (in favor of hypothesis 1)?</p>
-<div class="cell" data-inline="true">
-<span> <small style="color: grey;" id="pwh-B-kdw-hintarea" class="hintarea">pwh-B-kdw</small>
-<form id="pwh-B-kdw-form">
-<span> <span> <input type="radio" class="devoirs-mcq" value="Moderate support" id="pwh-B-kdw-1" w="23" name="pwh-B-kdw" hint="Boo!" show_hints="false"> Moderate support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Moderately ... ng support" id="pwh-B-kdw-2" w="7" name="pwh-B-kdw" hint="Incorrect choice." show_hints="false"> Moderately strong support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Strong support" id="pwh-B-kdw-3" w="3" name="pwh-B-kdw" hint="Better luck next time." show_hints="false"> Strong support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Very strong support" id="pwh-B-kdw-4" w="8" name="pwh-B-kdw" hint="Correct." show_hints="false"> Very strong support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Extremely  ... ng support" id="pwh-B-kdw-5" w="7" name="pwh-B-kdw" hint="Try again!" show_hints="false"> Extremely strong support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="pwh-B-kdw" id="pwh-B-kdw.null" style="display: none;" w="skipped" checked=""> </span> </span>
-</form>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function() {
-      console.log('Adding event listener for pwh-B-kdw.');
-      const form = document.getElementById('pwh-B-kdw-form');
-      const radioButtons = form.querySelectorAll('input[type="radio"]');
-
-      // Load saved value on page load
-      const savedValue = localStorage.getItem('pwh-B-kdw-choice');
-      if (savedValue) {
-        console.log("Restoring radio button values for pwh-B-kdw.");
-        radioButtons.forEach(radio => {
-          if (radio.value === savedValue) {
-            radio.checked = true;
-          }
-        });
-      }
-
-      // Save value on change
-      form.addEventListener('change', function(event) {
-        if (event.target.type === 'radio') {
-          console.log("Saving changed value for pwh-B-kdw.");
-          localStorage.setItem('pwh-B-kdw-choice', event.target.value);
-        }
-      });
-    });
-</script>
-<p></p>
-</span></div>
-<p>The genetic evidence is mixed. Richard had no children, but there are two kinds of DNA that are well conserved over time. The first is DNA from the Y chromosome, which is passed patrillinearly from generation to generation. The second is mitochondrial DNA which is passed exclusively from the mother.</p>
-<ol start="5" type="1">
-<li>To find a continuous line of male descendents, it was necessary to go back to Richard’s great-great-grandfather, Edward III (1312-1377). Edward’s descendents tracked through the male line, reach the present after 18-20 generations. No match was found between Edward living descendants and Richard’s Y-chromosome DNA. The likelihood of no match is high, practically 1, under hypothesis 2. But even under hypothesis 1, given the many opportunties for false paternity in the many generations between Edward and today’s male descendents, the likelihood of no match is something like 10%.</li>
-</ol>
-<p>C. Combine the two likelihoods given in (5) to find the likelihood ratio of hypothesis 1 versus hypothesis 2 under the observation of no genetic match. Which number is closest?</p>
-<div class="cell" data-inline="true">
-<span> <small style="color: grey;" id="pwh-C-k2l-hintarea" class="hintarea">pwh-C-k2l</small>
-<form id="pwh-C-k2l-form">
-<span> <span> <input type="radio" class="devoirs-mcq" value="0.01" id="pwh-C-k2l-1" w="87" name="pwh-C-k2l" hint="You're wrong here." show_hints="false"> 0.01 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.1" id="pwh-C-k2l-2" w="41" name="pwh-C-k2l" hint="You're right." show_hints="false"> 0.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1.0" id="pwh-C-k2l-3" w="3" name="pwh-C-k2l" hint="Try again!" show_hints="false"> 1.0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="10" id="pwh-C-k2l-4" w="3" name="pwh-C-k2l" hint="Incorrect choice." show_hints="false"> 10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="100" id="pwh-C-k2l-5" w="3" name="pwh-C-k2l" hint="Wrong." show_hints="false"> 100 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="pwh-C-k2l" id="pwh-C-k2l.null" style="display: none;" w="skipped" checked=""> </span> </span>
-</form>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function() {
-      console.log('Adding event listener for pwh-C-k2l.');
-      const form = document.getElementById('pwh-C-k2l-form');
-      const radioButtons = form.querySelectorAll('input[type="radio"]');
-
-      // Load saved value on page load
-      const savedValue = localStorage.getItem('pwh-C-k2l-choice');
-      if (savedValue) {
-        console.log("Restoring radio button values for pwh-C-k2l.");
-        radioButtons.forEach(radio => {
-          if (radio.value === savedValue) {
-            radio.checked = true;
-          }
-        });
-      }
-
-      // Save value on change
-      form.addEventListener('change', function(event) {
-        if (event.target.type === 'radio') {
-          console.log("Saving changed value for pwh-C-k2l.");
-          localStorage.setItem('pwh-C-k2l-choice', event.target.value);
-        }
-      });
-    });
-</script>
-<p></p>
-</span></div>
-<ol start="6" type="1">
-<li>Mitochondrial DNA. Richard had a sister, and the sister has a continuous line of female descendents (through 17 to 19 generations) to the present. These descendants provided a strong genetic match. The likelihood ratio was estimated by the researchers to be approximately 500: “moderately strong support.”</li>
-</ol>
-<p>D. Combining the likelihood ratios for (1) through (6), what is the overall likelihood ratio in favor of hypothesis 1?</p>
-<div class="cell" data-inline="true">
-<span> <small style="color: grey;" id="pwh-D-8wd-hintarea" class="hintarea">pwh-D-8wd</small>
-<form id="pwh-D-8wd-form">
-<span> <span> <input type="radio" class="devoirs-mcq" value="1000" id="pwh-D-8wd-1" w="23" name="pwh-D-8wd" hint="Boo!" show_hints="false"> 1000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="5000" id="pwh-D-8wd-2" w="23" name="pwh-D-8wd" hint="Try again!" show_hints="false"> 5000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="10,000 " id="pwh-D-8wd-3" w="19" name="pwh-D-8wd" hint="You're wrong here." show_hints="false"> 10,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="100,000 " id="pwh-D-8wd-4" w="7" name="pwh-D-8wd" hint="Not quite." show_hints="false"> 100,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1,000,000" id="pwh-D-8wd-5" w="32" name="pwh-D-8wd" hint="Not quite." show_hints="false"> 1,000,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="5,000,000" id="pwh-D-8wd-6" w="18" name="pwh-D-8wd" hint="You're right!" show_hints="false"> 5,000,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="10,000,000" id="pwh-D-8wd-7" w="7" name="pwh-D-8wd" hint="No." show_hints="false"> 10,000,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="pwh-D-8wd" id="pwh-D-8wd.null" style="display: none;" w="skipped" checked=""> </span> </span>
-</form>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function() {
-      console.log('Adding event listener for pwh-D-8wd.');
-      const form = document.getElementById('pwh-D-8wd-form');
-      const radioButtons = form.querySelectorAll('input[type="radio"]');
-
-      // Load saved value on page load
-      const savedValue = localStorage.getItem('pwh-D-8wd-choice');
-      if (savedValue) {
-        console.log("Restoring radio button values for pwh-D-8wd.");
-        radioButtons.forEach(radio => {
-          if (radio.value === savedValue) {
-            radio.checked = true;
-          }
-        });
-      }
-
-      // Save value on change
-      form.addEventListener('change', function(event) {
-        if (event.target.type === 'radio') {
-          console.log("Saving changed value for pwh-D-8wd.");
-          localStorage.setItem('pwh-D-8wd-choice', event.target.value);
-        }
-      });
-    });
-</script>
-<p></p>
-</span></div>
-<p>E. What is the verbal description of the overall likelihood ratio found in (D)?</p>
-<div class="cell" data-inline="true">
-<span> <small style="color: grey;" id="pwh-E-kdw-hintarea" class="hintarea">pwh-E-kdw</small>
-<form id="pwh-E-kdw-form">
-<span> <span> <input type="radio" class="devoirs-mcq" value="Moderate support" id="pwh-E-kdw-1" w="7" name="pwh-E-kdw" hint="You might think so, but ..." show_hints="false"> Moderate support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Moderately ... ng support" id="pwh-E-kdw-2" w="7" name="pwh-E-kdw" hint="You might think so, but ..." show_hints="false"> Moderately strong support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Strong support" id="pwh-E-kdw-3" w="87" name="pwh-E-kdw" hint="Better luck next time." show_hints="false"> Strong support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Very stron ... g support " id="pwh-E-kdw-4" w="19" name="pwh-E-kdw" hint="Not quite right." show_hints="false"> Very strong support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Extremely  ... ng support" id="pwh-E-kdw-5" w="29" name="pwh-E-kdw" hint="You've got it!" show_hints="false"> Extremely strong support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="pwh-E-kdw" id="pwh-E-kdw.null" style="display: none;" w="skipped" checked=""> </span> </span>
-</form>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function() {
-      console.log('Adding event listener for pwh-E-kdw.');
-      const form = document.getElementById('pwh-E-kdw-form');
-      const radioButtons = form.querySelectorAll('input[type="radio"]');
-
-      // Load saved value on page load
-      const savedValue = localStorage.getItem('pwh-E-kdw-choice');
-      if (savedValue) {
-        console.log("Restoring radio button values for pwh-E-kdw.");
-        radioButtons.forEach(radio => {
-          if (radio.value === savedValue) {
-            radio.checked = true;
-          }
-        });
-      }
-
-      // Save value on change
-      form.addEventListener('change', function(event) {
-        if (event.target.type === 'radio') {
-          console.log("Saving changed value for pwh-E-kdw.");
-          localStorage.setItem('pwh-E-kdw-choice', event.target.value);
-        }
-      });
-    });
-</script>
-<p></p>
-</span></div>
-<p>Each of the individual likelihoods (1) - (6) is subject to dispute, but only within a limited range, say, a factor of roughly 2. This renders the overall likelihood uncertain on a numeric scale, but much less uncertain on a logarithmic scale. Note that the likelihood ratios corresponding to the verbal scale are spaced logarithmally. In mathematics, being uncertain by a factor of 10 is considered unacceptable precession for calling an answer “correct.” But on the logarithmic likelihood scale, a factor of 10 is not necessarily large.</p>
-</div>
-<p><!-- end of exr-pollen-wish-hamper --></p>
-</div>
-<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <div id="exr-jaquar-shut-pot" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3</strong></span> You’re trying to predict the outcome of a football game, updating your predictions as the game proceeds. The competing hypotheses here are the possible end scores for your team: 2, 3, 4, 5, 6, 7, 8, 9, …, 100, 100+. I don’t know which is your team and what are your beliefs about it, so I can’t tell you much about what relative probability you assign to each of these 100 possible outcomes, but you have your own views, well informed or not.</p>
+<p><span class="theorem-title"><strong>Exercise 1</strong></span> You’re trying to predict the outcome of a football game, updating your predictions as the game proceeds. The competing hypotheses here are the possible end scores for your team: 2, 3, 4, 5, 6, 7, 8, 9, …, 100, 100+. I don’t know which is your team and what are your beliefs about it, so I can’t tell you much about what relative probability you assign to each of these 100 possible outcomes, but you have your own views, well informed or not.</p>
 <p>Purely for the sake of simplicity, let’s consider just these 20 hypotheses: the scores 5 through 24, with equal relative probability assigned to each: 1.</p>
 <p>A. You don’t need to translate this relative probability distribution into an (absolute) probability, but if you were to do so, what would it be?</p>
 <div class="cell">
 <span> <small style="color: grey;" id="jsp-A-3982-hintarea" class="hintarea">jsp-A-3982</small>
 <form id="jsp-A-3982-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="0.10 for e ... ed scores." id="jsp-A-3982-1" w="19" name="jsp-A-3982" hint="The absolute probability will have the same shape distribution as the relative probability." show_hints="false"> 0.10 for each of the odd-valued scores.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="0.10 for e ... ed scores." id="jsp-A-3982-1" w="87" name="jsp-A-3982" hint="The absolute probability will have the same shape distribution as the relative probability." show_hints="false"> 0.10 for each of the odd-valued scores.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="1% for sco ...  score 24." id="jsp-A-3982-2" w="3" name="jsp-A-3982" hint="Sorry. Going from a relative to an absolute probability is always a matter of multiplying each relative probability by the same number. That's not what's happening here." show_hints="false"> 1% for score of 5, increasing linearly to 13.5% for score 24.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="1% for sco ...  score 24." id="jsp-A-3982-2" w="19" name="jsp-A-3982" hint="Sorry. Going from a relative to an absolute probability is always a matter of multiplying each relative probability by the same number. That's not what's happening here." show_hints="false"> 1% for score of 5, increasing linearly to 13.5% for score 24.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="0.05 for e ... ypotheses." id="jsp-A-3982-3" w="35" name="jsp-A-3982" hint="Good job!" show_hints="false"> 0.05 for each of the hypotheses.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="0.05 for e ... ypotheses." id="jsp-A-3982-3" w="16" name="jsp-A-3982" hint="Yup!" show_hints="false"> 0.05 for each of the hypotheses.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Not enough ... een given." id="jsp-A-3982-4" w="19" name="jsp-A-3982" hint="Sorry, but you have everything you need." show_hints="false"> Not enough information has been given.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Not enough ... een given." id="jsp-A-3982-4" w="32" name="jsp-A-3982" hint="Sorry, but you have everything you need." show_hints="false"> Not enough information has been given.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="jsp-A-3982" id="jsp-A-3982.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -856,16 +550,16 @@ document.addEventListener('DOMContentLoaded', function() {
 <span> <small style="color: grey;" id="jsp-B-3843-hintarea" class="hintarea">jsp-B-3843</small>
 <form id="jsp-B-3843-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Hypothethe ... ikelihood." id="jsp-B-3843-1" w="41" name="jsp-B-3843" hint="Good job!" show_hints="false"> Hypothethetical ending scores of 5 through 9 have zero likelihood.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Hypothethe ... ikelihood." id="jsp-B-3843-1" w="29" name="jsp-B-3843" hint="You're right!" show_hints="false"> Hypothethetical ending scores of 5 through 9 have zero likelihood.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Hypothetic ... ikelihood." id="jsp-B-3843-2" w="7" name="jsp-B-3843" hint="Not on target." show_hints="false"> Hypothetical ending score of 5 through 10 have zero likelihood.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Hypothetic ... ikelihood." id="jsp-B-3843-2" w="23" name="jsp-B-3843" hint="Hmmm ..." show_hints="false"> Hypothetical ending score of 5 through 10 have zero likelihood.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Anything c ... ypothesis." id="jsp-B-3843-3" w="87" name="jsp-B-3843" hint="Incorrect." show_hints="false"> Anything can happen in a football game. Best not to assign zero likelihood to any before-the-game hypothesis.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Anything c ... ypothesis." id="jsp-B-3843-3" w="32" name="jsp-B-3843" hint="Untrue!" show_hints="false"> Anything can happen in a football game. Best not to assign zero likelihood to any before-the-game hypothesis.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="There is n ... ikelihood." id="jsp-B-3843-4" w="23" name="jsp-B-3843" hint="Not on target." show_hints="false"> There is no such thing as zero likelihood.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="There is n ... ikelihood." id="jsp-B-3843-4" w="87" name="jsp-B-3843" hint="Wrong." show_hints="false"> There is no such thing as zero likelihood.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="jsp-B-3843" id="jsp-B-3843.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -901,7 +595,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="cell" data-inline="true">
 <span> <small style="color: grey;" id="jsp-C-k3ks-hintarea" class="hintarea">jsp-C-k3ks</small>
 <form id="jsp-C-k3ks-form">
-<span> <span> <input type="radio" class="devoirs-mcq" value="Posterior" id="jsp-C-k3ks-1" w="19" name="jsp-C-k3ks" hint="You're wrong here." show_hints="false"> Posterior &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Prior" id="jsp-C-k3ks-2" w="29" name="jsp-C-k3ks" hint="Certainly." show_hints="false"> Prior &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Likelihood" id="jsp-C-k3ks-3" w="87" name="jsp-C-k3ks" hint="Try again!" show_hints="false"> Likelihood &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Antebellum" id="jsp-C-k3ks-4" w="23" name="jsp-C-k3ks" hint="Hmmm ..." show_hints="false"> Antebellum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Frequency" id="jsp-C-k3ks-5" w="3" name="jsp-C-k3ks" hint="Hmmm ..." show_hints="false"> Frequency &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="jsp-C-k3ks" id="jsp-C-k3ks.null" style="display: none;" w="skipped" checked=""> </span> </span>
+<span> <span> <input type="radio" class="devoirs-mcq" value="Posterior" id="jsp-C-k3ks-1" w="87" name="jsp-C-k3ks" hint="You're mistaken" show_hints="false"> Posterior &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Prior" id="jsp-C-k3ks-2" w="41" name="jsp-C-k3ks" hint="Excellent!" show_hints="false"> Prior &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Likelihood" id="jsp-C-k3ks-3" w="3" name="jsp-C-k3ks" hint="Nope." show_hints="false"> Likelihood &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Antebellum" id="jsp-C-k3ks-4" w="23" name="jsp-C-k3ks" hint="Nope." show_hints="false"> Antebellum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Frequency" id="jsp-C-k3ks-5" w="32" name="jsp-C-k3ks" hint="Better luck next time." show_hints="false"> Frequency &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="jsp-C-k3ks" id="jsp-C-k3ks.null" style="display: none;" w="skipped" checked=""> </span> </span>
 </form>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
@@ -935,7 +629,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="cell" data-inline="true">
 <span> <small style="color: grey;" id="jsp-D-3l2s-hintarea" class="hintarea">jsp-D-3l2s</small>
 <form id="jsp-D-3l2s-form">
-<span> <span> <input type="radio" class="devoirs-mcq" value="Posterior" id="jsp-D-3l2s-1" w="16" name="jsp-D-3l2s" hint="A win!" show_hints="false"> Posterior &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Prior " id="jsp-D-3l2s-2" w="7" name="jsp-D-3l2s" hint="Untrue!" show_hints="false"> Prior &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Likelihood" id="jsp-D-3l2s-3" w="87" name="jsp-D-3l2s" hint="Untrue!" show_hints="false"> Likelihood &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Antebellum" id="jsp-D-3l2s-4" w="32" name="jsp-D-3l2s" hint="Oops!" show_hints="false"> Antebellum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Frequency" id="jsp-D-3l2s-5" w="3" name="jsp-D-3l2s" hint="No." show_hints="false"> Frequency &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="jsp-D-3l2s" id="jsp-D-3l2s.null" style="display: none;" w="skipped" checked=""> </span> </span>
+<span> <span> <input type="radio" class="devoirs-mcq" value="Posterior" id="jsp-D-3l2s-1" w="8" name="jsp-D-3l2s" hint="Yes!" show_hints="false"> Posterior &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Prior " id="jsp-D-3l2s-2" w="7" name="jsp-D-3l2s" hint="Untrue!" show_hints="false"> Prior &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Likelihood" id="jsp-D-3l2s-3" w="7" name="jsp-D-3l2s" hint="Not so!" show_hints="false"> Likelihood &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Antebellum" id="jsp-D-3l2s-4" w="19" name="jsp-D-3l2s" hint="Hmmm ..." show_hints="false"> Antebellum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Frequency" id="jsp-D-3l2s-5" w="3" name="jsp-D-3l2s" hint="You might think so, but ..." show_hints="false"> Frequency &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="jsp-D-3l2s" id="jsp-D-3l2s.null" style="display: none;" w="skipped" checked=""> </span> </span>
 </form>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
@@ -968,9 +662,9 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 <p><!-- end of exr-jaquar-shut-pot --></p>
 </div>
-<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div id="exr-dingo-eat-saw" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4</strong></span> Consider a bad movie plot organized along these lines: The protagonist has a disturbing dream that the universe has changed from “Normal” to a new state: “Doom.” Doom was hitherto thought impossible. Doom and Normal constitute two hypotheses about the state of the universe.</p>
+<p><span class="theorem-title"><strong>Exercise 2</strong></span> Consider a bad movie plot organized along these lines: The protagonist has a disturbing dream that the universe has changed from “Normal” to a new state: “Doom.” Doom was hitherto thought impossible. Doom and Normal constitute two hypotheses about the state of the universe.</p>
 <p>To say that a hypothesis is impossible is equivalent to assigning it probability zero. That’s what everyone else believes, but our protagonist, on account of his dream, assigns Doom the rhetorical odds “one-in-a-million.”</p>
 <ol type="1">
 <li>If an outcome has probability zero, what are the odds of that outcome?</li>
@@ -979,16 +673,16 @@ document.addEventListener('DOMContentLoaded', function() {
 <span> <small style="color: grey;" id="des-1-ckd-hintarea" class="hintarea">des-1-ckd</small>
 <form id="des-1-ckd-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Zero" id="des-1-ckd-1" w="18" name="des-1-ckd" hint="Excellent!" show_hints="false"> Zero</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Zero" id="des-1-ckd-1" w="18" name="des-1-ckd" hint="You're right." show_hints="false"> Zero</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="One" id="des-1-ckd-2" w="19" name="des-1-ckd" hint="Sorry!" show_hints="false"> One</p>
+</p><p><input type="radio" class="devoirs-mcq" value="One" id="des-1-ckd-2" w="87" name="des-1-ckd" hint="Incorrect choice." show_hints="false"> One</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Infinity" id="des-1-ckd-3" w="7" name="des-1-ckd" hint="Nope." show_hints="false"> Infinity</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Infinity" id="des-1-ckd-3" w="23" name="des-1-ckd" hint="Incorrect choice." show_hints="false"> Infinity</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="You can't  ... odds here." id="des-1-ckd-4" w="23" name="des-1-ckd" hint="Incorrect." show_hints="false"> You can’t use odds here.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="You can't  ... odds here." id="des-1-ckd-4" w="3" name="des-1-ckd" hint="Nope." show_hints="false"> You can’t use odds here.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="des-1-ckd" id="des-1-ckd.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -1050,16 +744,16 @@ document.addEventListener('DOMContentLoaded', function() {
 <span> <small style="color: grey;" id="des-3-lfs-hintarea" class="hintarea">des-3-lfs</small>
 <form id="des-3-lfs-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="No evidence" id="des-3-lfs-1" w="19" name="des-3-lfs" hint="Hmmm ..." show_hints="false"> No evidence</p>
+</p><p><input type="radio" class="devoirs-mcq" value="No evidence" id="des-3-lfs-1" w="3" name="des-3-lfs" hint="Wrong." show_hints="false"> No evidence</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Limited" id="des-3-lfs-2" w="7" name="des-3-lfs" hint="Oops!" show_hints="false"> Limited</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Limited" id="des-3-lfs-2" w="3" name="des-3-lfs" hint="Incorrect choice." show_hints="false"> Limited</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Moderate" id="des-3-lfs-3" w="19" name="des-3-lfs" hint="Oops!" show_hints="false"> Moderate</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Moderate" id="des-3-lfs-3" w="23" name="des-3-lfs" hint="Incorrect choice." show_hints="false"> Moderate</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Moderate to strong" id="des-3-lfs-4" w="7" name="des-3-lfs" hint="Wrong." show_hints="false"> Moderate to strong</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Moderate to strong" id="des-3-lfs-4" w="32" name="des-3-lfs" hint="Oops!" show_hints="false"> Moderate to strong</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="des-3-lfs" id="des-3-lfs.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -1101,16 +795,16 @@ document.addEventListener('DOMContentLoaded', function() {
 <span> <small style="color: grey;" id="des-4-sot-hintarea" class="hintarea">des-4-sot</small>
 <form id="des-4-sot-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="One in a million" id="des-4-sot-1" w="23" name="des-4-sot" hint="Nope." show_hints="false"> One in a million</p>
+</p><p><input type="radio" class="devoirs-mcq" value="One in a million" id="des-4-sot-1" w="3" name="des-4-sot" hint="Better luck next time." show_hints="false"> One in a million</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Two in a million" id="des-4-sot-2" w="8" name="des-4-sot" hint="Good job!" show_hints="false"> Two in a million</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Two in a million" id="des-4-sot-2" w="41" name="des-4-sot" hint="Bingo!" show_hints="false"> Two in a million</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="One in one ... d thousand" id="des-4-sot-3" w="3" name="des-4-sot" hint="Boo!" show_hints="false"> One in one-hundred thousand</p>
+</p><p><input type="radio" class="devoirs-mcq" value="One in one ... d thousand" id="des-4-sot-3" w="23" name="des-4-sot" hint="You might think so, but ..." show_hints="false"> One in one-hundred thousand</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="One in ten thousand" id="des-4-sot-4" w="23" name="des-4-sot" hint="No." show_hints="false"> One in ten thousand</p>
+</p><p><input type="radio" class="devoirs-mcq" value="One in ten thousand" id="des-4-sot-4" w="23" name="des-4-sot" hint="Wrong." show_hints="false"> One in ten thousand</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="des-4-sot" id="des-4-sot.null" style="display: none;" w="skipped" checked="">
 </form>
@@ -1149,7 +843,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="cell" data-inline="true">
 <span> <small style="color: grey;" id="des-5-hjw-hintarea" class="hintarea">des-5-hjw</small>
 <form id="des-5-hjw-form">
-<span> <span> <input type="radio" class="devoirs-mcq" value="0.000001" id="des-5-hjw-1" w="32" name="des-5-hjw" hint="Try again!" show_hints="false"> 0.000001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.00003" id="des-5-hjw-2" w="35" name="des-5-hjw" hint="Bullseye!" show_hints="false"> 0.00003 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.0001" id="des-5-hjw-3" w="87" name="des-5-hjw" hint="Not so!" show_hints="false"> 0.0001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.003" id="des-5-hjw-4" w="23" name="des-5-hjw" hint="You're wrong here." show_hints="false"> 0.003 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.01" id="des-5-hjw-5" w="23" name="des-5-hjw" hint="This is wide of the mark." show_hints="false"> 0.01 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3 " id="des-5-hjw-6" w="23" name="des-5-hjw" hint="You're wrong here." show_hints="false"> 0.3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="des-5-hjw" id="des-5-hjw.null" style="display: none;" w="skipped" checked=""> </span> </span>
+<span> <span> <input type="radio" class="devoirs-mcq" value="0.000001" id="des-5-hjw-1" w="3" name="des-5-hjw" hint="Think again." show_hints="false"> 0.000001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.00003" id="des-5-hjw-2" w="29" name="des-5-hjw" hint="Yup!" show_hints="false"> 0.00003 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.0001" id="des-5-hjw-3" w="19" name="des-5-hjw" hint="Sorry!" show_hints="false"> 0.0001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.003" id="des-5-hjw-4" w="23" name="des-5-hjw" hint="Untrue!" show_hints="false"> 0.003 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.01" id="des-5-hjw-5" w="87" name="des-5-hjw" hint="Hmmm ..." show_hints="false"> 0.01 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3 " id="des-5-hjw-6" w="7" name="des-5-hjw" hint="Incorrect." show_hints="false"> 0.3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="des-5-hjw" id="des-5-hjw.null" style="display: none;" w="skipped" checked=""> </span> </span>
 </form>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
@@ -1185,7 +879,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="cell" data-inline="true">
 <span> <small style="color: grey;" id="des-6-yqe-hintarea" class="hintarea">des-6-yqe</small>
 <form id="des-6-yqe-form">
-<span> <span> <input type="radio" class="devoirs-mcq" value="0.000001" id="des-6-yqe-1" w="19" name="des-6-yqe" hint="Not so!" show_hints="false"> 0.000001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.00003" id="des-6-yqe-2" w="3" name="des-6-yqe" hint="Nope." show_hints="false"> 0.00003 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.0001 " id="des-6-yqe-3" w="16" name="des-6-yqe" hint="Right on the nose!" show_hints="false"> 0.0001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.003" id="des-6-yqe-4" w="7" name="des-6-yqe" hint="Not on target." show_hints="false"> 0.003 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.01" id="des-6-yqe-5" w="23" name="des-6-yqe" hint="Untrue!" show_hints="false"> 0.01 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3 " id="des-6-yqe-6" w="32" name="des-6-yqe" hint="Not on target." show_hints="false"> 0.3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="des-6-yqe" id="des-6-yqe.null" style="display: none;" w="skipped" checked=""> </span> </span>
+<span> <span> <input type="radio" class="devoirs-mcq" value="0.000001" id="des-6-yqe-1" w="7" name="des-6-yqe" hint="This is wide of the mark." show_hints="false"> 0.000001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.00003" id="des-6-yqe-2" w="19" name="des-6-yqe" hint="Wrong." show_hints="false"> 0.00003 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.0001 " id="des-6-yqe-3" w="14" name="des-6-yqe" hint="Yes." show_hints="false"> 0.0001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.003" id="des-6-yqe-4" w="7" name="des-6-yqe" hint="You're wrong here." show_hints="false"> 0.003 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.01" id="des-6-yqe-5" w="23" name="des-6-yqe" hint="Wrong." show_hints="false"> 0.01 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3 " id="des-6-yqe-6" w="32" name="des-6-yqe" hint="Think again." show_hints="false"> 0.3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="des-6-yqe" id="des-6-yqe.null" style="display: none;" w="skipped" checked=""> </span> </span>
 </form>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
@@ -1219,50 +913,64 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 <p><!-- end of exr-dingo-eat-saw --></p>
 </div>
-<div id="tabset-2-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-5-tab">
-<div id="exr-lynx-hit-target" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 5</strong></span> <strong>Prior and posterior: learning a probability from data</strong></p>
-<p>Suppose we want to learn the <strong>probability of success</strong> (p) in a repeated process (e.g.&nbsp;a machine producing a good part, or a single attempt succeeding). We don’t know (p); we only see outcomes: each trial is a success or a failure.</p>
-<p>A standard approach is to start with a <strong>prior</strong> distribution that encodes our uncertainty about (p) <em>before</em> we see data. Here we use a <strong>uniform prior</strong>: every value of (p) between 0 and 1 is considered equally plausible. After we observe data (e.g.&nbsp;4 successes in 4 trials), we update our beliefs to get a <strong>posterior</strong> distribution. The posterior is more concentrated where the data suggest (p) is likely to be.</p>
-<p>The R code below uses the <strong>Beta distribution</strong> to do this. With a uniform prior, after (k) successes in (n) trials the posterior is Beta((k+1), (n-k+1)). Run the chunk to see the prior (no data) and the posterior after 4 successes in 4 trials.</p>
-<div class="cell" data-caption="Prior (no data) and posterior (4 successes in 4 trials)">
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div id="exr-heron-catch-fish" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3</strong></span> <strong>Prior and posterior: the ICBM-style example (from class and the book)</strong></p>
+<p>This exercise revisits the example from class and the book in which we learn an unknown <strong>probability of success</strong> (p) by starting with a <strong>prior</strong> distribution and updating with data to get a <strong>posterior</strong> distribution.</p>
+<p>We use a <strong>uniform prior</strong>: before seeing any data, we treat every value of (p) between 0 and 1 as equally plausible. When we observe (k) successes in (n) trials, the mathematics of Bayesian updating (with this prior) gives a <strong>posterior</strong> that is a <strong>Beta distribution</strong> with shape parameters (= k + 1) and (= n - k + 1). The posterior density is highest where the data suggest (p) is likely to be. The <strong>MLE</strong> (maximum likelihood estimate) is (k/n), the fraction of successes—often shown as a vertical line on the plot.</p>
+<p><strong>Part 1: Flat prior, then 4 consecutive successes</strong></p>
+<p>Run the R chunk below. It defines a small function that plots the prior or posterior density of (p), then runs it for <strong>no data</strong> (prior) and for <strong>1, 2, 3, and 4 successes in 1, 2, 3, and 4 trials</strong> (so four posteriors in a row). You get five plots: first the flat prior, then the posterior after 1 success in 1 try, then 2 in 2, then 3 in 3, then 4 in 4. The red dashed line in each posterior plot is the MLE ((k/n)).</p>
+<div class="cell" data-caption="Prior (no data) and posteriors for 1/1, 2/2, 3/3, 4/4 successes">
+<div>
+<div id="webr-2" class="exercise-cell">
+
+</div>
+<script type="webr-2-contents">
+eyJhdHRyIjp7ImNhcHRpb24iOiJQcmlvciAobm8gZGF0YSkgYW5kIHBvc3RlcmlvcnMgZm9yIDEvMSwgMi8yLCAzLzMsIDQvNCBzdWNjZXNzZXMiLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJmaWctaGVpZ2h0IjoxMCwiZmlnLXdpZHRoIjo4fSwiY29kZSI6InBsb3RfcG9zdGVyaW9yIDwtIGZ1bmN0aW9uKGssIG4sIG1haW4gPSBOVUxMKSB7XG4gIHBfc2VxIDwtIHNlcSgwLCAxLCBsZW5ndGgub3V0ID0gMzAwKVxuICBhbHBoYV9wb3N0IDwtIGsgKyAxXG4gIGJldGFfcG9zdCA8LSBuIC0gayArIDFcbiAgZGVucyA8LSBkYmV0YShwX3NlcSwgYWxwaGFfcG9zdCwgYmV0YV9wb3N0KVxuICBpZiAoaXMubnVsbChtYWluKSkgbWFpbiA8LSBpZiAobiA9PSAwKSBcIlByaW9yIChubyBkYXRhKVwiIGVsc2UgcGFzdGUoXCJQb3N0ZXJpb3I6IFwiLCBrLCBcIiBzdWNjZXNzZXMgaW4gXCIsIG4sIFwiIHRyaWFsc1wiLCBzZXAgPSBcIlwiKVxuICBwbG90KHBfc2VxLCBkZW5zLCB0eXBlID0gXCJsXCIsIGNvbCA9IFwic3RlZWxibHVlXCIsIGx3ZCA9IDIsIHhsYWIgPSBcIlByb2JhYmlsaXR5IG9mIHN1Y2Nlc3MgKHApXCIsIHlsYWIgPSBcIkRlbnNpdHlcIiwgbWFpbiA9IG1haW4sIGJ0eSA9IFwibFwiKVxuICBpZiAobiA+IDApIGFibGluZSh2ID0gay9uLCBjb2wgPSBcInJlZFwiLCBsdHkgPSAyLCBsd2QgPSAxLjUpXG59XG5wYXIobWZyb3cgPSBjKDMsIDIpLCBidHkgPSBcImxcIilcbmZvciAoaWkgaW4gMDo0KSBwbG90X3Bvc3RlcmlvcihrID0gaWksIG4gPSBpaSlcbnBhcihtZnJvdyA9IGMoMSwgMSkpIn0=
+</script>
+</div>
+</div>
+<p><strong>Part 2: Informative prior from past data, then 4 new successes</strong></p>
+<p>Sometimes we already have past data. Suppose we had <strong>7 successes in 16 trials</strong> and we use that to form our <strong>prior</strong> (so the prior is Beta(8, 10), no longer flat). Then we run <strong>4 more trials</strong> and get <strong>4 successes</strong> (11 successes in 20 trials total). The next chunk shows the prior (based on 7/16) and the <strong>posterior</strong> after updating with the new data (11/20).</p>
+<div class="cell" data-caption="Prior from 7 successes in 16 trials; posterior after 4 more successes (11/20 total)">
 <div>
 <div id="webr-3" class="exercise-cell">
 
 </div>
 <script type="webr-3-contents">
-eyJhdHRyIjp7ImNhcHRpb24iOiJQcmlvciAobm8gZGF0YSkgYW5kIHBvc3RlcmlvciAoNCBzdWNjZXNzZXMgaW4gNCB0cmlhbHMpIiwiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZSwiZmlnLWhlaWdodCI6NCwiZmlnLXdpZHRoIjo4fSwiY29kZSI6InBfc2VxIDwtIHNlcSgwLCAxLCBsZW5ndGgub3V0ID0gMzAwKVxuIyBQcmlvcjogbm8gZGF0YSDihpIgdW5pZm9ybSAoQmV0YSgxLDEpKVxucHJpb3IgPC0gZGJldGEocF9zZXEsIDEsIDEpXG4jIFBvc3RlcmlvcjogNCBzdWNjZXNzZXMsIDQgdHJpYWxzIOKGkiBCZXRhKDUsIDEpXG5wb3N0ZXJpb3IgPC0gZGJldGEocF9zZXEsIDQgKyAxLCA0IC0gNCArIDEpXG5wYXIobWZyb3cgPSBjKDEsIDIpLCBidHkgPSBcImxcIilcbnBsb3QocF9zZXEsIHByaW9yLCB0eXBlID0gXCJsXCIsIGNvbCA9IFwic3RlZWxibHVlXCIsIGx3ZCA9IDIsXG4gICAgIHhsYWIgPSBcIlByb2JhYmlsaXR5IG9mIHN1Y2Nlc3MgKHApXCIsIHlsYWIgPSBcIkRlbnNpdHlcIixcbiAgICAgbWFpbiA9IFwiUHJpb3IgKG5vIGRhdGEpXCIpXG5wbG90KHBfc2VxLCBwb3N0ZXJpb3IsIHR5cGUgPSBcImxcIiwgY29sID0gXCJkYXJrZ3JlZW5cIiwgbHdkID0gMixcbiAgICAgeGxhYiA9IFwiUHJvYmFiaWxpdHkgb2Ygc3VjY2VzcyAocClcIiwgeWxhYiA9IFwiRGVuc2l0eVwiLFxuICAgICBtYWluID0gXCJQb3N0ZXJpb3IgKDQgc3VjY2Vzc2VzIGluIDQgdHJpYWxzKVwiKVxuYWJsaW5lKHYgPSA0LzQsIGNvbCA9IFwicmVkXCIsIGx0eSA9IDIsIGx3ZCA9IDEuNSkgICMgTUxFID0gay9uXG5wYXIobWZyb3cgPSBjKDEsIDEpKSJ9
+eyJhdHRyIjp7ImNhcHRpb24iOiJQcmlvciBmcm9tIDcgc3VjY2Vzc2VzIGluIDE2IHRyaWFsczsgcG9zdGVyaW9yIGFmdGVyIDQgbW9yZSBzdWNjZXNzZXMgKDExLzIwIHRvdGFsKSIsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImZpZy1oZWlnaHQiOjQsImZpZy13aWR0aCI6OH0sImNvZGUiOiJwX3NlcSA8LSBzZXEoMCwgMSwgbGVuZ3RoLm91dCA9IDMwMClcbnByaW9yX2RlbnMgPC0gZGJldGEocF9zZXEsIDcgKyAxLCAxNiAtIDcgKyAxKVxucG9zdF9kZW5zICA8LSBkYmV0YShwX3NlcSwgMTEgKyAxLCAyMCAtIDExICsgMSlcbnBhcihtZnJvdyA9IGMoMSwgMiksIGJ0eSA9IFwibFwiKVxucGxvdChwX3NlcSwgcHJpb3JfZGVucywgdHlwZSA9IFwibFwiLCBjb2wgPSBcInN0ZWVsYmx1ZVwiLCBsd2QgPSAyLCB4bGFiID0gXCJQcm9iYWJpbGl0eSBvZiBzdWNjZXNzIChwKVwiLCB5bGFiID0gXCJEZW5zaXR5XCIsIG1haW4gPSBcIlByaW9yICg3IHN1Y2Nlc3NlcyBpbiAxNiB0cmlhbHMpXCIsIGJ0eSA9IFwibFwiKVxucGxvdChwX3NlcSwgcG9zdF9kZW5zLCB0eXBlID0gXCJsXCIsIGNvbCA9IFwiZGFya2dyZWVuXCIsIGx3ZCA9IDIsIHhsYWIgPSBcIlByb2JhYmlsaXR5IG9mIHN1Y2Nlc3MgKHApXCIsIHlsYWIgPSBcIkRlbnNpdHlcIiwgbWFpbiA9IFwiUG9zdGVyaW9yICgxMSBzdWNjZXNzZXMgaW4gMjAgdHJpYWxzKVwiLCBidHkgPSBcImxcIilcbmFibGluZSh2ID0gMTEvMjAsIGNvbCA9IFwicmVkXCIsIGx0eSA9IDIsIGx3ZCA9IDEuNSlcbnBhcihtZnJvdyA9IGMoMSwgMSkpIn0=
 </script>
 </div>
 </div>
-<p><strong>1.</strong> What does the <strong>prior</strong> (left plot) represent?</p>
+<p><strong>Comprehension questions</strong></p>
+<p><strong>1.</strong> In Part 1, the first plot is “Prior (no data).” What does that plot represent?</p>
 <div class="cell">
-<span> <small style="color: grey;" id="lht-prior-hintarea" class="hintarea">lht-prior</small>
-<form id="lht-prior-form">
+<span> <small style="color: grey;" id="hcf-prior-hintarea" class="hintarea">hcf-prior</small>
+<form id="hcf-prior-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The probab ...  the data." id="lht-prior-1" w="3" name="lht-prior" hint="Untrue!" show_hints="false"> The probability of success after we see the data.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The probab ...  the data." id="hcf-prior-1" w="32" name="hcf-prior" hint="Not quite." show_hints="false"> The probability of success after we see the data.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Our uncert ...  any data." id="lht-prior-2" w="18" name="lht-prior" hint="You're right!" show_hints="false"> Our uncertainty about the probability of success <em>before</em> we see any data.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Our uncert ...  any data." id="hcf-prior-2" w="14" name="hcf-prior" hint="You're right!" show_hints="false"> Our uncertainty about the probability of success <em>before</em> we see any data.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The likeli ... alue of p." id="lht-prior-3" w="7" name="lht-prior" hint="Oops!" show_hints="false"> The likelihood of the data given each value of p.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The likeli ... alue of p." id="hcf-prior-3" w="87" name="hcf-prior" hint="Untrue!" show_hints="false"> The likelihood of the data given each value of p.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The number ...  4 trials." id="lht-prior-4" w="87" name="lht-prior" hint="Not quite right." show_hints="false"> The number of successes we expect in the next 4 trials.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The number ... ext trial." id="hcf-prior-4" w="19" name="hcf-prior" hint="Oops!" show_hints="false"> The number of successes we expect in the next trial.</p>
 <p></p>
-<input type="radio" class="devoirs-mcq" name="lht-prior" id="lht-prior.null" style="display: none;" w="skipped" checked="">
+<input type="radio" class="devoirs-mcq" name="hcf-prior" id="hcf-prior.null" style="display: none;" w="skipped" checked="">
 </form>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
-      console.log('Adding event listener for lht-prior.');
-      const form = document.getElementById('lht-prior-form');
+      console.log('Adding event listener for hcf-prior.');
+      const form = document.getElementById('hcf-prior-form');
       const radioButtons = form.querySelectorAll('input[type="radio"]');
 
       // Load saved value on page load
-      const savedValue = localStorage.getItem('lht-prior-choice');
+      const savedValue = localStorage.getItem('hcf-prior-choice');
       if (savedValue) {
-        console.log("Restoring radio button values for lht-prior.");
+        console.log("Restoring radio button values for hcf-prior.");
         radioButtons.forEach(radio => {
           if (radio.value === savedValue) {
             radio.checked = true;
@@ -1273,42 +981,42 @@ document.addEventListener('DOMContentLoaded', function() {
       // Save value on change
       form.addEventListener('change', function(event) {
         if (event.target.type === 'radio') {
-          console.log("Saving changed value for lht-prior.");
-          localStorage.setItem('lht-prior-choice', event.target.value);
+          console.log("Saving changed value for hcf-prior.");
+          localStorage.setItem('hcf-prior-choice', event.target.value);
         }
       });
     });
 </script>
 <p></p>
 </span></div>
-<p><strong>2.</strong> After seeing 4 successes in 4 trials, the posterior is concentrated near 1. Why?</p>
+<p><strong>2.</strong> As we go from 1/1 to 2/2 to 3/3 to 4/4 in Part 1, what happens to the posterior?</p>
 <div class="cell">
-<span> <small style="color: grey;" id="lht-why-hintarea" class="hintarea">lht-why</small>
-<form id="lht-why-form">
+<span> <small style="color: grey;" id="hcf-sharpen-hintarea" class="hintarea">hcf-sharpen</small>
+<form id="hcf-sharpen-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Because we ... orm prior." id="lht-why-1" w="3" name="lht-why" hint="You're wrong here." show_hints="false"> Because we used a uniform prior.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="It stays f ... (uniform)." id="hcf-sharpen-1" w="7" name="hcf-sharpen" hint="You're wrong here." show_hints="false"> It stays flat (uniform).</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Because th ... ects that." id="lht-why-2" w="29" name="lht-why" hint="Bullseye!" show_hints="false"> Because the data (4 out of 4) are consistent with a high probability of success; the posterior reflects that.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="It becomes ... cess rate." id="hcf-sharpen-2" w="18" name="hcf-sharpen" hint="Yes." show_hints="false"> It becomes more concentrated (narrower) and shifts toward the observed success rate.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Because th ... hen k = n." id="lht-why-3" w="19" name="lht-why" hint="You're mistaken" show_hints="false"> Because the Beta distribution always peaks near 1 when k = n.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="It becomes ... pread out." id="hcf-sharpen-3" w="23" name="hcf-sharpen" hint="Oops!" show_hints="false"> It becomes more spread out.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Because we ...  4 trials." id="lht-why-4" w="3" name="lht-why" hint="Not on target." show_hints="false"> Because we ran 4 trials.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="It always  ... eaks at 1." id="hcf-sharpen-4" w="7" name="hcf-sharpen" hint="Nope." show_hints="false"> It always peaks at 1.</p>
 <p></p>
-<input type="radio" class="devoirs-mcq" name="lht-why" id="lht-why.null" style="display: none;" w="skipped" checked="">
+<input type="radio" class="devoirs-mcq" name="hcf-sharpen" id="hcf-sharpen.null" style="display: none;" w="skipped" checked="">
 </form>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
-      console.log('Adding event listener for lht-why.');
-      const form = document.getElementById('lht-why-form');
+      console.log('Adding event listener for hcf-sharpen.');
+      const form = document.getElementById('hcf-sharpen-form');
       const radioButtons = form.querySelectorAll('input[type="radio"]');
 
       // Load saved value on page load
-      const savedValue = localStorage.getItem('lht-why-choice');
+      const savedValue = localStorage.getItem('hcf-sharpen-choice');
       if (savedValue) {
-        console.log("Restoring radio button values for lht-why.");
+        console.log("Restoring radio button values for hcf-sharpen.");
         radioButtons.forEach(radio => {
           if (radio.value === savedValue) {
             radio.checked = true;
@@ -1319,42 +1027,42 @@ document.addEventListener('DOMContentLoaded', function() {
       // Save value on change
       form.addEventListener('change', function(event) {
         if (event.target.type === 'radio') {
-          console.log("Saving changed value for lht-why.");
-          localStorage.setItem('lht-why-choice', event.target.value);
+          console.log("Saving changed value for hcf-sharpen.");
+          localStorage.setItem('hcf-sharpen-choice', event.target.value);
         }
       });
     });
 </script>
 <p></p>
 </span></div>
-<p><strong>3.</strong> If we had seen 2 successes in 4 trials instead, where would the posterior be concentrated?</p>
+<p><strong>3.</strong> What does the red dashed line in the posterior plots represent?</p>
 <div class="cell">
-<span> <small style="color: grey;" id="lht-2of4-hintarea" class="hintarea">lht-2of4</small>
-<form id="lht-2of4-form">
+<span> <small style="color: grey;" id="hcf-mle-hintarea" class="hintarea">hcf-mle</small>
+<form id="hcf-mle-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Near 0." id="lht-2of4-1" w="32" name="lht-2of4" hint="You might think so, but ..." show_hints="false"> Near 0.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The prior mean." id="hcf-mle-1" w="32" name="hcf-mle" hint="Think again." show_hints="false"> The prior mean.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Near 0.5." id="lht-2of4-2" w="35" name="lht-2of4" hint="Right-O!" show_hints="false"> Near 0.5.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The posterior mean." id="hcf-mle-2" w="19" name="hcf-mle" hint="No." show_hints="false"> The posterior mean.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Near 1." id="lht-2of4-3" w="23" name="lht-2of4" hint="Not quite." show_hints="false"> Near 1.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The maximu ...  i.e. k/n." id="hcf-mle-3" w="18" name="hcf-mle" hint="Right!" show_hints="false"> The maximum likelihood estimate (MLE), i.e.&nbsp;k/n.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Still unif ... he prior)." id="lht-2of4-4" w="3" name="lht-2of4" hint="Not so!" show_hints="false"> Still uniform (same as the prior).</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The number ... of trials." id="hcf-mle-4" w="3" name="hcf-mle" hint="Better luck next time." show_hints="false"> The number of trials.</p>
 <p></p>
-<input type="radio" class="devoirs-mcq" name="lht-2of4" id="lht-2of4.null" style="display: none;" w="skipped" checked="">
+<input type="radio" class="devoirs-mcq" name="hcf-mle" id="hcf-mle.null" style="display: none;" w="skipped" checked="">
 </form>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
-      console.log('Adding event listener for lht-2of4.');
-      const form = document.getElementById('lht-2of4-form');
+      console.log('Adding event listener for hcf-mle.');
+      const form = document.getElementById('hcf-mle-form');
       const radioButtons = form.querySelectorAll('input[type="radio"]');
 
       // Load saved value on page load
-      const savedValue = localStorage.getItem('lht-2of4-choice');
+      const savedValue = localStorage.getItem('hcf-mle-choice');
       if (savedValue) {
-        console.log("Restoring radio button values for lht-2of4.");
+        console.log("Restoring radio button values for hcf-mle.");
         radioButtons.forEach(radio => {
           if (radio.value === savedValue) {
             radio.checked = true;
@@ -1365,42 +1073,42 @@ document.addEventListener('DOMContentLoaded', function() {
       // Save value on change
       form.addEventListener('change', function(event) {
         if (event.target.type === 'radio') {
-          console.log("Saving changed value for lht-2of4.");
-          localStorage.setItem('lht-2of4-choice', event.target.value);
+          console.log("Saving changed value for hcf-mle.");
+          localStorage.setItem('hcf-mle-choice', event.target.value);
         }
       });
     });
 </script>
 <p></p>
 </span></div>
-<p><strong>4.</strong> Sometimes we start with an <strong>informative prior</strong> based on past data. Suppose earlier we saw 7 successes in 16 trials, so our prior is Beta(8, 10). Then we see 4 more trials and all 4 are successes (11 successes in 20 total). How does the posterior after this update compare to a posterior that used only the new 4 trials (with a uniform prior)?</p>
+<p><strong>4.</strong> In Part 2, we use a prior based on 7 successes in 16 trials, then see 4 more successes in 4 trials (11/20 total). Why is the posterior in Part 2 not as concentrated near 1 as the “4 successes in 4 trials” posterior in Part 1?</p>
 <div class="cell">
-<span> <small style="color: grey;" id="lht-update-hintarea" class="hintarea">lht-update</small>
-<form id="lht-update-form">
+<span> <small style="color: grey;" id="hcf-informative-hintarea" class="hintarea">hcf-informative</small>
+<form id="hcf-informative-form">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The poster ... oth cases." id="lht-update-1" w="87" name="lht-update" hint="Untrue!" show_hints="false"> The posterior is the same in both cases.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Because we ... 0 = 0.55)." id="hcf-informative-1" w="14" name="hcf-informative" hint="Right!" show_hints="false"> Because we used a different prior; the earlier 7/16 pulls the posterior away from 1 and reflects that we have mixed evidence overall (11/20 = 0.55).</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The poster ... more data." id="lht-update-2" w="23" name="lht-update" hint="Boo!" show_hints="false"> The posterior from the informative prior is more concentrated near 1, because we had more data.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Because we ... in Part 2." id="hcf-informative-2" w="23" name="hcf-informative" hint="You're mistaken" show_hints="false"> Because we ran fewer trials in Part 2.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The poster ...  evidence." id="lht-update-3" w="35" name="lht-update" hint="Yes." show_hints="false"> The posterior from the informative prior is pulled a bit away from 1 (toward the earlier 7/16), because we combine past and new evidence.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Because th ... en n = 20." id="hcf-informative-3" w="19" name="hcf-informative" hint="You might think so, but ..." show_hints="false"> Because the Beta distribution is different when n = 20.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The poster ... s uniform." id="lht-update-4" w="3" name="lht-update" hint="Hmmm ..." show_hints="false"> The posterior from the informative prior is uniform.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Because th ... different." id="hcf-informative-4" w="3" name="hcf-informative" hint="You're mistaken" show_hints="false"> Because the MLE is different.</p>
 <p></p>
-<input type="radio" class="devoirs-mcq" name="lht-update" id="lht-update.null" style="display: none;" w="skipped" checked="">
+<input type="radio" class="devoirs-mcq" name="hcf-informative" id="hcf-informative.null" style="display: none;" w="skipped" checked="">
 </form>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
-      console.log('Adding event listener for lht-update.');
-      const form = document.getElementById('lht-update-form');
+      console.log('Adding event listener for hcf-informative.');
+      const form = document.getElementById('hcf-informative-form');
       const radioButtons = form.querySelectorAll('input[type="radio"]');
 
       // Load saved value on page load
-      const savedValue = localStorage.getItem('lht-update-choice');
+      const savedValue = localStorage.getItem('hcf-informative-choice');
       if (savedValue) {
-        console.log("Restoring radio button values for lht-update.");
+        console.log("Restoring radio button values for hcf-informative.");
         radioButtons.forEach(radio => {
           if (radio.value === savedValue) {
             radio.checked = true;
@@ -1411,8 +1119,54 @@ document.addEventListener('DOMContentLoaded', function() {
       // Save value on change
       form.addEventListener('change', function(event) {
         if (event.target.type === 'radio') {
-          console.log("Saving changed value for lht-update.");
-          localStorage.setItem('lht-update-choice', event.target.value);
+          console.log("Saving changed value for hcf-informative.");
+          localStorage.setItem('hcf-informative-choice', event.target.value);
+        }
+      });
+    });
+</script>
+<p></p>
+</span></div>
+<p><strong>5.</strong> If we had started with a uniform prior and then observed 11 successes in 20 trials, the posterior would be Beta(12, 10). How would that posterior compare to the one in Part 2 (which used a 7/16 prior then 11/20)?</p>
+<div class="cell">
+<span> <small style="color: grey;" id="hcf-compare-hintarea" class="hintarea">hcf-compare</small>
+<form id="hcf-compare-form">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="They would ... identical." id="hcf-compare-1" w="32" name="hcf-compare" hint="Try again!" show_hints="false"> They would be identical.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="The unifor ... lier 7/16." id="hcf-compare-2" w="5" name="hcf-compare" hint="Exactly." show_hints="false"> The uniform-prior posterior would be more concentrated near 11/20, since we didn’t “mix in” the earlier 7/16.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="The unifor ... e flatter." id="hcf-compare-3" w="23" name="hcf-compare" hint="Boo!" show_hints="false"> The uniform-prior posterior would be flatter.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="The Part 2 ... posterior." id="hcf-compare-4" w="3" name="hcf-compare" hint="Nope." show_hints="false"> The Part 2 posterior would always be to the right of the uniform-prior posterior.</p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="hcf-compare" id="hcf-compare.null" style="display: none;" w="skipped" checked="">
+</form>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for hcf-compare.');
+      const form = document.getElementById('hcf-compare-form');
+      const radioButtons = form.querySelectorAll('input[type="radio"]');
+
+      // Load saved value on page load
+      const savedValue = localStorage.getItem('hcf-compare-choice');
+      if (savedValue) {
+        console.log("Restoring radio button values for hcf-compare.");
+        radioButtons.forEach(radio => {
+          if (radio.value === savedValue) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      // Save value on change
+      form.addEventListener('change', function(event) {
+        if (event.target.type === 'radio') {
+          console.log("Saving changed value for hcf-compare.");
+          localStorage.setItem('hcf-compare-choice', event.target.value);
         }
       });
     });
@@ -1420,7 +1174,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p></p>
 </span></div>
 </div>
-<!-- end of exr-lynx-hit-target -->
+<!-- end of exr-heron-catch-fish -->
 </div>
 </div>
 </div>

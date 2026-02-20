@@ -1,0 +1,114 @@
+---
+id: "heron-catch-fish"
+created: "2026-02"
+attribution: QRI-2026
+use: "Ch 7/9/10 ICBM prior–posterior example"
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+library(devoirs)
+library(mosaicCalc)
+```
+
+::: {#exr-heron-catch-fish}
+
+**Prior and posterior: the ICBM-style example (from class and the book)**
+
+This exercise revisits the example from class and the book in which we learn an unknown **probability of success** \(p\) by starting with a **prior** distribution and updating with data to get a **posterior** distribution.
+
+We use a **uniform prior**: before seeing any data, we treat every value of \(p\) between 0 and 1 as equally plausible. When we observe \(k\) successes in \(n\) trials, the mathematics of Bayesian updating (with this prior) gives a **posterior** that is a **Beta distribution** with shape parameters \(\alpha = k + 1\) and \(\beta = n - k + 1\). The posterior density is highest where the data suggest \(p\) is likely to be. The **MLE** (maximum likelihood estimate) is \(k/n\), the fraction of successes—often shown as a vertical line on the plot.
+
+**Part 1: Flat prior, then 4 consecutive successes**
+
+Run the R chunk below. It defines a small function that plots the prior or posterior density of \(p\), then runs it for **no data** (prior) and for **1, 2, 3, and 4 successes in 1, 2, 3, and 4 trials** (so four posteriors in a row). You get five plots: first the flat prior, then the posterior after 1 success in 1 try, then 2 in 2, then 3 in 3, then 4 in 4. The red dashed line in each posterior plot is the MLE (\(k/n\)).
+
+```{webr}
+#| caption: Prior (no data) and posteriors for 1/1, 2/2, 3/3, 4/4 successes
+#| fig-width: 8
+#| fig-height: 10
+plot_posterior <- function(k, n, main = NULL) {
+  p_seq <- seq(0, 1, length.out = 300)
+  alpha_post <- k + 1
+  beta_post <- n - k + 1
+  dens <- dbeta(p_seq, alpha_post, beta_post)
+  if (is.null(main)) main <- if (n == 0) "Prior (no data)" else paste("Posterior: ", k, " successes in ", n, " trials", sep = "")
+  plot(p_seq, dens, type = "l", col = "steelblue", lwd = 2, xlab = "Probability of success (p)", ylab = "Density", main = main, bty = "l")
+  if (n > 0) abline(v = k/n, col = "red", lty = 2, lwd = 1.5)
+}
+par(mfrow = c(3, 2), bty = "l")
+for (ii in 0:4) plot_posterior(k = ii, n = ii)
+par(mfrow = c(1, 1))
+```
+
+**Part 2: Informative prior from past data, then 4 new successes**
+
+Sometimes we already have past data. Suppose we had **7 successes in 16 trials** and we use that to form our **prior** (so the prior is Beta(8, 10), no longer flat). Then we run **4 more trials** and get **4 successes** (11 successes in 20 trials total). The next chunk shows the prior (based on 7/16) and the **posterior** after updating with the new data (11/20).
+
+```{webr}
+#| caption: Prior from 7 successes in 16 trials; posterior after 4 more successes (11/20 total)
+#| fig-width: 8
+#| fig-height: 4
+p_seq <- seq(0, 1, length.out = 300)
+prior_dens <- dbeta(p_seq, 7 + 1, 16 - 7 + 1)
+post_dens  <- dbeta(p_seq, 11 + 1, 20 - 11 + 1)
+par(mfrow = c(1, 2), bty = "l")
+plot(p_seq, prior_dens, type = "l", col = "steelblue", lwd = 2, xlab = "Probability of success (p)", ylab = "Density", main = "Prior (7 successes in 16 trials)", bty = "l")
+plot(p_seq, post_dens, type = "l", col = "darkgreen", lwd = 2, xlab = "Probability of success (p)", ylab = "Density", main = "Posterior (11 successes in 20 trials)", bty = "l")
+abline(v = 11/20, col = "red", lty = 2, lwd = 1.5)
+par(mfrow = c(1, 1))
+```
+
+**Comprehension questions**
+
+**1.** In Part 1, the first plot is "Prior (no data)." What does that plot represent?
+
+```{mcq}
+#| label: hcf-prior
+1. The probability of success after we see the data.
+2. Our uncertainty about the probability of success *before* we see any data. [correct]
+3. The likelihood of the data given each value of p.
+4. The number of successes we expect in the next trial.
+```
+
+**2.** As we go from 1/1 to 2/2 to 3/3 to 4/4 in Part 1, what happens to the posterior?
+
+```{mcq}
+#| label: hcf-sharpen
+1. It stays flat (uniform).
+2. It becomes more concentrated (narrower) and shifts toward the observed success rate. [correct]
+3. It becomes more spread out.
+4. It always peaks at 1.
+```
+
+**3.** What does the red dashed line in the posterior plots represent?
+
+```{mcq}
+#| label: hcf-mle
+1. The prior mean.
+2. The posterior mean.
+3. The maximum likelihood estimate (MLE), i.e. k/n. [correct]
+4. The number of trials.
+```
+
+**4.** In Part 2, we use a prior based on 7 successes in 16 trials, then see 4 more successes in 4 trials (11/20 total). Why is the posterior in Part 2 not as concentrated near 1 as the "4 successes in 4 trials" posterior in Part 1?
+
+```{mcq}
+#| label: hcf-informative
+1. Because we used a different prior; the earlier 7/16 pulls the posterior away from 1 and reflects that we have mixed evidence overall (11/20 = 0.55). [correct]
+2. Because we ran fewer trials in Part 2.
+3. Because the Beta distribution is different when n = 20.
+4. Because the MLE is different.
+```
+
+**5.** If we had started with a uniform prior and then observed 11 successes in 20 trials, the posterior would be Beta(12, 10). How would that posterior compare to the one in Part 2 (which used a 7/16 prior then 11/20)?
+
+```{mcq}
+#| label: hcf-compare
+1. They would be identical.
+2. The uniform-prior posterior would be more concentrated near 11/20, since we didn't "mix in" the earlier 7/16. [correct]
+3. The uniform-prior posterior would be flatter.
+4. The Part 2 posterior would always be to the right of the uniform-prior posterior.
+```
+
+:::
+<!-- end of exr-heron-catch-fish -->
