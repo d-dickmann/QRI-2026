@@ -1,0 +1,74 @@
+---
+title: QR-I Assignment 6
+subtitle: Chapters 7, 9, and 10 of the QR-A book
+---
+
+{{< include _use_webr.qmd >}}
+
+```{r include = FALSE}
+library(devoirs)
+library(mosaicCalc)
+source("_start-up.R")
+```
+
+{{< include _devoirs.qmd >}}
+
+::::: {.callout-note collapse=true}
+## Drill for Chapter 7 (Uncertainty in quantities)
+
+Open drill questions in [this document](https://dtkaplan.github.io/QR-A/Drill-07-uncertainty.html){target="_blank"}
+
+Remember to submit your drill answers through that document. But for the exercises in the present document, use the "collect answers" at the top of this page.
+
+:::::
+
+::::: {.callout-note collapse=true}
+## Drill for Chapter 9 (Likelihood)
+
+Open drill questions in [this document](https://dtkaplan.github.io/QR-A/Drill-09-likelihood.html){target="_blank"}
+
+Remember to submit your drill answers through that document. But for the exercises in the present document, use the "collect answers" at the top of this page.
+
+:::::
+
+::::: {.callout-note collapse=true}
+## Drill for Chapter 10 (Hypothesis and likelihood / Bayes)
+
+Open drill questions in [this document](https://dtkaplan.github.io/QR-A/Drill-10-bayes.html){target="_blank"}
+
+Remember to submit your drill answers through that document. But for the exercises in the present document, use the "collect answers" at the top of this page.
+
+:::::
+
+:::: {.callout-note collapse=true}
+## Chapters 7, 9, and 10 — Exercises
+
+`r id <- "a6-ch7-ch9-ch10"`
+
+These exercises draw on uncertainty in quantities (Ch 7), likelihood (Ch 9), and Bayesian updating (Ch 10).
+
+::: {.panel-tabset}
+## 1.
+
+{{< include ../QR-A/_exercises/sister-freeze-map.qmd >}}
+
+## 2.
+
+{{< include ../QR-A/_exercises/pollen-wish-hamper.qmd >}}
+
+## 3.
+
+{{< include ../QR-A/_exercises/jaquar-shut-pot.qmd >}}
+
+## 4.
+
+{{< include ../QR-A/_exercises/dingo-eat-saw.qmd >}}
+
+## 5.
+
+{{< include _exercises/lynx-hit-target.qmd >}}
+
+:::
+
+::::
+:::::

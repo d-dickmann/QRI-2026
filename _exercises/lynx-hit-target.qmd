@@ -1,0 +1,84 @@
+---
+id: "lynx-hit-target"
+created: "2026-02"
+attribution: QRI-2026
+use: "Ch 7/9/10 prior–posterior walkthrough"
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+library(devoirs)
+library(mosaicCalc)
+```
+
+::: {#exr-lynx-hit-target}
+
+**Prior and posterior: learning a probability from data**
+
+Suppose we want to learn the **probability of success** \(p\) in a repeated process (e.g. a machine producing a good part, or a single attempt succeeding). We don't know \(p\); we only see outcomes: each trial is a success or a failure.
+
+A standard approach is to start with a **prior** distribution that encodes our uncertainty about \(p\) *before* we see data. Here we use a **uniform prior**: every value of \(p\) between 0 and 1 is considered equally plausible. After we observe data (e.g. 4 successes in 4 trials), we update our beliefs to get a **posterior** distribution. The posterior is more concentrated where the data suggest \(p\) is likely to be.
+
+The R code below uses the **Beta distribution** to do this. With a uniform prior, after \(k\) successes in \(n\) trials the posterior is Beta(\(k+1\), \(n-k+1\)). Run the chunk to see the prior (no data) and the posterior after 4 successes in 4 trials.
+
+```{webr}
+#| caption: Prior (no data) and posterior (4 successes in 4 trials)
+#| fig-width: 8
+#| fig-height: 4
+p_seq <- seq(0, 1, length.out = 300)
+# Prior: no data → uniform (Beta(1,1))
+prior <- dbeta(p_seq, 1, 1)
+# Posterior: 4 successes, 4 trials → Beta(5, 1)
+posterior <- dbeta(p_seq, 4 + 1, 4 - 4 + 1)
+par(mfrow = c(1, 2), bty = "l")
+plot(p_seq, prior, type = "l", col = "steelblue", lwd = 2,
+     xlab = "Probability of success (p)", ylab = "Density",
+     main = "Prior (no data)")
+plot(p_seq, posterior, type = "l", col = "darkgreen", lwd = 2,
+     xlab = "Probability of success (p)", ylab = "Density",
+     main = "Posterior (4 successes in 4 trials)")
+abline(v = 4/4, col = "red", lty = 2, lwd = 1.5)  # MLE = k/n
+par(mfrow = c(1, 1))
+```
+
+**1.** What does the **prior** (left plot) represent?
+
+```{mcq}
+#| label: lht-prior
+1. The probability of success after we see the data.
+2. Our uncertainty about the probability of success *before* we see any data. [correct]
+3. The likelihood of the data given each value of p.
+4. The number of successes we expect in the next 4 trials.
+```
+
+**2.** After seeing 4 successes in 4 trials, the posterior is concentrated near 1. Why?
+
+```{mcq}
+#| label: lht-why
+1. Because we used a uniform prior.
+2. Because the data (4 out of 4) are consistent with a high probability of success; the posterior reflects that. [correct]
+3. Because the Beta distribution always peaks near 1 when k = n.
+4. Because we ran 4 trials.
+```
+
+**3.** If we had seen 2 successes in 4 trials instead, where would the posterior be concentrated?
+
+```{mcq}
+#| label: lht-2of4
+1. Near 0.
+2. Near 0.5. [correct]
+3. Near 1.
+4. Still uniform (same as the prior).
+```
+
+**4.** Sometimes we start with an **informative prior** based on past data. Suppose earlier we saw 7 successes in 16 trials, so our prior is Beta(8, 10). Then we see 4 more trials and all 4 are successes (11 successes in 20 total). How does the posterior after this update compare to a posterior that used only the new 4 trials (with a uniform prior)?
+
+```{mcq}
+#| label: lht-update
+1. The posterior is the same in both cases.
+2. The posterior from the informative prior is more concentrated near 1, because we had more data.
+3. The posterior from the informative prior is pulled a bit away from 1 (toward the earlier 7/16), because we combine past and new evidence. [correct]
+4. The posterior from the informative prior is uniform.
+```
+
+:::
+<!-- end of exr-lynx-hit-target -->

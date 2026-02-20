@@ -1,0 +1,1868 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>QR-I Assignment 6 – QR - Analysis at UATX</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-683cdb0e6233d135f59c0d2b214a8464.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">QR - Analysis at UATX</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">QR-I Assignment 6</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./One-minute.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">One-minute questions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://dtkaplan.github.io/QR-A" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">QRA textbook</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./weeks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Weekly materials</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">QR-I Assignment 6</h1>
+<p class="subtitle lead">Chapters 7, 9, and 10 of the QR-A book</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- set up webr for a document -->
+<div class="cell" data-context="setup">
+<div>
+<div id="webr-1" class="exercise-cell">
+
+</div>
+<script type="webr-1-contents">
+eyJhdHRyIjp7ImNvbnRleHQiOiJzZXR1cCIsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZX0sImNvZGUiOiIjIGRlZmluaXRpb25zIG9mIHN0b3J5Ym9vayBmdW5jdGlvbnNcblxuIyBldmVudHVhbGx5IHRoZXNlIHNob3VsZCBnbyBpbiBhIHBhY2thZ2UsIGxpa2Uge21vc2FpY0NhbGN9XG5vc2MgPC0gZnVuY3Rpb24odCkgc2luKDIqcGkqdClcbmhpbGxzaWRlIDwtIGZ1bmN0aW9uKHQpIHBub3JtKHQpXG5oaWxsIDwtIGZ1bmN0aW9uKHQpIGRub3JtKHQpXG5mbGF0IDwtIHVuaXR5IDwtIGZ1bmN0aW9uKHgpIDEuMFxuc3RlYWR5IDwtIGlkIDwtIGZ1bmN0aW9uKHgpIHhcbmRvdWJsZSA8LSBmdW5jdGlvbih0KSAyXnRcbmRvdWJsaW5ncyA8LSBmdW5jdGlvbih4KSBsb2cyKHgpXG5yZWNpcCA8LSBmdW5jdGlvbih4KSAxL3hcbm1hZ25pdHVkZSA8LSB0ZW5uaW5ncyA8LSBmdW5jdGlvbih4KSBsb2cxMCh4KVxudGVuX2ZvbGRzIDwtIGZ1bmN0aW9uKHgpIDEwXngifQ==
+</script>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="0" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -1;"><span id="cb1-0"><a href="#cb1-0" aria-hidden="true" tabindex="-1"></a><span class="co">// Hidden cell to ensure OJS runtime is loaded for webr</span></span>
+<span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>_webr_ojs_trigger <span class="op">=</span> <span class="kw">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Remember to hand in your work …
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Submitting answers</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Honor statement</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Clearing document memory</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>At any point, you can submit your answers by collecting them and uploading them to the class site.</p>
+<p><span id="devoirs-docID" style="display: none;">Assignment-06-CH7-Ch9-CH10.rmarkdown</span> <span><button onclick="devoirsSubmit()">Collect your answers</button></span> <span id="devoirs_summary">No answers yet collected</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<script type="text/javascript">
+ console.log("In devoirs.js")
+
+function devoirsCollectEssays() {
+  var essay_answers = [];
+  var items = document.getElementsByClassName("devoirs-text");
+  for (i = 0; i < items.length; i++) {
+    //console.log("text entry" + i + "being handled");
+    essay_answers[i] = {itemid: items[i].id, contents: items[i].value}
+  }
+
+  return essay_answers;
+}
+
+function devoirsGetDocID() {
+  return document.getElementById("devoirs-docID").innerHTML
+}
+
+function devoirsCollectMC() {
+    let mc_answers = [] // Hold the information
+    var ele = document.getElementsByClassName("devoirs-mcq");
+    var count = 0;
+    for (i = 0; i < ele.length; i++) {
+        if (ele[i].checked) {
+          //console.log("Entering conditional.");
+          let checked_one = ele[i];
+          mc_answers[count++] = {itemid: checked_one.id, w: checked_one.getAttribute("w"), contents: checked_one.text};
+        }
+    }
+    return mc_answers;
+}
+
+console.log("About to define WebR")
+
+function devoirsCollectWebR() {
+  var chunk_contents = []; // placeholder for collecting webr items
+  if (typeof qwebrCellDetails == "undefined") {
+    // There aren't any webr chunks
+    return chunk_contents;
+  }
+  var chunks = qwebrCellDetails;
+  for (i = 0; i < chunks.length; i++) {
+    chunk_contents[i] = {itemid: chunks[i].options["label"], contents: chunks[i].code};
+  }
+
+  return chunk_contents;
+}
+
+console.log("About to define devoirsSubmit")
+
+function devoirsSubmit() {
+  console.log("About to collect history")
+
+  // check if there is any sign of a webr entry
+  // If not, don't try to collect webr entries
+  if (typeof qwebrRCommandHistory === 'undefined') {
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: {}, R: {}}
+  } else {
+    console.log("Getting R commands.")
+    var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
+
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays()} //, WebR: devoirsCollectWebR(), R: Rhistory}
+  }
+
+  navigator.clipboard.writeText(JSON.stringify(items));
+
+  // summarize what's being collected
+  var my_summary = "Answers copied to clipboard. Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
+
+  document.getElementById("devoirs_summary").innerHTML = my_summary;
+}
+
+console.log("Read devoirsSubmit()")
+
+// Hint handling in Multiple choice
+
+// Still have to add an on/off switch from options
+
+function devoirs_setup_hintarea() {
+  answers = document.getElementsByClassName("devoirs-mcq")
+  for (i=0; i<answers.length; i++) answers[i].addEventListener('click', function(e){document.getElementById(e.target.name + "-hintarea").innerHTML = e.target.getAttribute("hint")})
+}
+
+ window.addEventListener("load", function() {
+  answers = document.getElementsByClassName("devoirs-mcq")
+  for (i=0; i<answers.length; i++) {
+    if (answers[i].getAttribute("show_hints") == "TRUE") {
+        answers[i].addEventListener('click', function(e){
+          console.log("inserting hint")
+        document.getElementById(e.target.name + "-hintarea").innerText = e.target.getAttribute("hint")
+      })
+
+    }
+  }
+})
+
+console.log("Added hint summary.") 
+</script>
+
+</div>
+</div>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfh2aEmMwgBA__bl_uTYZl9NjUTLBhzC25qEYHSnwXXWhDqoQ/viewform?usp=header" target="_blank">Link to upload site</a></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>If requested by your instructor, please identify here the people from whom you received assistance on this assignment.</p>
+<script type="text/javascript">
+      //save entered info
+      document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for honor-statement.');
+      const form = document.getElementById('honor-statement');
+      form.addEventListener("input", function () {
+        var todo = document.getElementById('honor-statement').value;
+        localStorage.setItem("honor-statement-contents", todo);
+        console.log("Saving value of honor-statement.")
+      }, false);
+
+      //on page load, read in the old value
+      const savedValue = localStorage.getItem("honor-statement-contents");
+      if (savedValue) {
+        document.getElementById('honor-statement').value = savedValue;
+      }
+})
+</script>
+<textarea id="honor-statement" name="honor-statement" class="devoirs-text" style="font-family: monospace, monospace;" rows="4" cols="50" placeholder="Type here. (ID honor-statement)"></textarea>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+If the answers that have been loaded automatically are not yours, press this button before starting your work:
+<script type="text/javascript">
+      // clear the local storage
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('btnClearStorage');
+      form.addEventListener("click", function () {
+        localStorage.clear();
+        location.reload();
+        console.log("Clearing memory");
+      }, false);
+    }
+    )
+    </script>
+<button id="btnClearStorage">
+Clear memory
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Drill for Chapter 7 (Uncertainty in quantities)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Open drill questions in <a href="https://dtkaplan.github.io/QR-A/Drill-07-uncertainty.html" target="_blank">this document</a></p>
+<p>Remember to submit your drill answers through that document. But for the exercises in the present document, use the “collect answers” at the top of this page.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Drill for Chapter 9 (Likelihood)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Open drill questions in <a href="https://dtkaplan.github.io/QR-A/Drill-09-likelihood.html" target="_blank">this document</a></p>
+<p>Remember to submit your drill answers through that document. But for the exercises in the present document, use the “collect answers” at the top of this page.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Drill for Chapter 10 (Hypothesis and likelihood / Bayes)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Open drill questions in <a href="https://dtkaplan.github.io/QR-A/Drill-10-bayes.html" target="_blank">this document</a></p>
+<p>Remember to submit your drill answers through that document. But for the exercises in the present document, use the “collect answers” at the top of this page.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Chapters 7, 9, and 10 — Exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>These exercises draw on uncertainty in quantities (Ch 7), likelihood (Ch 9), and Bayesian updating (Ch 10).</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">1.</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">2.</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">3.</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false" href="">4.</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-5" role="tab" aria-controls="tabset-2-5" aria-selected="false" href="">5.</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div id="exr-sister-freeze-map" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 1</strong></span> &nbsp;</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Next status step: Refine the draft
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>… to make it ready for testing.</p>
+<p>Assigned to DTK</p>
+</div>
+</div>
+<p>{&gt;&gt;Should we change this to multiple-choice answers?&lt;&lt;}</p>
+<p>In <a href="Chap-07-uncertainty.html#sec-relative-probability">Section 7.1</a> we looked at the problem of calculating the number of Cals used on a walk, when the uncertainty in the walk length is [3 to 4] miles, and the uncertainty in Cals-per-mile is [60 to 100].</p>
+<p>In the chunk that follows, a <em>simulation</em> has been constructed that generates normally distributed random numbers based on the intervals for walk length and Cals-per-mile.</p>
+<p>Then, the simulation is run for 5000 iterations. There will be 5000 rows in the resulting data frame, one row for each iteration. There will be three variables, the randomly generated walk length and cals per mile as well as the total Calories calculated by multiplying the two random quantities. The 5000-row output from the simulation is then passed to a statistics function which calculates the lower and upper bounds of the 95% interval.</p>
+<div class="cell" data-caption="Simulation for arithmetic on intervals">
+<div>
+<div id="webr-2" class="exercise-cell">
+
+</div>
+<script type="webr-2-contents">
+eyJhdHRyIjp7ImNhcHRpb24iOiJTaW11bGF0aW9uIGZvciBhcml0aG1ldGljIG9uIGludGVydmFscyIsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2ltMSA8LSBkYXRhc2ltX21ha2UoXG4gIHdhbGtfbGVuZ3RoIDwtIHJub3JtKG4sIG1lYW4gPSAzLjUsIHNkID0gMC4yNSksXG4gIGNhbHNfcGVyX21pbGUgPC0gcm5vcm0obiwgbWVhbiA9IDgwLCBzZCA9IDEwKSxcbiAgdG90YWxfY2FscyA8LSB3YWxrX2xlbmd0aCAqIGNhbHNfcGVyX21pbGVcbilcbnNpbTEgfD5cbiAgZGF0YXNpbV9ydW4obiA9IDUwMDApIHw+XG4gIGRmX3N0YXRzKH4gdG90YWxfY2FscywgbG93ZXIgPSBxdWFudGlsZSgwLjAyNSksIHVwcGVyID0gcXVhbnRpbGUoMC45NzUpKSJ9
+</script>
+</div>
+</div>
+<p>The intervals are given as [3 to 4] and [60 to 80], but the simulation is run using random number generators that take the <em>mean</em> and <em>standard deviation</em> as their parameter values.</p>
+<ol type="1">
+<li>Explain how the parameters used in generating <code>walk_length</code> and <code>cals_per_mile</code> correspond to the two intervals.</li>
+</ol>
+<script type="text/javascript">
+      //save entered info
+      document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for sfm-intervals.');
+      const form = document.getElementById('sfm-intervals');
+      form.addEventListener("input", function () {
+        var todo = document.getElementById('sfm-intervals').value;
+        localStorage.setItem("sfm-intervals-contents", todo);
+        console.log("Saving value of sfm-intervals.")
+      }, false);
+
+      //on page load, read in the old value
+      const savedValue = localStorage.getItem("sfm-intervals-contents");
+      if (savedValue) {
+        document.getElementById('sfm-intervals').value = savedValue;
+      }
+})
+</script>
+<textarea id="sfm-intervals" name="sfm-intervals" class="devoirs-text" style="font-family: monospace, monospace;" rows="4" cols="50" placeholder="Type here. (ID sfm-intervals)"></textarea>
+<ol start="2" type="1">
+<li>Modify the code to find the uncertainty distribution of the product [-3 to 5]<span class="math inline">\(\times\)</span>[-10 to 2]. What is the resulting interval? Does it include zero?</li>
+</ol>
+<script type="text/javascript">
+      //save entered info
+      document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for sfm-intervals2.');
+      const form = document.getElementById('sfm-intervals2');
+      form.addEventListener("input", function () {
+        var todo = document.getElementById('sfm-intervals2').value;
+        localStorage.setItem("sfm-intervals2-contents", todo);
+        console.log("Saving value of sfm-intervals2.")
+      }, false);
+
+      //on page load, read in the old value
+      const savedValue = localStorage.getItem("sfm-intervals2-contents");
+      if (savedValue) {
+        document.getElementById('sfm-intervals2').value = savedValue;
+      }
+})
+</script>
+<textarea id="sfm-intervals2" name="sfm-intervals2" class="devoirs-text" style="font-family: monospace, monospace;" rows="4" cols="50" placeholder="Type here. (ID sfm-intervals2)"></textarea>
+<ol start="3" type="1">
+<li>Modify the code once again to find the uncertainty distribution of the ratio [-1 to 1] divided by [-1 to 1]. What is the resulting interval and why is it so much bigger than [-1 to 1]? (Hint: If the interval you calculate is about [-1 to 1], you probably used multiplication rather than division in your calculations.)</li>
+</ol>
+<script type="text/javascript">
+      //save entered info
+      document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for sfm-intervals3.');
+      const form = document.getElementById('sfm-intervals3');
+      form.addEventListener("input", function () {
+        var todo = document.getElementById('sfm-intervals3').value;
+        localStorage.setItem("sfm-intervals3-contents", todo);
+        console.log("Saving value of sfm-intervals3.")
+      }, false);
+
+      //on page load, read in the old value
+      const savedValue = localStorage.getItem("sfm-intervals3-contents");
+      if (savedValue) {
+        document.getElementById('sfm-intervals3').value = savedValue;
+      }
+})
+</script>
+<textarea id="sfm-intervals3" name="sfm-intervals3" class="devoirs-text" style="font-family: monospace, monospace;" rows="4" cols="50" placeholder="Type here. (ID sfm-intervals3)"></textarea>
+</div>
+<p><!-- end of exr-sister-freeze-map --></p>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div id="exr-pollen-wish-hamper" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 2</strong></span> An important task for quantitative reasoning is evaluating evidence for a claim. Non-Bayesian statistical methodology can offer great insight so long as data can be collected in a repeatable and reliable way as in a laboratory experiment. The logic of non-Bayesian statistics is based on <em>making assumptions</em> that the data meet the required standards and have the properties needed for the techniques to give a correct answer. And, for the idea of a “correct” answer to apply at all, non-Bayesian statistics limits its purview to mathematically idealized questions that often do not directly target the questions of actual interest. An example: the “fail to reject” the Null Hypothesis that is at the heart of frequentist statistics.</p>
+<p>In his autobiography, Benjamin Franklin (1706-1790), gave a good description of the personality trait of requiring mathematically correct answers:</p>
+<blockquote class="blockquote">
+<p>Thomas Godfrey, a self-taught mathematician, great in his way, and afterward inventor of what is now called Hadley’s Quadrant. But he knew little out of his way, and was not a pleasing companion; as, like most great mathematicians I have met with, he expected universal precision in everything said, or was for ever denying or distinguishing upon trifles, to the disturbance of all conversation. He soon left us.*</p>
+</blockquote>
+<p>Often, useful quantitative reasoning accepts uncertainty and imprecision as inevitable and recognizes that precise statements about a matter of not usually available. An excellent example of such quantitative reasoning is described in David Spiegelhalter’s <em>The Art of Statistics</em> and is based on a 2014 report published in <em>Nature</em>: “<a href="https://www.nature.com/articles/ncomms6631">Identification of the remains of King Richard III</a>.”</p>
+<p>Richard III was killed on August 22, 1485 at the Battle of Bosworth, aged 32. He was buried in the town of Leicester in the medieval church of the Grey Friars. The church was torn down on the orders of Henry VIII in about 1540. The location of the church is documented but there are no grave markers and, today, the site is occupied by a car parking lot. Around 2012, an interdisciplinary group—archeologists, anthropologists, geneticists, historians, etc.—attempted to locate Richard’s skeleton. Digging at a likely location in the parking lot let almost immediately to a skeleton.</p>
+<p>Finding a skeleton on the site of a church graveyard is hardly surprising, but was the skeleton Richard’s? The team sought to evaluate the evidence provided by the skeleton and, importantly, the recovered DNA from the skeleton.</p>
+<p>The <em>Nature</em> report states:</p>
+<blockquote class="blockquote">
+<p>To obtain a probability that Skeleton 1 is that of Richard III, we considered the non-genetic data (radiocarbon data, estimated age at death, sex, presence of scoliosis and presence of perimortem wounds) together with the genetic data (mtDNA and Y-chromosome). For each data type, we computed likelihoods for the observed data under hypothesis 1 (H1—that Skeleton 1 is Richard III) and under hypothesis 2 (H2—that Skeleton 1 is not Richard III).</p>
+</blockquote>
+<p>Here are the non-genetic observations:</p>
+<blockquote class="blockquote">
+<p>The skeleton was that of a male aged 30 to 34 years, with severe scoliosis rendering one shoulder higher than the other, with numerous perimortem battle injuries Modelled radiocarbon dating … [indicated death in the interval] 1456–1530 AD at 95.4% probability.</p>
+</blockquote>
+<ol type="1">
+<li><p>Age and sex of skeleton. Given the historical facts, a “male aged 30 to 34 years” is absolutely consistent with the observations. So, under hypothesis 1, the likelihood would be high, perhaps 75%. On the other hand, under hypothesis 2, it’s fair to see the likelihood as the product of 1/2 (for sex) and perhaps 1/5 given the age distribution at death of the sorts of people likely to be buried at the church. The likelihood ratio is divides the likelihood under hypothesis 1 by the likelihood under hypothesis 2, something like 0.75 / 0.10 = 7.5. On the verbal scale, this is “weak support” for hypothesis 1.</p></li>
+<li><p>Radiocarbon dating to AD 1456-1530. Given the historical record, this is obviously consistent with hypothesis 1, so the likelihood is high (say, 50%) under hypothesis 1. But under hypothesis 2, given the location and age of the church, it’s hardly surprising that any skeleton would date to this period. Let’s call it a likelihood of 1/3 to 1/4. The likelihood ratio is thus about 1.5 to 2, also “weak support.” It would have been much more stronger evidence, <strong>against hypothesis 1</strong>, if the skeleton dated to 1400 or 1600.</p></li>
+<li><p>Scoliosis. Under hypothesis 1, the likelihood of this evidence is high. Under hypothesis 2, the likelihood can be estimated from the fraction of skeletons found with scoliosis, perhaps 1 in 300. The likelihood ratio can reasonably be assigned as 200, “moderately strong evidence.”</p></li>
+<li><p>Wounds inflicted after death. Under hypothesis 1, this likelihood is high, but hard to know how high. (The War of the Roses, for which Richard’s death marked the end, was bitterly fought.) Under hypothesis 2, one could look at how often post-mortem wounds are found in such burials. The researchers assigned a likelihood ratio of 40: “moderate support.”</p></li>
+</ol>
+<p>A. Given the evidence presented in (1) - (4), what’s a reasonable estimate of the overall likelihood ratio?</p>
+<div class="cell" data-inline="true">
+<span> <small style="color: grey;" id="pwh-A-3ks-hintarea" class="hintarea">pwh-A-3ks</small>
+<form id="pwh-A-3ks-form">
+<span> <span> <input type="radio" class="devoirs-mcq" value="1000" id="pwh-A-3ks-1" w="3" name="pwh-A-3ks" hint="Wrong." show_hints="false"> 1000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="5,000" id="pwh-A-3ks-2" w="19" name="pwh-A-3ks" hint="Try again!" show_hints="false"> 5,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="10,000 " id="pwh-A-3ks-2" w="3" name="pwh-A-3ks" hint="You might think so, but ..." show_hints="false"> 10,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="100,000" id="pwh-A-3ks-3" w="5" name="pwh-A-3ks" hint="Score!" show_hints="false"> 100,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1,000,000" id="pwh-A-3ks-4" w="7" name="pwh-A-3ks" hint="This is wide of the mark." show_hints="false"> 1,000,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="5,000,000" id="pwh-A-3ks-5" w="87" name="pwh-A-3ks" hint="You're mistaken" show_hints="false"> 5,000,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="10,000,000" id="pwh-A-3ks-6" w="23" name="pwh-A-3ks" hint="Sorry!" show_hints="false"> 10,000,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="pwh-A-3ks" id="pwh-A-3ks.null" style="display: none;" w="skipped" checked=""> </span> </span>
+</form>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for pwh-A-3ks.');
+      const form = document.getElementById('pwh-A-3ks-form');
+      const radioButtons = form.querySelectorAll('input[type="radio"]');
+
+      // Load saved value on page load
+      const savedValue = localStorage.getItem('pwh-A-3ks-choice');
+      if (savedValue) {
+        console.log("Restoring radio button values for pwh-A-3ks.");
+        radioButtons.forEach(radio => {
+          if (radio.value === savedValue) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      // Save value on change
+      form.addEventListener('change', function(event) {
+        if (event.target.type === 'radio') {
+          console.log("Saving changed value for pwh-A-3ks.");
+          localStorage.setItem('pwh-A-3ks-choice', event.target.value);
+        }
+      });
+    });
+</script>
+<p></p>
+</span></div>
+<p>B. What does (A) correspond to on the verbal scale of strength of evidence (in favor of hypothesis 1)?</p>
+<div class="cell" data-inline="true">
+<span> <small style="color: grey;" id="pwh-B-kdw-hintarea" class="hintarea">pwh-B-kdw</small>
+<form id="pwh-B-kdw-form">
+<span> <span> <input type="radio" class="devoirs-mcq" value="Moderate support" id="pwh-B-kdw-1" w="19" name="pwh-B-kdw" hint="Not quite right." show_hints="false"> Moderate support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Moderately ... ng support" id="pwh-B-kdw-2" w="19" name="pwh-B-kdw" hint="Not on target." show_hints="false"> Moderately strong support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Strong support" id="pwh-B-kdw-3" w="32" name="pwh-B-kdw" hint="Incorrect." show_hints="false"> Strong support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Very strong support" id="pwh-B-kdw-4" w="14" name="pwh-B-kdw" hint="That's right." show_hints="false"> Very strong support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Extremely  ... ng support" id="pwh-B-kdw-5" w="32" name="pwh-B-kdw" hint="Think again." show_hints="false"> Extremely strong support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="pwh-B-kdw" id="pwh-B-kdw.null" style="display: none;" w="skipped" checked=""> </span> </span>
+</form>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for pwh-B-kdw.');
+      const form = document.getElementById('pwh-B-kdw-form');
+      const radioButtons = form.querySelectorAll('input[type="radio"]');
+
+      // Load saved value on page load
+      const savedValue = localStorage.getItem('pwh-B-kdw-choice');
+      if (savedValue) {
+        console.log("Restoring radio button values for pwh-B-kdw.");
+        radioButtons.forEach(radio => {
+          if (radio.value === savedValue) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      // Save value on change
+      form.addEventListener('change', function(event) {
+        if (event.target.type === 'radio') {
+          console.log("Saving changed value for pwh-B-kdw.");
+          localStorage.setItem('pwh-B-kdw-choice', event.target.value);
+        }
+      });
+    });
+</script>
+<p></p>
+</span></div>
+<p>The genetic evidence is mixed. Richard had no children, but there are two kinds of DNA that are well conserved over time. The first is DNA from the Y chromosome, which is passed patrillinearly from generation to generation. The second is mitochondrial DNA which is passed exclusively from the mother.</p>
+<ol start="5" type="1">
+<li>To find a continuous line of male descendents, it was necessary to go back to Richard’s great-great-grandfather, Edward III (1312-1377). Edward’s descendents tracked through the male line, reach the present after 18-20 generations. No match was found between Edward living descendants and Richard’s Y-chromosome DNA. The likelihood of no match is high, practically 1, under hypothesis 2. But even under hypothesis 1, given the many opportunties for false paternity in the many generations between Edward and today’s male descendents, the likelihood of no match is something like 10%.</li>
+</ol>
+<p>C. Combine the two likelihoods given in (5) to find the likelihood ratio of hypothesis 1 versus hypothesis 2 under the observation of no genetic match. Which number is closest?</p>
+<div class="cell" data-inline="true">
+<span> <small style="color: grey;" id="pwh-C-k2l-hintarea" class="hintarea">pwh-C-k2l</small>
+<form id="pwh-C-k2l-form">
+<span> <span> <input type="radio" class="devoirs-mcq" value="0.01" id="pwh-C-k2l-1" w="23" name="pwh-C-k2l" hint="This is wide of the mark." show_hints="false"> 0.01 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.1" id="pwh-C-k2l-2" w="18" name="pwh-C-k2l" hint="Yup!" show_hints="false"> 0.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1.0" id="pwh-C-k2l-3" w="19" name="pwh-C-k2l" hint="Boo!" show_hints="false"> 1.0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="10" id="pwh-C-k2l-4" w="32" name="pwh-C-k2l" hint="This is wide of the mark." show_hints="false"> 10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="100" id="pwh-C-k2l-5" w="19" name="pwh-C-k2l" hint="Wrong." show_hints="false"> 100 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="pwh-C-k2l" id="pwh-C-k2l.null" style="display: none;" w="skipped" checked=""> </span> </span>
+</form>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for pwh-C-k2l.');
+      const form = document.getElementById('pwh-C-k2l-form');
+      const radioButtons = form.querySelectorAll('input[type="radio"]');
+
+      // Load saved value on page load
+      const savedValue = localStorage.getItem('pwh-C-k2l-choice');
+      if (savedValue) {
+        console.log("Restoring radio button values for pwh-C-k2l.");
+        radioButtons.forEach(radio => {
+          if (radio.value === savedValue) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      // Save value on change
+      form.addEventListener('change', function(event) {
+        if (event.target.type === 'radio') {
+          console.log("Saving changed value for pwh-C-k2l.");
+          localStorage.setItem('pwh-C-k2l-choice', event.target.value);
+        }
+      });
+    });
+</script>
+<p></p>
+</span></div>
+<ol start="6" type="1">
+<li>Mitochondrial DNA. Richard had a sister, and the sister has a continuous line of female descendents (through 17 to 19 generations) to the present. These descendants provided a strong genetic match. The likelihood ratio was estimated by the researchers to be approximately 500: “moderately strong support.”</li>
+</ol>
+<p>D. Combining the likelihood ratios for (1) through (6), what is the overall likelihood ratio in favor of hypothesis 1?</p>
+<div class="cell" data-inline="true">
+<span> <small style="color: grey;" id="pwh-D-8wd-hintarea" class="hintarea">pwh-D-8wd</small>
+<form id="pwh-D-8wd-form">
+<span> <span> <input type="radio" class="devoirs-mcq" value="1000" id="pwh-D-8wd-1" w="3" name="pwh-D-8wd" hint="Sorry!" show_hints="false"> 1000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="5000" id="pwh-D-8wd-2" w="3" name="pwh-D-8wd" hint="Incorrect choice." show_hints="false"> 5000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="10,000 " id="pwh-D-8wd-3" w="19" name="pwh-D-8wd" hint="Not on target." show_hints="false"> 10,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="100,000 " id="pwh-D-8wd-4" w="32" name="pwh-D-8wd" hint="Hmmm ..." show_hints="false"> 100,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1,000,000" id="pwh-D-8wd-5" w="3" name="pwh-D-8wd" hint="No." show_hints="false"> 1,000,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="5,000,000" id="pwh-D-8wd-6" w="41" name="pwh-D-8wd" hint="Bingo!" show_hints="false"> 5,000,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="10,000,000" id="pwh-D-8wd-7" w="19" name="pwh-D-8wd" hint="Hmmm ..." show_hints="false"> 10,000,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="pwh-D-8wd" id="pwh-D-8wd.null" style="display: none;" w="skipped" checked=""> </span> </span>
+</form>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for pwh-D-8wd.');
+      const form = document.getElementById('pwh-D-8wd-form');
+      const radioButtons = form.querySelectorAll('input[type="radio"]');
+
+      // Load saved value on page load
+      const savedValue = localStorage.getItem('pwh-D-8wd-choice');
+      if (savedValue) {
+        console.log("Restoring radio button values for pwh-D-8wd.");
+        radioButtons.forEach(radio => {
+          if (radio.value === savedValue) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      // Save value on change
+      form.addEventListener('change', function(event) {
+        if (event.target.type === 'radio') {
+          console.log("Saving changed value for pwh-D-8wd.");
+          localStorage.setItem('pwh-D-8wd-choice', event.target.value);
+        }
+      });
+    });
+</script>
+<p></p>
+</span></div>
+<p>E. What is the verbal description of the overall likelihood ratio found in (D)?</p>
+<div class="cell" data-inline="true">
+<span> <small style="color: grey;" id="pwh-E-kdw-hintarea" class="hintarea">pwh-E-kdw</small>
+<form id="pwh-E-kdw-form">
+<span> <span> <input type="radio" class="devoirs-mcq" value="Moderate support" id="pwh-E-kdw-1" w="23" name="pwh-E-kdw" hint="Oops!" show_hints="false"> Moderate support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Moderately ... ng support" id="pwh-E-kdw-2" w="32" name="pwh-E-kdw" hint="Sorry!" show_hints="false"> Moderately strong support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Strong support" id="pwh-E-kdw-3" w="19" name="pwh-E-kdw" hint="Incorrect." show_hints="false"> Strong support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Very stron ... g support " id="pwh-E-kdw-4" w="7" name="pwh-E-kdw" hint="Incorrect." show_hints="false"> Very strong support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Extremely  ... ng support" id="pwh-E-kdw-5" w="29" name="pwh-E-kdw" hint="That's right." show_hints="false"> Extremely strong support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="pwh-E-kdw" id="pwh-E-kdw.null" style="display: none;" w="skipped" checked=""> </span> </span>
+</form>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for pwh-E-kdw.');
+      const form = document.getElementById('pwh-E-kdw-form');
+      const radioButtons = form.querySelectorAll('input[type="radio"]');
+
+      // Load saved value on page load
+      const savedValue = localStorage.getItem('pwh-E-kdw-choice');
+      if (savedValue) {
+        console.log("Restoring radio button values for pwh-E-kdw.");
+        radioButtons.forEach(radio => {
+          if (radio.value === savedValue) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      // Save value on change
+      form.addEventListener('change', function(event) {
+        if (event.target.type === 'radio') {
+          console.log("Saving changed value for pwh-E-kdw.");
+          localStorage.setItem('pwh-E-kdw-choice', event.target.value);
+        }
+      });
+    });
+</script>
+<p></p>
+</span></div>
+<p>Each of the individual likelihoods (1) - (6) is subject to dispute, but only within a limited range, say, a factor of roughly 2. This renders the overall likelihood uncertain on a numeric scale, but much less uncertain on a logarithmic scale. Note that the likelihood ratios corresponding to the verbal scale are spaced logarithmally. In mathematics, being uncertain by a factor of 10 is considered unacceptable precession for calling an answer “correct.” But on the logarithmic likelihood scale, a factor of 10 is not necessarily large.</p>
+</div>
+<p><!-- end of exr-pollen-wish-hamper --></p>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div id="exr-jaquar-shut-pot" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3</strong></span> You’re trying to predict the outcome of a football game, updating your predictions as the game proceeds. The competing hypotheses here are the possible end scores for your team: 2, 3, 4, 5, 6, 7, 8, 9, …, 100, 100+. I don’t know which is your team and what are your beliefs about it, so I can’t tell you much about what relative probability you assign to each of these 100 possible outcomes, but you have your own views, well informed or not.</p>
+<p>Purely for the sake of simplicity, let’s consider just these 20 hypotheses: the scores 5 through 24, with equal relative probability assigned to each: 1.</p>
+<p>A. You don’t need to translate this relative probability distribution into an (absolute) probability, but if you were to do so, what would it be?</p>
+<div class="cell">
+<span> <small style="color: grey;" id="jsp-A-3982-hintarea" class="hintarea">jsp-A-3982</small>
+<form id="jsp-A-3982-form">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="0.10 for e ... ed scores." id="jsp-A-3982-1" w="87" name="jsp-A-3982" hint="The absolute probability will have the same shape distribution as the relative probability." show_hints="false"> 0.10 for each of the odd-valued scores.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="1% for sco ...  score 24." id="jsp-A-3982-2" w="19" name="jsp-A-3982" hint="Sorry. Going from a relative to an absolute probability is always a matter of multiplying each relative probability by the same number. That's not what's happening here." show_hints="false"> 1% for score of 5, increasing linearly to 13.5% for score 24.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="0.05 for e ... ypotheses." id="jsp-A-3982-3" w="20" name="jsp-A-3982" hint="Score!" show_hints="false"> 0.05 for each of the hypotheses.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Not enough ... een given." id="jsp-A-3982-4" w="23" name="jsp-A-3982" hint="Sorry, but you have everything you need." show_hints="false"> Not enough information has been given.</p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="jsp-A-3982" id="jsp-A-3982.null" style="display: none;" w="skipped" checked="">
+</form>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for jsp-A-3982.');
+      const form = document.getElementById('jsp-A-3982-form');
+      const radioButtons = form.querySelectorAll('input[type="radio"]');
+
+      // Load saved value on page load
+      const savedValue = localStorage.getItem('jsp-A-3982-choice');
+      if (savedValue) {
+        console.log("Restoring radio button values for jsp-A-3982.");
+        radioButtons.forEach(radio => {
+          if (radio.value === savedValue) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      // Save value on change
+      form.addEventListener('change', function(event) {
+        if (event.target.type === 'radio') {
+          console.log("Saving changed value for jsp-A-3982.");
+          localStorage.setItem('jsp-A-3982-choice', event.target.value);
+        }
+      });
+    });
+</script>
+<p></p>
+</span></div>
+<p>Now it’s half-time. Your team has a score of 10 pts. To update your before-the-game opinion, you need to multiply that relative probability by a likelihood function: What is the probability of the half-time outcome given each of the hypotheses.</p>
+<p>B. Some of the hypotheses can be assigned zero likelihood given the half-time observation. Which are these?</p>
+<div class="cell">
+<span> <small style="color: grey;" id="jsp-B-3843-hintarea" class="hintarea">jsp-B-3843</small>
+<form id="jsp-B-3843-form">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Hypothethe ... ikelihood." id="jsp-B-3843-1" w="18" name="jsp-B-3843" hint="You're right." show_hints="false"> Hypothethetical ending scores of 5 through 9 have zero likelihood.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Hypothetic ... ikelihood." id="jsp-B-3843-2" w="32" name="jsp-B-3843" hint="Hmmm ..." show_hints="false"> Hypothetical ending score of 5 through 10 have zero likelihood.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Anything c ... ypothesis." id="jsp-B-3843-3" w="32" name="jsp-B-3843" hint="Hmmm ..." show_hints="false"> Anything can happen in a football game. Best not to assign zero likelihood to any before-the-game hypothesis.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="There is n ... ikelihood." id="jsp-B-3843-4" w="7" name="jsp-B-3843" hint="Not quite." show_hints="false"> There is no such thing as zero likelihood.</p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="jsp-B-3843" id="jsp-B-3843.null" style="display: none;" w="skipped" checked="">
+</form>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for jsp-B-3843.');
+      const form = document.getElementById('jsp-B-3843-form');
+      const radioButtons = form.querySelectorAll('input[type="radio"]');
+
+      // Load saved value on page load
+      const savedValue = localStorage.getItem('jsp-B-3843-choice');
+      if (savedValue) {
+        console.log("Restoring radio button values for jsp-B-3843.");
+        radioButtons.forEach(radio => {
+          if (radio.value === savedValue) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      // Save value on change
+      form.addEventListener('change', function(event) {
+        if (event.target.type === 'radio') {
+          console.log("Saving changed value for jsp-B-3843.");
+          localStorage.setItem('jsp-B-3843-choice', event.target.value);
+        }
+      });
+    });
+</script>
+<p></p>
+</span></div>
+<p>C. What’s a better name for relative probability distribution that encodes your “before-the-game opinion” on your team’s score?</p>
+<div class="cell" data-inline="true">
+<span> <small style="color: grey;" id="jsp-C-k3ks-hintarea" class="hintarea">jsp-C-k3ks</small>
+<form id="jsp-C-k3ks-form">
+<span> <span> <input type="radio" class="devoirs-mcq" value="Posterior" id="jsp-C-k3ks-1" w="87" name="jsp-C-k3ks" hint="Oops!" show_hints="false"> Posterior &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Prior" id="jsp-C-k3ks-2" w="8" name="jsp-C-k3ks" hint="A hit!" show_hints="false"> Prior &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Likelihood" id="jsp-C-k3ks-3" w="23" name="jsp-C-k3ks" hint="Think again." show_hints="false"> Likelihood &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Antebellum" id="jsp-C-k3ks-4" w="32" name="jsp-C-k3ks" hint="Nope." show_hints="false"> Antebellum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Frequency" id="jsp-C-k3ks-5" w="3" name="jsp-C-k3ks" hint="Untrue!" show_hints="false"> Frequency &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="jsp-C-k3ks" id="jsp-C-k3ks.null" style="display: none;" w="skipped" checked=""> </span> </span>
+</form>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for jsp-C-k3ks.');
+      const form = document.getElementById('jsp-C-k3ks-form');
+      const radioButtons = form.querySelectorAll('input[type="radio"]');
+
+      // Load saved value on page load
+      const savedValue = localStorage.getItem('jsp-C-k3ks-choice');
+      if (savedValue) {
+        console.log("Restoring radio button values for jsp-C-k3ks.");
+        radioButtons.forEach(radio => {
+          if (radio.value === savedValue) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      // Save value on change
+      form.addEventListener('change', function(event) {
+        if (event.target.type === 'radio') {
+          console.log("Saving changed value for jsp-C-k3ks.");
+          localStorage.setItem('jsp-C-k3ks-choice', event.target.value);
+        }
+      });
+    });
+</script>
+<p></p>
+</span></div>
+<p>D. What’s a proper name for your updated distribution of relative probabilities taking into account the half-time score?</p>
+<div class="cell" data-inline="true">
+<span> <small style="color: grey;" id="jsp-D-3l2s-hintarea" class="hintarea">jsp-D-3l2s</small>
+<form id="jsp-D-3l2s-form">
+<span> <span> <input type="radio" class="devoirs-mcq" value="Posterior" id="jsp-D-3l2s-1" w="5" name="jsp-D-3l2s" hint="Excellent!" show_hints="false"> Posterior &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Prior " id="jsp-D-3l2s-2" w="19" name="jsp-D-3l2s" hint="Try again!" show_hints="false"> Prior &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Likelihood" id="jsp-D-3l2s-3" w="3" name="jsp-D-3l2s" hint="No." show_hints="false"> Likelihood &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Antebellum" id="jsp-D-3l2s-4" w="32" name="jsp-D-3l2s" hint="Sorry!" show_hints="false"> Antebellum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Frequency" id="jsp-D-3l2s-5" w="7" name="jsp-D-3l2s" hint="Not quite." show_hints="false"> Frequency &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="jsp-D-3l2s" id="jsp-D-3l2s.null" style="display: none;" w="skipped" checked=""> </span> </span>
+</form>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for jsp-D-3l2s.');
+      const form = document.getElementById('jsp-D-3l2s-form');
+      const radioButtons = form.querySelectorAll('input[type="radio"]');
+
+      // Load saved value on page load
+      const savedValue = localStorage.getItem('jsp-D-3l2s-choice');
+      if (savedValue) {
+        console.log("Restoring radio button values for jsp-D-3l2s.");
+        radioButtons.forEach(radio => {
+          if (radio.value === savedValue) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      // Save value on change
+      form.addEventListener('change', function(event) {
+        if (event.target.type === 'radio') {
+          console.log("Saving changed value for jsp-D-3l2s.");
+          localStorage.setItem('jsp-D-3l2s-choice', event.target.value);
+        }
+      });
+    });
+</script>
+<p></p>
+</span></div>
+</div>
+<p><!-- end of exr-jaquar-shut-pot --></p>
+</div>
+<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
+<div id="exr-dingo-eat-saw" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4</strong></span> Consider a bad movie plot organized along these lines: The protagonist has a disturbing dream that the universe has changed from “Normal” to a new state: “Doom.” Doom was hitherto thought impossible. Doom and Normal constitute two hypotheses about the state of the universe.</p>
+<p>To say that a hypothesis is impossible is equivalent to assigning it probability zero. That’s what everyone else believes, but our protagonist, on account of his dream, assigns Doom the rhetorical odds “one-in-a-million.”</p>
+<ol type="1">
+<li>If an outcome has probability zero, what are the odds of that outcome?</li>
+</ol>
+<div class="cell">
+<span> <small style="color: grey;" id="des-1-ckd-hintarea" class="hintarea">des-1-ckd</small>
+<form id="des-1-ckd-form">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Zero" id="des-1-ckd-1" w="20" name="des-1-ckd" hint="Right-O!" show_hints="false"> Zero</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="One" id="des-1-ckd-2" w="87" name="des-1-ckd" hint="Sorry!" show_hints="false"> One</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Infinity" id="des-1-ckd-3" w="87" name="des-1-ckd" hint="Untrue!" show_hints="false"> Infinity</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="You can't  ... odds here." id="des-1-ckd-4" w="7" name="des-1-ckd" hint="Incorrect choice." show_hints="false"> You can’t use odds here.</p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="des-1-ckd" id="des-1-ckd.null" style="display: none;" w="skipped" checked="">
+</form>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for des-1-ckd.');
+      const form = document.getElementById('des-1-ckd-form');
+      const radioButtons = form.querySelectorAll('input[type="radio"]');
+
+      // Load saved value on page load
+      const savedValue = localStorage.getItem('des-1-ckd-choice');
+      if (savedValue) {
+        console.log("Restoring radio button values for des-1-ckd.");
+        radioButtons.forEach(radio => {
+          if (radio.value === savedValue) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      // Save value on change
+      form.addEventListener('change', function(event) {
+        if (event.target.type === 'radio') {
+          console.log("Saving changed value for des-1-ckd.");
+          localStorage.setItem('des-1-ckd-choice', event.target.value);
+        }
+      });
+    });
+</script>
+<p></p>
+</span></div>
+<p>Now, in typical movie fashion, the protagonist starts to observe events—call them “strange events”—that shouldn’t be happening. In the Doom universe, such events have a high likelihood. But in the normal universe they could also be observed due to optical illusions, distraction, or tricks played by the neighborhood children who think the protagonist is crazy. Let’s assign each observed strange event a likelihood ratio of 2 in favor of Doom.</p>
+<ol start="2" type="1">
+<li>Explain what feature of Bayesian reasoning allows evidence to be in favor of a hypothesis that we believe is impossible.</li>
+</ol>
+<script type="text/javascript">
+      //save entered info
+      document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for des-2-rtir.');
+      const form = document.getElementById('des-2-rtir');
+      form.addEventListener("input", function () {
+        var todo = document.getElementById('des-2-rtir').value;
+        localStorage.setItem("des-2-rtir-contents", todo);
+        console.log("Saving value of des-2-rtir.")
+      }, false);
+
+      //on page load, read in the old value
+      const savedValue = localStorage.getItem("des-2-rtir-contents");
+      if (savedValue) {
+        document.getElementById('des-2-rtir').value = savedValue;
+      }
+})
+</script>
+<textarea id="des-2-rtir" name="des-2-rtir" class="devoirs-text" style="font-family: monospace, monospace;" rows="4" cols="50" placeholder="Type here. (ID des-2-rtir)"></textarea>
+<ol start="3" type="1">
+<li>Translate a likelihood ratio of 3 according to the verbal scale for evidence:</li>
+</ol>
+<div class="cell">
+<span> <small style="color: grey;" id="des-3-lfs-hintarea" class="hintarea">des-3-lfs</small>
+<form id="des-3-lfs-form">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="No evidence" id="des-3-lfs-1" w="23" name="des-3-lfs" hint="Sorry!" show_hints="false"> No evidence</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Limited" id="des-3-lfs-2" w="3" name="des-3-lfs" hint="Not quite right." show_hints="false"> Limited</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Moderate" id="des-3-lfs-3" w="87" name="des-3-lfs" hint="Not quite right." show_hints="false"> Moderate</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Moderate to strong" id="des-3-lfs-4" w="3" name="des-3-lfs" hint="Not on target." show_hints="false"> Moderate to strong</p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="des-3-lfs" id="des-3-lfs.null" style="display: none;" w="skipped" checked="">
+</form>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for des-3-lfs.');
+      const form = document.getElementById('des-3-lfs-form');
+      const radioButtons = form.querySelectorAll('input[type="radio"]');
+
+      // Load saved value on page load
+      const savedValue = localStorage.getItem('des-3-lfs-choice');
+      if (savedValue) {
+        console.log("Restoring radio button values for des-3-lfs.");
+        radioButtons.forEach(radio => {
+          if (radio.value === savedValue) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      // Save value on change
+      form.addEventListener('change', function(event) {
+        if (event.target.type === 'radio') {
+          console.log("Saving changed value for des-3-lfs.");
+          localStorage.setItem('des-3-lfs-choice', event.target.value);
+        }
+      });
+    });
+</script>
+<p></p>
+</span></div>
+<p>The Bayesian updating calculation has a particularly simple mathematical form when the prior probability is stated in terms of odds.</p>
+<p><span class="math display">\[\text{posterior odds} = \text{prior odds} \times \text{likelihood ratio} .\]</span></p>
+<p>For the character who claims that the prior odds of Doom is zero, the posterior odds must always remain zero regardless of the likelihood ratio. In the movies, such a character always ends up dying in a dramatic way, just punishment for his skepticism.</p>
+<ol start="4" type="1">
+<li>For our protagonist, who started with a prior odds of one-in-a-million, the posterior odds after one such “strange” event will be what?</li>
+</ol>
+<div class="cell">
+<span> <small style="color: grey;" id="des-4-sot-hintarea" class="hintarea">des-4-sot</small>
+<form id="des-4-sot-form">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="One in a million" id="des-4-sot-1" w="87" name="des-4-sot" hint="Try again!" show_hints="false"> One in a million</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Two in a million" id="des-4-sot-2" w="14" name="des-4-sot" hint="Right on the nose!" show_hints="false"> Two in a million</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="One in one ... d thousand" id="des-4-sot-3" w="19" name="des-4-sot" hint="Untrue!" show_hints="false"> One in one-hundred thousand</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="One in ten thousand" id="des-4-sot-4" w="32" name="des-4-sot" hint="Better luck next time." show_hints="false"> One in ten thousand</p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="des-4-sot" id="des-4-sot.null" style="display: none;" w="skipped" checked="">
+</form>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for des-4-sot.');
+      const form = document.getElementById('des-4-sot-form');
+      const radioButtons = form.querySelectorAll('input[type="radio"]');
+
+      // Load saved value on page load
+      const savedValue = localStorage.getItem('des-4-sot-choice');
+      if (savedValue) {
+        console.log("Restoring radio button values for des-4-sot.");
+        radioButtons.forEach(radio => {
+          if (radio.value === savedValue) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      // Save value on change
+      form.addEventListener('change', function(event) {
+        if (event.target.type === 'radio') {
+          console.log("Saving changed value for des-4-sot.");
+          localStorage.setItem('des-4-sot-choice', event.target.value);
+        }
+      });
+    });
+</script>
+<p></p>
+</span></div>
+<p>Our protagonist starts to encounter other “strange” reports, hearing about them on the radio, seeing them in news reports from diverse locations, and so on. For the skeptic, these are all of no import. It is impossible to move the skeptic off his prior odds of zero. But our protagonist takes them seriously. Or, at least, he is willing to fold them in to a Bayesian calculation.</p>
+<ol start="5" type="1">
+<li>After five strange events (in total), what should be our protagonist’s posterior odds? (Pick the closest answer.)</li>
+</ol>
+<div class="cell" data-inline="true">
+<span> <small style="color: grey;" id="des-5-hjw-hintarea" class="hintarea">des-5-hjw</small>
+<form id="des-5-hjw-form">
+<span> <span> <input type="radio" class="devoirs-mcq" value="0.000001" id="des-5-hjw-1" w="3" name="des-5-hjw" hint="Think again." show_hints="false"> 0.000001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.00003" id="des-5-hjw-2" w="20" name="des-5-hjw" hint="Certainly." show_hints="false"> 0.00003 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.0001" id="des-5-hjw-3" w="19" name="des-5-hjw" hint="Wrong." show_hints="false"> 0.0001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.003" id="des-5-hjw-4" w="3" name="des-5-hjw" hint="Try again!" show_hints="false"> 0.003 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.01" id="des-5-hjw-5" w="23" name="des-5-hjw" hint="Incorrect." show_hints="false"> 0.01 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3 " id="des-5-hjw-6" w="87" name="des-5-hjw" hint="Try again!" show_hints="false"> 0.3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="des-5-hjw" id="des-5-hjw.null" style="display: none;" w="skipped" checked=""> </span> </span>
+</form>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for des-5-hjw.');
+      const form = document.getElementById('des-5-hjw-form');
+      const radioButtons = form.querySelectorAll('input[type="radio"]');
+
+      // Load saved value on page load
+      const savedValue = localStorage.getItem('des-5-hjw-choice');
+      if (savedValue) {
+        console.log("Restoring radio button values for des-5-hjw.");
+        radioButtons.forEach(radio => {
+          if (radio.value === savedValue) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      // Save value on change
+      form.addEventListener('change', function(event) {
+        if (event.target.type === 'radio') {
+          console.log("Saving changed value for des-5-hjw.");
+          localStorage.setItem('des-5-hjw-choice', event.target.value);
+        }
+      });
+    });
+</script>
+<p></p>
+</span></div>
+<ol start="6" type="1">
+<li>Another five strange events are observed, making 10 in all. What should be our protagonists posterior odds?</li>
+</ol>
+<div class="cell" data-inline="true">
+<span> <small style="color: grey;" id="des-6-yqe-hintarea" class="hintarea">des-6-yqe</small>
+<form id="des-6-yqe-form">
+<span> <span> <input type="radio" class="devoirs-mcq" value="0.000001" id="des-6-yqe-1" w="19" name="des-6-yqe" hint="Not so!" show_hints="false"> 0.000001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.00003" id="des-6-yqe-2" w="32" name="des-6-yqe" hint="Hmmm ..." show_hints="false"> 0.00003 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.0001 " id="des-6-yqe-3" w="18" name="des-6-yqe" hint="Bullseye!" show_hints="false"> 0.0001 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.003" id="des-6-yqe-4" w="32" name="des-6-yqe" hint="Try again!" show_hints="false"> 0.003 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.01" id="des-6-yqe-5" w="32" name="des-6-yqe" hint="Incorrect." show_hints="false"> 0.01 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3 " id="des-6-yqe-6" w="32" name="des-6-yqe" hint="Nope." show_hints="false"> 0.3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="des-6-yqe" id="des-6-yqe.null" style="display: none;" w="skipped" checked=""> </span> </span>
+</form>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for des-6-yqe.');
+      const form = document.getElementById('des-6-yqe-form');
+      const radioButtons = form.querySelectorAll('input[type="radio"]');
+
+      // Load saved value on page load
+      const savedValue = localStorage.getItem('des-6-yqe-choice');
+      if (savedValue) {
+        console.log("Restoring radio button values for des-6-yqe.");
+        radioButtons.forEach(radio => {
+          if (radio.value === savedValue) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      // Save value on change
+      form.addEventListener('change', function(event) {
+        if (event.target.type === 'radio') {
+          console.log("Saving changed value for des-6-yqe.");
+          localStorage.setItem('des-6-yqe-choice', event.target.value);
+        }
+      });
+    });
+</script>
+<p></p>
+</span></div>
+<p>Amazingly, we have all been exposed to series of strange events through web “doomscrolling.” We Bayesian thinkers might deal with the deluge by adding new hypotheses to consider. Not just Normal and Doom, but also Clickbait/AI.</p>
+</div>
+<p><!-- end of exr-dingo-eat-saw --></p>
+</div>
+<div id="tabset-2-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-5-tab">
+<div id="exr-lynx-hit-target" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 5</strong></span> <strong>Prior and posterior: learning a probability from data</strong></p>
+<p>Suppose we want to learn the <strong>probability of success</strong> (p) in a repeated process (e.g.&nbsp;a machine producing a good part, or a single attempt succeeding). We don’t know (p); we only see outcomes: each trial is a success or a failure.</p>
+<p>A standard approach is to start with a <strong>prior</strong> distribution that encodes our uncertainty about (p) <em>before</em> we see data. Here we use a <strong>uniform prior</strong>: every value of (p) between 0 and 1 is considered equally plausible. After we observe data (e.g.&nbsp;4 successes in 4 trials), we update our beliefs to get a <strong>posterior</strong> distribution. The posterior is more concentrated where the data suggest (p) is likely to be.</p>
+<p>The R code below uses the <strong>Beta distribution</strong> to do this. With a uniform prior, after (k) successes in (n) trials the posterior is Beta((k+1), (n-k+1)). Run the chunk to see the prior (no data) and the posterior after 4 successes in 4 trials.</p>
+<div class="cell" data-caption="Prior (no data) and posterior (4 successes in 4 trials)">
+<div>
+<div id="webr-3" class="exercise-cell">
+
+</div>
+<script type="webr-3-contents">
+eyJhdHRyIjp7ImNhcHRpb24iOiJQcmlvciAobm8gZGF0YSkgYW5kIHBvc3RlcmlvciAoNCBzdWNjZXNzZXMgaW4gNCB0cmlhbHMpIiwiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZSwiZmlnLWhlaWdodCI6NCwiZmlnLXdpZHRoIjo4fSwiY29kZSI6InBfc2VxIDwtIHNlcSgwLCAxLCBsZW5ndGgub3V0ID0gMzAwKVxuIyBQcmlvcjogbm8gZGF0YSDihpIgdW5pZm9ybSAoQmV0YSgxLDEpKVxucHJpb3IgPC0gZGJldGEocF9zZXEsIDEsIDEpXG4jIFBvc3RlcmlvcjogNCBzdWNjZXNzZXMsIDQgdHJpYWxzIOKGkiBCZXRhKDUsIDEpXG5wb3N0ZXJpb3IgPC0gZGJldGEocF9zZXEsIDQgKyAxLCA0IC0gNCArIDEpXG5wYXIobWZyb3cgPSBjKDEsIDIpLCBidHkgPSBcImxcIilcbnBsb3QocF9zZXEsIHByaW9yLCB0eXBlID0gXCJsXCIsIGNvbCA9IFwic3RlZWxibHVlXCIsIGx3ZCA9IDIsXG4gICAgIHhsYWIgPSBcIlByb2JhYmlsaXR5IG9mIHN1Y2Nlc3MgKHApXCIsIHlsYWIgPSBcIkRlbnNpdHlcIixcbiAgICAgbWFpbiA9IFwiUHJpb3IgKG5vIGRhdGEpXCIpXG5wbG90KHBfc2VxLCBwb3N0ZXJpb3IsIHR5cGUgPSBcImxcIiwgY29sID0gXCJkYXJrZ3JlZW5cIiwgbHdkID0gMixcbiAgICAgeGxhYiA9IFwiUHJvYmFiaWxpdHkgb2Ygc3VjY2VzcyAocClcIiwgeWxhYiA9IFwiRGVuc2l0eVwiLFxuICAgICBtYWluID0gXCJQb3N0ZXJpb3IgKDQgc3VjY2Vzc2VzIGluIDQgdHJpYWxzKVwiKVxuYWJsaW5lKHYgPSA0LzQsIGNvbCA9IFwicmVkXCIsIGx0eSA9IDIsIGx3ZCA9IDEuNSkgICMgTUxFID0gay9uXG5wYXIobWZyb3cgPSBjKDEsIDEpKSJ9
+</script>
+</div>
+</div>
+<p><strong>1.</strong> What does the <strong>prior</strong> (left plot) represent?</p>
+<div class="cell">
+<span> <small style="color: grey;" id="lht-prior-hintarea" class="hintarea">lht-prior</small>
+<form id="lht-prior-form">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="The probab ...  the data." id="lht-prior-1" w="87" name="lht-prior" hint="Wrong." show_hints="false"> The probability of success after we see the data.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Our uncert ...  any data." id="lht-prior-2" w="29" name="lht-prior" hint="Bingo!" show_hints="false"> Our uncertainty about the probability of success <em>before</em> we see any data.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="The likeli ... alue of p." id="lht-prior-3" w="19" name="lht-prior" hint="Think again." show_hints="false"> The likelihood of the data given each value of p.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="The number ...  4 trials." id="lht-prior-4" w="3" name="lht-prior" hint="You're wrong here." show_hints="false"> The number of successes we expect in the next 4 trials.</p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="lht-prior" id="lht-prior.null" style="display: none;" w="skipped" checked="">
+</form>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for lht-prior.');
+      const form = document.getElementById('lht-prior-form');
+      const radioButtons = form.querySelectorAll('input[type="radio"]');
+
+      // Load saved value on page load
+      const savedValue = localStorage.getItem('lht-prior-choice');
+      if (savedValue) {
+        console.log("Restoring radio button values for lht-prior.");
+        radioButtons.forEach(radio => {
+          if (radio.value === savedValue) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      // Save value on change
+      form.addEventListener('change', function(event) {
+        if (event.target.type === 'radio') {
+          console.log("Saving changed value for lht-prior.");
+          localStorage.setItem('lht-prior-choice', event.target.value);
+        }
+      });
+    });
+</script>
+<p></p>
+</span></div>
+<p><strong>2.</strong> After seeing 4 successes in 4 trials, the posterior is concentrated near 1. Why?</p>
+<div class="cell">
+<span> <small style="color: grey;" id="lht-why-hintarea" class="hintarea">lht-why</small>
+<form id="lht-why-form">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Because we ... orm prior." id="lht-why-1" w="3" name="lht-why" hint="Better luck next time." show_hints="false"> Because we used a uniform prior.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Because th ... ects that." id="lht-why-2" w="8" name="lht-why" hint="Bingo!" show_hints="false"> Because the data (4 out of 4) are consistent with a high probability of success; the posterior reflects that.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Because th ... hen k = n." id="lht-why-3" w="19" name="lht-why" hint="Not quite right." show_hints="false"> Because the Beta distribution always peaks near 1 when k = n.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Because we ...  4 trials." id="lht-why-4" w="19" name="lht-why" hint="Not quite." show_hints="false"> Because we ran 4 trials.</p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="lht-why" id="lht-why.null" style="display: none;" w="skipped" checked="">
+</form>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for lht-why.');
+      const form = document.getElementById('lht-why-form');
+      const radioButtons = form.querySelectorAll('input[type="radio"]');
+
+      // Load saved value on page load
+      const savedValue = localStorage.getItem('lht-why-choice');
+      if (savedValue) {
+        console.log("Restoring radio button values for lht-why.");
+        radioButtons.forEach(radio => {
+          if (radio.value === savedValue) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      // Save value on change
+      form.addEventListener('change', function(event) {
+        if (event.target.type === 'radio') {
+          console.log("Saving changed value for lht-why.");
+          localStorage.setItem('lht-why-choice', event.target.value);
+        }
+      });
+    });
+</script>
+<p></p>
+</span></div>
+<p><strong>3.</strong> If we had seen 2 successes in 4 trials instead, where would the posterior be concentrated?</p>
+<div class="cell">
+<span> <small style="color: grey;" id="lht-2of4-hintarea" class="hintarea">lht-2of4</small>
+<form id="lht-2of4-form">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Near 0." id="lht-2of4-1" w="87" name="lht-2of4" hint="Not on target." show_hints="false"> Near 0.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Near 0.5." id="lht-2of4-2" w="20" name="lht-2of4" hint="Excellent!" show_hints="false"> Near 0.5.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Near 1." id="lht-2of4-3" w="32" name="lht-2of4" hint="Not quite." show_hints="false"> Near 1.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Still unif ... he prior)." id="lht-2of4-4" w="3" name="lht-2of4" hint="Hmmm ..." show_hints="false"> Still uniform (same as the prior).</p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="lht-2of4" id="lht-2of4.null" style="display: none;" w="skipped" checked="">
+</form>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for lht-2of4.');
+      const form = document.getElementById('lht-2of4-form');
+      const radioButtons = form.querySelectorAll('input[type="radio"]');
+
+      // Load saved value on page load
+      const savedValue = localStorage.getItem('lht-2of4-choice');
+      if (savedValue) {
+        console.log("Restoring radio button values for lht-2of4.");
+        radioButtons.forEach(radio => {
+          if (radio.value === savedValue) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      // Save value on change
+      form.addEventListener('change', function(event) {
+        if (event.target.type === 'radio') {
+          console.log("Saving changed value for lht-2of4.");
+          localStorage.setItem('lht-2of4-choice', event.target.value);
+        }
+      });
+    });
+</script>
+<p></p>
+</span></div>
+<p><strong>4.</strong> Sometimes we start with an <strong>informative prior</strong> based on past data. Suppose earlier we saw 7 successes in 16 trials, so our prior is Beta(8, 10). Then we see 4 more trials and all 4 are successes (11 successes in 20 total). How does the posterior after this update compare to a posterior that used only the new 4 trials (with a uniform prior)?</p>
+<div class="cell">
+<span> <small style="color: grey;" id="lht-update-hintarea" class="hintarea">lht-update</small>
+<form id="lht-update-form">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="The poster ... oth cases." id="lht-update-1" w="19" name="lht-update" hint="Wrong." show_hints="false"> The posterior is the same in both cases.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="The poster ... more data." id="lht-update-2" w="19" name="lht-update" hint="Think again." show_hints="false"> The posterior from the informative prior is more concentrated near 1, because we had more data.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="The poster ...  evidence." id="lht-update-3" w="35" name="lht-update" hint="Yes." show_hints="false"> The posterior from the informative prior is pulled a bit away from 1 (toward the earlier 7/16), because we combine past and new evidence.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="The poster ... s uniform." id="lht-update-4" w="87" name="lht-update" hint="No." show_hints="false"> The posterior from the informative prior is uniform.</p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="lht-update" id="lht-update.null" style="display: none;" w="skipped" checked="">
+</form>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+      console.log('Adding event listener for lht-update.');
+      const form = document.getElementById('lht-update-form');
+      const radioButtons = form.querySelectorAll('input[type="radio"]');
+
+      // Load saved value on page load
+      const savedValue = localStorage.getItem('lht-update-choice');
+      if (savedValue) {
+        console.log("Restoring radio button values for lht-update.");
+        radioButtons.forEach(radio => {
+          if (radio.value === savedValue) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      // Save value on change
+      form.addEventListener('change', function(event) {
+        if (event.target.type === 'radio') {
+          console.log("Saving changed value for lht-update.");
+          localStorage.setItem('lht-update-choice', event.target.value);
+        }
+      });
+    });
+</script>
+<p></p>
+</span></div>
+</div>
+<!-- end of exr-lynx-hit-target -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>:::::</p>
+
+
+<script type="webr-data">
+eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC41LjQvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyIsIm1vc2FpY0NhbGMiLCJnZ3Bsb3QyIiwiZ2dmb3JtdWxhIiwiZHBseXIiXSwicmVwb3MiOlsiaHR0cHM6Ly9kdGthcGxhbi5yLXVuaXZlcnNlLmRldiJdfSwicmVuZGVyX2RmIjoiZGVmYXVsdCJ9
+</script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0zIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8zO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItMyIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzMgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0zLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItMy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8zID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8zLCB7fSk7XG4ifSx7ImNlbGxOYW1lIjoid2Vici13aWRnZXQtMiIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMjtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl8yID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMi1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTItY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfMiA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMiwge30pO1xuIn0seyJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzE7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0xIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6Il93ZWJyX3ZhbHVlXzEgPSB7XG4gIGNvbnN0IHsgaGlnaGxpZ2h0UiwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMS1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIC8vIERlZmF1bHQgZXZhbHVhdGlvbiBjb25maWd1cmF0aW9uXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHtcbiAgICBpZDogXCJ3ZWJyLTEtY29udGVudHNcIixcbiAgICBlY2hvOiB0cnVlLFxuICAgIG91dHB1dDogdHJ1ZVxuICB9LCBibG9jay5hdHRyKTtcblxuICAvLyBFdmFsdWF0ZSB0aGUgcHJvdmlkZWQgUiBjb2RlXG4gIGNvbnN0IHJlc3VsdCA9IHdlYlJPanMucHJvY2Vzcyh7Y29kZTogYmxvY2suY29kZSwgb3B0aW9uc30sIHt9KTtcblxuICAvLyBFYXJseSB5aWVsZCB3aGlsZSB3ZSB3YWl0IGZvciB0aGUgZmlyc3QgZXZhbHVhdGlvbiBhbmQgcmVuZGVyXG4gIGlmIChvcHRpb25zLm91dHB1dCAmJiAhKFwiMVwiIGluIHdlYlJPanMucmVuZGVyZWRPanMpKSB7XG4gICAgY29uc3QgY29udGFpbmVyID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKTtcbiAgICBjb25zdCBzcGlubmVyID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKTtcblxuICAgIGlmIChvcHRpb25zLmVjaG8pIHtcbiAgICAgIC8vIFNob3cgb3V0cHV0IGFzIGhpZ2hsaWdodGVkIHNvdXJjZVxuICAgICAgY29uc3QgcHJlRWxlbSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJwcmVcIik7XG4gICAgICBjb250YWluZXIuY2xhc3NOYW1lID0gXCJzb3VyY2VDb2RlXCI7XG4gICAgICBwcmVFbGVtLmNsYXNzTmFtZSA9IFwic291cmNlQ29kZSByXCI7XG4gICAgICBwcmVFbGVtLmFwcGVuZENoaWxkKGhpZ2hsaWdodFIoYmxvY2suY29kZSkpO1xuICAgICAgc3Bpbm5lci5jbGFzc05hbWUgPSBcInNwaW5uZXItZ3JvdyBzcGlubmVyLWdyb3ctc20gbS0yIHBvc2l0aW9uLWFic29sdXRlIHRvcC0wIGVuZC0wXCI7XG4gICAgICBwcmVFbGVtLmFwcGVuZENoaWxkKHNwaW5uZXIpO1xuICAgICAgY29udGFpbmVyLmFwcGVuZENoaWxkKHByZUVsZW0pO1xuICAgIH0gZWxzZSB7XG4gICAgICBzcGlubmVyLmNsYXNzTmFtZSA9IFwic3Bpbm5lci1ib3JkZXIgc3Bpbm5lci1ib3JkZXItc21cIjtcbiAgICAgIGNvbnRhaW5lci5hcHBlbmRDaGlsZChzcGlubmVyKTtcbiAgICB9XG5cbiAgICB5aWVsZCBjb250YWluZXI7XG4gIH1cblxuICB3ZWJST2pzLnJlbmRlcmVkT2pzW1wiMVwiXSA9IHRydWU7XG4gIHlpZWxkIGF3YWl0IHJlc3VsdDtcbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXByZWx1ZGUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ3ZWJST2pzID0ge1xuICBjb25zdCB7IFdlYlIsIENoYW5uZWxUeXBlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lLldlYlI7XG4gIGNvbnN0IHtcbiAgICBXZWJSRXZhbHVhdG9yLFxuICAgIFdlYlJFbnZpcm9ubWVudE1hbmFnZXIsXG4gICAgc2V0dXBSLFxuICAgIGI2NERlY29kZSxcbiAgICBjb2xsYXBzZVBhdGhcbiAgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc3RhdHVzQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLXN0YXR1c1wiKTtcbiAgY29uc3QgaW5kaWNhdG9yQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaW5kaWNhdG9yQ29udGFpbmVyLmNsYXNzTGlzdC5yZW1vdmUoXCJkLW5vbmVcIik7XG5cbiAgbGV0IHN0YXR1c1RleHQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiZGl2XCIpXG4gIHN0YXR1c1RleHQuY2xhc3NMaXN0ID0gXCJleGVyY2lzZS1sb2FkaW5nLWRldGFpbHNcIjtcbiAgc3RhdHVzVGV4dCA9IHN0YXR1c0NvbnRhaW5lci5hcHBlbmRDaGlsZChzdGF0dXNUZXh0KTtcbiAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBJbml0aWFsaXNlYDtcblxuICAvLyBIb2lzdCBpbmRpY2F0b3Igb3V0IGZyb20gZmluYWwgc2xpZGUgd2hlbiBydW5uaW5nIHVuZGVyIHJldmVhbFxuICBjb25zdCByZXZlYWxTdGF0dXMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCAuZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGlmIChyZXZlYWxTdGF0dXMpIHtcbiAgICByZXZlYWxTdGF0dXMucmVtb3ZlKCk7XG4gICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgPiAuc2xpZGVzXCIpLmFwcGVuZENoaWxkKHJldmVhbFN0YXR1cyk7XG4gIH1cblxuICAvLyBNYWtlIGFueSByZXZlYWwgc2xpZGVzIHdpdGggbGl2ZSBjZWxscyBzY3JvbGxhYmxlXG4gIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoXCIucmV2ZWFsIC5leGVyY2lzZS1jZWxsXCIpLmZvckVhY2goKGVsKSA9PiB7XG4gICAgZWwuY2xvc2VzdCgnc2VjdGlvbi5zbGlkZScpLmNsYXNzTGlzdC5hZGQoXCJzY3JvbGxhYmxlXCIpO1xuICB9KVxuXG4gIC8vIHdlYlIgc3VwcGxlbWVudGFsIGRhdGEgYW5kIG9wdGlvbnNcbiAgY29uc3QgZGF0YUNvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici1kYXRhXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZGF0YSA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGRhdGFDb250ZW50KSk7XG5cbiAgLy8gR3JhYiBsaXN0IG9mIHJlc291cmNlcyB0byBiZSBkb3dubG9hZGVkXG4gIGNvbnN0IGZpbGVzQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ2ZnMtZmlsZVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGZpbGVzID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZmlsZXNDb250ZW50KSk7XG5cbiAgLy8gVXNlIFBvc3RNZXNzYWdlIGNoYW5uZWwgZm9yIGFzeW5jIGNvbW11bmljYXRpb25cbiAgLy8gV2UgZG8gbm90IGV4cGVjdCB0byB0YWtlIG5lc3RlZCBwcm9tcHQgaW5wdXQgaW4gUXVhcnRvIExpdmUgY2VsbHNcbiAgZGF0YS5vcHRpb25zLmNoYW5uZWxUeXBlID0gQ2hhbm5lbFR5cGUuUG9zdE1lc3NhZ2U7XG5cbiAgLy8gSW5pdGlhbGlzZSB3ZWJSIGFuZCBzZXR1cCBmb3IgUiBjb2RlIGV2YWx1YXRpb25cbiAgbGV0IHdlYlJQcm9taXNlID0gKGFzeW5jICh3ZWJSKSA9PiB7XG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyB3ZWJSYDtcbiAgICBhd2FpdCB3ZWJSLmluaXQoKTtcblxuICAgIC8vIEluc3RhbGwgcHJvdmlkZWQgbGlzdCBvZiBwYWNrYWdlc1xuICAgIC8vIEVuc3VyZSB3ZWJSIGRlZmF1bHQgcmVwbyBpcyBpbmNsdWRlZFxuICAgIGRhdGEucGFja2FnZXMucmVwb3MucHVzaChcImh0dHBzOi8vcmVwby5yLXdhc20ub3JnXCIpXG4gICAgYXdhaXQgZGF0YS5wYWNrYWdlcy5wa2dzLm1hcCgocGtnKSA9PiAoKSA9PiB7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHBhY2thZ2U6ICR7cGtnfWA7XG4gICAgICByZXR1cm4gd2ViUi5ldmFsUlZvaWQoYFxuICAgICAgICB3ZWJyOjppbnN0YWxsKHBrZywgcmVwb3MgPSByZXBvcylcbiAgICAgICAgbGlicmFyeShwa2csIGNoYXJhY3Rlci5vbmx5ID0gVFJVRSlcbiAgICAgIGAsIHsgZW52OiB7XG4gICAgICAgIHBrZzogcGtnLFxuICAgICAgICByZXBvczogZGF0YS5wYWNrYWdlcy5yZXBvcyxcbiAgICAgIH19KTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIC8vIERvd25sb2FkIGFuZCBpbnN0YWxsIHJlc291cmNlc1xuICAgIGF3YWl0IGZpbGVzLm1hcCgoZmlsZSkgPT4gYXN5bmMgKCkgPT4ge1xuICAgICAgY29uc3QgbmFtZSA9IGZpbGUuc3Vic3RyaW5nKGZpbGUubGFzdEluZGV4T2YoJy8nKSArIDEpO1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyByZXNvdXJjZTogJHtuYW1lfWA7XG4gICAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKGZpbGUpO1xuICAgICAgaWYgKCFyZXNwb25zZS5vaykge1xuICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYENhbid0IGRvd25sb2FkIFxcYCR7ZmlsZX1cXGAuIEVycm9yICR7cmVzcG9uc2Uuc3RhdHVzfTogXCIke3Jlc3BvbnNlLnN0YXR1c1RleHR9XCIuYCk7XG4gICAgICB9XG4gICAgICBjb25zdCBkYXRhID0gYXdhaXQgcmVzcG9uc2UuYXJyYXlCdWZmZXIoKTtcblxuICAgICAgLy8gU3RvcmUgVVJMcyBpbiB0aGUgY3dkIHdpdGhvdXQgYW55IHN1YmRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGlmIChmaWxlLmluY2x1ZGVzKFwiOi8vXCIpKSB7XG4gICAgICAgIGZpbGUgPSBuYW1lO1xuICAgICAgfVxuXG4gICAgICAvLyBDb2xsYXBzZSBoaWdoZXIgZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgZmlsZSA9IGNvbGxhcHNlUGF0aChmaWxlKTtcblxuICAgICAgLy8gQ3JlYXRlIGRpcmVjdG9yeSB0cmVlLCBpZ25vcmluZyBcImRpcmVjdG9yeSBleGlzdHNcIiBWRlMgZXJyb3JzXG4gICAgICBjb25zdCBwYXJ0cyA9IGZpbGUuc3BsaXQoJy8nKS5zbGljZSgwLCAtMSk7XG4gICAgICBsZXQgcGF0aCA9ICcnO1xuICAgICAgd2hpbGUgKHBhcnRzLmxlbmd0aCA+IDApIHtcbiAgICAgICAgcGF0aCArPSBwYXJ0cy5zaGlmdCgpICsgJy8nO1xuICAgICAgICBjb25zdCBhbmFseXNpcyA9IGF3YWl0IHdlYlIuRlMuYW5hbHl6ZVBhdGgocGF0aCk7XG4gICAgICAgIGlmICghYW5hbHlzaXMuZXhpc3RzKSB7XG4gICAgICAgICAgdHJ5IHtcbiAgICAgICAgICAgIGF3YWl0IHdlYlIuRlMubWtkaXIocGF0aCk7XG4gICAgICAgICAgfSBjYXRjaCAoZSkge1xuICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBGaWxlc3lzdGVtIEVycm9yOiBcIiR7ZS5tZXNzYWdlfVwiLmApO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgfVxuXG4gICAgICAvLyBXcml0ZSB0aGlzIGZpbGUgdG8gdGhlIFZGU1xuICAgICAgcmV0dXJuIGF3YWl0IHdlYlIuRlMud3JpdGVGaWxlKGZpbGUsIG5ldyBVaW50OEFycmF5KGRhdGEpKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5zdGFsbGluZyB3ZWJSIHNoaW1zYDtcbiAgICBhd2FpdCB3ZWJSLmV2YWxSVm9pZChgd2Vicjo6c2hpbV9pbnN0YWxsKClgKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgV2ViUiBlbnZpcm9ubWVudCBzZXR1cGA7XG4gICAgYXdhaXQgc2V0dXBSKHdlYlIsIGRhdGEpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHdlYlI7XG4gIH0pKG5ldyBXZWJSKGRhdGEub3B0aW9ucykpO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCB3ZWJSID0gYXdhaXQgd2ViUlByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFdlYlJFdmFsdWF0b3Iod2ViUiwgY29udGV4dClcbiAgICBhd2FpdCBldmFsdWF0b3IucHJvY2VzcyhpbnB1dHMpO1xuICAgIHJldHVybiBldmFsdWF0b3IuY29udGFpbmVyO1xuICB9XG5cbiAgcmV0dXJuIHtcbiAgICBwcm9jZXNzLFxuICAgIHdlYlJQcm9taXNlLFxuICAgIHJlbmRlcmVkT2pzLFxuICB9O1xufVxuIn1dfQ==
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+W10=
+</script>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vIEhpZGRlbiBjZWxsIHRvIGVuc3VyZSBPSlMgcnVudGltZSBpcyBsb2FkZWQgZm9yIHdlYnJcbl93ZWJyX29qc190cmlnZ2VyID0gdHJ1ZVxuIn1dfQ==
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
