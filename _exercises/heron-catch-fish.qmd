@@ -12,17 +12,15 @@ library(mosaicCalc)
 
 ::: {#exr-heron-catch-fish}
 
-**Prior and posterior: the ICBM-style example (from class and the book)**
+Prior and posterior: the ICBM-style example (from class and the book)
 
-This exercise revisits the example from class and the book in which we learn an unknown **probability of success** \(p\) by starting with a **prior** distribution and updating with data to get a **posterior** distribution.
+This exercise revisits the example from class and the book in which we learn an unknown probability of success \(p\) by starting with a prior distribution and updating with data to get a posterior distribution.
 
-We use a **uniform prior**: before seeing any data, we treat every value of \(p\) between 0 and 1 as equally plausible. When we observe \(k\) successes in \(n\) trials, Bayesian updating gives a **posterior** distribution: the density is highest where the data suggest \(p\) is likely to be. The **MLE** (maximum likelihood estimate) is \(k/n\), the fraction of successes—shown as a red dashed line on the plots below.
-
-**The figures below are pre-generated.** Use them to answer the questions; you do not need to understand or run any code.
+We use a uniform prior: before seeing any data, we treat every value of \(p\) between 0 and 1 as equally plausible. When we observe \(k\) successes in \(n\) trials, Bayesian updating gives a posterior distribution: the density is highest where the data suggest \(p\) is likely to be.
 
 **Part 1: Flat prior, then 4 consecutive successes**
 
-The figure below shows the **prior** (no data) and then the **posterior** after 1 success in 1 try, 2 in 2, 3 in 3, and 4 in 4. The red dashed line in each posterior plot is the MLE (\(k/n\)).
+The figure below shows the prior (no data) and then the posterior after 1 success in 1 try, 2 in 2, 3 in 3, and 4 in 4. The red dashed line in each posterior plot shows the fraction of successes so far (\(k/n\)).
 
 ```{r}
 #| label: fig-hcf-part1
@@ -46,7 +44,7 @@ par(mfrow = c(1, 1))
 
 **Part 2: Informative prior from past data, then 4 new successes**
 
-Sometimes we already have past data. Suppose we had **7 successes in 16 trials** and we use that to form our **prior** (no longer flat). Then we run **4 more trials** and get **4 successes** (11 successes in 20 trials total). The figure below shows the prior (based on 7/16) and the **posterior** after updating with the new data (11/20).
+Sometimes we already have past data. Suppose we had 7 successes in 16 trials and we use that to form our prior (no longer flat). Then we run 4 more trials and get 4 successes (11 successes in 20 trials total). The figure below shows the prior (based on 7/16) and the posterior after updating with the new data (11/20).
 
 ```{r}
 #| label: fig-hcf-part2
@@ -64,9 +62,40 @@ abline(v = 11/20, col = "red", lty = 2, lwd = 1.5)
 par(mfrow = c(1, 1))
 ```
 
+**Part 3: More data — which posterior is correct?**
+
+Suppose we had 4 successes in 4 trials (as in Part 1). We then run 4 more trials and get 3 successes (7 successes in 8 trials total). The figure below shows four possible posteriors labeled A, B, C, and D. Only one of them is the correct posterior after 7 successes in 8 trials.
+
+```{r}
+#| label: fig-hcf-choose
+#| fig-cap: "Four candidate posteriors (A–D). Which one is correct for 7 successes in 8 trials?"
+#| fig-width: 8
+#| fig-height: 8
+#| echo: false
+p_seq <- seq(0, 1, length.out = 300)
+par(mfrow = c(2, 2), bty = "l")
+# A: 8/8 (wrong - all successes)
+dens_a <- dbeta(p_seq, 9, 1)
+plot(p_seq, dens_a, type = "l", col = "steelblue", lwd = 2, xlab = "p", ylab = "Density", main = "A", bty = "l")
+abline(v = 1, col = "red", lty = 2, lwd = 1.5)
+# B: 7/8 (correct)
+dens_b <- dbeta(p_seq, 8, 2)
+plot(p_seq, dens_b, type = "l", col = "steelblue", lwd = 2, xlab = "p", ylab = "Density", main = "B", bty = "l")
+abline(v = 7/8, col = "red", lty = 2, lwd = 1.5)
+# C: 4/8 (wrong)
+dens_c <- dbeta(p_seq, 5, 5)
+plot(p_seq, dens_c, type = "l", col = "steelblue", lwd = 2, xlab = "p", ylab = "Density", main = "C", bty = "l")
+abline(v = 1/2, col = "red", lty = 2, lwd = 1.5)
+# D: 2/8 (wrong)
+dens_d <- dbeta(p_seq, 3, 7)
+plot(p_seq, dens_d, type = "l", col = "steelblue", lwd = 2, xlab = "p", ylab = "Density", main = "D", bty = "l")
+abline(v = 2/8, col = "red", lty = 2, lwd = 1.5)
+par(mfrow = c(1, 1))
+```
+
 **Comprehension questions**
 
-**1.** In Part 1, the first plot is "Prior (no data)." What does that plot represent?
+1. In Part 1, the first plot is "Prior (no data)." What does that plot represent?
 
 ```{mcq}
 #| label: hcf-prior
@@ -76,7 +105,7 @@ par(mfrow = c(1, 1))
 4. The number of successes we expect in the next trial.
 ```
 
-**2.** As we go from 1/1 to 2/2 to 3/3 to 4/4 in Part 1, what happens to the posterior?
+2. As we go from 1/1 to 2/2 to 3/3 to 4/4 in Part 1, what happens to the posterior?
 
 ```{mcq}
 #| label: hcf-sharpen
@@ -86,27 +115,17 @@ par(mfrow = c(1, 1))
 4. It always peaks at 1.
 ```
 
-**3.** What does the red dashed line in the posterior plots represent?
-
-```{mcq}
-#| label: hcf-mle
-1. The prior mean.
-2. The posterior mean.
-3. The maximum likelihood estimate (MLE), i.e. k/n. [correct]
-4. The number of trials.
-```
-
-**4.** In Part 2, we use a prior based on 7 successes in 16 trials, then see 4 more successes in 4 trials (11/20 total). Why is the posterior in Part 2 not as concentrated near 1 as the "4 successes in 4 trials" posterior in Part 1?
+3. In Part 2, we use a prior based on 7 successes in 16 trials, then see 4 more successes in 4 trials (11/20 total). Why is the posterior in Part 2 not as concentrated near 1 as the "4 successes in 4 trials" posterior in Part 1?
 
 ```{mcq}
 #| label: hcf-informative
 1. Because we used a different prior; the earlier 7/16 pulls the posterior away from 1 and reflects that we have mixed evidence overall (11/20 = 0.55). [correct]
 2. Because we ran fewer trials in Part 2.
 3. Because we have more total trials in Part 2, so the distribution is wider.
-4. Because the MLE is different.
+4. Because the success rate is different.
 ```
 
-**5.** If we had started with a uniform prior and then observed 11 successes in 20 trials, we would get a posterior centered near 11/20. How would that posterior compare to the one in Part 2 (which used a 7/16 prior then 11/20)?
+4. If we had started with a uniform prior and then observed 11 successes in 20 trials, we would get a posterior centered near 11/20. How would that posterior compare to the one in Part 2 (which used a 7/16 prior then 11/20)?
 
 ```{mcq}
 #| label: hcf-compare
@@ -114,6 +133,36 @@ par(mfrow = c(1, 1))
 2. The uniform-prior posterior would be more concentrated near 11/20, since we didn't "mix in" the earlier 7/16. [correct]
 3. The uniform-prior posterior would be flatter.
 4. The Part 2 posterior would always be to the right of the uniform-prior posterior.
+```
+
+5. In Part 3, we had 4 successes in 4 trials, then 3 more successes in 4 more trials (7 in 8 total). Which panel (A–D) in the figure shows the correct posterior for 7 successes in 8 trials?
+
+```{mcq}
+#| label: hcf-choose-plot
+1. A
+2. B [correct]
+3. C
+4. D
+```
+
+6. Suppose we had 2 successes in 4 trials. We then run 2 more trials and get 2 more successes (4 successes in 6 trials total). What happens to the posterior?
+
+```{mcq}
+#| label: hcf-more-data
+1. It stays the same as the posterior after 2 in 4.
+2. It becomes more concentrated and shifts toward 4/6 (about 0.67), since we have more data and the success rate is 4/6. [correct]
+3. It becomes more spread out.
+4. It shifts toward 0.5 and becomes flatter.
+```
+
+7. We have a prior based on 7 successes in 16 trials (as in Part 2). We then see 2 more trials and get 2 successes (9 successes in 18 trials total). How does this new posterior (9/18) compare to the posterior in Part 2 (11/20)?
+
+```{mcq}
+#| label: hcf-update-compare
+1. The new posterior is centered at 0.5 (9/18), since the new data (2/2) brought the overall success rate down from 11/20 toward 50%. [correct]
+2. The new posterior is identical to the 11/20 posterior.
+3. The new posterior is centered at 0.55, same as 11/20.
+4. The new posterior is centered near 1, because we saw 2 successes in 2 trials.
 ```
 
 :::
