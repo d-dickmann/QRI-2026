@@ -16,16 +16,20 @@ library(mosaicCalc)
 
 This exercise revisits the example from class and the book in which we learn an unknown **probability of success** \(p\) by starting with a **prior** distribution and updating with data to get a **posterior** distribution.
 
-We use a **uniform prior**: before seeing any data, we treat every value of \(p\) between 0 and 1 as equally plausible. When we observe \(k\) successes in \(n\) trials, the mathematics of Bayesian updating (with this prior) gives a **posterior** that is a **Beta distribution** with shape parameters \(\alpha = k + 1\) and \(\beta = n - k + 1\). The posterior density is highest where the data suggest \(p\) is likely to be. The **MLE** (maximum likelihood estimate) is \(k/n\), the fraction of successes—often shown as a vertical line on the plot.
+We use a **uniform prior**: before seeing any data, we treat every value of \(p\) between 0 and 1 as equally plausible. When we observe \(k\) successes in \(n\) trials, Bayesian updating gives a **posterior** distribution: the density is highest where the data suggest \(p\) is likely to be. The **MLE** (maximum likelihood estimate) is \(k/n\), the fraction of successes—shown as a red dashed line on the plots below.
+
+**The figures below are pre-generated.** Use them to answer the questions; you do not need to understand or run any code.
 
 **Part 1: Flat prior, then 4 consecutive successes**
 
-Run the R chunk below. It defines a small function that plots the prior or posterior density of \(p\), then runs it for **no data** (prior) and for **1, 2, 3, and 4 successes in 1, 2, 3, and 4 trials** (so four posteriors in a row). You get five plots: first the flat prior, then the posterior after 1 success in 1 try, then 2 in 2, then 3 in 3, then 4 in 4. The red dashed line in each posterior plot is the MLE (\(k/n\)).
+The figure below shows the **prior** (no data) and then the **posterior** after 1 success in 1 try, 2 in 2, 3 in 3, and 4 in 4. The red dashed line in each posterior plot is the MLE (\(k/n\)).
 
-```{webr}
-#| caption: Prior (no data) and posteriors for 1/1, 2/2, 3/3, 4/4 successes
+```{r}
+#| label: fig-hcf-part1
+#| fig-cap: "Prior (no data) and posteriors for 1/1, 2/2, 3/3, 4/4 successes"
 #| fig-width: 8
 #| fig-height: 10
+#| echo: false
 plot_posterior <- function(k, n, main = NULL) {
   p_seq <- seq(0, 1, length.out = 300)
   alpha_post <- k + 1
@@ -42,12 +46,14 @@ par(mfrow = c(1, 1))
 
 **Part 2: Informative prior from past data, then 4 new successes**
 
-Sometimes we already have past data. Suppose we had **7 successes in 16 trials** and we use that to form our **prior** (so the prior is Beta(8, 10), no longer flat). Then we run **4 more trials** and get **4 successes** (11 successes in 20 trials total). The next chunk shows the prior (based on 7/16) and the **posterior** after updating with the new data (11/20).
+Sometimes we already have past data. Suppose we had **7 successes in 16 trials** and we use that to form our **prior** (no longer flat). Then we run **4 more trials** and get **4 successes** (11 successes in 20 trials total). The figure below shows the prior (based on 7/16) and the **posterior** after updating with the new data (11/20).
 
-```{webr}
-#| caption: Prior from 7 successes in 16 trials; posterior after 4 more successes (11/20 total)
+```{r}
+#| label: fig-hcf-part2
+#| fig-cap: "Prior from 7 successes in 16 trials; posterior after 4 more successes (11/20 total)"
 #| fig-width: 8
 #| fig-height: 4
+#| echo: false
 p_seq <- seq(0, 1, length.out = 300)
 prior_dens <- dbeta(p_seq, 7 + 1, 16 - 7 + 1)
 post_dens  <- dbeta(p_seq, 11 + 1, 20 - 11 + 1)
@@ -96,11 +102,11 @@ par(mfrow = c(1, 1))
 #| label: hcf-informative
 1. Because we used a different prior; the earlier 7/16 pulls the posterior away from 1 and reflects that we have mixed evidence overall (11/20 = 0.55). [correct]
 2. Because we ran fewer trials in Part 2.
-3. Because the Beta distribution is different when n = 20.
+3. Because we have more total trials in Part 2, so the distribution is wider.
 4. Because the MLE is different.
 ```
 
-**5.** If we had started with a uniform prior and then observed 11 successes in 20 trials, the posterior would be Beta(12, 10). How would that posterior compare to the one in Part 2 (which used a 7/16 prior then 11/20)?
+**5.** If we had started with a uniform prior and then observed 11 successes in 20 trials, we would get a posterior centered near 11/20. How would that posterior compare to the one in Part 2 (which used a 7/16 prior then 11/20)?
 
 ```{mcq}
 #| label: hcf-compare

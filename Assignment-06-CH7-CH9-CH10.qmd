@@ -54,7 +54,7 @@ These exercises draw on uncertainty in quantities (Ch 7), likelihood (Ch 9), and
 
 ## 2.
 
-{{< include ../QR-A/_exercises/dingo-eat-saw.qmd >}}
+{{< include _exercises/dingo-eat-saw.qmd >}}
 
 ## 3.
 
