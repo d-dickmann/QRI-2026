@@ -99,16 +99,29 @@ When in doubt whether your work has been submitted, submit it again! The compute
 
 ## Week 6 (Feb 9-13)
 
-**Wolfram Week!** 
+**Wolfram Week!** Wolfram was on campus this week.
 
-- No quiz
+- No traditional quiz. **Homework and quiz credit for this week** is based on: (1) completion of the Wolfram module, (2) participation in class, and (3) the **Wolfram write-up**, to be turned in on Populi by the start of your class [Wed Feb 18]{title="Section 1"} or [Thurs Feb 19]{title="Sections 3 & 4"}.
 
-- Log into the Wolfram Cloud platform prior to your class on Monday/Tuesday
+- Log into the Wolfram Cloud platform prior to your class on Monday/Tuesday.
 
-- Assignment 5 : [Link to assignment document](Assignment-05-CH8.html) 
-    - *Submission deadline:* Start of your class [Wed Feb 11]{title="Section 1"} or [Thurs Feb 12]{title="Sections 3 & 4"}.  
+- Assignment 5: [Link to assignment document](Assignment-05-CH8.html)  
+    - *Submission deadline (extended):* Start of your class [Wed Feb 18]{title="Section 1"} or [Thurs Feb 19]{title="Sections 3 & 4"}.  
 
+## Week 7 (Feb 16-20)
 
+- **Wolfram write-up** due on Populi: Start of your class [Wed Feb 18]{title="Section 1"} or [Thurs Feb 19]{title="Sections 3 & 4"}.
+
+- **Assignment 5** (extended deadline): If you have not yet submitted, due at the start of your class [Wed Feb 18]{title="Section 1"} or [Thurs Feb 19]{title="Sections 3 & 4"}. [Link to assignment document](Assignment-05-CH8.html)
+
+- Reading: Chapters 7, 9, and 10 of *QR-A* (Uncertainty, Likelihood, and Hypothesis/likelihood). Answer the Reading Questions as assigned for those chapters.
+
+## Week 8 (Feb 23-27)
+
+- **Quiz** on Chapters 7, 9, and 10: [Mon Feb 23]{title="Section 1"} or [Tues Feb 24]{title="Sections 3 & 4"}.
+
+- Assignment 6 (Ch 7, 9, 10): [Link to assignment document](Assignment-06-CH7-CH9-CH10.html)  
+    - *Submission deadline:* Start of your class [Wed Feb 25]{title="Section 1"} or [Thurs Feb 26]{title="Sections 3 & 4"}.  
 
 
 
