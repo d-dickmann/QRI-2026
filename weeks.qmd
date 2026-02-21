@@ -120,7 +120,7 @@ When in doubt whether your work has been submitted, submit it again! The compute
 
 - **Quiz** on Chapters 7, 9, and 10: [Mon Feb 23]{title="Section 1"} or [Tues Feb 24]{title="Sections 3 & 4"}.
 
-- Assignment 6 (Ch 7, 9, 10): [Link to assignment document](https://d-dickmann.github.io/QRI-2026/Assignment-06-CH7-CH9-CH10.html){target="_blank"}  
+- Assignment 6 (Ch 7, 9, 10): [Link to assignment document](Assignment-06-CH7-CH9-CH10.html)
     - *Submission deadline:* Start of your class [Wed Feb 25]{title="Section 1"} or [Thurs Feb 26]{title="Sections 3 & 4"}.  
 
 
