@@ -116,18 +116,7 @@ ggplot() +
 5. Mainly to the left (R decreasing only).
 ```
 
-3. What shape does the trajectory have?
-
-```{mcq}
-#| label: leh-shape
-1. It heads straight toward the center and stops.
-2. It spirals inward toward a single point.
-3. It forms a closed loop (cycle) that repeats. [correct]
-4. It heads outward without bound.
-5. It is a straight line.
-```
-
-4. How does long-term behavior here differ from SIR?
+3. How does long-term behavior here differ from SIR?
 
 ```{mcq}
 #| label: leh-vs-SIR
@@ -137,37 +126,7 @@ ggplot() +
 4. Predator-prey has no equilibrium; SIR always has one.
 ```
 
-5. Starting with many prey and few predators, what typically happens to $F$ (predators) next?
-
-```{mcq}
-#| label: leh-fox-increase
-1. $F$ only decreases, because there are too many prey.
-2. $F$ increases (more food for predators), then later can decrease as prey are eaten down. [correct]
-3. $F$ stays constant.
-4. $F$ decreases to zero.
-```
-
-6. Near the center of the flow field the arrows are short. What does that mean?
-
-```{mcq}
-#| label: leh-short-arrows
-1. Time runs more slowly there.
-2. State changes slowly there; it's the **equilibrium**. [correct]
-3. Prey and predators are equal in number.
-4. The trajectory cannot pass through that region.
-```
-
-7. If the system started exactly at that center point, what would happen?
-
-```{mcq}
-#| label: leh-center-behavior
-1. Both populations would immediately explode.
-2. The state would stay there; neither population would grow nor decline because the rate of change is zero at that point. [correct]
-3. The state would spiral inward to zero.
-4. The state would move in a straight line away from the center.
-```
-
-8. When would the cycle break (populations no longer follow a repeating cycle)?
+4. When would the cycle break (populations no longer follow a repeating cycle)?
 
 ```{mcq}
 #| label: leh-cycle-break
@@ -177,7 +136,18 @@ ggplot() +
 4. If the cycle runs for more than one full loop.
 ```
 
-9. Why does the flow point roughly southwest when there are few prey and many predators?
+5. At the **rightmost** point of the green trajectory (where $R$ is largest on the loop), in which direction does the flow point?
+
+```{mcq}
+#| label: leh-rightmost-flow
+1. Roughly northeast (both R and F increasing).
+2. Roughly to the right (R increasing).
+3. Roughly upward (F increasing, R not changing much).
+4. Roughly downward (F decreasing, R not changing much). [correct]
+5. Roughly southwest (both R and F decreasing).
+```
+
+6. Why does the flow point roughly southwest when there are few prey and many predators?
 
 `r devoirs::devoirs_text("leh-explain", rows = 3)`
 
