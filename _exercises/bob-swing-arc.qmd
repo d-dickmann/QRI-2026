@@ -1,0 +1,138 @@
+---
+id: "bob-swing-arc"
+created: "2026-02"
+attribution: QRI-2026 (revised from QR-A kid-ring-screen)
+use: "Ch 11 Dynamics – pendulum state space (no hand-drawing)"
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+library(devoirs)
+library(mosaicCalc)
+```
+
+::: {#exr-bob-swing-arc}
+
+The figure below shows six different instantaneous configurations for a pendulum as it swings. Each panel is labeled (a)–(f). The curved arrow in each panel shows the velocity of the bob; the length of the arrow is proportional to the speed (velocity × 1 second). The horizontal axis in state space is position $\theta$ (angle in degrees); the vertical axis is angular velocity.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-pendulums-6
+#| layout-ncol: 3
+#| fig-cap: "Six pendulum configurations (a)–(f)."
+#| fig-subcap:
+#| - "a"
+#| - "b"
+#| - "c"
+#| - "d"
+#| - "e"
+#| - "f"
+source("_software/pendulum.R")
+draw_pendulum1(pi/8, -0.2)
+draw_pendulum1(-pi/4, 0.05)
+draw_pendulum1(pi/7, -0.3)
+draw_pendulum1(-pi/6, 0.5)
+draw_pendulum1(pi/10, -0.1)
+draw_pendulum1(-pi/10, +1)
+```
+
+**1.** Which frame shows the pendulum where it is nearest the *top* of its swing (maximum angle from vertical)?
+
+```{mcq}
+#| label: bsa-topmost
+#| inline: true
+1. a
+2. b [correct]
+3. c
+4. d
+5. e
+6. f
+```
+
+**2.** The next figure shows the *state space* for the pendulum: horizontal axis = $\theta$ (degrees), vertical axis = angular velocity. Six states are plotted and labeled **A** through **F**. These correspond to the six pendulum frames (a)–(f) above, but in a different order. Your task: match each state-space point to the correct pendulum frame. (The fastest velocity in the pendulum figure is taken to be 1 on the vertical scale.)
+
+```{r}
+#| label: fig-pendulum-state-space
+#| fig-cap: "State space: six states A–F corresponding to the six pendulum frames (a)–(f)."
+#| echo: false
+# Positions (theta in deg, velocity): a=(22.5,-0.2), b=(-45,0.05), c=(25.7,-0.3), d=(-30,0.5), e=(18,-0.1), f=(-18,1)
+pts <- tibble::tibble(
+  theta_deg = c(22.5, -45, 25.7, -30, 18, -18),
+  velocity  = c(-0.2, 0.05, -0.3, 0.5, -0.1, 1),
+  label = LETTERS[1:6]
+)
+gf_blank(0 ~ 0) |>
+  gf_lims(y = c(-1.2, 1.2), x = c(-55, 35)) |>
+  gf_labs(y = "velocity", x = expression(theta ~ "(deg)")) |>
+  gf_point(velocity ~ theta_deg, data = pts, size = 5, color = "steelblue") |>
+  gf_text(velocity ~ theta_deg, label = ~ label, data = pts, hjust = -0.5, vjust = -0.5, size = 5) |>
+  gf_hline(yintercept = 0, linetype = 2, alpha = 0.5) |>
+  gf_vline(xintercept = 0, linetype = 2, alpha = 0.5) |>
+  gf_theme(theme_minimal())
+```
+
+**2a.** Which state-space point (A–F) corresponds to **frame b** (pendulum nearest the top of its swing)?
+
+```{mcq}
+#| label: bsa-match-b
+#| inline: true
+1. A
+2. B [correct]
+3. C
+4. D
+5. E
+6. F
+```
+
+**2b.** Which state-space point corresponds to **frame f** (the frame with the largest speed in the figure)?
+
+```{mcq}
+#| label: bsa-match-f
+#| inline: true
+1. A
+2. B
+3. C
+4. D
+5. E
+6. F [correct]
+```
+
+**2c.** Frame (a) shows the bob on the right side with velocity pointing roughly downward (negative direction). Which point is frame (a)?
+
+```{mcq}
+#| label: bsa-match-a
+#| inline: true
+1. A [correct]
+2. B
+3. C
+4. D
+5. E
+6. F
+```
+
+**3.** The *rate of change of state* at any point has two components: $d\theta/dt$ (horizontal) and $d(\text{velocity})/dt$ (vertical). You can read $d\theta/dt$ from the pendulum: it equals the angular velocity. The vertical component (rate of change of velocity) is the acceleration; for a pendulum, the acceleration is a restoring force toward the vertical.
+
+**3a.** At the state corresponding to the **top of the swing** (point B), in which direction does the rate-of-change vector $(d\theta/dt,\, d(\text{velocity})/dt)$ mainly point?
+
+```{mcq}
+#| label: bsa-roc-top
+1. Left (negative $\theta$ direction).
+2. Right (positive $\theta$ direction).
+3. Down (negative velocity direction).
+4. Up (positive velocity direction). [correct — velocity is small and increasing as the bob starts to swing down.]
+5. Nowhere; both components are zero.
+```
+
+**3b.** At point **A** (bob on the right, moving slowly toward the left), what is the sign of $d\theta/dt$ and the sign of $d(\text{velocity})/dt$?
+
+```{mcq}
+#| label: bsa-roc-A
+1. $d\theta/dt > 0$, $d(\text{velocity})/dt > 0$
+2. $d\theta/dt > 0$, $d(\text{velocity})/dt < 0$
+3. $d\theta/dt < 0$, $d(\text{velocity})/dt > 0$
+4. $d\theta/dt < 0$, $d(\text{velocity})/dt < 0$ [correct — velocity is negative; restoring force pulls toward center so acceleration is negative.]
+5. One is zero.
+```
+
+:::
+<!-- end of exr-bob-swing-arc -->

@@ -1,0 +1,18 @@
+---
+id: "dolphin-bring-knob"
+created: "2026-02"
+attribution: QRI-2026 (image + link fix; from QR-A)
+use: "Ch 11 Dynamics – SIR flow mechanics"
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+library(devoirs)
+library(mosaicCalc)
+```
+
+::: {#exr-dolphin-bring-knob}
+Referring to [Figure 11.2 (SIR state space)](https://dtkaplan.github.io/QR-A/Chap-11-dynamics.html#fig-SIR-model-rule1){target="_blank"}, three nearby points in state space, marked ![three violet points](https://dtkaplan.github.io/QR-A/www/dots/dots-violet-all.png), have mainly a westward flow. But only the middle dot is purely westward, the neighboring positions have flows that are a little bit inclined to the north or south. Explain what it is about the mechanics of the epidemic that leads to the north or south component of the flows.
+
+`r devoirs::devoirs_text("dbk-flow")`
+:::
+ <!-- end of exr-dolphin-bring-knob -->

@@ -32,15 +32,15 @@ These exercises draw on dynamics (Ch 11): state space, flow fields, and the SIR 
 ::: {.panel-tabset}
 ## 1.
 
-{{< include ../QR-A/_exercises/kid-ring-screen.qmd >}}
+{{< include _exercises/bob-swing-arc.qmd >}}
 
 ## 2.
 
-{{< include ../QR-A/_exercises/fawn-shut-bulb.qmd >}}
+{{< include _exercises/fawn-shut-bulb.qmd >}}
 
 ## 3.
 
-{{< include ../QR-A/_exercises/dolphin-bring-knob.qmd >}}
+{{< include _exercises/dolphin-bring-knob.qmd >}}
 
 ## 4.
 
