@@ -45,11 +45,6 @@ draw_pendulum1(-pi/10, +1)
 
 **1.** Which frame shows the pendulum where it is nearest the *top* of its swing?
 
-::: {.callout-tip collapse=true}
-## Hint
-Maximum angle from vertical.
-:::
-
 ```{mcq}
 #| label: bsa-topmost
 #| inline: true
