@@ -127,7 +127,7 @@ When in doubt whether your work has been submitted, submit it again! The compute
 
 - **Quiz** on Chapter 11 (Dynamics): [Mon Mar 2]{title="Section 1"} or [Tues Mar 3]{title="Sections 3 & 4"}.
 
-- Reading: Chapter 12 of *QR-A*. Answer and submit the [Reading Questions for Chapter 12](https://dtkaplan.github.io/QR-A/RQ-12-rates-of-change.html) before your class meeting.
+- Reading: Chapter 12 of *QR-A*. Answer and submit the [Reading Questions for Chapter 12](https://dtkaplan.github.io/QR-A/RQ-12-rates-of-change.html).
 
 ::: {.callout-tip collapse=false appearance=simple}
 ## Assignment 7
