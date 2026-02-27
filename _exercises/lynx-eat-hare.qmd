@@ -2,7 +2,7 @@
 id: "lynx-eat-hare"
 created: "2026-02"
 attribution: QRI-2026
-use: "Ch 11 Dynamics – predator-prey (Lotka-Volterra)"
+use: "Ch 11 Dynamics – predator-prey"
 ---
 
 ```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
@@ -12,8 +12,8 @@ library(mosaicCalc)
 
 ::: {#exr-lynx-eat-hare}
 
-**Predator–prey (Lotka–Volterra)**  
-State $(R, F)$: prey and predator populations. The flow field shows how the state changes; trajectories can **cycle** around an equilibrium. The figure shows the flow and **one** trajectory (green).
+**Predator–prey**  
+State $(R, F)$: prey and predator populations. The flow field shows how the state changes; trajectories can **cycle** around an equilibrium. The figure shows the flow and one trajectory (green).
 
 ```{r}
 #| label: fig-lynx-hare-flow
@@ -21,22 +21,75 @@ State $(R, F)$: prey and predator populations. The flow field shows how the stat
 #| echo: false
 #| warning: false
 #| message: false
-r <- 0.6
-a <- 0.002
-b <- 0.0015
-m <- 0.6
-LV <- makeODE(dR ~ r*R - a*R*F, dF ~ b*R*F - m*F)
-# One trajectory; integrate long enough for full closed orbit
-sol1 <- integrateODE(LV, domain(t = 0:50), R = 600, F = 150)
-# Domain and limits chosen so the full orbit is visible (no clipping)
-R_range <- c(100, 700)
-F_range <- c(100, 620)
-flow_field(LV, domain(R = R_range[1]:R_range[2], F = F_range[1]:F_range[2]), npts = 12) |>
-  traj_plot(F(t) ~ R(t), sol1, color = "forestgreen", nt = 0, inherit = FALSE, linewidth = 1.9, alpha = 0.95) |>
-  gf_lims(x = R_range, y = F_range) |>
-  gf_labs(x = "R (prey)", y = "F (predators)") |>
-  gf_refine(coord_fixed()) |>
-  gf_theme(theme_minimal())
+library(ggplot2)
+
+# Parameters; equilibrium at R* = 400, F* = 300
+a <- 1.5    # prey growth rate
+b <- 0.005  # predation rate
+c <- 0.5    # conversion efficiency
+d <- 1.0    # predator death rate
+
+dRdt <- function(R, F) a*R - b*R*F
+dFdt <- function(R, F) c*b*R*F - d*F
+
+# RK4 trajectory
+dt     <- 0.005
+steps  <- 20000
+R_traj <- numeric(steps)
+F_traj <- numeric(steps)
+R_traj[1] <- 250
+F_traj[1] <- 200
+
+for (i in 2:steps) {
+  R <- R_traj[i-1]; F <- F_traj[i-1]
+  k1r <- dRdt(R, F);                     k1f <- dFdt(R, F)
+  k2r <- dRdt(R+dt/2*k1r, F+dt/2*k1f); k2f <- dFdt(R+dt/2*k1r, F+dt/2*k1f)
+  k3r <- dRdt(R+dt/2*k2r, F+dt/2*k2f); k3f <- dFdt(R+dt/2*k2r, F+dt/2*k2f)
+  k4r <- dRdt(R+dt*k3r,   F+dt*k3f);   k4f <- dFdt(R+dt*k3r,   F+dt*k3f)
+  R_traj[i] <- R + dt/6*(k1r + 2*k2r + 2*k3r + k4r)
+  F_traj[i] <- F + dt/6*(k1f + 2*k2f + 2*k3f + k4f)
+}
+
+traj <- data.frame(R = R_traj, F = F_traj)
+
+# Flow field grid
+R_grid <- seq(150, 750, by = 75)
+F_grid <- seq(0, 700, by = 75)
+grid   <- expand.grid(R = R_grid, F = F_grid)
+grid$dR <- mapply(dRdt, grid$R, grid$F)
+grid$dF <- mapply(dFdt, grid$R, grid$F)
+
+mag       <- sqrt(grid$dR^2 + grid$dF^2)
+mag[mag == 0] <- 1
+arrow_len <- 30
+grid$dRn  <- grid$dR / mag * arrow_len
+grid$dFn  <- grid$dF / mag * arrow_len
+
+ggplot() +
+  geom_segment(
+    data = grid,
+    aes(x = R, y = F, xend = R + dRn, yend = F + dFn),
+    arrow = arrow(length = unit(0.15, "cm"), type = "closed"),
+    linewidth = 0.35,
+    color = "black"
+  ) +
+  geom_path(
+    data = traj,
+    aes(x = R, y = F),
+    color = "#22aa22",
+    linewidth = 1.6
+  ) +
+  scale_x_continuous(
+    name   = "R (prey)",
+    breaks = c(200, 400, 600, 800)
+  ) +
+  scale_y_continuous(
+    name   = "F (predators)",
+    breaks = c(0, 100, 200, 300, 400, 500, 600, 700)
+  ) +
+  coord_cartesian(xlim = c(100, 800), ylim = c(0, 700)) +
+  theme_bw(base_size = 13) +
+  theme(panel.grid.minor = element_blank())
 ```
 
 **Questions**
@@ -124,7 +177,7 @@ flow_field(LV, domain(R = R_range[1]:R_range[2], F = F_range[1]:F_range[2]), npt
 4. If the cycle runs for more than one full loop.
 ```
 
-9. (Optional) Why does the flow point roughly southwest when there are few prey and many predators?
+9. Why does the flow point roughly southwest when there are few prey and many predators?
 
 `r devoirs::devoirs_text("leh-explain", rows = 3)`
 
