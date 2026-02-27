@@ -51,15 +51,15 @@ draw_pendulum1(-pi/10, +1)
 6. f
 ```
 
-**2.** The next figure shows the **flow field** (dynamical rule) for the pendulum in state space: at each point, the arrow shows the direction and rate of change of the state. Several points are marked with numbers **1–5**. Some of these numbered points correspond to one of the six pendulum frames (a)–(f) above; at least one does *not* correspond to any of those frames. Use the flow field and the pendulum panels to locate states.
+**2.** The next figure shows the **flow field** (dynamical rule) for the pendulum in state space: each arrow shows the direction the state moves from that point ($\theta$ on the horizontal axis, velocity on the vertical). **0° = straight down.** Numbered points **1–5** are marked; some match one of the pendulum frames (a)–(f), at least one does not. Use the flow and the pendulum panels to locate each state.
 
 ```{r}
 #| label: fig-pendulum-flow
-#| fig-cap: "Pendulum flow field in state space. Numbered points 1–5: some match frames (a)–(f), at least one does not."
+#| fig-cap: "Pendulum flow field. Arrows show (dθ/dt, dv/dt). Numbered points 1–5: some match frames (a)–(f), at least one does not."
 #| echo: false
 #| warning: false
-# Pendulum: dp/dt = v, dv/dt = -k*p with 0 = straight down
-k <- 0.025
+# Pendulum: d(theta)/dt = v, dv/dt = -k*theta with 0 = straight down
+k <- 0.03
 pend <- makeODE(dp ~ v, dv ~ -k*p)
 # Points: 1=frame b (top), 2=frame f (max speed), 3=frame a (right, down), 4=distractor (0,0), 5=frame d
 pts <- tibble::tibble(
@@ -67,14 +67,20 @@ pts <- tibble::tibble(
   v = c(0.05, 1, -0.2, 0, 0.5),
   label = as.character(1:5)
 )
-flow_field(pend, domain(p = -50:50, v = -1.2:1.2), npts = 10, scale = 0.7) |>
-  gf_point(v ~ p, data = pts, size = 5, color = "darkred", inherit = FALSE) |>
-  gf_text(v ~ p, label = ~ label, data = pts, hjust = -0.6, vjust = -0.5, size = 5, color = "darkred", inherit = FALSE) |>
-  gf_hline(yintercept = 0, linetype = 2, alpha = 0.5) |>
-  gf_vline(xintercept = 0, linetype = 2, alpha = 0.5) |>
-  gf_labs(x = expression(theta ~ "(deg)"), y = "velocity") |>
-  gf_refine(coord_fixed()) |>
-  gf_theme(theme_minimal())
+# Sparse grid and shorter arrows so the flow is readable; domain focused on where the points lie
+flow_field(pend, domain(p = -48:32, v = -0.35:1.15), npts = 6, scale = 0.45) |>
+  gf_hline(yintercept = 0, linetype = 2, alpha = 0.6, color = "gray40") |>
+  gf_vline(xintercept = 0, linetype = 2, alpha = 0.6, color = "gray40") |>
+  gf_point(v ~ p, data = pts, size = 6, color = "darkred", inherit = FALSE) |>
+  gf_text(v ~ p, label = ~ label, data = pts, hjust = -0.7, vjust = -0.4, size = 5, fontface = "bold", color = "darkred", inherit = FALSE) |>
+  gf_labs(x = expression(theta ~ "(deg, 0 = straight down)"), y = "angular velocity") |>
+  gf_refine(
+    scale_x_continuous(breaks = c(-45, -30, 0, 22),
+                       minor_breaks = NULL),
+    scale_y_continuous(breaks = c(-0.2, 0, 0.5, 1),
+                       minor_breaks = NULL)
+  ) |>
+  gf_theme(theme_minimal(base_size = 12))
 ```
 
 **2a.** Which numbered point (1–5) corresponds to **frame b** (pendulum nearest the top of its swing)?
