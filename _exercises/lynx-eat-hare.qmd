@@ -98,9 +98,9 @@ ggplot() +
 
 ```{mcq}
 #| label: leh-highR-lowF
-1. Mainly to the right (R increasing, F not changing much).
+1. Mainly to the right (R increasing, F not changing much). [correct]
 2. Mainly upward (F increasing, R not changing much).
-3. Roughly northeast (both R and F increasing). [correct]
+3. Roughly northeast (both R and F increasing). 
 4. Mainly downward (F decreasing).
 5. Roughly southwest (both R and F decreasing).
 ```
@@ -142,8 +142,8 @@ ggplot() +
 #| label: leh-rightmost-flow
 1. Roughly northeast (both R and F increasing).
 2. Roughly to the right (R increasing).
-3. Roughly upward (F increasing, R not changing much).
-4. Roughly downward (F decreasing, R not changing much). [correct]
+3. Roughly upward (F increasing, R not changing much). [correct]
+4. Roughly downward (F decreasing, R not changing much).
 5. Roughly southwest (both R and F decreasing).
 ```
 
