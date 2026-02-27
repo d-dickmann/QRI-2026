@@ -14,10 +14,6 @@ library(mosaicCalc)
 
 **Note:** In this exercise, $\theta = 0°$ is the position where the pendulum hangs **straight down**. Positive $\theta$ is one side, negative $\theta$ the other.
 
-::: {.callout-tip collapse=true}
-## Hint: What does "straight down" mean?
-Center/bottom of the pendulum's swing.
-:::
 
 The figure below shows six different instantaneous configurations for a pendulum as it swings. Each panel is labeled (a)–(f). The curved arrow in each panel shows the velocity of the bob; the length of the arrow is proportional to the speed (velocity × 1 second). In state space, the horizontal axis is $\theta$ (angle in degrees); the vertical axis is angular velocity.
 
@@ -90,10 +86,7 @@ flow_field(pend, domain(p = -48:32, v = -0.35:1.15), npts = 6, scale = 0.45) |>
 
 **2a.** Which numbered point (1–5) corresponds to **frame b**?
 
-::: {.callout-tip collapse=true}
-## Hint
-Frame b is the pendulum nearest the top of its swing.
-:::
+
 
 ```{mcq}
 #| label: bsa-match-b
@@ -107,10 +100,6 @@ Frame b is the pendulum nearest the top of its swing.
 
 **2b.** Which numbered point corresponds to **frame f**?
 
-::: {.callout-tip collapse=true}
-## Hint
-Frame f is the one with the largest speed in the pendulum figure.
-:::
 
 ```{mcq}
 #| label: bsa-match-f
@@ -124,10 +113,6 @@ Frame f is the one with the largest speed in the pendulum figure.
 
 **2c.** Which numbered point does **not** correspond to any of the six pendulum frames (a)–(f)?
 
-::: {.callout-tip collapse=true}
-## Hint
-One of the numbered points is a state that never appears in the six panels (a)–(f).
-:::
 
 ```{mcq}
 #| label: bsa-distractor
@@ -146,10 +131,6 @@ Point 4 is at (0, 0): straight down at rest. None of the six pendulum panels sho
 
 **2d.** Which numbered point corresponds to **frame a**?
 
-::: {.callout-tip collapse=true}
-## Hint
-Frame a shows the bob on the right, with velocity pointing downward.
-:::
 
 ```{mcq}
 #| label: bsa-match-a
