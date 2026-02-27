@@ -12,40 +12,29 @@ library(mosaicCalc)
 
 ::: {#exr-lynx-eat-hare}
 
-**A new dynamic system: predator and prey**
-
-In the SIR model, the state (susceptibles, infectives) moves in one general direction over time. Many two-variable dynamical systems behave differently. Here we introduce a simple **predator–prey** model (often called Lotka–Volterra). The state is $(R, F)$: $R$ = prey population and $F$ = predator population (e.g. in units per square km, or hundreds of individuals).
-
-- When there are many prey and few predators, prey tend to increase and predators can grow (more food).
-- When there are many predators and few prey, predators decline (not enough food) and prey can recover.
-- The dynamical rule has both $R$ and $F$ increasing or decreasing depending on the current state, and trajectories often **cycle** around an equilibrium instead of heading one way.
-
-The figure below shows the **flow field** (dynamical rule) for such a model, with axes in population units. The domain extends toward the axes (low $R$ or low $F$) so you can see how the flow behaves near those edge cases. Each arrow shows the direction and relative rate of change of the state. Three **trajectories** are drawn (green, brown, blue), starting at different states. Time runs along each curve; one full cycle might represent several years in a real system.
+**Predator–prey (Lotka–Volterra)**  
+State $(R, F)$: prey and predator populations. The flow field shows how the state changes; trajectories can **cycle** around an equilibrium. The figure shows the flow and **two** trajectories (green, brown).
 
 ```{r}
 #| label: fig-lynx-hare-flow
-#| fig-cap: "Predator-prey flow field and three trajectories (green, brown, blue). Domain extends toward R=0 and F=0 so edge cases (e.g. near-extinction) are visible. R = prey, F = predators (population units)."
+#| fig-cap: "Predator-prey flow field and two trajectories (green, brown). R = prey, F = predators."
 #| echo: false
 #| warning: false
 #| message: false
-# Lotka-Volterra: dR/dt = r*R - a*R*F, dF/dt = b*R*F - m*F
-# Equilibrium R* = m/b, F* = r/a. Parameters chosen so equilibrium ~(400, 300), cycle period ~several time units
 r <- 0.6
 a <- 0.002
 b <- 0.0015
 m <- 0.6
 LV <- makeODE(dR ~ r*R - a*R*F, dF ~ b*R*F - m*F)
-sol1 <- integrateODE(LV, domain(t = 0:35), R = 600, F = 150)
-sol2 <- integrateODE(LV, domain(t = 0:35), R = 200, F = 450)
-sol3 <- integrateODE(LV, domain(t = 0:35), R = 350, F = 280)
-# Flow field domain must cover the full cyclic region (including "north" where F is high)
-# so arrows fill the figure and no trajectory runs into empty space
-R_range <- c(15, 700)
-F_range <- c(15, 550)
-flow_field(LV, domain(R = R_range[1]:R_range[2], F = F_range[1]:F_range[2]), npts = 14) |>
-  traj_plot(F(t) ~ R(t), sol1, color = "darkgreen", nt = 0, inherit = FALSE, linewidth = 1.3, alpha = 0.85) |>
-  traj_plot(F(t) ~ R(t), sol2, color = "brown", nt = 0, inherit = FALSE, linewidth = 1.3, alpha = 0.85) |>
-  traj_plot(F(t) ~ R(t), sol3, color = "steelblue", nt = 0, inherit = FALSE, linewidth = 1.3, alpha = 0.85) |>
+# Two trajectories only; integrate long enough for full orbits to show
+sol1 <- integrateODE(LV, domain(t = 0:45), R = 600, F = 150)
+sol2 <- integrateODE(LV, domain(t = 0:45), R = 200, F = 450)
+# Domain and limits so both full closed orbits are visible (no clipping)
+R_range <- c(50, 650)
+F_range <- c(50, 520)
+flow_field(LV, domain(R = R_range[1]:R_range[2], F = F_range[1]:F_range[2]), npts = 12) |>
+  traj_plot(F(t) ~ R(t), sol1, color = "darkgreen", nt = 0, inherit = FALSE, linewidth = 1.4, alpha = 0.9) |>
+  traj_plot(F(t) ~ R(t), sol2, color = "brown", nt = 0, inherit = FALSE, linewidth = 1.4, alpha = 0.9) |>
   gf_lims(x = R_range, y = F_range) |>
   gf_labs(x = "R (prey)", y = "F (predators)") |>
   gf_refine(coord_fixed()) |>
@@ -54,7 +43,7 @@ flow_field(LV, domain(R = R_range[1]:R_range[2], F = F_range[1]:F_range[2]), npt
 
 **Questions**
 
-1. At the point in state space where there are *many* prey and *few* predators (e.g. high $R$, low $F$ — right side of the plot), in which direction does the flow mainly point?
+1. Where there are many prey and few predators (high $R$, low $F$), which way does the flow mainly point?
 
 ```{mcq}
 #| label: leh-highR-lowF
@@ -65,7 +54,7 @@ flow_field(LV, domain(R = R_range[1]:R_range[2], F = F_range[1]:F_range[2]), npt
 5. Roughly southwest (both R and F decreasing).
 ```
 
-2. At the point where there are *few* prey and *many* predators (e.g. low $R$, high $F$ — left side of the plot), in which direction does the flow mainly point?
+2. Where there are few prey and many predators (low $R$, high $F$), which way does the flow mainly point?
 
 ```{mcq}
 #| label: leh-lowR-highF
@@ -76,7 +65,7 @@ flow_field(LV, domain(R = R_range[1]:R_range[2], F = F_range[1]:F_range[2]), npt
 5. Mainly to the left (R decreasing only).
 ```
 
-3. What shape do the trajectories (green, brown, blue) in the figure have?
+3. What shape do the two trajectories have?
 
 ```{mcq}
 #| label: leh-shape
@@ -87,17 +76,17 @@ flow_field(LV, domain(R = R_range[1]:R_range[2], F = F_range[1]:F_range[2]), npt
 5. They are straight lines.
 ```
 
-4. How does this predator–prey system *differ* from the SIR epidemic model in terms of long-term behavior?
+4. How does long-term behavior here differ from SIR?
 
 ```{mcq}
 #| label: leh-vs-SIR
 1. SIR has no state space; predator-prey does.
-2. In SIR the state eventually moves in one general direction (e.g. toward fewer infectives); in this predator-prey model the state can cycle and not settle at a single point. [correct]
+2. SIR trends one way; here the state can cycle and not settle. [correct]
 3. SIR has two state variables; predator-prey has only one.
 4. Predator-prey has no equilibrium; SIR always has one.
 ```
 
-5. Suppose we start at a state with many prey and few predators. Over the next stretch of time, what typically happens to the predator population $F$?
+5. Starting with many prey and few predators, what typically happens to $F$ (predators) next?
 
 ```{mcq}
 #| label: leh-fox-increase
@@ -107,17 +96,17 @@ flow_field(LV, domain(R = R_range[1]:R_range[2], F = F_range[1]:F_range[2]), npt
 4. $F$ decreases to zero.
 ```
 
-6. In the **center** of the flow field (e.g. near $R \approx 400$, $F \approx 300$), the arrows are relatively short. What does that indicate?
+6. Near the center of the flow field the arrows are short. What does that mean?
 
 ```{mcq}
 #| label: leh-short-arrows
 1. Time runs more slowly there.
-2. The rate of change of the state is small there (state is changing slowly); this is the **equilibrium** where inflows and outflows balance. [correct]
+2. State changes slowly there; it's the **equilibrium**. [correct]
 3. Prey and predators are equal in number.
 4. The trajectory cannot pass through that region.
 ```
 
-7. What would happen if the system started *exactly* at that center point (the equilibrium)?
+7. If the system started exactly at that center point, what would happen?
 
 ```{mcq}
 #| label: leh-center-behavior
@@ -127,17 +116,17 @@ flow_field(LV, domain(R = R_range[1]:R_range[2], F = F_range[1]:F_range[2]), npt
 4. The state would move in a straight line away from the center.
 ```
 
-8. In what kind of deviation or situation would the **cycle break** — that is, the populations would no longer follow a repeating cycle?
+8. When would the cycle break (populations no longer follow a repeating cycle)?
 
 ```{mcq}
 #| label: leh-cycle-break
 1. If we start with too many prey.
-2. If one population is driven to zero (e.g. extinction of prey or predators); the system then leaves the regime where both species interact and the closed orbit is lost. [correct]
+2. One population goes to zero (extinction); the closed orbit is lost. [correct]
 3. If we start exactly at the equilibrium.
 4. If the cycle runs for more than one full loop.
 ```
 
-9. (Optional) In one or two sentences, explain in terms of prey and predators why the flow points roughly southwest when there are few prey and many predators.
+9. (Optional) Why does the flow point roughly southwest when there are few prey and many predators?
 
 `r devoirs::devoirs_text("leh-explain", rows = 3)`
 
