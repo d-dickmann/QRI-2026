@@ -1,0 +1,118 @@
+---
+id: "lynx-eat-hare"
+created: "2026-02"
+attribution: QRI-2026
+use: "Ch 11 Dynamics – predator-prey (Lotka-Volterra)"
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+library(devoirs)
+library(mosaicCalc)
+```
+
+::: {#exr-lynx-eat-hare}
+
+**A new dynamic system: predator and prey**
+
+In the SIR model, the state (susceptibles, infectives) moves in one general direction over time. Many two-variable dynamical systems behave differently. Here we introduce a simple **predator–prey** model (often called Lotka–Volterra). The state is $(R, F)$: $R$ = number of rabbits (prey) and $F$ = number of foxes (predators).
+
+- When there are many rabbits and few foxes, rabbits tend to increase (and foxes can grow by eating them).
+- When there are many foxes and few rabbits, foxes tend to decrease (not enough food) and rabbits can recover.
+- The dynamical rule therefore has both $R$ and $F$ increasing or decreasing depending on the current state, and trajectories can **cycle** around an equilibrium instead of heading one way.
+
+The figure below shows the **flow field** (dynamical rule) for one such predator–prey model. The horizontal axis is $R$ (rabbits) and the vertical axis is $F$ (foxes). Each arrow shows the direction and relative rate of change of the state at that point. Two **trajectories** are drawn: one starting at (2, 1.5) and one starting at (1, 3).
+
+```{r}
+#| label: fig-lynx-hare-flow
+#| fig-cap: "Predator-prey flow field and two trajectories. R = rabbits (prey), F = foxes (predators)."
+#| echo: false
+#| warning: false
+#| message: false
+# Lotka-Volterra: dR/dt = r*R - a*R*F, dF/dt = b*R*F - m*F
+# Equilibrium: R = m/b, F = r/a. Use r=1, a=0.5, b=0.3, m=0.4 => (R*,F*) ~ (1.33, 2)
+r <- 1
+a <- 0.5
+b <- 0.3
+m <- 0.4
+LV <- makeODE(dR ~ r*R - a*R*F, dF ~ b*R*F - m*F)
+sol1 <- integrateODE(LV, domain(t = 0:25), R = 2, F = 1.5)
+sol2 <- integrateODE(LV, domain(t = 0:25), R = 1, F = 3)
+flow_field(LV, domain(R = 0.4:3, F = 0.4:3.5), npts = 12) |>
+  traj_plot(F(t) ~ R(t), sol1, color = "darkgreen", nt = 0, inherit = FALSE, linewidth = 1.2, alpha = 0.8) |>
+  traj_plot(F(t) ~ R(t), sol2, color = "brown", nt = 0, inherit = FALSE, linewidth = 1.2, alpha = 0.8) |>
+  gf_labs(x = "R (rabbits)", y = "F (foxes)") |>
+  gf_refine(coord_fixed()) |>
+  gf_theme(theme_minimal())
+```
+
+**Questions**
+
+1. At the point in state space where there are *many* rabbits and *few* foxes (e.g. top-left area of the plot, high $R$, low $F$), in which direction does the flow mainly point?
+
+```{mcq}
+#| label: leh-highR-lowF
+1. Mainly to the right (R increasing, F not changing much).
+2. Mainly upward (F increasing, R not changing much).
+3. Roughly northeast (both R and F increasing). [correct]
+4. Mainly downward (F decreasing).
+5. Roughly southwest (both R and F decreasing).
+```
+
+2. At the point where there are *few* rabbits and *many* foxes (e.g. bottom-right area: low $R$, high $F$), in which direction does the flow mainly point?
+
+```{mcq}
+#| label: leh-lowR-highF
+1. Mainly to the right (R increasing).
+2. Roughly southwest (both R and F decreasing). [correct]
+3. Roughly northeast (both R and F increasing).
+4. Mainly upward (F increasing).
+5. Mainly to the left (R decreasing only).
+```
+
+3. What shape do the two trajectories (green and brown) in the figure have?
+
+```{mcq}
+#| label: leh-shape
+1. They head straight toward the center and stop.
+2. They spiral inward toward a single point.
+3. They form closed loops (cycles) that repeat. [correct]
+4. They head outward without bound.
+5. They are straight lines.
+```
+
+4. How does this predator–prey system *differ* from the SIR epidemic model in terms of long-term behavior?
+
+```{mcq}
+#| label: leh-vs-SIR
+1. SIR has no state space; predator-prey does.
+2. In SIR the state eventually moves in one general direction (e.g. toward fewer infectives); in this predator-prey model the state can cycle and not settle at a single point. [correct]
+3. SIR has two state variables; predator-prey has only one.
+4. Predator-prey has no equilibrium; SIR always has one.
+```
+
+5. Suppose we start at a state with many rabbits and few foxes. Over the next stretch of time, what typically happens to the fox population $F$?
+
+```{mcq}
+#| label: leh-fox-increase
+1. $F$ only decreases, because there are too many rabbits.
+2. $F$ increases (more food for foxes), then later can decrease as rabbits are eaten down. [correct]
+3. $F$ stays constant.
+4. $F$ decreases to zero.
+```
+
+6. In the middle of the state space (e.g. near $R \approx 1.5$, $F \approx 2$), the arrows are relatively short. What does that indicate?
+
+```{mcq}
+#| label: leh-short-arrows
+1. Time runs more slowly there.
+2. The rate of change of the state is small there (state is changing slowly); this is near an equilibrium. [correct]
+3. Rabbits and foxes are equal in number.
+4. The trajectory cannot pass through that region.
+```
+
+7. (Optional) In one or two sentences, explain in terms of “rabbits” and “foxes” why the flow points roughly southwest when there are few rabbits and many foxes.
+
+`r devoirs::devoirs_text("leh-explain", rows = 3)`
+
+:::
+<!-- end of exr-lynx-eat-hare -->

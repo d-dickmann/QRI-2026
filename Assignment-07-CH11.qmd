@@ -1,0 +1,52 @@
+---
+title: QR-I Assignment 7
+subtitle: Chapter 11 of the QR-A book
+---
+
+{{< include _use_webr.qmd >}}
+
+```{r include = FALSE}
+library(devoirs)
+library(mosaicCalc)
+source("_start-up.R")
+```
+
+{{< include _devoirs.qmd >}}
+
+::::: {.callout-note collapse=true}
+## Drill for Chapter 11 (Dynamics)
+
+Open drill questions in [this document](https://dtkaplan.github.io/QR-A/Drill-11-dynamics.html){target="_blank"}
+
+Remember to submit your drill answers through that document. But for the exercises in the present document, use the "collect answers" at the top of this page.
+
+:::::
+
+:::: {.callout-note collapse=true}
+## Chapter 11 — Exercises
+
+`r id <- "a7-ch11"`
+
+These exercises draw on dynamics (Ch 11): state space, flow fields, and the SIR model.
+
+::: {.panel-tabset}
+## 1.
+
+{{< include ../QR-A/_exercises/kid-ring-screen.qmd >}}
+
+## 2.
+
+{{< include ../QR-A/_exercises/fawn-shut-bulb.qmd >}}
+
+## 3.
+
+{{< include ../QR-A/_exercises/dolphin-bring-knob.qmd >}}
+
+## 4.
+
+{{< include _exercises/lynx-eat-hare.qmd >}}
+
+:::
+
+::::
+:::::
