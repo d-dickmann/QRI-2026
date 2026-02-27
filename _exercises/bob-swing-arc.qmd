@@ -12,7 +12,9 @@ library(mosaicCalc)
 
 ::: {#exr-bob-swing-arc}
 
-The figure below shows six different instantaneous configurations for a pendulum as it swings. Each panel is labeled (a)–(f). The curved arrow in each panel shows the velocity of the bob; the length of the arrow is proportional to the speed (velocity × 1 second). The horizontal axis in state space is position $\theta$ (angle in degrees); the vertical axis is angular velocity.
+**Note:** In this exercise, $\theta = 0°$ is the position where the pendulum hangs **straight down** (center/bottom of its swing). Positive $\theta$ is one side, negative $\theta$ the other.
+
+The figure below shows six different instantaneous configurations for a pendulum as it swings. Each panel is labeled (a)–(f). The curved arrow in each panel shows the velocity of the bob; the length of the arrow is proportional to the speed (velocity × 1 second). In state space, the horizontal axis is $\theta$ (angle in degrees); the vertical axis is angular velocity.
 
 ```{r}
 #| echo: false
@@ -49,57 +51,78 @@ draw_pendulum1(-pi/10, +1)
 6. f
 ```
 
-**2.** The next figure shows the *state space* for the pendulum: horizontal axis = $\theta$ (degrees), vertical axis = angular velocity. Three states from the pendulum figures are plotted and labeled **A**, **B**, and **C** (they correspond to three of the frames (a)–(f), in no particular order).
+**2.** The next figure shows the **flow field** (dynamical rule) for the pendulum in state space: at each point, the arrow shows the direction and rate of change of the state. Several points are marked with numbers **1–5**. Some of these numbered points correspond to one of the six pendulum frames (a)–(f) above; at least one does *not* correspond to any of those frames. Use the flow field and the pendulum panels to locate states.
 
 ```{r}
-#| label: fig-pendulum-state-space
-#| fig-cap: "State space: three states A, B, C from the pendulum frames."
+#| label: fig-pendulum-flow
+#| fig-cap: "Pendulum flow field in state space. Numbered points 1–5: some match frames (a)–(f), at least one does not."
 #| echo: false
-# A = top of swing (b), B = largest speed (f), C = right side, moving down (a)
+#| warning: false
+# Pendulum: dp/dt = v, dv/dt = -k*p with 0 = straight down
+k <- 0.025
+pend <- makeODE(dp ~ v, dv ~ -k*p)
+# Points: 1=frame b (top), 2=frame f (max speed), 3=frame a (right, down), 4=distractor (0,0), 5=frame d
 pts <- tibble::tibble(
-  theta_deg = c(-45, -18, 22.5),
-  velocity  = c(0.05, 1, -0.2),
-  label = c("A", "B", "C")
+  p = c(-45, -18, 22.5, 0, -30),
+  v = c(0.05, 1, -0.2, 0, 0.5),
+  label = as.character(1:5)
 )
-gf_blank(0 ~ 0) |>
-  gf_lims(y = c(-1.2, 1.2), x = c(-55, 35)) |>
-  gf_labs(y = "velocity", x = expression(theta ~ "(deg)")) |>
-  gf_point(velocity ~ theta_deg, data = pts, size = 4, color = "steelblue") |>
-  gf_text(velocity ~ theta_deg, label = ~ label, data = pts, hjust = -0.5, vjust = -0.5, size = 4) |>
+flow_field(pend, domain(p = -50:50, v = -1.2:1.2), npts = 10, scale = 0.7) |>
+  gf_point(v ~ p, data = pts, size = 5, color = "darkred", inherit = FALSE) |>
+  gf_text(v ~ p, label = ~ label, data = pts, hjust = -0.6, vjust = -0.5, size = 5, color = "darkred", inherit = FALSE) |>
   gf_hline(yintercept = 0, linetype = 2, alpha = 0.5) |>
   gf_vline(xintercept = 0, linetype = 2, alpha = 0.5) |>
+  gf_labs(x = expression(theta ~ "(deg)"), y = "velocity") |>
+  gf_refine(coord_fixed()) |>
   gf_theme(theme_minimal())
 ```
 
-**2a.** Which point (A, B, or C) corresponds to the **top of the swing** (pendulum nearest maximum angle)?
+**2a.** Which numbered point (1–5) corresponds to **frame b** (pendulum nearest the top of its swing)?
 
 ```{mcq}
 #| label: bsa-match-b
 #| inline: true
-1. A [correct]
-2. B
-3. C
+1. 1 [correct]
+2. 2
+3. 3
+4. 4
+5. 5
 ```
 
-**2b.** Which point corresponds to the configuration with the **largest speed** in the pendulum figure?
+**2b.** Which numbered point corresponds to **frame f** (the frame with the largest speed)?
 
 ```{mcq}
 #| label: bsa-match-f
 #| inline: true
-1. A
-2. B [correct]
-3. C
+1. 1
+2. 2 [correct]
+3. 3
+4. 4
+5. 5
 ```
 
-**3.** The *rate of change of state* has two components: $d\theta/dt$ (horizontal) and $d(\text{velocity})/dt$ (vertical). At the **top of the swing** (point A), in which direction does this rate-of-change vector mainly point?
+**2c.** Which numbered point does **not** correspond to any of the six pendulum frames (a)–(f)?
 
 ```{mcq}
-#| label: bsa-roc-top
-1. Left (negative $\theta$ direction).
-2. Right (positive $\theta$ direction).
-3. Down (negative velocity direction).
-4. Up (positive velocity direction). [correct]
-5. Both components are zero.
+#| label: bsa-distractor
+#| inline: true
+1. 1
+2. 2
+3. 3
+4. 4 [correct — (0, 0) is straight down at rest; none of the panels show that.]
+5. 5
+```
+
+**2d.** Which numbered point corresponds to **frame a** (bob on the right, velocity pointing downward)?
+
+```{mcq}
+#| label: bsa-match-a
+#| inline: true
+1. 1
+2. 2
+3. 3 [correct]
+4. 4
+5. 5
 ```
 
 :::

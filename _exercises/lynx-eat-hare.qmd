@@ -20,11 +20,11 @@ In the SIR model, the state (susceptibles, infectives) moves in one general dire
 - When there are many predators and few prey, predators decline (not enough food) and prey can recover.
 - The dynamical rule has both $R$ and $F$ increasing or decreasing depending on the current state, and trajectories often **cycle** around an equilibrium instead of heading one way.
 
-The figure below shows the **flow field** (dynamical rule) for such a model, with axes in population units. The domain extends toward the axes (low $R$ or low $F$) so you can see how the flow behaves near those edge cases. Each arrow shows the direction and relative rate of change of the state. Two **trajectories** are drawn: one starting at (600, 150) and one at (200, 450). Time runs along each curve; one full cycle might represent several years in a real system.
+The figure below shows the **flow field** (dynamical rule) for such a model, with axes in population units. The domain extends toward the axes (low $R$ or low $F$) so you can see how the flow behaves near those edge cases. Each arrow shows the direction and relative rate of change of the state. Three **trajectories** are drawn (green, brown, blue), starting at different states. Time runs along each curve; one full cycle might represent several years in a real system.
 
 ```{r}
 #| label: fig-lynx-hare-flow
-#| fig-cap: "Predator-prey flow field and two trajectories. Domain extends toward R=0 and F=0 so edge cases (e.g. near-extinction) are visible. R = prey, F = predators (population units)."
+#| fig-cap: "Predator-prey flow field and three trajectories (green, brown, blue). Domain extends toward R=0 and F=0 so edge cases (e.g. near-extinction) are visible. R = prey, F = predators (population units)."
 #| echo: false
 #| warning: false
 #| message: false
@@ -37,10 +37,12 @@ m <- 0.6
 LV <- makeODE(dR ~ r*R - a*R*F, dF ~ b*R*F - m*F)
 sol1 <- integrateODE(LV, domain(t = 0:35), R = 600, F = 150)
 sol2 <- integrateODE(LV, domain(t = 0:35), R = 200, F = 450)
+sol3 <- integrateODE(LV, domain(t = 0:35), R = 350, F = 280)
 # Extend domain toward R=0 and F=0 so edge cases (extinction, cycle break) are visible
 flow_field(LV, domain(R = 15:700, F = 15:500), npts = 12) |>
   traj_plot(F(t) ~ R(t), sol1, color = "darkgreen", nt = 0, inherit = FALSE, linewidth = 1.2, alpha = 0.8) |>
   traj_plot(F(t) ~ R(t), sol2, color = "brown", nt = 0, inherit = FALSE, linewidth = 1.2, alpha = 0.8) |>
+  traj_plot(F(t) ~ R(t), sol3, color = "steelblue", nt = 0, inherit = FALSE, linewidth = 1.2, alpha = 0.8) |>
   gf_labs(x = "R (prey)", y = "F (predators)") |>
   gf_refine(coord_fixed()) |>
   gf_theme(theme_minimal())
@@ -70,7 +72,7 @@ flow_field(LV, domain(R = 15:700, F = 15:500), npts = 12) |>
 5. Mainly to the left (R decreasing only).
 ```
 
-3. What shape do the two trajectories (green and brown) in the figure have?
+3. What shape do the trajectories (green, brown, blue) in the figure have?
 
 ```{mcq}
 #| label: leh-shape
