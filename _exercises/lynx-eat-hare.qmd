@@ -13,11 +13,11 @@ library(mosaicCalc)
 ::: {#exr-lynx-eat-hare}
 
 **Predator–prey (Lotka–Volterra)**  
-State $(R, F)$: prey and predator populations. The flow field shows how the state changes; trajectories can **cycle** around an equilibrium. The figure shows the flow and **two** trajectories (green, brown).
+State $(R, F)$: prey and predator populations. The flow field shows how the state changes; trajectories can **cycle** around an equilibrium. The figure shows the flow and **one** trajectory (green).
 
 ```{r}
 #| label: fig-lynx-hare-flow
-#| fig-cap: "Predator-prey flow field and two trajectories (green, brown). R = prey, F = predators."
+#| fig-cap: "Predator-prey flow field and one trajectory (green). R = prey, F = predators."
 #| echo: false
 #| warning: false
 #| message: false
@@ -26,14 +26,12 @@ a <- 0.002
 b <- 0.0015
 m <- 0.6
 LV <- makeODE(dR ~ r*R - a*R*F, dF ~ b*R*F - m*F)
-# Two trajectories; integrate long enough for full closed orbits
+# One trajectory; integrate long enough for full closed orbit
 sol1 <- integrateODE(LV, domain(t = 0:50), R = 600, F = 150)
-sol2 <- integrateODE(LV, domain(t = 0:50), R = 200, F = 450)
-# Widen domain and limits so both full orbits fit (no clipping)
-R_range <- c(80, 720)
-F_range <- c(80, 580)
+# Domain and limits chosen so the full orbit is visible (no clipping)
+R_range <- c(100, 700)
+F_range <- c(100, 620)
 flow_field(LV, domain(R = R_range[1]:R_range[2], F = F_range[1]:F_range[2]), npts = 12) |>
-  traj_plot(F(t) ~ R(t), sol2, color = "brown", nt = 0, inherit = FALSE, linewidth = 1.3, alpha = 0.85) |>
   traj_plot(F(t) ~ R(t), sol1, color = "forestgreen", nt = 0, inherit = FALSE, linewidth = 1.9, alpha = 0.95) |>
   gf_lims(x = R_range, y = F_range) |>
   gf_labs(x = "R (prey)", y = "F (predators)") |>
@@ -65,15 +63,15 @@ flow_field(LV, domain(R = R_range[1]:R_range[2], F = F_range[1]:F_range[2]), npt
 5. Mainly to the left (R decreasing only).
 ```
 
-3. What shape do the two trajectories have?
+3. What shape does the trajectory have?
 
 ```{mcq}
 #| label: leh-shape
-1. They head straight toward the center and stop.
-2. They spiral inward toward a single point.
-3. They form closed loops (cycles) that repeat. [correct]
-4. They head outward without bound.
-5. They are straight lines.
+1. It heads straight toward the center and stops.
+2. It spirals inward toward a single point.
+3. It forms a closed loop (cycle) that repeats. [correct]
+4. It heads outward without bound.
+5. It is a straight line.
 ```
 
 4. How does long-term behavior here differ from SIR?
