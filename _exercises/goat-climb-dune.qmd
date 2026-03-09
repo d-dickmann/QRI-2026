@@ -13,41 +13,65 @@ library(mosaicCalc)
 ::: {#exr-goat-climb-dune}
 
 **Marginal tax rates (Ch 12)**  
-In a simplified tax system, the *marginal* tax rate (the rate applied to an extra dollar of income) is 0% for income up to $20,000, 10% for income from $20,001 to $50,000, and 25% above $50,000. A taxpayer has an income of $35,000.
+Federal income tax for 2025 uses *marginal* rates: each rate applies only to income *within* that bracket, not to your whole income. The brackets for **single filers** (tax year 2025) are:
 
-1. What is this taxpayer’s *marginal* tax rate at their current income?
+| Rate | Taxable income (single filer) |
+|------|-------------------------------|
+| 10%  | $0 to $11,925                  |
+| 12%  | $11,926 to $48,475             |
+| 22%  | $48,476 to $103,350            |
+| 24%  | $103,351 to $197,300           |
+| 32%  | $197,301 to $250,525           |
+| 35%  | $250,526 to $626,350           |
+| 37%  | $626,351 and above             |
 
-```{mcq}
-#| label: gcd-1-marg
-1. 0%
-2. 10% [correct]
-3. 25%
-4. It depends on how much they earned last year.
-```
+Source: [Federal income tax rates and brackets (IRS)](https://www.irs.gov/filing/federal-income-tax-rates-and-brackets).
 
-2. The taxpayer is considering a side job that would add $8,000 to their income (total $43,000). On that *additional* $8,000, how much tax would they owe?
+---
 
-```{mcq}
-#| label: gcd-2-extra
-1. $0
-2. $800 [correct]
-3. $2,000
-4. $10,750
-```
-
-3. Why does the tax code specify *marginal* rates rather than a single “overall” rate for each bracket?
+1. A single filer has **$50,000** in taxable income in 2025. How is the federal tax on that income calculated?
 
 ```{mcq}
-#| label: gcd-3-why
-1. So that high earners pay less.
-2. So that a small increase in income never causes a sudden jump in total tax owed. [correct]
-3. So that everyone pays the same percentage.
-4. To make the forms shorter.
+#| label: gcd-1-how
+1. 22% of $50,000, because 22% is the rate for that bracket.
+2. 10% of the first $11,925, plus 12% of the next $36,550, plus 22% only on the amount over $48,475. [correct]
+3. The average of 10%, 12%, and 22% applied to $50,000.
+4. It depends on whether they take the standard deduction.
 ```
 
-4. In one sentence, what does “on the margin” mean in the phrase “marginal tax rate”?
+2. For that same taxpayer with $50,000 taxable income, what is their **marginal** federal tax rate—i.e., the rate that applies to the *next* dollar of taxable income?
 
-`r devoirs::devoirs_text("gcd-4-sentence")`
+```{mcq}
+#| label: gcd-2-marg
+1. 10%
+2. 12%
+3. 22% [correct]
+4. Some average of 10%, 12%, and 22%.
+```
+
+3. They get a raise and their taxable income goes from $50,000 to **$51,000**. How much federal tax do they owe on that *additional* $1,000 of income?
+
+```{mcq}
+#| label: gcd-3-extra
+1. $220 [correct]
+2. $1,100
+3. $11,220
+4. 22% of their total $51,000 income.
+```
+
+4. Because of marginal rates, when your taxable income rises, what happens to the fraction of each *extra* dollar you keep after federal income tax?
+
+```{mcq}
+#| label: gcd-4-takehome
+1. It stays the same no matter how much you earn.
+2. It goes down as you move into higher brackets—each additional dollar is taxed at a higher rate, so you keep less of it. [correct]
+3. It goes up, because higher earners get better tax breaks.
+4. It depends only on your total income, not on which bracket you're in.
+```
+
+5. In one sentence, what does "on the margin" mean in the phrase "marginal tax rate"?
+
+`r devoirs::devoirs_text("gcd-5-sentence")`
 
 :::
 <!-- end of exr-goat-climb-dune -->
