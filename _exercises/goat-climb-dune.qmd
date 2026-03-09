@@ -79,23 +79,9 @@ Source: [Federal income tax rates and brackets (IRS)](https://www.irs.gov/filing
 4. It depends on whether you're single or married.
 ```
 
-6. A raise always increases your after-tax income (you never end up with less). Even so, someone might feel a raise "isn't worth it." **Select all that can be real reasons or trade-offs** that might make a raise feel not worth it to them.
+6. A raise always increases your after-tax income (you never end up with less). Even so, someone might feel a raise "isn't worth it." In a short paragraph, give two or more real reasons or trade-offs that might make a raise feel not worth it to someone. (Consider effort vs. take-home pay, benefits, taxes, or other factors we've discussed.)
 
-```{mcq}
-#| label: gcd-6-effort
-1. The trade-off between the extra effort, hours, or stress to earn the raise and the extra take-home pay they'd actually keep. [correct]
-2. Losing eligibility for federal benefits (e.g., SNAP, Medicaid) when income rises, so total resources go down even though pay went up. [correct]
-3. Concern that higher income could mean a higher chance of IRS audit or scrutiny. [correct]
-4. On principle, not wanting to pay more total tax to the government. [correct]
-5. The raise would move them into a higher bracket and leave them with less after-tax income than before.
-6. The government would tax the raise at 100%, so they'd keep nothing of the extra income.
-7. They'd have to work fewer hours, and that wouldn't be worth it.
-8. Their employer would cut their base salary by the amount of the raise.
-```
-
-7. In one sentence, what does "on the margin" mean in the phrase "marginal tax rate"?
-
-`r devoirs::devoirs_text("gcd-7-sentence")`
+`r devoirs::devoirs_text("gcd-6-free")`
 
 :::
 <!-- end of exr-goat-climb-dune -->

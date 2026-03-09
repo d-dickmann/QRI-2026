@@ -136,6 +136,20 @@ When in doubt whether your work has been submitted, submit it again! The compute
 - *Submission deadline*: Start of your class [Wed Mar 4]{title="Section 1"} or [Thurs Mar 5]{title="Sections 3 & 4"}.
 :::
 
+## Week 10 (Mar 9–15)
 
+- **Quiz** on Chapter 12 (Rates of change): [Mon Mar 9]{title="Section 1"} or [Tues Mar 10]{title="Sections 3 & 4"}.
 
+- **Reading:** Chapter 13 of *QR-A* (Accumulation). There are no Reading Questions for Chapter 13 this time; read the chapter to support the assignment and class discussion.
 
+::: {.callout-tip collapse=false appearance=simple}
+## Assignment 8
+
+- [Link to assignment document](Assignment-08-CH12-CH13.html)
+- *Submission deadline*: **Sunday Mar 15, 11:59 PM** (all sections).
+- Covers Chapters 12 and 13. Ch 12 & Ch 13 drill questions are not part of this assignment; you will be emailed when they are available for exam studying.
+:::
+
+## Week 11: Finals Week (Mar 16–22)
+
+- **Final exam:** Tuesday Mar 17. Refer to the official exam schedule for time and location.
