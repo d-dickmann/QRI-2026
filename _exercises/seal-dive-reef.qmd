@@ -1,0 +1,59 @@
+---
+id: "seal-dive-reef"
+created: "2026-03"
+attribution: QRI-2026
+use: "Chapter 12 – rate of change as slope, derivative"
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+library(devoirs)
+library(mosaicCalc)
+```
+
+::: {#exr-seal-dive-reef}
+
+**Rate of change and slope (Ch 12)**  
+A city’s health department tracks total COVID cases (cumulative) as a function of date. The graph of this function is increasing and roughly S-shaped: steep in the middle, flatter at the start and end.
+
+1. What does the *slope* of this graph at a given date represent?
+
+```{mcq}
+#| label: sdr-1-slope
+1. Total cases so far.
+2. The rate of change of total cases with respect to time (e.g. new cases per day). [correct]
+3. The number of days since the first case.
+4. The average number of cases per day over the whole period.
+```
+
+2. During the period when the curve is steepest, the *rate of change* of total cases is:
+
+```{mcq}
+#| label: sdr-2-steep
+1. Zero
+2. Small
+3. Largest (most new cases per day). [correct]
+4. Negative
+```
+
+3. “The epidemic has leveled off” is often used when daily case counts stop growing. In terms of the graph of *total* cases vs time, “leveled off” means the slope is:
+
+```{mcq}
+#| label: sdr-3-level
+1. Steep and positive
+2. Near zero [correct]
+3. Negative
+4. Undefined
+```
+
+4. If we drew a new graph whose vertical axis is *new cases per day* (instead of total cases), that new graph would be the __________ of the original total-cases function.
+
+```{mcq}
+#| label: sdr-4-deriv
+1. anti-derivative
+2. derivative [correct]
+3. inverse
+4. average
+```
+
+:::
+<!-- end of exr-seal-dive-reef -->

@@ -1,0 +1,53 @@
+---
+id: "ibis-peck-sand"
+created: "2026-03"
+attribution: QRI-2026
+use: "Chapter 13 – accumulation from rate"
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+library(devoirs)
+library(mosaicCalc)
+```
+
+::: {#exr-ibis-peck-sand}
+
+**Accumulation (Ch 13)**  
+A beachcomber walks north and collects shells. Her *collection rate* is 12 shells per hour and is constant over a 2-hour walk. She starts with an empty basket.
+
+1. How many shells has she accumulated after 2 hours?
+
+```{mcq}
+#| label: ips-1-total
+1. 6
+2. 12
+3. 24 [correct]
+4. 36
+```
+
+2. The *accumulation* of a constant rate over a time interval equals:
+
+```{mcq}
+#| label: ips-2-formula
+1. rate minus time
+2. rate plus time
+3. rate times time [correct]
+4. rate divided by time
+```
+
+3. If instead her collection rate *varied* (e.g. 5 shells/hour in the first hour and 19 shells/hour in the second), the total shells collected would still be found by:
+
+```{mcq}
+#| label: ips-3-vary
+1. multiplying the average rate by 2 hours
+2. adding the accumulations in each interval (e.g. 5 + 19 = 24 for the two hours). [correct]
+3. taking the derivative of the rate function
+4. dividing total time by the rate
+```
+
+4. In one sentence, what is the relationship between the *rate of change* of a quantity and the *accumulated* quantity over an interval?
+
+`r devoirs::devoirs_text("ips-4-relation")`
+
+:::
+<!-- end of exr-ibis-peck-sand -->

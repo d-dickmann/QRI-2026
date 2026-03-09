@@ -1,0 +1,59 @@
+---
+id: "elk-run-meadow"
+created: "2026-03"
+attribution: QRI-2026
+use: "Chapter 13 – anti-differentiation, tax owed from marginal rate"
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+library(devoirs)
+library(mosaicCalc)
+```
+
+::: {#exr-elk-run-meadow}
+
+**From marginal rate to total (Ch 13)**  
+Chapter 13 explains that the tax *owed* (as a function of income) is the *accumulation* of the *marginal* tax rate: that is, the total-tax function is the anti-derivative of the marginal-rate function.
+
+1. If the marginal tax rate is given as a function of income, finding total tax owed at each income is an example of:
+
+```{mcq}
+#| label: erm-1-anti
+1. differentiation
+2. anti-differentiation (integration / accumulation) [correct]
+3. finding the slope
+4. finding the rate of change
+```
+
+2. On a graph of *marginal* tax rate vs income, the total tax owed between income $A and income $B is represented by:
+
+```{mcq}
+#| label: erm-2-area
+1. the slope of the line between $A and $B
+2. the height of the graph at $B
+3. the area under the marginal-rate curve from $A to $B [correct]
+4. the difference between the rate at $B and the rate at $A
+```
+
+3. The textbook notes that “differentiation” and “anti-differentiation” are inverse operations. So if function (b) is total tax owed and function (a) is marginal tax rate, then:
+
+```{mcq}
+#| label: erm-3-inverse
+1. (a) is the derivative of (b), and (b) is the anti-derivative of (a). [correct]
+2. (b) is the derivative of (a).
+3. (a) and (b) are the same.
+4. Neither is the derivative of the other.
+```
+
+4. Why is it useful to think of the tax table (marginal rates) as a *function* of income?
+
+```{mcq}
+#| label: erm-4-useful
+1. So we can ignore the brackets.
+2. Because we can then apply differentiation or anti-differentiation to get another useful form (e.g. total owed). [correct]
+3. So that everyone pays the same rate.
+4. Only for mathematical convenience.
+```
+
+:::
+<!-- end of exr-elk-run-meadow -->

@@ -1,0 +1,53 @@
+---
+id: "goat-climb-dune"
+created: "2026-03"
+attribution: QRI-2026
+use: "Chapter 12 – rates of change, marginal rate"
+---
+
+```{r include=FALSE, eval=!"devoirs" %in% (.packages())}
+library(devoirs)
+library(mosaicCalc)
+```
+
+::: {#exr-goat-climb-dune}
+
+**Marginal tax rates (Ch 12)**  
+In a simplified tax system, the *marginal* tax rate (the rate applied to an extra dollar of income) is 0% for income up to $20,000, 10% for income from $20,001 to $50,000, and 25% above $50,000. A taxpayer has an income of $35,000.
+
+1. What is this taxpayer’s *marginal* tax rate at their current income?
+
+```{mcq}
+#| label: gcd-1-marg
+1. 0%
+2. 10% [correct]
+3. 25%
+4. It depends on how much they earned last year.
+```
+
+2. The taxpayer is considering a side job that would add $8,000 to their income (total $43,000). On that *additional* $8,000, how much tax would they owe?
+
+```{mcq}
+#| label: gcd-2-extra
+1. $0
+2. $800 [correct]
+3. $2,000
+4. $10,750
+```
+
+3. Why does the tax code specify *marginal* rates rather than a single “overall” rate for each bracket?
+
+```{mcq}
+#| label: gcd-3-why
+1. So that high earners pay less.
+2. So that a small increase in income never causes a sudden jump in total tax owed. [correct]
+3. So that everyone pays the same percentage.
+4. To make the forms shorter.
+```
+
+4. In one sentence, what does “on the margin” mean in the phrase “marginal tax rate”?
+
+`r devoirs::devoirs_text("gcd-4-sentence")`
+
+:::
+<!-- end of exr-goat-climb-dune -->

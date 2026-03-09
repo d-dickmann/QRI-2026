@@ -1,0 +1,52 @@
+---
+title: QR-I Assignment 8
+subtitle: Chapters 12 and 13 of the QR-A book
+---
+
+{{< include _use_webr.qmd >}}
+
+```{r include = FALSE}
+library(devoirs)
+library(mosaicCalc)
+source("_start-up.R")
+```
+
+{{< include _devoirs.qmd >}}
+
+::::: {.callout-important}
+## Drill for Chapters 12 and 13 — not included in this assignment
+
+**The Chapter 12 and Chapter 13 drill questions are not part of Assignment 8.** You will receive an email when drill questions for CH12 & CH13 are available for final exam studying. The CH12 and CH13 drills will not be required for this assignment, but I suggest you complete them when available to prepare for the exam.
+
+For the exercises below, use the "collect answers" at the top of this page to submit your work.
+
+:::::
+
+:::: {.callout-note collapse=true}
+## Chapters 12 and 13 — Exercises
+
+`r id <- "a8-ch12-ch13"`
+
+These exercises draw on rates of change (Ch 12) and accumulation (Ch 13): marginal rates, derivatives, and anti-differentiation.
+
+::: {.panel-tabset}
+## 1.
+
+{{< include _exercises/hare-read-chart.qmd >}}
+
+## 2.
+
+{{< include _exercises/goat-climb-dune.qmd >}}
+
+## 3.
+
+{{< include ../QR-A/_exercises/walrus-hang-kitchen.qmd >}}
+
+## 4.
+
+{{< include _exercises/elk-run-meadow.qmd >}}
+
+:::
+
+::::
+:::::
